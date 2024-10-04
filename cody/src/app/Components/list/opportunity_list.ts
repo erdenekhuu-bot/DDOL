@@ -130,3 +130,5 @@ const opportunity_list: { id: number; image: string; title: string }[] = [
     title: "Performance & Scale",
   },
 ];
+
+export default opportunity_list;
