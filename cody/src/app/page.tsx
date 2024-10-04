@@ -4,6 +4,7 @@ import Footer from "./Components/Footer";
 import FirstSection from "./Components/home/FirstSection";
 import SecondSection from "./Components/home/SecondSection";
 import ThirdSection from "./Components/home/ThirdSection";
+import FourthSection from "./Components/home/FourthSection";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
         <FirstSection />
         <SecondSection />
         <ThirdSection />
+        <FourthSection />
       </Stack>
       <Footer />
     </main>

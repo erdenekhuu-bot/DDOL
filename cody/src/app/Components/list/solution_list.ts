@@ -77,3 +77,5 @@ const solution_list: { id: number; title: string; content: string }[] = [
       "Томоохон сошиал суваг дээр худалдааны орон зайгаа бий болгох боломжууд",
   },
 ];
+
+export default solution_list;
