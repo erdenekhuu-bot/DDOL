@@ -1,4 +1,4 @@
-const solution_item = function ({
+const Solution_Item = function ({
   title,
   content,
 }: {
@@ -15,4 +15,4 @@ const solution_item = function ({
   );
 };
 
-export default solution_item;
+export default Solution_Item;

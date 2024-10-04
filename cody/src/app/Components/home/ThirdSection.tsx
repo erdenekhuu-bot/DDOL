@@ -9,7 +9,7 @@ import { Button } from "@mui/material";
 const ThirdSection = function () {
   const [tap, setTap] = useState(0);
   return (
-    <section className="h-[500px] overflow-hidden">
+    <section className="h-[480px] overflow-hidden">
       {tap == 0 ? (
         <div className="flex my-4 px-10 transition">
           <Image src={slide_1} width={530} height={530} alt="" />
