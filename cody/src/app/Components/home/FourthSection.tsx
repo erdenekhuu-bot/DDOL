@@ -35,13 +35,13 @@ const FourthSection = function () {
         <Button
           onClick={() => {
             setClick(!click);
-            if (click) <Popup />;
           }}
           variant="contained"
           className="px-8 py-4 bg-purple-900 text-xs font-bold rounded-lg"
         >
           Дэлгэрэнгүй
         </Button>
+        {click && <Popup />}
       </div>
     </section>
   );
