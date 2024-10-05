@@ -129,6 +129,11 @@ const opportunity_list: { id: number; image: string; title: string }[] = [
     image: "",
     title: "Performance & Scale",
   },
+  {
+    id: 27,
+    image: "txt.image",
+    title: "Demo example",
+  },
 ];
 
 export default opportunity_list;
