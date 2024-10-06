@@ -7,12 +7,15 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "test": "npx tsc --init",
+    "migration": "npx prisma init",
     "migrate": "npx prisma migrate dev --name init"
   },
   "dependencies": {
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
     "@mui/material": "^6.1.2",
+    "@prisma/client": "^5.20.0",
     "next": "14.2.14",
     "react": "^18",
     "react-dom": "^18"
