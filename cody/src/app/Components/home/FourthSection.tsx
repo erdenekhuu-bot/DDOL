@@ -8,6 +8,10 @@ import Popup from "../Popup";
 const FourthSection = function () {
   const [click, setClick] = useState(false);
 
+  const handlePopupToggle = () => {
+    setClick(!click);
+  };
+
   return (
     <section className="h-[500px] my-4">
       <div className="text-center">
@@ -41,7 +45,7 @@ const FourthSection = function () {
         >
           Дэлгэрэнгүй
         </Button>
-        {click && <Popup />}
+        {click && <Popup onClose={handlePopupToggle} />}
       </div>
     </section>
   );
