@@ -1,8 +1,17 @@
+"use client";
 import { SvgIcon } from "@mui/material";
 import Opportunity_item from "../Opportunity_item";
 import opportunity_list from "../list/opportunity_list";
+import { Button } from "@mui/material";
+import { useState } from "react";
+import { Popup } from "../Popup";
 
 const FifthSection = function () {
+  const [click, setClick] = useState(false);
+
+  const handlePopupToggle = () => {
+    setClick(!click);
+  };
   return (
     <section className="flex justify-around flex-wrap bg-gray-200 p-8">
       {opportunity_list.map((item) => (
@@ -13,6 +22,18 @@ const FifthSection = function () {
           feature={item.feature}
         />
       ))}
+      <div className="flex justify-center">
+        <Button
+          onClick={() => {
+            setClick(!click);
+          }}
+          variant="contained"
+          className="px-8 py-4 bg-purple-900 text-xs font-bold rounded-lg"
+        >
+          Дэлгэрэнгүй
+        </Button>
+        {click && <Popup onClose={handlePopupToggle} />}
+      </div>
     </section>
   );
 };
