@@ -1,37 +1,31 @@
 const Footer = function () {
   return (
-    <footer className="w-full flex justify-around bg-purple-900 text-white font-bold">
+    <footer className="w-full flex justify-around bg-purple-900 text-white">
       <section className="text-white">
-        <div className="font-bold my-8">
-          КОДИ ПЛАТФОРМ
-          <div className="font-medium my-2">Платформын тухай</div>
-          <div className="font-medium my-2">Шийдэл</div>
-          <div className="font-medium my-2">Онцлог, боломжууд</div>
-          <div className="font-medium my-2">Бизнесийн төрөл</div>
-          <div className="font-medium my-2">Харилцагчид</div>
-          <div className="font-medium my-2">Web Submit 2022</div>
-        </div>
+        <div className="font-bold text-xl my-8">КОДИ ПЛАТФОРМ</div>
+        <p className="my-2 text-xs">Платформын тухай</p>
+        <p className="my-2 text-xs">Шийдэл</p>
+        <p className="my-2 text-xs">Онцлог, боломжууд</p>
+        <p className="my-2 text-xs">Бизнесийн төрөл</p>
+        <p className="my-2 text-xs">Харилцагчид</p>
+        <p className="my-2 text-xs">Web Submit 2022</p>
       </section>
       <section className="text-white">
-        <div className="font-bold my-8">
-          КОДИ ПЛАТФОРМ
-          <div className="font-medium my-2">Танилцуулга</div>
-          <div className="font-medium my-2">Үйлчилгээний төрөл</div>
-          <div className="font-medium my-2">Хамтрагч байгууллага</div>
-          <div className="font-medium my-2">Холбоо барих</div>
-          <div className="font-medium my-2">Ажлын байр</div>
-          <div className="font-medium my-2">Веб үйлчилгээний сургалт</div>
-        </div>
+        <div className="font-bold text-xl my-8">КОДИ ПЛАТФОРМ</div>
+        <p className="my-2 text-xs">Танилцуулга</p>
+        <p className="my-2 text-xs">Үйлчилгээний төрөл</p>
+        <p className="my-2 text-xs">Хамтрагч байгууллага</p>
+        <p className="my-2 text-xs">Холбоо барих</p>
+        <p className="my-2 text-xs">Ажлын байр</p>
+        <p className="my-2 text-xs">Веб үйлчилгээний сургалт</p>
       </section>
       <section className="text-white">
-        <div className="font-bold my-8">
-          ХОЛБОО БАРИХ
-          <div className="font-medium my-2">Имэйл: info@cody.mn</div>
-          <div className="font-medium my-2">
-            Хаяг: Нью Хоризон оффис, 401 тоот, Улаанбаатар хот
-          </div>
-          <div className="font-medium my-2">Утас: 77778977</div>
-        </div>
+        <div className="font-bold text-xl my-8">ХОЛБОО БАРИХ</div>
+        <p className="my-2 text-xs">Имэйл: info@cody.mn</p>
+        <p className="my-2 text-xs">
+          Хаяг: Нью Хоризон оффис, 401 тоот, Улаанбаатар хот
+        </p>
+        <p className="my-2 text-xs">Утас: 77778977</p>
       </section>
       <div>4</div>
     </footer>
