@@ -30,7 +30,7 @@ const ThirdSection = function () {
                   setTap(0);
                 }}
                 variant="contained"
-                className="rounded-full mx-2 bg-purple-600"
+                className="rounded-full mx-2 bg-purple-600 w-5 h-5"
               >
                 {""}
               </Button>
@@ -39,7 +39,7 @@ const ThirdSection = function () {
                   setTap(1);
                 }}
                 variant="contained"
-                className="rounded-full mx-2 bg-purple-600"
+                className="rounded-full mx-2 bg-purple-600 w-5 h-5"
               >
                 {""}
               </Button>
@@ -48,7 +48,7 @@ const ThirdSection = function () {
                   setTap(2);
                 }}
                 variant="contained"
-                className="rounded-full mx-2 bg-purple-600"
+                className="rounded-full mx-2 bg-purple-600 w-5 h-5"
               >
                 {""}
               </Button>
@@ -58,7 +58,7 @@ const ThirdSection = function () {
       )}
       {tap == 1 && (
         <div className="block my-4 px-10 transition md:flex">
-          <Image src={slide_2} width={530} height={530} alt="" />
+          <Image src={slide_2} width={500} height={500} alt="" />
           <div className="px-10">
             <div className="mt-10 text-center md:text-left">
               <span className="font-bold text-[20px]">
@@ -78,7 +78,7 @@ const ThirdSection = function () {
                   setTap(0);
                 }}
                 variant="contained"
-                className="rounded-full mx-2 bg-purple-600"
+                className="rounded-full mx-2 bg-purple-600 w-5 h-5"
               >
                 {""}
               </Button>
@@ -87,7 +87,7 @@ const ThirdSection = function () {
                   setTap(1);
                 }}
                 variant="contained"
-                className="rounded-full mx-2 bg-purple-600"
+                className="rounded-full mx-2 bg-purple-600 w-5 h-5"
               >
                 {""}
               </Button>
@@ -96,7 +96,7 @@ const ThirdSection = function () {
                   setTap(2);
                 }}
                 variant="contained"
-                className="rounded-full mx-2 bg-purple-600"
+                className="rounded-full mx-2 bg-purple-600 w-5 h-5"
               >
                 {""}
               </Button>
@@ -106,7 +106,7 @@ const ThirdSection = function () {
       )}
       {tap == 2 && (
         <div className="block my-4 px-10 transition md:flex">
-          <Image src={slide_3} width={530} height={530} alt="" />
+          <Image src={slide_3} width={500} height={500} alt="" />
           <div className="px-10">
             <div className="mt-10 text-center md:text-left">
               <span className="font-bold text-[20px]">
@@ -126,7 +126,7 @@ const ThirdSection = function () {
                   setTap(0);
                 }}
                 variant="contained"
-                className="rounded-full mx-2 bg-purple-600"
+                className="rounded-full mx-2 bg-purple-600 w-5 h-5"
               >
                 {""}
               </Button>
@@ -135,7 +135,7 @@ const ThirdSection = function () {
                   setTap(1);
                 }}
                 variant="contained"
-                className="rounded-full mx-2 bg-purple-600"
+                className="rounded-full mx-2 bg-purple-600 w-5 h-5"
               >
                 {""}
               </Button>
@@ -144,7 +144,7 @@ const ThirdSection = function () {
                   setTap(2);
                 }}
                 variant="contained"
-                className="rounded-full mx-2 bg-purple-600"
+                className="rounded-full mx-2 bg-purple-600 w-5 h-5"
               >
                 {""}
               </Button>
