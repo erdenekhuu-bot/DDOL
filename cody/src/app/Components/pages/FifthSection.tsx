@@ -13,16 +13,18 @@ const FifthSection = function () {
     setClick(!click);
   };
   return (
-    <section className="flex justify-around flex-wrap bg-gray-200 p-8">
-      {opportunity_list.map((item) => (
-        <Opportunity_item
-          key={item.id}
-          image={item.id}
-          title={item.title}
-          feature={item.feature}
-        />
-      ))}
-      <div className="flex justify-center">
+    <div className="bg-gray-200">
+      <section className="flex justify-around flex-wrap  p-8">
+        {opportunity_list.map((item) => (
+          <Opportunity_item
+            key={item.id}
+            image={item.id}
+            title={item.title}
+            feature={item.feature}
+          />
+        ))}
+      </section>
+      <section className="flex justify-center">
         <Button
           onClick={() => {
             setClick(!click);
@@ -33,8 +35,8 @@ const FifthSection = function () {
           Дэлгэрэнгүй
         </Button>
         {click && <Popup onClose={handlePopupToggle} />}
-      </div>
-    </section>
+      </section>
+    </div>
   );
 };
 
