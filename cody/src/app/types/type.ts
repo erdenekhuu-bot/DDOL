@@ -16,7 +16,7 @@ export type PopupProps = {
 
 export type EventProps = {
   id?: number;
-  icon?: string;
-  image?: string;
+  icon?: any;
+  image?: any;
   title?: string;
 };
