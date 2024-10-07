@@ -9,3 +9,7 @@ export type subitems = {
   title?: string;
   feature?: string;
 };
+
+export type PopupProps = {
+  onClose: () => void;
+};
