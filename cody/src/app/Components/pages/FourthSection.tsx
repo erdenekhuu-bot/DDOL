@@ -13,11 +13,11 @@ const FourthSection = function () {
   };
 
   return (
-    <section className="h-[500px] my-4">
+    <section className="my-4 md:h-[500px]">
       <div className="text-center">
         <span className="font-bold text-[20px]">Бидний шийдэл</span>
       </div>
-      <div className="flex justify-evenly flex-wrap p-4">
+      <div className="p-4 md:flex md:justify-evenly md:flex-wrap md:p-4">
         <Solution_Item
           title="Headless Ecommerce"
           content="Headless цахим худалдааны шийдлээр бизнесийн онцлогтоо тохирох цахим худалдааг бүтээж ирээдүйтэй бэлтгэ"

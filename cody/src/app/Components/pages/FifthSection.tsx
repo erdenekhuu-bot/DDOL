@@ -13,7 +13,7 @@ const FifthSection = function () {
     setClick(!click);
   };
   return (
-    <div className="bg-gray-200">
+    <div className="bg-gray-200 py-4">
       <section className="flex justify-around flex-wrap  p-8">
         {opportunity_list.map((item) => (
           <Opportunity_item
