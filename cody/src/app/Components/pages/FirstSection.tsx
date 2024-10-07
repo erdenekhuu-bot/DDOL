@@ -6,7 +6,7 @@ import pad_background from "../../images/pad_template.png";
 
 const FirstSection = function () {
   return (
-    <section className="z-0 block items-center justify-center h-[500px] mt-20 bg-gradient-to-tr from-purple-400 to-white md:flex">
+    <section className="z-0 block items-center justify-center py-10 mt-20 bg-gradient-to-tr from-purple-400 to-white md:flex md:py-12">
       <div className="mr-[5%] hidden md:block">
         <Image src={phone_background} width={150} height={100} alt="" />
       </div>
@@ -20,10 +20,10 @@ const FirstSection = function () {
             Та онлайнаар хаана ч, хэнд ч юу ч зарж болно
           </span>
         </div>
-        <div className="w-[70%] hidden text-center md:block">
+        <div className="hidden text-center md:block">
           <span>www.allstars.mn</span>
         </div>
-        <div className="w-[70%] hidden text-center md:block">
+        <div className="hidden text-center md:block">
           <Button
             variant="contained"
             className="bg-blue-950 w-[70%] p-2 rounded-xl"
@@ -34,6 +34,17 @@ const FirstSection = function () {
       </Stack>
       <div className="mx-auto w-1/2 md:ml-[5%]">
         <Image src={pad_background} width={350} height={100} alt="" />
+      </div>
+      <div className="flex justify-center md:hidden">
+        <span>www.allstars.mn</span>
+      </div>
+      <div className="text-center md:hidden">
+        <Button
+          variant="contained"
+          className="bg-blue-950 w-[30%] p-2 rounded-xl"
+        >
+          <span className="font-bold text-[10px]">Бидэнтэй холбогдох</span>
+        </Button>
       </div>
     </section>
   );
