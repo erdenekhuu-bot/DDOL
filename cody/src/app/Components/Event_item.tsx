@@ -38,8 +38,8 @@ const Event_item = ({
         }`}
       >
         <Image
-          width={500}
-          height={500}
+          width={800}
+          height={800}
           src={image}
           alt=""
           className={`transition-opacity duration-300 ${
