@@ -1,5 +1,5 @@
 import opportunity_list from "./list/opportunity_list";
-import { subitems } from "../types/header_type";
+import { subitems } from "../types/type";
 
 const Opportunity_item = function ({ id, image, title, feature }: subitems) {
   return (

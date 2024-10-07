@@ -1,4 +1,4 @@
-import { header_menu } from "@/app/types/header_type";
+import { header_menu } from "@/app/types/type";
 
 const menu_list: { id: number; title: string }[] = [
   {

@@ -107,3 +107,5 @@ const slide_events: {
     title: "Гоо, сайхан",
   },
 ];
+
+export default slide_events;

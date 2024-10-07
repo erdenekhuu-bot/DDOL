@@ -13,3 +13,10 @@ export type subitems = {
 export type PopupProps = {
   onClose: () => void;
 };
+
+export type EventProps = {
+  id?: number;
+  icon?: string;
+  image?: string;
+  title?: string;
+};

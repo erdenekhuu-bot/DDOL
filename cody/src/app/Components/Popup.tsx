@@ -1,7 +1,7 @@
 import solution_list from "./list/solution_list";
 import { Button } from "@mui/material";
 import Solution_Item from "./Solution_Item";
-import { PopupProps } from "../types/header_type";
+import { PopupProps } from "../types/type";
 import opportunity_list from "./list/opportunity_list";
 import Opportunity_item from "./Opportunity_item";
 
