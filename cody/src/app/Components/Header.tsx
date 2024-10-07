@@ -29,8 +29,8 @@ const Header = function () {
             }}
             src={menu}
             alt=""
-            width={50}
-            height={50}
+            width={40}
+            height={40}
             className="bg-purple-900 rounded-lg p-2"
           />
         ) : (
@@ -40,8 +40,8 @@ const Header = function () {
             }}
             src={x}
             alt=""
-            width={50}
-            height={50}
+            width={40}
+            height={40}
             className="bg-purple-900 rounded-lg p-2"
           />
         )}

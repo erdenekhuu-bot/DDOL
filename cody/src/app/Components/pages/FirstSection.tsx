@@ -11,7 +11,7 @@ const FirstSection = function () {
         <Image src={phone_background} width={150} height={100} alt="" />
       </div>
       <Stack spacing={2}>
-        <div className="text-center">
+        <div className="text-center p-10">
           <span className="font-bold text-blue-950 text-[28px]">
             Өөрийн цахим дэлгүүрээ бүтээ!
           </span>
@@ -20,10 +20,10 @@ const FirstSection = function () {
             Та онлайнаар хаана ч, хэнд ч юу ч зарж болно
           </span>
         </div>
-        <div className="w-[70%] text-center">
+        <div className="w-[70%] hidden text-center md:block">
           <span>www.allstars.mn</span>
         </div>
-        <div className="w-[70%] text-center">
+        <div className="w-[70%] hidden text-center md:block">
           <Button
             variant="contained"
             className="bg-blue-950 w-[70%] p-2 rounded-xl"
@@ -32,7 +32,7 @@ const FirstSection = function () {
           </Button>
         </div>
       </Stack>
-      <div className="md:ml-[5%]">
+      <div className="mx-auto w-1/2 md:ml-[5%]">
         <Image src={pad_background} width={350} height={100} alt="" />
       </div>
     </section>

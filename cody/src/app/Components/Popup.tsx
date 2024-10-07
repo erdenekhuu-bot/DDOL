@@ -48,4 +48,13 @@ const Popuplist = function ({ onClose }: PopupProps) {
   </section>;
 };
 
-export { Popup, Popuplist };
+const Popupheader = function () {
+  return (
+    <section className="">
+      <div>1</div>
+      <div>2</div>
+    </section>
+  );
+};
+
+export { Popup, Popuplist, Popupheader };
