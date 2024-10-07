@@ -3,8 +3,23 @@ import { useState } from "react";
 import slide_events from "../list/slide_events";
 import Event_item from "../Event_item";
 
-const SixthSection = function () {
-  const [click, setClick] = useState<boolean>(false);
+interface SlideEvent {
+  id: number;
+  icon: string;
+  title: string;
+  image: string;
+}
+
+interface SixthSectionProps {
+  slide_events: SlideEvent[];
+}
+
+const SixthSection = () => {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  const handleClick = (index: number) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
 
   return (
     <section className="py-12 h-[650px] overflow-y-scroll">
@@ -13,12 +28,14 @@ const SixthSection = function () {
           Кодиг ашиглан Та юу бүтээж чадах вэ?
         </p>
       </div>
-      {slide_events.map((item) => (
+      {slide_events.map((item, index) => (
         <Event_item
           key={item.id}
           icon={item.icon}
           title={item.title}
           image={item.image}
+          onClick={() => handleClick(index)}
+          isActive={activeIndex === index}
         />
       ))}
     </section>

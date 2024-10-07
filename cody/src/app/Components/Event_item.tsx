@@ -1,15 +1,25 @@
 import { EventProps } from "../types/type";
 import Image from "next/image";
 
-const Event_item = function ({ id, icon, image, title, click }: EventProps) {
+interface EventItemProps {
+  icon: string;
+  title: string;
+  image: string;
+  onClick: () => void;
+  isActive: boolean;
+}
+
+const Event_item = ({
+  icon,
+  title,
+  image,
+  onClick,
+  isActive,
+}: EventItemProps) => {
   return (
     <section className="flex">
       <div className="w-1/3 flex items-center p-4">
-        <section
-          onClick={click}
-          className="flex hover:cursor-pointer
-        "
-        >
+        <section onClick={onClick} className="flex hover:cursor-pointer">
           <Image
             className="mx-4 font-bold"
             width={20}
@@ -22,7 +32,21 @@ const Event_item = function ({ id, icon, image, title, click }: EventProps) {
           </p>
         </section>
       </div>
-      <Image width={500} height={500} src={image} alt="" />
+      <div
+        className={`flex overflow-hidden transition-all duration-300 ${
+          isActive ? "max-h-[500px]" : "max-h-0"
+        }`}
+      >
+        <Image
+          width={500}
+          height={500}
+          src={image}
+          alt=""
+          className={`transition-opacity duration-300 ${
+            isActive ? "opacity-100" : "opacity-0"
+          }`}
+        />
+      </div>
     </section>
   );
 };
