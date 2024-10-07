@@ -7,11 +7,11 @@ const SixthSection = function () {
   const [click, setClick] = useState<boolean>(false);
 
   return (
-    <section className="h-[600px] py-12">
+    <section className="py-12">
       <div className="flex justify-center">
-        <span className="font-bold text-2xl">
+        <p className="font-bold text-2xl my-8">
           Кодиг ашиглан Та юу бүтээж чадах вэ?
-        </span>
+        </p>
       </div>
       {slide_events.map((item) => (
         <Event_item

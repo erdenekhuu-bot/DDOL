@@ -19,4 +19,5 @@ export type EventProps = {
   icon?: any;
   image?: any;
   title?: string;
+  click?: () => void;
 };

@@ -1,7 +1,7 @@
 const slide_events: {
   id: number;
-  icon: string;
-  image: string;
+  icon: any;
+  image: any;
   title: string;
 }[] = [
   {

@@ -1,6 +1,6 @@
 const slide_category: {
   id: number;
-  image: string;
+  image: any;
   title: string;
   content: string;
 }[] = [

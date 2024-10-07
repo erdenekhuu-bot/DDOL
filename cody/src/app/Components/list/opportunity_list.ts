@@ -1,6 +1,6 @@
 const opportunity_list: {
   id: number;
-  image: string;
+  image: any;
   title: string;
   feature: string;
 }[] = [
