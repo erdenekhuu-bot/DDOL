@@ -16,7 +16,7 @@ const SixthSection = function () {
       {slide_events.map((item) => (
         <Event_item
           key={item.id}
-          icon={item.id}
+          icon={item.icon}
           title={item.title}
           image={item.id}
         />
