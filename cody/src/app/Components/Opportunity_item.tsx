@@ -1,6 +1,5 @@
 import opportunity_list from "./list/opportunity_list";
 import { subitems } from "../types/header_type";
-import { Popup } from "./Popup";
 
 const Opportunity_item = function ({ id, image, title, feature }: subitems) {
   return (

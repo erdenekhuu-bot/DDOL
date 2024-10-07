@@ -2,6 +2,8 @@ import solution_list from "./list/solution_list";
 import { Button } from "@mui/material";
 import Solution_Item from "./Solution_Item";
 import { PopupProps } from "../types/header_type";
+import opportunity_list from "./list/opportunity_list";
+import Opportunity_item from "./Opportunity_item";
 
 const Popup = function ({ onClose }: PopupProps) {
   return (
@@ -34,11 +36,12 @@ const Popuplist = function ({ onClose }: PopupProps) {
       </Button>
     </div>
     <div className="w-full p-8 flex justify-around flex-wrap overflow-scroll">
-      {solution_list.map((item) => (
-        <Solution_Item
+      {opportunity_list.map((item) => (
+        <Opportunity_item
           key={item.id}
+          image={item.id}
           title={item.title}
-          content={item.content}
+          feature={item.feature}
         />
       ))}
     </div>
