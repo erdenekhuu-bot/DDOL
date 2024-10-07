@@ -3,8 +3,8 @@ import Image from "next/image";
 
 const Event_item = function ({ id, icon, image, title, click }: EventProps) {
   return (
-    <div className="flex">
-      <div className="w-1/3 flex items-center p-4 overflow-y-scroll ">
+    <section className="flex">
+      <div className="w-1/3 flex items-center p-4">
         <section
           onClick={click}
           className="flex hover:cursor-pointer
@@ -22,8 +22,8 @@ const Event_item = function ({ id, icon, image, title, click }: EventProps) {
           </p>
         </section>
       </div>
-      <div className="w-full">{image}</div>
-    </div>
+      <Image width={500} height={500} src={image} alt="" />
+    </section>
   );
 };
 

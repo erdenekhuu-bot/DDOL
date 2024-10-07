@@ -7,7 +7,7 @@ const SixthSection = function () {
   const [click, setClick] = useState<boolean>(false);
 
   return (
-    <section className="py-12">
+    <section className="py-12 h-[650px] overflow-y-scroll">
       <div className="flex justify-center">
         <p className="font-bold text-2xl my-8">
           Кодиг ашиглан Та юу бүтээж чадах вэ?
@@ -18,7 +18,7 @@ const SixthSection = function () {
           key={item.id}
           icon={item.icon}
           title={item.title}
-          image={item.id}
+          image={item.image}
         />
       ))}
     </section>
