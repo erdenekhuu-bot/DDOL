@@ -3,10 +3,14 @@ import { Button } from "@mui/material";
 import Image from "next/image";
 import phone_background from "../../images/phone_template.png";
 import pad_background from "../../images/pad_template.png";
+import background_back from "../../images/background_image.jpg";
 
 const FirstSection = function () {
   return (
-    <section className="z-0 block items-center justify-center py-10 mt-20 bg-gradient-to-tr from-purple-400 to-white md:flex md:py-12">
+    <section
+      className="z-0 block items-center justify-center py-10 mt-20 md:flex md:py-12"
+      style={{ backgroundImage: `url(${background_back.src})` }}
+    >
       <div className="mr-[5%] hidden md:block">
         <Image src={phone_background} width={150} height={100} alt="" />
       </div>
