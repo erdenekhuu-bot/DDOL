@@ -1,5 +1,5 @@
 "use client";
-import SVGcody from "../svg/SVG";
+import { SVGcody } from "../svg/SVG";
 import { Button } from "@mui/material";
 import Image from "next/image";
 import menu from "../../app/images/white_menu.png";
@@ -9,6 +9,7 @@ import { useState, useContext, createContext } from "react";
 
 const Header = function () {
   const [click, setClick] = useState(false);
+  const [storeImage, setStore] = useState([]);
 
   return (
     <nav className="fixed bg-[white] w-full flex justify-between px-8 py-4 z-10 border drop-shadow">

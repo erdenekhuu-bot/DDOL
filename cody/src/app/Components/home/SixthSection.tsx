@@ -1,7 +1,7 @@
 const SixthSection = function () {
   return (
     <section>
-      <div>1</div>
+      <div>{""}</div>
     </section>
   );
 };
