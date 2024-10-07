@@ -30,7 +30,7 @@ const ThirdSection = function () {
                   setTap(0);
                 }}
                 variant="contained"
-                className="rounded-full mx-2 bg-purple-600 w-5 h-5"
+                className="rounded-full mx-2 bg-purple-600 "
               >
                 {""}
               </Button>
@@ -39,7 +39,7 @@ const ThirdSection = function () {
                   setTap(1);
                 }}
                 variant="contained"
-                className="rounded-full mx-2 bg-purple-600 w-5 h-5"
+                className="rounded-full mx-2 bg-purple-600 "
               >
                 {""}
               </Button>
@@ -48,7 +48,7 @@ const ThirdSection = function () {
                   setTap(2);
                 }}
                 variant="contained"
-                className="rounded-full mx-2 bg-purple-600 w-5 h-5"
+                className="rounded-full mx-2 bg-purple-600 "
               >
                 {""}
               </Button>
@@ -78,7 +78,7 @@ const ThirdSection = function () {
                   setTap(0);
                 }}
                 variant="contained"
-                className="rounded-full mx-2 bg-purple-600 w-5 h-5"
+                className="rounded-full mx-2 bg-purple-600 "
               >
                 {""}
               </Button>
@@ -87,7 +87,7 @@ const ThirdSection = function () {
                   setTap(1);
                 }}
                 variant="contained"
-                className="rounded-full mx-2 bg-purple-600 w-5 h-5"
+                className="rounded-full mx-2 bg-purple-600 "
               >
                 {""}
               </Button>
@@ -96,7 +96,7 @@ const ThirdSection = function () {
                   setTap(2);
                 }}
                 variant="contained"
-                className="rounded-full mx-2 bg-purple-600 w-5 h-5"
+                className="rounded-full mx-2 bg-purple-600 "
               >
                 {""}
               </Button>
@@ -126,7 +126,7 @@ const ThirdSection = function () {
                   setTap(0);
                 }}
                 variant="contained"
-                className="rounded-full mx-2 bg-purple-600 w-5 h-5"
+                className="rounded-full mx-2 bg-purple-600"
               >
                 {""}
               </Button>
@@ -135,7 +135,7 @@ const ThirdSection = function () {
                   setTap(1);
                 }}
                 variant="contained"
-                className="rounded-full mx-2 bg-purple-600 w-5 h-5"
+                className="rounded-full mx-2 bg-purple-600"
               >
                 {""}
               </Button>
@@ -144,7 +144,7 @@ const ThirdSection = function () {
                   setTap(2);
                 }}
                 variant="contained"
-                className="rounded-full mx-2 bg-purple-600 w-5 h-5"
+                className="rounded-full mx-2 bg-purple-600"
               >
                 {""}
               </Button>
