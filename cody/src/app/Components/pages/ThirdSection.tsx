@@ -9,16 +9,16 @@ import { Button } from "@mui/material";
 const ThirdSection = function () {
   const [tap, setTap] = useState(0);
   return (
-    <section className="h-[480px] overflow-hidden">
+    <section className="h-[650px] overflow-hidden md:h-[480px]">
       {tap == 0 ? (
-        <div className="flex my-4 px-10 transition">
-          <Image src={slide_1} width={530} height={530} alt="" />
+        <div className="block my-4 px-10 transition md:flex">
+          <Image src={slide_1} width={500} height={500} alt="" />
           <div className="px-10">
-            <div className="mt-10">
+            <div className="mt-10 text-center md:text-left">
               <span className="font-bold text-[20px]">КОДИ ПЛАТФОРМ</span>
             </div>
             <div className="mt-4">
-              <span>
+              <span className="text-xs text-center md:text-[16px] md:text-left">
                 Худалдаа, үйлчилгээний бизнест зориулсан, дата, хиймэл оюун
                 ухаанд суурилсан, тасралтгүй хөгжүүлэлттэй Цахим худалдааны цогц
                 платформ юм.
@@ -57,10 +57,10 @@ const ThirdSection = function () {
         </div>
       ) : null}
       {tap == 1 ? (
-        <div className="flex my-4 px-10 transition">
+        <div className="block my-4 px-10 transition md:flex">
           <Image src={slide_2} width={530} height={530} alt="" />
           <div className="px-10">
-            <div className="mt-10">
+            <div className="mt-10 text-center md:text-left">
               <span className="font-bold text-[20px]">
                 ЦАХИМ ХУДАЛДААНЫ ЦОГЦ ПЛАТФОРМ
               </span>
@@ -104,10 +104,10 @@ const ThirdSection = function () {
           </div>
         </div>
       ) : null}
-      <div className="flex my-4 px-10 transition">
+      <div className="block my-4 px-10 transition md:flex">
         <Image src={slide_3} width={530} height={530} alt="" />
         <div className="px-10">
-          <div className="mt-10">
+          <div className="mt-10 text-center md:text-left">
             <span className="font-bold text-[20px]">
               ПЛАТФОРМЫН ХҮЧИЙГ МЭДЭР
             </span>
