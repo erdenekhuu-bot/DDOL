@@ -13,21 +13,21 @@ datasource db {
 }
 model Navlist {
   id Int @id @default(autoincrement())
-  title String @unique
+  title String
 }
 model Slidecategory {
   id Int @id @default(autoincrement())
-  image String @unique
-  title String @unique
+  image String
+  title String 
   content String
 }
 model Opportunity {
   id Int @id @default(autoincrement())
-  image String @unique
+  image String
   title String 
 }
 model Solution {
   id Int @id @default(autoincrement())
-  title String @unique
+  title String
   content String
 }

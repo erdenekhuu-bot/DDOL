@@ -33,18 +33,3 @@ CREATE TABLE "Solution" (
 
     CONSTRAINT "Solution_pkey" PRIMARY KEY ("id")
 );
-
--- CreateIndex
-CREATE UNIQUE INDEX "Navlist_title_key" ON "Navlist"("title");
-
--- CreateIndex
-CREATE UNIQUE INDEX "Slidecategory_image_key" ON "Slidecategory"("image");
-
--- CreateIndex
-CREATE UNIQUE INDEX "Slidecategory_title_key" ON "Slidecategory"("title");
-
--- CreateIndex
-CREATE UNIQUE INDEX "Opportunity_image_key" ON "Opportunity"("image");
-
--- CreateIndex
-CREATE UNIQUE INDEX "Solution_title_key" ON "Solution"("title");

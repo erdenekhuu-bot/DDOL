@@ -9,6 +9,7 @@
     "lint": "next lint",
     "test": "npx tsc --init",
     "migration": "npx prisma init",
+    "generate": "npx prisma generate",
     "migrate": "npx prisma migrate dev --name init"
   },
   "dependencies": {

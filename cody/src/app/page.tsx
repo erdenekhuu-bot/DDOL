@@ -8,7 +8,7 @@ import FourthSection from "./Components/pages/FourthSection";
 import FifthSection from "./Components/pages/FifthSection";
 import SixthSection from "./Components/pages/SixthSection";
 
-export default function Home() {
+export default async function Home() {
   return (
     <main>
       <Header />

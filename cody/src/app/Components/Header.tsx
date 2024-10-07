@@ -6,10 +6,15 @@ import menu from "../../app/images/white_menu.png";
 import x from "../../app/images/x_ios.png";
 import menu_list from "./list/menu";
 import { useState, useContext, createContext } from "react";
+import { create_navlist } from "./prisma/methods";
 
 const Header = function () {
   const [click, setClick] = useState(false);
   const [storeImage, setStore] = useState([]);
+
+  // menu_list.forEach((items: any) => {
+  //   create_navlist(items.title);
+  // });
 
   return (
     <nav className="fixed bg-[white] w-full flex justify-between px-8 py-4 z-10 border drop-shadow">
