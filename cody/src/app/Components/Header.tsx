@@ -6,7 +6,7 @@ import menu from "../../app/images/white_menu.png";
 import x from "../../app/images/x_ios.png";
 import menu_list from "./list/menu";
 import { useState, useContext, createContext } from "react";
-import { create_navlist } from "./prisma/methods";
+import { create_navlist } from "./prismamethod/methods";
 
 const Header = function () {
   const [click, setClick] = useState(false);

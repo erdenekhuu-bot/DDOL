@@ -1,7 +1,10 @@
 const SeventhSection = function () {
   return (
-    <section>
-      <div>1</div>
+    <section className="h-96 py-12">
+      <div className="flex justify-center">
+        <span className="font-bold text-2xl">Харилцагчдын сэтгэгдэл</span>
+      </div>
+      <div></div>
     </section>
   );
 };

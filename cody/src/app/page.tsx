@@ -7,6 +7,7 @@ import ThirdSection from "./Components/pages/ThirdSection";
 import FourthSection from "./Components/pages/FourthSection";
 import FifthSection from "./Components/pages/FifthSection";
 import SixthSection from "./Components/pages/SixthSection";
+import SeventhSection from "./Components/pages/SeventhSection";
 
 export default async function Home() {
   return (
@@ -19,6 +20,7 @@ export default async function Home() {
         <FourthSection />
         <FifthSection />
         <SixthSection />
+        <SeventhSection />
       </Stack>
       <Footer />
     </main>
