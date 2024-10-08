@@ -16,7 +16,7 @@ const SixthSection = () => {
   };
 
   return (
-    <section className="py-12 h-[650px] overflow-y-scroll rounded-tl-md rounded-tr-md">
+    <section className="py-12 my-8 h-[650px] overflow-y-scroll rounded-tl-md rounded-tr-md">
       <div className="flex justify-center">
         <p className="font-bold text-2xl my-8">
           Кодиг ашиглан Та юу бүтээж чадах вэ?

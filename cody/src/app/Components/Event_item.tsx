@@ -48,7 +48,7 @@ const Event_item_show = function ({
   isActive,
 }: EventItem) {
   return (
-    <section className="flex hover:cursor-pointer items-center">
+    <section className="flex hover:cursor-pointer items-center p-4">
       <Image className="mx-4" width={20} height={20} src={icon} alt="" />
       <p className="font-bold text-opacity-60 hover:text-purple-500">{title}</p>
     </section>
