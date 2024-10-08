@@ -30,8 +30,6 @@ const SixthSection = () => {
     arr.push(imageElement);
   });
 
-  console.log(arr);
-
   return (
     <Context.Provider value={page}>
       <section className="py-12 my-8 overflow-hidden rounded-tl-md rounded-tr-md">
