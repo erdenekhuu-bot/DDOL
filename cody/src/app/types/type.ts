@@ -22,12 +22,18 @@ export type EventProps = {
   click?: () => void;
 };
 
-export type EventItemProps = {
+export type EventItem = {
   icon: string;
   title: string;
+  image?: string;
+  onClick?: () => void;
+  isActive?: boolean;
+};
+
+export type EventItemImage = {
   image: string;
-  onClick: () => void;
-  isActive: boolean;
+  onClick?: () => void;
+  isActive?: boolean;
 };
 
 export type SlideEvent = {

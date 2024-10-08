@@ -29,9 +29,9 @@ const Popup = function ({ onClose }: PopupProps) {
 
 const Popuplist = function ({ onClose }: PopupProps) {
   return (
-    <section className="fixed inset-0 z-10 bg-white w-[90%] h-[90%] rounded-lg mx-auto my-auto flex flex-col">
+    <section className="fixed inset-0 z-10 bg-gray-200 w-[90%] h-[90%] rounded-lg mx-auto my-auto flex flex-col">
       <div className="flex justify-center items-center p-4">
-        <span className="font-bold text-3xl">Шийдлүүд</span>
+        <span className="font-bold text-3xl">Системийн боломжууд</span>
         <Button onClick={onClose} variant="outlined">
           Close
         </Button>
