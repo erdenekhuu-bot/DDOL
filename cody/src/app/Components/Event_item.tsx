@@ -23,11 +23,7 @@ const Event_item_show = function ({
   );
 };
 
-const Event_item_image = function ({
-  image,
-  onClick,
-  isActive,
-}: EventItemImage) {
+const Event_item_image = function ({ image, isActive }: EventItemImage) {
   const activeIndex = useContext(Context);
   console.log(activeIndex);
   return (
