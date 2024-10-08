@@ -13,8 +13,8 @@ const FifthSection = function () {
     setClick(!click);
   };
   return (
-    <div className="bg-gray-200 py-4 h-[600px]">
-      <section className="flex justify-around h-[600px] overflow-hidden flex-wrap p-8">
+    <div className="bg-gray-200 py-4 h-[700px]">
+      <section className="flex justify-around h-[560px] overflow-hidden flex-wrap p-8">
         {opportunity_list.map((item) => (
           <Opportunity_item
             key={item.id}
@@ -30,7 +30,7 @@ const FifthSection = function () {
             setClick(!click);
           }}
           variant="contained"
-          className="px-8 py-4 bg-purple-900 text-xs font-bold rounded-lg"
+          className="px-8 py-4 my-8 bg-purple-900 text-xs font-bold rounded-lg"
         >
           Дэлгэрэнгүй
         </Button>
