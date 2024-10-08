@@ -17,7 +17,7 @@ const SeventhSection = function () {
         height={500}
         src={item.image}
         alt=""
-        className="object-cover w-[80%] mx-auto"
+        className="object-cover w-[90%] mx-auto"
       />
     );
 
@@ -25,12 +25,12 @@ const SeventhSection = function () {
   });
 
   return (
-    <section className="z-0 p-8">
+    <section className="z-0">
       <div className="flex justify-center">
         <p className="font-bold text-2xl my-8">Харилцагчдын сэтгэгдэл</p>
       </div>
       <div className="">{arr[tap]}</div>
-      <div className="flex justify-center mt-9">
+      <div className="flex justify-center my-9">
         <Button
           onClick={() => {
             setTap(0);
