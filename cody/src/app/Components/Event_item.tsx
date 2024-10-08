@@ -25,7 +25,6 @@ const Event_item_show = function ({
 
 const Event_item_image = function ({ image, isActive }: EventItemImage) {
   const context = useContext(Context);
-  console.log(context);
   return (
     <div className="sticky top-0 flex-shrink-0 w-full h-full py-4">
       <Image
