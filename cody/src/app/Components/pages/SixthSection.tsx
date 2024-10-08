@@ -1,12 +1,7 @@
 "use client";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import slide_events from "../list/slide_events";
 import { Event_item_show, Event_item_image } from "../Event_item";
-import { SlideEvent } from "@/app/types/type";
-import Image from "next/image";
-interface SixthSectionProps {
-  slide_events: SlideEvent[];
-}
 
 const SixthSection = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -34,11 +29,12 @@ const SixthSection = () => {
       ))} */}
       <section className="flex h-[650px] overflow-y-scroll">
         <div className="w-1/3  p-4">
-          {slide_events.map((item) => (
+          {slide_events.map((item, index) => (
             <Event_item_show
               key={item.id}
               icon={item.icon}
               title={item.title}
+              onClick={() => handleClick(index)}
             />
           ))}
         </div>
