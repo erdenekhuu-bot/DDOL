@@ -24,17 +24,20 @@ const Event_item_show = function ({
 };
 
 const Event_item_image = function ({ image, isActive }: EventItemImage) {
-  const activeIndex = useContext(Context);
-  console.log(activeIndex);
+  const context = useContext(Context);
+  console.log(context);
+
   return (
     <div className="sticky top-0 flex-shrink-0 w-full h-full py-4">
-      <Image
-        width={980}
-        height={980}
-        src={image}
-        alt=""
-        className="object-cover"
-      />
+      {isActive && (
+        <Image
+          width={980}
+          height={980}
+          src={image}
+          alt=""
+          className="object-cover"
+        />
+      )}
     </div>
   );
 };

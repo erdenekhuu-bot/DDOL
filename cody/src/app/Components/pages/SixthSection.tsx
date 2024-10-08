@@ -3,10 +3,10 @@ import { useState, createContext } from "react";
 import slide_events from "../list/slide_events";
 import { Event_item_show, Event_item_image } from "../Event_item";
 
-export const Context = createContext<number | null>(null);
+export const Context = createContext<number | null>(0);
 
 const SixthSection = () => {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
   const handleClick = (index: number) => {
     setActiveIndex(activeIndex == index ? null : index);
@@ -34,6 +34,7 @@ const SixthSection = () => {
           <div className="w-full flex overflow-hidden">
             {slide_events.map((item, index) => (
               <Event_item_image
+                key={item.id}
                 image={item.image}
                 isActive={index == activeIndex}
               />
