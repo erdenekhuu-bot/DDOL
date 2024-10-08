@@ -2,14 +2,7 @@
 import { useState } from "react";
 import slide_events from "../list/slide_events";
 import Event_item from "../Event_item";
-
-interface SlideEvent {
-  id: number;
-  icon: string;
-  title: string;
-  image: string;
-}
-
+import { SlideEvent } from "@/app/types/type";
 interface SixthSectionProps {
   slide_events: SlideEvent[];
 }

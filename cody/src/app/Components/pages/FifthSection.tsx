@@ -4,7 +4,7 @@ import Opportunity_item from "../Opportunity_item";
 import opportunity_list from "../list/opportunity_list";
 import { Button } from "@mui/material";
 import { useState } from "react";
-import { Popup } from "../Popup";
+import { Popup, Popuplist } from "../Popup";
 
 const FifthSection = function () {
   const [click, setClick] = useState(false);
@@ -34,7 +34,7 @@ const FifthSection = function () {
         >
           Дэлгэрэнгүй
         </Button>
-        {click && <Popup onClose={handlePopupToggle} />}
+        {click && <Popuplist onClose={handlePopupToggle} />}
       </section>
     </div>
   );

@@ -29,3 +29,10 @@ export type EventItemProps = {
   onClick: () => void;
   isActive: boolean;
 };
+
+export type SlideEvent = {
+  id: number;
+  icon: string;
+  title: string;
+  image: string;
+};
