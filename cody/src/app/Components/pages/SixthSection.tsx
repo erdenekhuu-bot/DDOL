@@ -1,7 +1,9 @@
 "use client";
-import { useState, useContext } from "react";
+import { useState, createContext } from "react";
 import slide_events from "../list/slide_events";
 import { Event_item_show, Event_item_image } from "../Event_item";
+
+export const Context = createContext<number | null>(null);
 
 const SixthSection = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -11,40 +13,35 @@ const SixthSection = () => {
   };
 
   return (
-    <section className="py-12 my-8 overflow-hidden rounded-tl-md rounded-tr-md">
-      <div className="flex justify-center">
-        <p className="font-bold text-2xl my-8">
-          Кодиг ашиглан Та юу бүтээж чадах вэ?
-        </p>
-      </div>
-      {/* {slide_events.map((item, index) => (
-        <Event_item
-          key={item.id}
-          icon={item.icon}
-          title={item.title}
-          image={item.image}
-          onClick={() => handleClick(index)}
-          isActive={activeIndex == index}
-        />
-      ))} */}
-      <section className="flex h-[650px] overflow-y-scroll">
-        <div className="w-1/3  p-4">
-          {slide_events.map((item, index) => (
-            <Event_item_show
-              key={item.id}
-              icon={item.icon}
-              title={item.title}
-              onClick={() => handleClick(index)}
-            />
-          ))}
+    <Context.Provider value={activeIndex}>
+      <section className="py-12 my-8 overflow-hidden rounded-tl-md rounded-tr-md">
+        <div className="flex justify-center">
+          <p className="font-bold text-2xl my-8">
+            Кодиг ашиглан Та юу бүтээж чадах вэ?
+          </p>
         </div>
-        <div className="w-full flex overflow-hidden">
-          {slide_events.map((item) => (
-            <Event_item_image image={item.image} />
-          ))}
-        </div>
+        <section className="flex h-[650px] overflow-y-scroll">
+          <div className="w-1/3 p-4">
+            {slide_events.map((item, index) => (
+              <Event_item_show
+                key={item.id}
+                icon={item.icon}
+                title={item.title}
+                onClick={() => handleClick(index)}
+              />
+            ))}
+          </div>
+          <div className="w-full flex overflow-hidden">
+            {slide_events.map((item, index) => (
+              <Event_item_image
+                image={item.image}
+                isActive={index == activeIndex}
+              />
+            ))}
+          </div>
+        </section>
       </section>
-    </section>
+    </Context.Provider>
   );
 };
 

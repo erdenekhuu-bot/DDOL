@@ -1,44 +1,9 @@
+"use client";
+import { useContext } from "react";
 import { EventProps } from "../types/type";
 import Image from "next/image";
 import { EventItem, EventItemImage } from "../types/type";
-
-// const Event_item = ({
-//   icon,
-//   title,
-//   image,
-//   onClick,
-//   isActive,
-// }: EventItemProps) => {
-//   return (
-//     <section className="flex items-center h-16">
-//       <div className="w-1/3 flex items-center p-4">
-//         <section
-//           onClick={onClick}
-//           className="flex hover:cursor-pointer items-center"
-//         >
-//           <Image className="mx-4" width={20} height={20} src={icon} alt="" />
-//           <p className="font-bold text-opacity-60 hover:text-purple-500">
-//             {title}
-//           </p>
-//         </section>
-//       </div>
-
-//       <div
-//         className={`flex transition-opacity duration-300 overflow-hidden w-full ${
-//           isActive ? "opacity-100 w-[800px]" : "opacity-0 w-[0px]"
-//         }`}
-//       >
-//         <Image
-//           width={800}
-//           height={800}
-//           src={image}
-//           alt=""
-//           className="transition-opacity duration-100"
-//         />
-//       </div>
-//     </section>
-//   );
-// };
+import { Context } from "./pages/SixthSection";
 
 const Event_item_show = function ({
   icon,
@@ -48,7 +13,10 @@ const Event_item_show = function ({
   isActive,
 }: EventItem) {
   return (
-    <section className="flex hover:cursor-pointer items-center p-4">
+    <section
+      onClick={onClick}
+      className="flex hover:cursor-pointer items-center p-4"
+    >
       <Image className="mx-4" width={20} height={20} src={icon} alt="" />
       <p className="font-bold text-opacity-60 hover:text-purple-500">{title}</p>
     </section>
@@ -60,6 +28,8 @@ const Event_item_image = function ({
   onClick,
   isActive,
 }: EventItemImage) {
+  const activeIndex = useContext(Context);
+  console.log(activeIndex);
   return (
     <div className="sticky top-0 flex-shrink-0 w-full h-full py-4">
       <Image
