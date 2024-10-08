@@ -8,7 +8,7 @@ import background_back from "../../images/background_image.jpg";
 const FirstSection = function () {
   return (
     <section
-      className="z-0 block items-center justify-center py-10 mt-20 md:flex md:py-12"
+      className="z-0 block py-10 mt-20 md:flex md:py-12 md:items-center md:justify-center"
       style={{ backgroundImage: `url(${background_back.src})` }}
     >
       <div className="mr-[5%] hidden md:block">
