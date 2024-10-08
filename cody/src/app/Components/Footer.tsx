@@ -1,3 +1,7 @@
+import Image from "next/image";
+import instagram from "../../app/images/instagram.png";
+import facebook from "../../app/images/facebook-logo.png";
+
 const Footer = function () {
   return (
     <footer className="z-10 hidden w-full justify-around bg-purple-900 text-white md:flex">
@@ -55,7 +59,21 @@ const Footer = function () {
           Утас: 77778977
         </p>
       </section>
-      <div>4</div>
+      <section className="text-white">
+        <p className="font-bold text-xl my-20"></p>
+        <div className="flex items-center">
+          <Image src={instagram} width={20} height={20} alt="" />
+          <p className="my-2 text-xs hover:cursor-pointer px-2 hover:text-gray-300">
+            instagram
+          </p>
+        </div>
+        <div className="flex items-center">
+          <Image src={facebook} width={20} height={20} alt="" />
+          <p className="my-2 text-xs hover:cursor-pointer px-2 hover:text-gray-300">
+            facebook
+          </p>
+        </div>
+      </section>
     </footer>
   );
 };
