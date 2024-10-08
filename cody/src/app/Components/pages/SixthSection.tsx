@@ -55,7 +55,7 @@ const SixthSection = () => {
         height={900}
         src={item.mobile}
         alt=""
-        className="object-cover rounded-3xl drop-shadow border mx-auto"
+        className="object-cover mx-auto"
       />
     );
 
@@ -70,7 +70,7 @@ const SixthSection = () => {
             Кодиг ашиглан Та юу бүтээж чадах вэ?
           </p>
         </div>
-        <section className="flex h-[650px]">
+        <section className="flex md:h-[650px]">
           <div className="md:w-1/3 md:p-4 md:overflow-y-scroll">
             {slide_events.map((item, index) => (
               <Event_item_show
@@ -81,16 +81,16 @@ const SixthSection = () => {
               />
             ))}
           </div>
-          <div className="relative w-full flex">
+          <div className="relative w-full md:flex">
             <div
               onClick={navigateRight}
-              className="absolute right-5 top-72 border bg-white rounded-full p-4 z-10 hover:cursor-pointer"
+              className="absolute md:right-5 right-36 top-72 border bg-white rounded-full p-4 z-10 hover:cursor-pointer"
             >
               <Image src={left} width={10} height={10} alt="" />
             </div>
             <div
               onClick={navigateLeft}
-              className="absolute left-5 top-72 border bg-white rounded-full p-4 z-10 hover:cursor-pointer"
+              className="absolute md:left-5 left-36 top-72 border bg-white rounded-full p-4 z-10 hover:cursor-pointer"
             >
               <Image src={right} width={10} height={10} alt="" />
             </div>
