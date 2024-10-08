@@ -61,10 +61,10 @@ const Event_item_image = function ({
   isActive,
 }: EventItemImage) {
   return (
-    <div className="flex-shrink-0 w-full h-full">
+    <div className="sticky top-0 flex-shrink-0 w-full h-full py-4">
       <Image
-        width={900}
-        height={900}
+        width={980}
+        height={980}
         src={image}
         alt=""
         className="object-cover"
