@@ -66,7 +66,7 @@ const ThirdSection = function () {
               </span>
             </div>
             <div className="mt-4">
-              <span>
+              <span className="text-xs text-center md:text-[16px] md:text-left">
                 Бид маш бага зардлаар таны бизнесийг цахим орчинд ажиллах
                 боломжийг бүрдүүлнэ. Та богино хугацаанд, найдвартай, уян хатан
                 цахим худалдаагаа эхлүүлээрэй.
@@ -114,7 +114,7 @@ const ThirdSection = function () {
               </span>
             </div>
             <div className="mt-4">
-              <span>
+              <span className="text-xs text-center md:text-[16px] md:text-left">
                 Дэлхийн тэргүүлэгч технологиудыг хослуулан ашиглаж, технологийн
                 тасралтгүй хөгжүүлэлтээр хэрэглэгч байгууллагыг хангана.
                 Платформын гайхалтай шийдлүүдийг ашиглан борлуулалтаа өсгөөрэй.

@@ -1,13 +1,6 @@
 import { EventProps } from "../types/type";
 import Image from "next/image";
-
-interface EventItemProps {
-  icon: string;
-  title: string;
-  image: string;
-  onClick: () => void;
-  isActive: boolean;
-}
+import { EventItemProps } from "../types/type";
 
 const Event_item = ({
   icon,

@@ -21,3 +21,11 @@ export type EventProps = {
   title?: string;
   click?: () => void;
 };
+
+export type EventItemProps = {
+  icon: string;
+  title: string;
+  image: string;
+  onClick: () => void;
+  isActive: boolean;
+};
