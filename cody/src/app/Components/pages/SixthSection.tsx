@@ -40,8 +40,8 @@ const SixthSection = () => {
             Кодиг ашиглан Та юу бүтээж чадах вэ?
           </p>
         </div>
-        <section className="flex h-[650px] overflow-y-scroll">
-          <div className="w-1/3 p-4">
+        <section className="flex h-[650px]">
+          <div className="w-1/3 p-4 overflow-y-scroll">
             {slide_events.map((item, index) => (
               <Event_item_show
                 key={item.id}
