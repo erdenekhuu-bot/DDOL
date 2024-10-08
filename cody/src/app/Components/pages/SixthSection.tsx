@@ -46,6 +46,22 @@ const SixthSection = () => {
     arr.push(imageElement);
   });
 
+  const mobile: JSX.Element[] = [];
+  slide_events.map((item) => {
+    const imageElement = (
+      <Image
+        key={item.id}
+        width={400}
+        height={900}
+        src={item.mobile}
+        alt=""
+        className="object-cover rounded-3xl drop-shadow border mx-auto"
+      />
+    );
+
+    mobile.push(imageElement);
+  });
+
   return (
     <Context.Provider value={page}>
       <section className="py-12 my-8 overflow-hidden rounded-tl-md rounded-tr-md z-0">
@@ -55,7 +71,7 @@ const SixthSection = () => {
           </p>
         </div>
         <section className="flex h-[650px]">
-          <div className="w-1/3 p-4 overflow-y-scroll">
+          <div className="md:w-1/3 md:p-4 md:overflow-y-scroll">
             {slide_events.map((item, index) => (
               <Event_item_show
                 key={item.id}
@@ -78,7 +94,12 @@ const SixthSection = () => {
             >
               <Image src={right} width={10} height={10} alt="" />
             </div>
-            <div className="flex-shrink-0 w-full h-full py-4">{arr[page]}</div>
+            <div className="hidden flex-shrink-0 w-full h-full py-4 md:flex">
+              {arr[page]}
+            </div>
+            <div className="flex flex-shrink-0 md:w-full md:h-full py-4 md:hidden">
+              {mobile[page]}
+            </div>
             {/* {slide_events.map((item, index) => (
               <Event_item_image
                 key={item.id}
