@@ -13,8 +13,8 @@ const FifthSection = function () {
     setClick(!click);
   };
   return (
-    <div className="bg-gray-200 py-4">
-      <section className="flex justify-around flex-wrap  p-8">
+    <div className="bg-gray-200 py-4 h-[600px]">
+      <section className="flex justify-around h-[600px] overflow-hidden flex-wrap p-8">
         {opportunity_list.map((item) => (
           <Opportunity_item
             key={item.id}
