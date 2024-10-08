@@ -3,17 +3,17 @@ import { useState, createContext } from "react";
 import slide_events from "../list/slide_events";
 import { Event_item_show, Event_item_image } from "../Event_item";
 
-export const Context = createContext<number | null>(0);
+export const Context = createContext(0);
 
 const SixthSection = () => {
-  const [activeIndex, setActiveIndex] = useState<number | null>(0);
+  const [page, setPage] = useState<number>(0);
 
   const handleClick = (index: number) => {
-    setActiveIndex(activeIndex == index ? null : index);
+    setPage(index);
   };
 
   return (
-    <Context.Provider value={activeIndex}>
+    <Context.Provider value={page}>
       <section className="py-12 my-8 overflow-hidden rounded-tl-md rounded-tr-md">
         <div className="flex justify-center">
           <p className="font-bold text-2xl my-8">
@@ -31,12 +31,12 @@ const SixthSection = () => {
               />
             ))}
           </div>
-          <div className="w-full flex overflow-hidden">
+          <div className="w-full flex overflow-x-scroll">
             {slide_events.map((item, index) => (
               <Event_item_image
                 key={item.id}
                 image={item.image}
-                isActive={index == activeIndex}
+                isActive={index == page}
               />
             ))}
           </div>
