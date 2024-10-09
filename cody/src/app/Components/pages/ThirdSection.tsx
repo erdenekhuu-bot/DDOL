@@ -8,9 +8,9 @@ import { useState } from "react";
 const ThirdSection = function () {
   const [tap, setTap] = useState(0);
   return (
-    <section className="h-[650px] bg-white my-16 overflow-hidden md:h-[480px] ">
+    <section className="bg-white py-12 overflow-hidden">
       {tap == 0 && (
-        <div className="block my-4 transition md:flex">
+        <div className="block transition md:flex">
           <Image src={slide_1} width={500} height={500} alt="" />
           <div className="px-10">
             <div className="mt-10 text-center md:text-left">
