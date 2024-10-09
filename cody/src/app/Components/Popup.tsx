@@ -1,11 +1,39 @@
-import solution_list from "./list/solution_list";
+"use client";
 import { Button } from "@mui/material";
 import Solution_Item from "./Solution_Item";
 import { PopupProps } from "../types/type";
 import opportunity_list from "./list/opportunity_list";
 import Opportunity_item from "./Opportunity_item";
+import axios from "axios";
+import { useState, useEffect } from "react";
+import { solution_list } from "../types/type";
+import { token } from "../types/type";
 
 const Popup = function ({ onClose }: PopupProps) {
+  const [save, setSave] = useState<solution_list>([]);
+
+  const read_list = async () => {
+    try {
+      const config = {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      };
+
+      const response = await axios.get(
+        "http://192.168.1.41:1337/api/codysolutions",
+        config
+      );
+      setSave(response.data.data);
+    } catch (error) {
+      return;
+    }
+  };
+
+  useEffect(() => {
+    read_list();
+  }, []);
+
   return (
     <section className="fixed inset-0 z-10 bg-white w-[90%] h-[90%] rounded-lg mx-auto my-auto flex flex-col">
       <div className="flex justify-center items-center p-4">
@@ -15,7 +43,7 @@ const Popup = function ({ onClose }: PopupProps) {
         </Button>
       </div>
       <div className="w-full p-8 flex justify-around flex-wrap overflow-scroll">
-        {solution_list.map((item) => (
+        {save.map((item) => (
           <Solution_Item
             key={item.id}
             title={item.title}

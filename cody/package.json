@@ -17,6 +17,7 @@
     "@emotion/styled": "^11.13.0",
     "@mui/material": "^6.1.2",
     "@prisma/client": "^5.20.0",
+    "axios": "^1.7.7",
     "next": "14.2.14",
     "react": "^18",
     "react-dom": "^18"

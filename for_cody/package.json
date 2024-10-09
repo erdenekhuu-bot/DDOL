@@ -1,5 +1,5 @@
 {
-  "name": "my-strapi-project",
+  "name": "for-cody",
   "version": "0.1.0",
   "private": true,
   "description": "A Strapi application",
@@ -11,9 +11,9 @@
     "strapi": "strapi"
   },
   "dependencies": {
-    "@strapi/plugin-cloud": "5.0.2",
-    "@strapi/plugin-users-permissions": "5.0.2",
-    "@strapi/strapi": "5.0.2",
+    "@strapi/plugin-cloud": "5.0.3",
+    "@strapi/plugin-users-permissions": "5.0.3",
+    "@strapi/strapi": "5.0.3",
     "pg": "8.8.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
@@ -31,6 +31,6 @@
     "npm": ">=6.0.0"
   },
   "strapi": {
-    "uuid": "a7dc8b9a-6fa1-45c5-9e6c-8774edc34e73"
+    "uuid": "b94a033d-03c4-468a-a645-eea29eb33d2b"
   }
 }

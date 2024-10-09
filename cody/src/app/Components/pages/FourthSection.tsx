@@ -2,8 +2,9 @@
 import solution_list from "../list/solution_list";
 import Solution_Item from "../Solution_Item";
 import { Button } from "@mui/material";
-import { useState } from "react";
 import { Popup } from "../Popup";
+import axios from "axios";
+import { useState, useEffect } from "react";
 
 const FourthSection = function () {
   const [click, setClick] = useState(false);

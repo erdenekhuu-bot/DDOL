@@ -1,20 +1,19 @@
 import type { Struct, Schema } from '@strapi/strapi';
 
-export interface ApiRestaurantRestaurant extends Struct.CollectionTypeSchema {
-  collectionName: 'restaurants';
+export interface ApiCodysolutionCodysolution
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'codysolutions';
   info: {
-    singularName: 'restaurant';
-    pluralName: 'restaurants';
-    displayName: 'Restaurant ';
+    singularName: 'codysolution';
+    pluralName: 'codysolutions';
+    displayName: 'Codysolution';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    Name: Schema.Attribute.String;
-    opened: Schema.Attribute.Boolean;
-    Rooms: Schema.Attribute.Integer;
-    Logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String;
+    content: Schema.Attribute.Text;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -25,7 +24,7 @@ export interface ApiRestaurantRestaurant extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::restaurant.restaurant'
+      'api::codysolution.codysolution'
     >;
   };
 }
@@ -880,7 +879,7 @@ export interface AdminTransferTokenPermission
 declare module '@strapi/strapi' {
   export module Public {
     export interface ContentTypeSchemas {
-      'api::restaurant.restaurant': ApiRestaurantRestaurant;
+      'api::codysolution.codysolution': ApiCodysolutionCodysolution;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::i18n.locale': PluginI18NLocale;
