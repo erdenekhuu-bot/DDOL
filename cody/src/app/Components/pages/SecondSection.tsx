@@ -32,14 +32,6 @@ const SecondSection = function () {
   return (
     <section className="flex items-center justify-center p-4 opacity-50 overflow-hidden">
       {save.map((item) => (
-        // <Image
-        //   key={item.id}
-        //   src={`http://192.168.1.41:1337${item.image.formats?.thumbnail.url}`}
-        //   width={80}
-        //   height={80}
-        //   alt=""
-        //   className="hover:cursor-pointer hover:opacity-100 mx-4"
-        // />
         <img
           key={item.id}
           src={`http://192.168.1.41:1337${item.image.formats?.thumbnail.url}`}

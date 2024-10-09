@@ -37,8 +37,6 @@ const SixthSection = () => {
     read_list();
   }, []);
 
-  console.log(save);
-
   const handleClick = (index: number) => {
     setPage(index);
     if (page > arr.length && page < arr.length) {
