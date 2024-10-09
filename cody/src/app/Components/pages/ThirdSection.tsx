@@ -4,14 +4,13 @@ import slide_1 from "../../images/slide1.webp";
 import slide_2 from "../../images/slide2.webp";
 import slide_3 from "../../images/slide3.webp";
 import { useState } from "react";
-import { Button } from "@mui/material";
 
 const ThirdSection = function () {
   const [tap, setTap] = useState(0);
   return (
     <section className="h-[650px] overflow-hidden md:h-[480px] ">
       {tap == 0 && (
-        <div className="block my-4 px-10 transition md:flex">
+        <div className="block my-4 transition md:flex">
           <Image src={slide_1} width={500} height={500} alt="" />
           <div className="px-10">
             <div className="mt-10 text-center md:text-left">
@@ -24,40 +23,37 @@ const ThirdSection = function () {
                 платформ юм.
               </span>
             </div>
-            <div className="flex">
-              <Button
+            <div className="flex mt-10">
+              <button
                 onClick={() => {
                   setTap(0);
                 }}
-                variant="contained"
-                className="rounded-full mx-2 bg-purple-600 "
+                className="rounded-full mx-2 bg-purple-600 w-[15px] h-[15px]"
               >
                 {""}
-              </Button>
-              <Button
+              </button>
+              <button
                 onClick={() => {
                   setTap(1);
                 }}
-                variant="contained"
-                className="rounded-full mx-2 bg-purple-600 "
+                className="rounded-full mx-2 bg-purple-600 w-[15px] h-[15px]"
               >
                 {""}
-              </Button>
-              <Button
+              </button>
+              <button
                 onClick={() => {
                   setTap(2);
                 }}
-                variant="contained"
-                className="rounded-full mx-2 bg-purple-600 "
+                className="rounded-full mx-2 bg-purple-600 w-[15px] h-[15px]"
               >
                 {""}
-              </Button>
+              </button>
             </div>
           </div>
         </div>
       )}
       {tap == 1 && (
-        <div className="block my-4 px-10 transition md:flex">
+        <div className="block my-4 transition md:flex">
           <Image src={slide_2} width={500} height={500} alt="" />
           <div className="px-10">
             <div className="mt-10 text-center md:text-left">
@@ -72,40 +68,37 @@ const ThirdSection = function () {
                 цахим худалдаагаа эхлүүлээрэй.
               </span>
             </div>
-            <div className="flex">
-              <Button
+            <div className="flex mt-10">
+              <button
                 onClick={() => {
                   setTap(0);
                 }}
-                variant="contained"
-                className="rounded-full mx-2 bg-purple-600 "
+                className="rounded-full mx-2 bg-purple-600 w-[15px] h-[15px]"
               >
                 {""}
-              </Button>
-              <Button
+              </button>
+              <button
                 onClick={() => {
                   setTap(1);
                 }}
-                variant="contained"
-                className="rounded-full mx-2 bg-purple-600 "
+                className="rounded-full mx-2 bg-purple-600 w-[15px] h-[15px]"
               >
                 {""}
-              </Button>
-              <Button
+              </button>
+              <button
                 onClick={() => {
                   setTap(2);
                 }}
-                variant="contained"
-                className="rounded-full mx-2 bg-purple-600 "
+                className="rounded-full mx-2 bg-purple-600 w-[15px] h-[15px]"
               >
                 {""}
-              </Button>
+              </button>
             </div>
           </div>
         </div>
       )}
       {tap == 2 && (
-        <div className="block my-4 px-10 transition md:flex">
+        <div className="block my-4 transition md:flex">
           <Image src={slide_3} width={500} height={500} alt="" />
           <div className="px-10">
             <div className="mt-10 text-center md:text-left">
@@ -120,34 +113,31 @@ const ThirdSection = function () {
                 Платформын гайхалтай шийдлүүдийг ашиглан борлуулалтаа өсгөөрэй.
               </span>
             </div>
-            <div className="flex">
-              <Button
+            <div className="flex mt-10">
+              <button
                 onClick={() => {
                   setTap(0);
                 }}
-                variant="contained"
-                className="rounded-full mx-2 bg-purple-600"
+                className="rounded-full mx-2 bg-purple-600 w-[15px] h-[15px]"
               >
                 {""}
-              </Button>
-              <Button
+              </button>
+              <button
                 onClick={() => {
                   setTap(1);
                 }}
-                variant="contained"
-                className="rounded-full mx-2 bg-purple-600"
+                className="rounded-full mx-2 bg-purple-600 w-[15px] h-[15px]"
               >
                 {""}
-              </Button>
-              <Button
+              </button>
+              <button
                 onClick={() => {
                   setTap(2);
                 }}
-                variant="contained"
-                className="rounded-full mx-2 bg-purple-600"
+                className="rounded-full mx-2 bg-purple-600 w-[15px] h-[15px]"
               >
                 {""}
-              </Button>
+              </button>
             </div>
           </div>
         </div>
