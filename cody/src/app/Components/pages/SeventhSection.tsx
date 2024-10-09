@@ -2,8 +2,6 @@
 import { useState } from "react";
 import Image from "next/image";
 import { comments } from "../list/comment";
-import comment1 from "../../images/comment1.png";
-import { Button } from "@mui/material";
 
 const SeventhSection = function () {
   const [tap, setTap] = useState(0);
@@ -31,33 +29,36 @@ const SeventhSection = function () {
       </div>
       <div className="">{arr[tap]}</div>
       <div className="flex justify-center my-9">
-        <Button
+        <button
           onClick={() => {
             setTap(0);
           }}
-          variant="contained"
-          className="rounded-full mx-2 bg-purple-600 "
+          className={`rounded-full mx-2 ${
+            tap != 0 ? `bg-purple-100` : `bg-purple-600`
+          } w-[15px] h-[15px]`}
         >
           {""}
-        </Button>
-        <Button
+        </button>
+        <button
           onClick={() => {
             setTap(1);
           }}
-          variant="contained"
-          className="rounded-full mx-2 bg-purple-600 "
+          className={`rounded-full mx-2 ${
+            tap != 1 ? `bg-purple-100` : `bg-purple-600`
+          } w-[15px] h-[15px]`}
         >
           {""}
-        </Button>
-        <Button
+        </button>
+        <button
           onClick={() => {
             setTap(2);
           }}
-          variant="contained"
-          className="rounded-full mx-2 bg-purple-600 "
+          className={`rounded-full mx-2 ${
+            tap != 2 ? `bg-purple-100` : `bg-purple-600`
+          } w-[15px] h-[15px]`}
         >
           {""}
-        </Button>
+        </button>
       </div>
     </section>
   );
