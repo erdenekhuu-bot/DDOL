@@ -15,10 +15,10 @@ const FirstSection = function () {
         backgroundSize: "cover",
       }}
     >
-      <div className="mr-[5%] hidden md:block">
+      <div className="mr-[5%] hidden md:block md:mx-auto">
         <Image src={phone_background} width={150} height={100} alt="" />
       </div>
-      <Stack spacing={2}>
+      <Stack spacing={2} className="md:w-1/3">
         <div className="text-center p-10">
           <span className="font-bold text-blue-950 text-[28px]">
             Өөрийн цахим дэлгүүрээ бүтээ!
@@ -40,7 +40,7 @@ const FirstSection = function () {
           </Button>
         </div>
       </Stack>
-      <div className="mx-auto w-1/2 md:ml-[5%]">
+      <div className="mx-auto w-1/2 md:ml-[5%] md:w-1/4 md:mx-auto">
         <Image src={pad_background} width={350} height={100} alt="" />
       </div>
       <div className="flex justify-center md:hidden">
