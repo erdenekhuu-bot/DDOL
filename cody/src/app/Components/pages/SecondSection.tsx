@@ -30,7 +30,7 @@ const SecondSection = function () {
     read_list();
   }, []);
   return (
-    <section className="flex items-center justify-center p-4 opacity-50 overflow-hidden">
+    <section className="flex border shadow-xl items-center justify-center opacity-50 overflow-hidden">
       {save.map((item) => (
         <img
           key={item.id}

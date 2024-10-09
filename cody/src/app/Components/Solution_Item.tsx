@@ -7,7 +7,7 @@ const Solution_Item = function ({
 }) {
   return (
     <div className="m-8 md:w-[40%]">
-      <div className="text-purple-600 font-bold text-xl md:text-2xl">
+      <div className="text-purple-600 font-bold text-xl md:text-2xl text-opacity-70">
         {title}
       </div>
       <div className="my-4">
