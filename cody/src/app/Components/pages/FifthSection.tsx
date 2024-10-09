@@ -38,6 +38,9 @@ const FifthSection = function () {
   };
   return (
     <div className="bg-gray-100 py-4">
+      {click && (
+        <div className="fixed z-10 inset-0 bg-black bg-opacity-50 w-full h-full"></div>
+      )}
       <div className="text-center mt-16">
         <span className="font-bold text-2xl">Системийн боломжууд</span>
       </div>

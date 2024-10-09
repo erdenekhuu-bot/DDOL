@@ -16,7 +16,7 @@ import inx from "../../app/images/in.svg";
 import Image from "next/image";
 import cody from "../../app/images/cody.svg";
 
-const Popup = function ({ onClose }: PopupProps) {
+const Popup = function ({ onClose, isOpen }: PopupProps) {
   const [save, setSave] = useState<solution_list>([]);
 
   const read_list = async () => {

@@ -7,13 +7,20 @@ import { useState, useEffect } from "react";
 
 const FourthSection = function () {
   const [click, setClick] = useState(false);
+  const [trigger, setTrigger] = useState(false);
 
   const handlePopupToggle = () => {
     setClick(!click);
   };
+  const togglePopup = () => {
+    setTrigger(!trigger);
+  };
 
   return (
     <section className="my-6 bg-gray-50 md:h-[550px]  md:rounded-bl-[300px] md:rounded-br-[300px]">
+      {click && (
+        <div className="fixed z-10 inset-0 bg-black bg-opacity-50 w-full h-full"></div>
+      )}
       <div className="text-center">
         <span className="font-bold text-2xl">Бидний шийдэл</span>
       </div>

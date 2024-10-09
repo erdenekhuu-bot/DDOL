@@ -12,6 +12,7 @@ export type subitems = {
 
 export type PopupProps = {
   onClose: () => void;
+  isOpen?: boolean;
 };
 
 export type EventProps = {
