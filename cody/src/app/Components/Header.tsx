@@ -10,11 +10,6 @@ import { create_navlist } from "./prismamethod/methods";
 
 const Header = function () {
   const [click, setClick] = useState(false);
-  const [storeImage, setStore] = useState([]);
-
-  // menu_list.forEach((items: any) => {
-  //   create_navlist(items.title);
-  // });
 
   return (
     <nav className="fixed bg-[white] w-full flex justify-between px-8 py-4 z-10 border drop-shadow">
