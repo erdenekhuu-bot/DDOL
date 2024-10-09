@@ -3,10 +3,15 @@ import Image from "next/image";
 import slide_1 from "../../images/slide1.webp";
 import slide_2 from "../../images/slide2.webp";
 import slide_3 from "../../images/slide3.webp";
+import { slide_category } from "../list/slide_category";
 import { useState } from "react";
 
 const ThirdSection = function () {
   const [tap, setTap] = useState(0);
+  const arr: JSX.Element[] = [];
+
+  slide_category.map((item) => {});
+
   return (
     <section className="bg-white py-12 overflow-hidden">
       {tap == 0 && (

@@ -1,4 +1,4 @@
-const slide_category: {
+export const slide_category: {
   id: number;
   image: string;
   title: string;
