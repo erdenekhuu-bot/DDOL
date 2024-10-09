@@ -61,19 +61,11 @@ const SixthSection = () => {
 
   save.map((item) => {
     const imageElement = (
-      // <Image
-      //   key={item.id}
-      //   width={980}
-      //   height={980}
-      //   src={item.image}
-      //   alt=""
-      //   className="object-cover rounded-3xl drop-shadow border m-2"
-      // />
       <img
         key={item.id}
         width={980}
         height={980}
-        src={`http://192.168.1.41:1337${item.image.formats?.thumbnail.url}`}
+        src={`http://192.168.1.41:1337${item.image.formats.large.url}`}
         alt=""
         className="object-cover rounded-3xl drop-shadow border m-2"
       />
@@ -85,11 +77,11 @@ const SixthSection = () => {
   const mobile: JSX.Element[] = [];
   save.map((item) => {
     const imageElement = (
-      <Image
+      <img
         key={item.id}
         width={400}
         height={900}
-        src={item.mobile}
+        src={`http://192.168.1.41:1337${item.mobile.formats.large.url}`}
         alt=""
         className="object-cover mx-auto"
       />
@@ -111,7 +103,7 @@ const SixthSection = () => {
             {save.map((item, index) => (
               <Event_item_show
                 key={item.id}
-                icon={`http://192.168.1.41:1337${item.icon.formats?.thumbnail.url}`}
+                icon={`http://192.168.1.41:1337${item.icon.url}`}
                 title={item.title}
                 onClick={() => handleClick(index)}
               />
@@ -136,13 +128,6 @@ const SixthSection = () => {
             <div className="flex flex-shrink-0 md:w-full md:h-full py-4 md:hidden">
               {mobile[page]}
             </div>
-            {/* {slide_events.map((item, index) => (
-              <Event_item_image
-                key={item.id}
-                image={item.image}
-                isActive={index == page}
-              />
-            ))} */}
           </div>
         </section>
       </section>
