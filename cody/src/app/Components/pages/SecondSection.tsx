@@ -34,7 +34,7 @@ const SecondSection = function () {
       {save.map((item) => (
         <img
           key={item.id}
-          src={`http://192.168.1.41:1337${item.image.formats?.thumbnail.url}`}
+          src={`http://192.168.1.41:1337${item.image.url}`}
           width={80}
           height={80}
           alt=""
