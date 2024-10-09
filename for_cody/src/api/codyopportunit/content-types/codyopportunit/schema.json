@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "codyopportunits",
+  "info": {
+    "singularName": "codyopportunit",
+    "pluralName": "codyopportunits",
+    "displayName": "Codyopportunit",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "image": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "feature": {
+      "type": "string"
+    }
+  }
+}

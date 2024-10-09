@@ -1,5 +1,4 @@
 "use client";
-import solution_list from "../list/solution_list";
 import Solution_Item from "../Solution_Item";
 import { Button } from "@mui/material";
 import { Popup } from "../Popup";

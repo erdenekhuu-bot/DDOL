@@ -2,7 +2,7 @@
 import { Button } from "@mui/material";
 import Solution_Item from "./Solution_Item";
 import { PopupProps } from "../types/type";
-import opportunity_list from "./list/opportunity_list";
+import { opportunity_list } from "@/app/types/type";
 import Opportunity_item from "./Opportunity_item";
 import axios from "axios";
 import { useState, useEffect } from "react";
@@ -56,6 +56,29 @@ const Popup = function ({ onClose }: PopupProps) {
 };
 
 const Popuplist = function ({ onClose }: PopupProps) {
+  const [save, setSave] = useState<opportunity_list>([]);
+
+  const read_list = async () => {
+    try {
+      const config = {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      };
+
+      const response = await axios.get(
+        "http://192.168.1.41:1337/api/codysolutions",
+        config
+      );
+      setSave(response.data.data);
+    } catch (error) {
+      return;
+    }
+  };
+
+  useEffect(() => {
+    read_list();
+  }, []);
   return (
     <section className="fixed inset-0 z-10 bg-gray-200 w-[90%] h-[90%] rounded-lg mx-auto my-auto flex flex-col">
       <div className="flex justify-center items-center p-4">
@@ -65,7 +88,7 @@ const Popuplist = function ({ onClose }: PopupProps) {
         </Button>
       </div>
       <div className="w-full p-8 flex justify-around flex-wrap overflow-scroll">
-        {opportunity_list.map((item) => (
+        {save.map((item) => (
           <Opportunity_item
             key={item.id}
             image={item.id}

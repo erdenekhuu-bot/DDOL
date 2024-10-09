@@ -1,13 +1,37 @@
 "use client";
-import { SvgIcon } from "@mui/material";
 import Opportunity_item from "../Opportunity_item";
-import opportunity_list from "../list/opportunity_list";
+import { opportunity_list } from "@/app/types/type";
 import { Button } from "@mui/material";
-import { useState } from "react";
-import { Popup, Popuplist } from "../Popup";
+import { useState, useEffect } from "react";
+import { Popuplist } from "../Popup";
+import axios from "axios";
+import { token } from "@/app/types/type";
 
 const FifthSection = function () {
   const [click, setClick] = useState(false);
+  const [save, setSave] = useState<opportunity_list>([]);
+
+  const read_list = async () => {
+    try {
+      const config = {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      };
+
+      const response = await axios.get(
+        "http://192.168.1.41:1337/api/codyopportunits",
+        config
+      );
+      setSave(response.data.data);
+    } catch (error) {
+      return;
+    }
+  };
+
+  useEffect(() => {
+    read_list();
+  }, []);
 
   const handlePopupToggle = () => {
     setClick(!click);
@@ -15,7 +39,7 @@ const FifthSection = function () {
   return (
     <div className="bg-gray-200 py-4 h-[700px]">
       <section className="flex justify-around h-[560px] overflow-hidden flex-wrap p-8">
-        {opportunity_list.map((item) => (
+        {save.map((item) => (
           <Opportunity_item
             key={item.id}
             image={item.id}
