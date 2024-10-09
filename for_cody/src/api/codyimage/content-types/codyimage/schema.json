@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "codyimages",
+  "info": {
+    "singularName": "codyimage",
+    "pluralName": "codyimages",
+    "displayName": "Codyimage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
