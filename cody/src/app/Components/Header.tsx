@@ -5,7 +5,7 @@ import Image from "next/image";
 import menu from "../../app/images/white_menu.png";
 import x from "../../app/images/x_ios.png";
 import menu_list from "./list/menu";
-import { useState, useContext, createContext } from "react";
+import { useState } from "react";
 import { Popupheader } from "./Popup";
 
 const Header = function () {
@@ -17,7 +17,7 @@ const Header = function () {
   };
 
   return (
-    <nav className="fixed bg-[white] w-full flex justify-between px-8 py-4 z-10 border drop-shadow">
+    <nav className="fixed w-full flex justify-between bg-white px-8 py-4 z-10 border drop-shadow">
       <section>
         <Image src={cody} width={100} height={40} alt="" />
       </section>

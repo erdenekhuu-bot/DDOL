@@ -19,13 +19,13 @@ const ThirdSection = function () {
               <span className="font-bold text-[20px]">КОДИ ПЛАТФОРМ</span>
             </div>
             <div className="mt-4">
-              <span className="text-xs text-center md:text-[16px] md:text-left">
+              <span className="text-xs text-center md:text-left md:text-sm">
                 Худалдаа, үйлчилгээний бизнест зориулсан, дата, хиймэл оюун
                 ухаанд суурилсан, тасралтгүй хөгжүүлэлттэй Цахим худалдааны цогц
                 платформ юм.
               </span>
             </div>
-            <div className="flex mt-10">
+            <div className="flex justify-center mt-10 md:justify-normal">
               <button
                 onClick={() => {
                   setTap(0);

@@ -128,7 +128,7 @@ const Popupheader = function ({
           {menu_list.map((item) => (
             <div
               key={item.id}
-              className="flex justify-between p-3 border border-r-0 border-l-0"
+              className="flex justify-between p-3 border border-r-0 border-l-0 hover:cursor-pointer"
             >
               <span className="text-[14px] hover:cursor-pointer transition">
                 {item.title}
