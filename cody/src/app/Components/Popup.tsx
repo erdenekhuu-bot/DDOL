@@ -117,7 +117,7 @@ const Popupheader = function ({
 }) {
   return (
     <section
-      className={`fixed z-0 top-20 right-0 left-0 bg-white transition-all duration-300`}
+      className={`fixed z-0 mt-14 right-0 left-0 bg-white transition-all duration-300`}
     >
       <div
         className={`overflow-hidden transition-all duration-300 ${
