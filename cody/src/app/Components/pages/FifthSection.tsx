@@ -37,7 +37,7 @@ const FifthSection = function () {
     setClick(!click);
   };
   return (
-    <div className="bg-gray-100 py-4 ">
+    <div className="bg-gray-100 py-4">
       <div className="text-center mt-16">
         <span className="font-bold text-2xl">Системийн боломжууд</span>
       </div>
