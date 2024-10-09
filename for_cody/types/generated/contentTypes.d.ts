@@ -485,6 +485,36 @@ export interface PluginUsersPermissionsUser
   };
 }
 
+export interface ApiCodyeventCodyevent extends Struct.CollectionTypeSchema {
+  collectionName: 'codyevents';
+  info: {
+    singularName: 'codyevent';
+    pluralName: 'codyevents';
+    displayName: 'codyevent';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String;
+    mobile: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::codyevent.codyevent'
+    >;
+  };
+}
+
 export interface ApiCodyimageCodyimage extends Struct.CollectionTypeSchema {
   collectionName: 'codyimages';
   info: {
@@ -948,6 +978,7 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::codyevent.codyevent': ApiCodyeventCodyevent;
       'api::codyimage.codyimage': ApiCodyimageCodyimage;
       'api::codyopportunit.codyopportunit': ApiCodyopportunitCodyopportunit;
       'api::codysolution.codysolution': ApiCodysolutionCodysolution;

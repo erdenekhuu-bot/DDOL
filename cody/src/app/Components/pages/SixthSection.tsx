@@ -1,15 +1,43 @@
 "use client";
-import { useState, createContext } from "react";
-import slide_events from "../list/slide_events";
+import { useState, createContext, useEffect } from "react";
 import { Event_item_show, Event_item_image } from "../Event_item";
 import Image from "next/image";
 import right from "../../images/right.svg";
 import left from "../../images/left.svg";
+import { slide_events } from "@/app/types/type";
+import { token } from "@/app/types/type";
+import axios from "axios";
 
 export const Context = createContext(0);
 
 const SixthSection = () => {
   const [page, setPage] = useState<number>(0);
+
+  const [save, setSave] = useState<slide_events>([]);
+
+  const read_list = async () => {
+    try {
+      const config = {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      };
+
+      const response = await axios.get(
+        "http://192.168.1.41:1337/api/codyevents?populate=*",
+        config
+      );
+      setSave(response.data.data);
+    } catch (error) {
+      return;
+    }
+  };
+
+  useEffect(() => {
+    read_list();
+  }, []);
+
+  console.log(save);
 
   const handleClick = (index: number) => {
     setPage(index);
@@ -31,13 +59,21 @@ const SixthSection = () => {
 
   const arr: JSX.Element[] = [];
 
-  slide_events.map((item) => {
+  save.map((item) => {
     const imageElement = (
-      <Image
+      // <Image
+      //   key={item.id}
+      //   width={980}
+      //   height={980}
+      //   src={item.image}
+      //   alt=""
+      //   className="object-cover rounded-3xl drop-shadow border m-2"
+      // />
+      <img
         key={item.id}
         width={980}
         height={980}
-        src={item.image}
+        src={`http://192.168.1.41:1337${item.image.formats?.thumbnail.url}`}
         alt=""
         className="object-cover rounded-3xl drop-shadow border m-2"
       />
@@ -47,7 +83,7 @@ const SixthSection = () => {
   });
 
   const mobile: JSX.Element[] = [];
-  slide_events.map((item) => {
+  save.map((item) => {
     const imageElement = (
       <Image
         key={item.id}
@@ -72,10 +108,10 @@ const SixthSection = () => {
         </div>
         <section className="flex md:h-[650px]">
           <div className="md:w-1/3 md:p-4 md:overflow-y-scroll">
-            {slide_events.map((item, index) => (
+            {save.map((item, index) => (
               <Event_item_show
                 key={item.id}
-                icon={item.icon}
+                icon={`http://192.168.1.41:1337${item.icon.formats?.thumbnail.url}`}
                 title={item.title}
                 onClick={() => handleClick(index)}
               />
