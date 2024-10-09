@@ -1,45 +1,38 @@
 "use client";
-import { SVGcody } from "../svg/SVG";
+import cody from "../../app/images/cody.svg";
 import { Button } from "@mui/material";
 import Image from "next/image";
 import menu from "../../app/images/white_menu.png";
 import x from "../../app/images/x_ios.png";
 import menu_list from "./list/menu";
 import { useState, useContext, createContext } from "react";
-import { create_navlist } from "./prismamethod/methods";
+import { Popupheader } from "./Popup";
 
 const Header = function () {
   const [click, setClick] = useState(false);
+  const [trigger, setTrigger] = useState(false);
+
+  const togglePopup = () => {
+    setTrigger(!trigger);
+  };
 
   return (
     <nav className="fixed bg-[white] w-full flex justify-between px-8 py-4 z-10 border drop-shadow">
       <section>
-        <SVGcody />
+        <Image src={cody} width={100} height={40} alt="" />
       </section>
-      <section className="md:hidden hover:cursor-pointer">
-        {click == true ? (
-          <Image
-            onClick={function () {
-              setClick(!click);
-            }}
-            src={menu}
-            alt=""
-            width={40}
-            height={40}
-            className="bg-purple-900 rounded-lg p-2"
-          />
-        ) : (
-          <Image
-            onClick={function () {
-              setClick(!click);
-            }}
-            src={x}
-            alt=""
-            width={40}
-            height={40}
-            className="bg-purple-900 rounded-lg p-2"
-          />
-        )}
+      <section className="md:hidden hover:cursor-pointer relative">
+        <Image
+          onClick={() => {
+            setClick(!click);
+            togglePopup();
+          }}
+          src={click ? x : menu}
+          alt=""
+          width={40}
+          height={40}
+          className="bg-purple-900 rounded-lg p-2"
+        />
       </section>
       <section className="hidden justify-between items-center md:flex">
         {menu_list.map((item) => (
@@ -55,6 +48,7 @@ const Header = function () {
           </Button>
         </div>
       </section>
+      <Popupheader isOpen={trigger} onClick={() => setTrigger(false)} />
     </nav>
   );
 };

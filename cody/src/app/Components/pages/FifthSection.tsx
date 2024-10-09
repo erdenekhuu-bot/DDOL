@@ -20,7 +20,7 @@ const FifthSection = function () {
       };
 
       const response = await axios.get(
-        "http://192.168.1.41:1337/api/codyopportunits",
+        "http://192.168.0.102:1337/api/codyopportunits",
         config
       );
       setSave(response.data.data);

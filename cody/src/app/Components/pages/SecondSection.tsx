@@ -17,7 +17,7 @@ const SecondSection = function () {
       };
 
       const response = await axios.get(
-        "http://192.168.1.41:1337/api/codyimages?populate=*",
+        "http://192.168.0.102:1337/api/codyimages?populate=*",
         config
       );
       setSave(response.data.data);
@@ -34,7 +34,7 @@ const SecondSection = function () {
       {save.map((item) => (
         <img
           key={item.id}
-          src={`http://192.168.1.41:1337${item.image.url}`}
+          src={`http://192.168.0.102:1337${item.image.url}`}
           width={80}
           height={80}
           alt=""
