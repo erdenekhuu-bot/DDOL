@@ -9,7 +9,11 @@ const FirstSection = function () {
   return (
     <section
       className="z-0 block py-10 mt-20 md:flex md:py-12 md:items-center md:justify-center"
-      style={{ backgroundImage: `url(${background_back.src})` }}
+      style={{
+        backgroundImage: `url(${background_back.src})`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      }}
     >
       <div className="mr-[5%] hidden md:block">
         <Image src={phone_background} width={150} height={100} alt="" />
