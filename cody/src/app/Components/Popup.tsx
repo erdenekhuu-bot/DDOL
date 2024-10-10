@@ -42,7 +42,7 @@ const Popup = function ({ onClose, isOpen }: PopupProps) {
   }, []);
 
   return (
-    <section className="fixed inset-0 bg-gray-50 w-[90%] h-[90%] rounded-lg mx-auto my-auto flex flex-col">
+    <section className="fixed inset-0 z-10 bg-gray-50 w-[90%] h-[90%] rounded-lg mx-auto my-auto flex flex-col">
       <div className="flex justify-center items-center p-4 my-4">
         <span className="font-bold text-3xl">Шийдлүүд</span>
       </div>

@@ -20,7 +20,8 @@
     "axios": "^1.7.7",
     "next": "14.2.14",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-draggable": "^4.4.6"
   },
   "devDependencies": {
     "@types/node": "^20.16.10",

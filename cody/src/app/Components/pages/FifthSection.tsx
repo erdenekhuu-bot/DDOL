@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { Popuplist } from "../Popup";
 import axios from "axios";
 import { token } from "@/app/types/type";
+import Draggable from "react-draggable";
 
 const FifthSection = function () {
   const [click, setClick] = useState(false);
@@ -36,6 +37,7 @@ const FifthSection = function () {
   const handlePopupToggle = () => {
     setClick(!click);
   };
+
   return (
     <div className="bg-gray-100 py-4">
       {click && (
@@ -50,7 +52,6 @@ const FifthSection = function () {
       <section className="flex overflow-hidden p-4 md:justify-around md:flex-wrap md:p-8 md:h-[560px]">
         {save.map((item) => (
           <Opportunity_item
-            key={item.id}
             image={item.id}
             title={item.title}
             feature={item.feature}
