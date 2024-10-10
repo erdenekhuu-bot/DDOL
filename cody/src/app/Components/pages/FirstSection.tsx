@@ -17,13 +17,6 @@ const FirstSection = function () {
       }}
     >
       <div className="z-10 mr-[5%] hidden md:block md:mx-auto">
-        {/* <Image
-          src={phone_background}
-          width={150}
-          height={100}
-          alt=""
-          className=" z-10"
-        /> */}
         <div
           className="z-10 p-2"
           style={{
@@ -42,17 +35,34 @@ const FirstSection = function () {
         </div>
       </div>
       <Stack spacing={2} className="md:w-1/3">
-        <div className="text-center p-10">
-          <span className="font-bold text-blue-950 text-[28px]">
+        <div className="text-center md:p-8">
+          <p className="font-bold my-4 text-blue-950 text-[28px] md:text-3xl">
             Өөрийн цахим дэлгүүрээ бүтээ!
-          </span>
-          <br />
-          <span className="font-bold text-[#4c39db]">
+          </p>
+          <p className="font-bold text-[#4c39db]">
             Та онлайнаар хаана ч, хэнд ч юу ч зарж болно
-          </span>
+          </p>
+        </div>
+        <div className="z-10 mr-[5%] flex justify-center md:hidden">
+          <div
+            className="z-10 p-2"
+            style={{
+              backgroundImage: `url(${phone_background.src})`,
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+            }}
+          >
+            <Image
+              src={phone_image[4].image}
+              width={150}
+              height={100}
+              alt=""
+              className="object-cover z-0 rounded-3xl w-full h-full"
+            />
+          </div>
         </div>
         <div className="hidden text-center md:block">
-          <span>www.allstars.mn</span>
+          <p>www.allstars.mn</p>
         </div>
         <div className="hidden text-center md:block">
           <Button
@@ -63,14 +73,7 @@ const FirstSection = function () {
           </Button>
         </div>
       </Stack>
-      <div className="w-1/2 mx-auto flex md:ml-[5%] md:w-1/4 md:mx-auto">
-        {/* <Image
-          src={pad_background}
-          width={350}
-          height={100}
-          alt=""
-          className="absolute z-10"
-        /> */}
+      <div className="hidden w-1/2 mx-auto md:ml-[5%] md:w-1/4 md:mx-auto md:flex">
         <div
           className="z-10 p-2 flex overflow-hidden"
           style={{
@@ -86,20 +89,10 @@ const FirstSection = function () {
             alt=""
             className="object-cover mr-3 z-0 rounded-xl"
           />
-          {/* {tablet_image.map((item) => (
-            <Image
-              key={item.id}
-              src={item.image}
-              width={350}
-              height={100}
-              alt=""
-              className="object-cover mr-3 z-0 rounded-xl"
-            />
-          ))} */}
         </div>
       </div>
-      <div className="flex justify-center md:hidden">
-        <span>www.allstars.mn</span>
+      <div className="flex my-4 justify-center md:hidden">
+        <span className="text-xl text-blue-500">www.allstars.mn</span>
       </div>
       <div className="text-center md:hidden">
         <Button

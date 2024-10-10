@@ -4,7 +4,7 @@ import facebook from "../../app/images/facebook-logo.png";
 
 const Footer = function () {
   return (
-    <footer className="z-10 hidden w-full justify-around bg-purple-900 text-white md:flex">
+    <footer className="z-10 py-8 px-6 hidden w-full justify-around bg-purple-900 text-white md:flex">
       <section className="text-white">
         <div className="font-bold text-xl my-8">КОДИ ПЛАТФОРМ</div>
         <p className="my-2 text-xs hover:cursor-pointer hover:text-gray-300">
