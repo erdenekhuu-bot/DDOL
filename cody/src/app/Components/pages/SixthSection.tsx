@@ -53,7 +53,7 @@ const SixthSection = () => {
     });
   };
 
-  const navigateLeft = function (index: number) {
+  const navigateLeft = function () {
     setPage((index) => {
       if (index == arr.length - 1) {
         return 0;
@@ -104,7 +104,7 @@ const SixthSection = () => {
           </p>
         </div>
         <section className="flex md:h-[650px]">
-          <div className="md:w-1/3 md:p-4 md:overflow-y-scroll">
+          <div className="md:w-1/3 md:p-4 md:overflow-y-scroll ">
             {save.map((item, index) => (
               <Event_item_show
                 key={item.id}
@@ -127,10 +127,10 @@ const SixthSection = () => {
             >
               <Image src={right} width={10} height={10} alt="" />
             </div>
-            <div className="hidden flex-shrink-0 w-full h-full py-4 md:flex">
+            <div className="hidden flex-shrink-0 w-full h-full py-4 transition-transform duration-300 ease-in-out md:flex">
               {arr[page]}
             </div>
-            <div className="flex flex-shrink-0 md:w-full md:h-full py-4 md:hidden">
+            <div className="flex flex-shrink-0 md:w-full transition-transform duration-300 ease-in-out md:h-full py-4 md:hidden">
               {mobile[page]}
             </div>
           </div>
