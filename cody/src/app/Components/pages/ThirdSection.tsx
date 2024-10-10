@@ -10,7 +10,7 @@ const ThirdSection = function () {
   const [tap, setTap] = useState(0);
   const arr: JSX.Element[] = [];
   return (
-    <section className="bg-white py-12 overflow-hidden">
+    <section className="bg-white py-12 px-32 overflow-hidden md:px-32">
       {tap == 0 && (
         <div className="block transition md:flex">
           <Image src={slide_1} width={500} height={500} alt="" />
