@@ -12,7 +12,7 @@ const FourthSection = function () {
     setClick(!click);
   };
   return (
-    <section className="my-6 bg-gray-50 md:h-[550px]  md:rounded-bl-[300px] md:rounded-br-[300px]">
+    <section className="my-6 bg-gray-50 md:h-[550px]">
       {click && (
         <div
           onClick={handlePopupToggle}

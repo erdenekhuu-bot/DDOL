@@ -39,9 +39,6 @@ const SixthSection = () => {
 
   const handleClick = (index: number) => {
     setPage(index);
-    if (page > arr.length && page < arr.length) {
-      setPage(0);
-    }
   };
 
   const navigateRight = function () {
@@ -106,7 +103,9 @@ const SixthSection = () => {
     );
     titles.push(imageElement);
   });
-
+  for (var i = 0; i < save.length; i++) {
+    console.log(save[i].title);
+  }
   return (
     <Context.Provider value={page}>
       <section className="py-12 my-8 bg-gray-50 overflow-hidden md:rounded-tl-[300px] md:rounded-tr-[300px] z-0">
@@ -126,6 +125,7 @@ const SixthSection = () => {
               />
             ))}
           </div>
+
           <div className="relative w-full md:flex">
             <div
               onClick={navigateRight}
