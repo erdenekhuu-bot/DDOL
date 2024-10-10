@@ -24,7 +24,7 @@ const SixthSection = () => {
       };
 
       const response = await axios.get(
-        "http://192.168.0.102:1337/api/codyevents?populate=*",
+        "http://192.168.1.41:1337/api/codyevents?populate=*",
         config
       );
       setSave(response.data.data);
@@ -45,14 +45,21 @@ const SixthSection = () => {
   };
 
   const navigateRight = function () {
-    setPage(page - 1);
-    if (page > arr.length && page < arr.length) {
-      setPage(0);
-    }
+    setPage((index) => {
+      if (index == arr.length - 1) {
+        return 0;
+      }
+      return index + 1;
+    });
   };
 
-  const navigateLeft = function () {
-    setPage(page + 1);
+  const navigateLeft = function (index: number) {
+    setPage((index) => {
+      if (index == arr.length - 1) {
+        return 0;
+      }
+      return index + 1;
+    });
   };
 
   const arr: JSX.Element[] = [];
@@ -63,7 +70,7 @@ const SixthSection = () => {
         key={item.id}
         width={980}
         height={980}
-        src={`http://192.168.0.102:1337${item.image.formats.large.url}`}
+        src={`http://192.168.1.41:1337${item.image.formats.large.url}`}
         alt=""
         className="object-cover rounded-3xl drop-shadow border m-2"
       />
@@ -79,7 +86,7 @@ const SixthSection = () => {
         key={item.id}
         width={400}
         height={900}
-        src={`http://192.168.0.102:1337${item.mobile.formats.large.url}`}
+        src={`http://192.168.1.41:1337${item.mobile.formats.large.url}`}
         alt=""
         className="object-cover mx-auto"
       />
@@ -101,7 +108,7 @@ const SixthSection = () => {
             {save.map((item, index) => (
               <Event_item_show
                 key={item.id}
-                icon={`http://192.168.0.102:1337${item.icon.url}`}
+                icon={`http://192.168.1.41:1337${item.icon.url}`}
                 title={item.title}
                 onClick={() => handleClick(index)}
               />

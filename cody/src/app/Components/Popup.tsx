@@ -28,7 +28,7 @@ const Popup = function ({ onClose, isOpen }: PopupProps) {
       };
 
       const response = await axios.get(
-        "http://192.168.0.102:1337/api/codysolutions",
+        "http://192.168.1.41:1337/api/codysolutions",
         config
       );
       setSave(response.data.data);
@@ -74,7 +74,7 @@ const Popuplist = function ({ onClose }: PopupProps) {
       };
 
       const response = await axios.get(
-        "http://192.168.0.102:1337/api/codysolutions",
+        "http://192.168.1.41:1337/api/codysolutions",
         config
       );
       setSave(response.data.data);
