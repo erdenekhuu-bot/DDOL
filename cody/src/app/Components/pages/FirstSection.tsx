@@ -7,8 +7,6 @@ import background_back from "../../images/background_image.jpg";
 import { tablet_image, phone_image } from "../list/images";
 
 const FirstSection = function () {
-  const arr: JSX.Element[] = [];
-
   return (
     <section
       className="z-0 block py-10 mt-20 md:flex md:py-12 md:items-center md:justify-center"
@@ -81,16 +79,23 @@ const FirstSection = function () {
             backgroundSize: "cover",
           }}
         >
-          {tablet_image.map((item) => (
+          <Image
+            src={tablet_image[1].image}
+            width={350}
+            height={100}
+            alt=""
+            className="object-cover mr-3 z-0 rounded-xl"
+          />
+          {/* {tablet_image.map((item) => (
             <Image
               key={item.id}
               src={item.image}
               width={350}
               height={100}
               alt=""
-              className="object-cover mr-3 z-0 rounded-xl transition-transform duration-300 translate-x-[-930px]"
+              className="object-cover mr-3 z-0 rounded-xl"
             />
-          ))}
+          ))} */}
         </div>
       </div>
       <div className="flex justify-center md:hidden">
