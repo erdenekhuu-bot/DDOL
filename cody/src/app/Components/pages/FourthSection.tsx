@@ -22,7 +22,7 @@ const FourthSection = function () {
       <div className="text-center">
         <span className="font-bold text-2xl">Бидний шийдэл</span>
       </div>
-      <div className="text-xs md:flex md:justify-evenly md:flex-wrap md:p-8 md:text-xl">
+      <div className="text-xs md:flex md:justify-around md:flex-wrap md:p-8 md:text-xl">
         <Solution_Item
           title="Headless Ecommerce"
           content="Headless цахим худалдааны шийдлээр бизнесийн онцлогтоо тохирох цахим худалдааг бүтээж ирээдүйтэй бэлтгэ"

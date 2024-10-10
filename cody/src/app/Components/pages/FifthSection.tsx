@@ -47,7 +47,7 @@ const FifthSection = function () {
       <div className="text-center mt-16">
         <span className="font-bold text-2xl">Системийн боломжууд</span>
       </div>
-      <section className="flex justify-around h-[560px] overflow-hidden flex-wrap p-8">
+      <section className="flex overflow-hidden p-4 md:justify-around md:flex-wrap md:p-8 md:h-[560px]">
         {save.map((item) => (
           <Opportunity_item
             key={item.id}

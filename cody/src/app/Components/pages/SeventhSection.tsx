@@ -28,7 +28,7 @@ const SeventhSection = function () {
         <p className="font-bold text-2xl my-8">Харилцагчдын сэтгэгдэл</p>
       </div>
       <div className="">{arr[tap]}</div>
-      <div className="flex justify-center my-9">
+      <div className="flex justify-center my-2 md:my-9">
         <button
           onClick={() => {
             setTap(0);

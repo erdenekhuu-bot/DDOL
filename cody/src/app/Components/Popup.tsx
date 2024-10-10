@@ -42,14 +42,11 @@ const Popup = function ({ onClose, isOpen }: PopupProps) {
   }, []);
 
   return (
-    <section
-      onClick={onClose}
-      className="fixed inset-0 z-10 bg-gray-50 w-[90%] h-[90%] rounded-lg mx-auto my-auto flex flex-col"
-    >
+    <section className="fixed inset-0 bg-gray-50 w-[90%] h-[90%] rounded-lg mx-auto my-auto flex flex-col">
       <div className="flex justify-center items-center p-4 my-4">
         <span className="font-bold text-3xl">Шийдлүүд</span>
       </div>
-      <div className="w-full p-8 flex justify-around flex-wrap overflow-scroll">
+      <div className="mx-auto w-full p-8 flex justify-start flex-wrap overflow-scroll">
         {save.map((item) => (
           <Solution_Item
             key={item.id}
@@ -74,7 +71,7 @@ const Popuplist = function ({ onClose }: PopupProps) {
       };
 
       const response = await axios.get(
-        "http://192.168.1.41:1337/api/codysolutions",
+        "http://192.168.1.41:1337/api/codyopportunits",
         config
       );
       setSave(response.data.data);
@@ -87,10 +84,7 @@ const Popuplist = function ({ onClose }: PopupProps) {
     read_list();
   }, []);
   return (
-    <section
-      onClick={onClose}
-      className="fixed inset-0 z-10 bg-gray-50 w-[90%] h-[90%] rounded-lg mx-auto my-auto flex flex-col"
-    >
+    <section className="fixed inset-0 z-10 p-8 bg-gray-50 w-[90%] h-[90%] rounded-lg mx-auto my-auto flex flex-col">
       <div className="flex justify-center items-center p-4">
         <span className="font-bold text-3xl">Системийн боломжууд</span>
       </div>
