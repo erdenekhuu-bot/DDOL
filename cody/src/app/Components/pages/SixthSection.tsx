@@ -134,7 +134,7 @@ const SixthSection = () => {
             <div
               onClick={navigateLeft}
               className={`absolute md:left-0 left-36 top-72 border bg-white rounded-full p-4 z-10 hover:cursor-pointer ${
-                page == 0 ? `hidden` : `block`
+                page == arr.length - 1 ? `hidden` : `block`
               }`}
             >
               <Image src={right} width={10} height={10} alt="" />
