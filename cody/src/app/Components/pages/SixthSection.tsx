@@ -1,5 +1,5 @@
 "use client";
-import { useState, createContext, useEffect } from "react";
+import { useState, createContext, useEffect, useRef } from "react";
 import { Event_item_show, Event_item_image } from "../Event_item";
 import Image from "next/image";
 import right from "../../images/right.svg";
@@ -24,7 +24,7 @@ const SixthSection = () => {
       };
 
       const response = await axios.get(
-        "http://192.168.1.41:1337/api/codyevents?populate=*",
+        "http://192.168.0.102:1337/api/codyevents?populate=*",
         config
       );
       setSave(response.data.data);
@@ -41,24 +41,23 @@ const SixthSection = () => {
     setPage(index);
   };
 
-  const navigateRight = function () {
-    setPage((index) => {
-      if (index == arr.length - 1) {
+  const navigateRight = () => {
+    setPage((prevIndex: number) => {
+      if (prevIndex == save.length - 1) {
         return 0;
       }
-      return index + 1;
+      return prevIndex + 1;
     });
   };
 
-  const navigateLeft = function () {
-    setPage((index) => {
-      if (index == arr.length - 1) {
-        return 0;
+  const navigateLeft = () => {
+    setPage((prevIndex: number) => {
+      if (prevIndex == 0) {
+        return save.length - 1;
       }
-      return index + 1;
+      return prevIndex - 1;
     });
   };
-
   const arr: JSX.Element[] = [];
 
   save.map((item) => {
@@ -67,7 +66,7 @@ const SixthSection = () => {
         key={item.id}
         width={980}
         height={980}
-        src={`http://192.168.1.41:1337${item.image.formats.large.url}`}
+        src={`http://192.168.0.102:1337${item.image.formats.large.url}`}
         alt=""
         className="object-cover rounded-3xl drop-shadow border m-2"
       />
@@ -83,7 +82,7 @@ const SixthSection = () => {
         key={item.id}
         width={400}
         height={900}
-        src={`http://192.168.1.41:1337${item.mobile.formats.large.url}`}
+        src={`http://192.168.0.102:1337${item.mobile.formats.large.url}`}
         alt=""
         className="object-cover mx-auto"
       />
@@ -97,15 +96,12 @@ const SixthSection = () => {
     const imageElement = (
       <Event_item_show
         key={item.id}
-        icon={`http://192.168.1.41:1337${item.icon.url}`}
+        icon={`http://192.168.0.102:1337${item.icon.url}`}
         title={item.title}
       />
     );
     titles.push(imageElement);
   });
-  for (var i = 0; i < save.length; i++) {
-    console.log(save[i].title);
-  }
   return (
     <Context.Provider value={page}>
       <section className="py-12 my-8 bg-gray-50 overflow-hidden md:rounded-tl-[300px] md:rounded-tr-[300px] z-0">
@@ -119,7 +115,7 @@ const SixthSection = () => {
             {save.map((item, index) => (
               <Event_item_show
                 key={item.id}
-                icon={`http://192.168.1.41:1337${item.icon.url}`}
+                icon={`http://192.168.0.102:1337${item.icon.url}`}
                 title={item.title}
                 onClick={() => handleClick(index)}
               />
@@ -129,28 +125,38 @@ const SixthSection = () => {
           <div className="relative w-full md:flex">
             <div
               onClick={navigateRight}
-              className="absolute md:right-0 right-36 top-72 border bg-white rounded-full p-4 z-10 hover:cursor-pointer"
+              className={`absolute md:right-0 right-36 top-72 border bg-white rounded-full p-4 z-10 hover:cursor-pointer ${
+                page == arr.length - 1 ? `hidden` : `block`
+              }`}
             >
               <Image src={left} width={10} height={10} alt="" />
             </div>
             <div
               onClick={navigateLeft}
-              className="absolute md:left-0 left-36 top-72 border bg-white rounded-full p-4 z-10 hover:cursor-pointer"
+              className={`absolute md:left-0 left-36 top-72 border bg-white rounded-full p-4 z-10 hover:cursor-pointer ${
+                page == 0 ? `hidden` : `block`
+              }`}
             >
               <Image src={right} width={10} height={10} alt="" />
             </div>
-            <div className="hidden flex-shrink-0 w-full h-full py-4 transition-transform duration-300 ease-in-out md:flex">
+            {/* <div className="hidden flex-shrink-0 w-full h-full py-4 md:flex">
               {arr[page]}
-            </div>
-            <div className="block md:p-4 md:overflow-y-scroll md:hidden">
-              {save.map((item, index) => (
-                <Event_item_show
-                  key={item.id}
-                  icon={`http://192.168.1.41:1337${item.icon.url}`}
-                  title={item.title}
-                  onClick={() => handleClick(index)}
-                />
-              ))}
+            </div> */}
+            <div className="flex overflow-hidden md:w-full h-full">
+              <div
+                className="flex transition-transform duration-300 ease-in-out"
+                style={{ transform: `translateX(-${page * 100}%)` }}
+              >
+                {arr.map((image, index) => (
+                  <div
+                    key={index}
+                    draggable
+                    className="flex-shrink-0 w-full h-full"
+                  >
+                    {image}
+                  </div>
+                ))}
+              </div>
             </div>
 
             <div className="flex flex-shrink-0 md:w-full transition-transform duration-300 ease-in-out md:h-full py-4 md:hidden">

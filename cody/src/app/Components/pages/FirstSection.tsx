@@ -61,8 +61,8 @@ const FirstSection = function () {
             />
           </div>
         </div>
-        <div className="hidden text-center md:block">
-          <p>www.allstars.mn</p>
+        <div className="hidden typing text-center md:block">
+          <span className="">www.allstars.mn.</span>
         </div>
         <div className="hidden text-center md:block">
           <Button

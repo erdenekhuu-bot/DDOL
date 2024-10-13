@@ -28,3 +28,46 @@ body {
     text-wrap: balance;
   }
 }
+
+@keyframes cursorBlink {
+  0%,
+  75% {
+    opacity: 1;
+  }
+
+  76%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes type {
+  0%,
+  100% {
+    width: 0px;
+  }
+
+  30%,
+  60% {
+    width: 394.09px;
+  }
+}
+
+.typing {
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #3333);
+}
+
+.typing {
+  color: #4fc3f7;
+  letter-spacing: 5px;
+  overflow: hidden;
+  animation: type 5s steps(11) infinite;
+}
+
+.typing::before {
+  content: "";
+  width: 2px;
+  height: 100%;
+  background: #4fc3f7;
+  animation: cursorBlink 0.8s steps(3) infinite;
+}

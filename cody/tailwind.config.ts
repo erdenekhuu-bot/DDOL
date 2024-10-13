@@ -7,6 +7,9 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    maxWidth: {
+      custom: "1200px",
+    },
     extend: {
       colors: {
         background: "var(--background)",
