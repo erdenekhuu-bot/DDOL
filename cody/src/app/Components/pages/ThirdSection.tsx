@@ -31,7 +31,7 @@ const ThirdSection = function () {
   }, []);
 
   return (
-    <section className="bg-white overflow-hidden md:px-20 md:h-[550px]">
+    <section className="bg-white overflow-hidden md:px-20">
       {save.length > 0 && (
         <div className="block m-4 overflow-hidden md:flex">
           <img
@@ -52,7 +52,7 @@ const ThirdSection = function () {
           </div>
         </div>
       )}
-      <div className="flex justify-center">
+      <div className="flex justify-center my-8">
         {save.map((item, index) => (
           <button
             key={item.id}
