@@ -53,7 +53,12 @@ export type opportunity_list = {
   feature: string;
 }[];
 
-export type image_list = { id: number; name: string; image: any }[];
+export type image_list = {
+  id: number;
+  name: string;
+  image: any;
+  url: string;
+}[];
 
 export type slide_events = {
   id: number;
