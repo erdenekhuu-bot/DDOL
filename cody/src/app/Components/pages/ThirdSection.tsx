@@ -3,12 +3,39 @@ import Image from "next/image";
 import slide_1 from "../../images/slide1.webp";
 import slide_2 from "../../images/slide2.webp";
 import slide_3 from "../../images/slide3.webp";
-import { slide_category } from "../list/slide_category";
-import { useState } from "react";
+import { slide_category } from "@/app/types/type";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { token } from "@/app/types/type";
 
 const ThirdSection = function () {
+  const [save, setSave] = useState<slide_category>([]);
+
+  const read_list = async () => {
+    try {
+      const config = {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      };
+
+      const response = await axios.get(
+        "http://192.168.1.41:1337/api/codyplatforms?populate=*",
+        config
+      );
+      setSave(response.data.data);
+    } catch (error) {
+      return;
+    }
+  };
+
+  useEffect(() => {
+    read_list();
+  }, []);
+
   const [tap, setTap] = useState(0);
   const arr: JSX.Element[] = [];
+  console.log(save);
   return (
     <section className="bg-white py-12 overflow-hidden md:px-20">
       {tap == 0 && (
