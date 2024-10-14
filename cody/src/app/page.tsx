@@ -12,7 +12,6 @@ import SeventhSection from "./Components/pages/SeventhSection";
 export default async function Home() {
   return (
     <main className="bg-gray-50">
-      <Header />
       <Stack>
         <FirstSection />
         <SecondSection />
@@ -22,7 +21,6 @@ export default async function Home() {
         <SixthSection />
         <SeventhSection />
       </Stack>
-      <Footer />
     </main>
   );
 }
