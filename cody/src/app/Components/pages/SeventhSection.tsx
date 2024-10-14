@@ -59,6 +59,16 @@ const SeventhSection = function () {
         >
           {""}
         </button>
+        <button
+          onClick={() => {
+            setTap(3);
+          }}
+          className={`rounded-full mx-2 ${
+            tap != 3 ? `bg-purple-100` : `bg-purple-600`
+          } w-[15px] h-[15px]`}
+        >
+          {""}
+        </button>
       </div>
     </section>
   );
