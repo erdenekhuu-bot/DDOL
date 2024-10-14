@@ -36,8 +36,8 @@ const SecondSection = function () {
         <Link key={item.id} href={item.url} target="_blank">
           <img
             src={`http://192.168.1.41:1337${item.image.url}`}
-            width={70}
-            height={70}
+            width={60}
+            height={60}
             alt=""
             className="mx-4 p-1 transition-opacity duration-300 opacity-30 hover:cursor-pointer hover:opacity-100"
           />

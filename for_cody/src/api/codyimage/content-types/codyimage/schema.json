@@ -4,7 +4,8 @@
   "info": {
     "singularName": "codyimage",
     "pluralName": "codyimages",
-    "displayName": "Codyimage"
+    "displayName": "Codyimage",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,14 +16,18 @@
       "type": "string"
     },
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "url": {
+      "type": "text"
     }
   }
 }

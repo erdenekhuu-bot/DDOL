@@ -521,6 +521,7 @@ export interface ApiCodyimageCodyimage extends Struct.CollectionTypeSchema {
     singularName: 'codyimage';
     pluralName: 'codyimages';
     displayName: 'Codyimage';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -528,6 +529,7 @@ export interface ApiCodyimageCodyimage extends Struct.CollectionTypeSchema {
   attributes: {
     name: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    url: Schema.Attribute.Text;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
