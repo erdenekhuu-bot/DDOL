@@ -29,6 +29,7 @@ const SecondSection = function () {
   useEffect(() => {
     read_list();
   }, []);
+
   return (
     <section className="flex border shadow-2xl items-center justify-center opacity-50 overflow-hidden">
       {save.map((item) => (
