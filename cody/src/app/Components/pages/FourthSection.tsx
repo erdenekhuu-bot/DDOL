@@ -11,7 +11,7 @@ const FourthSection = function () {
     setClick(!click);
   };
   return (
-    <section className="py-6 bg-gray-50 rounded-br-[40%] rounded-bl-[40%]">
+    <section className="py-6 bg-gray-50 rounded-br-[30%] rounded-bl-[30%]">
       {click && (
         <div
           onClick={handlePopupToggle}
