@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
+import Head from "next/head";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -27,6 +28,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Head>
+        <title>CODY.MN - Бизнесийг Технологиор Хөгжүүлнэ</title>
+        <meta
+          name="description"
+          content="CODY.MN - Бизнесийг Технологиор Хөгжүүлнэ"
+        />
+      </Head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

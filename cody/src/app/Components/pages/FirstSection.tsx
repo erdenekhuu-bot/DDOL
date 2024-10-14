@@ -36,7 +36,7 @@ const FirstSection = function () {
       </div>
       <Stack spacing={2} className="md:w-1/3">
         <div className="text-center md:p-8">
-          <p className="font-bold my-4 text-blue-950 text-[28px] md:text-3xl">
+          <p className="font-bold my-4 text-blue-950 text-[32px] md:text-3xl">
             Өөрийн цахим дэлгүүрээ бүтээ!
           </p>
           <p className="font-bold text-[#4c39db]">
