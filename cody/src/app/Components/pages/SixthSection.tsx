@@ -104,7 +104,7 @@ const SixthSection = () => {
   });
   return (
     <Context.Provider value={page}>
-      <section className="py-12 bg-gray-50 overflow-hidden md:rounded-tl-[300px] md:rounded-tr-[300px] z-0">
+      <section className="py-12 bg-gray-50 overflow-hidden z-0 rounded-tr-[25%] rounded-tl-[25%]">
         <div className="flex justify-center p-8">
           <p className="font-bold text-2xl">
             Кодиг ашиглан Та юу бүтээж чадах вэ?

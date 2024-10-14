@@ -11,7 +11,7 @@ const FourthSection = function () {
     setClick(!click);
   };
   return (
-    <section className="my-6 bg-gray-50 md:h-[550px]">
+    <section className="py-6 bg-gray-50 rounded-br-[40%] rounded-bl-[40%]">
       {click && (
         <div
           onClick={handlePopupToggle}
@@ -39,7 +39,7 @@ const FourthSection = function () {
           content="Медиа платформын тусламжтайгаар контент дээр суурилсан цахим худалдаагаа эхлүүлээрэй"
         />
       </div>
-      <div className="flex justify-center">
+      <div className="flex my-12 justify-center">
         <Button
           onClick={() => {
             setClick(!click);
