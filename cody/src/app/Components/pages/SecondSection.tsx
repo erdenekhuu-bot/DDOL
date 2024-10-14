@@ -31,7 +31,7 @@ const SecondSection = function () {
   }, []);
 
   return (
-    <section className="flex border shadow-2xl items-center justify-center opacity-50 overflow-hidden">
+    <section className="flex border shadow-2xl items-center justify-center overflow-hidden">
       {save.map((item) => (
         <img
           key={item.id}
@@ -39,7 +39,7 @@ const SecondSection = function () {
           width={70}
           height={70}
           alt=""
-          className="hover:cursor-pointer mx-4 p-2"
+          className="mx-4 p-2 transition-opacity duration-300 opacity-50 hover:cursor-pointer hover:opacity-100"
         />
       ))}
     </section>
