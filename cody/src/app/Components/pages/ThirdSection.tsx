@@ -31,7 +31,7 @@ const ThirdSection = function () {
   }, []);
 
   return (
-    <section className="bg-white py-12 overflow-hidden md:px-20 md:h-[550px]">
+    <section className="bg-white overflow-hidden md:px-20 md:h-[550px]">
       {save.length > 0 && (
         <div className="block m-4 overflow-hidden md:flex">
           <img
