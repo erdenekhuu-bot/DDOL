@@ -576,6 +576,36 @@ export interface ApiCodyopportunitCodyopportunit
   };
 }
 
+export interface ApiCodyplatformCodyplatform
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'codyplatforms';
+  info: {
+    singularName: 'codyplatform';
+    pluralName: 'codyplatforms';
+    displayName: 'Codyplatform';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String;
+    content: Schema.Attribute.Blocks;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::codyplatform.codyplatform'
+    >;
+  };
+}
+
 export interface ApiCodysolutionCodysolution
   extends Struct.CollectionTypeSchema {
   collectionName: 'codysolutions';
@@ -983,6 +1013,7 @@ declare module '@strapi/strapi' {
       'api::codyevent.codyevent': ApiCodyeventCodyevent;
       'api::codyimage.codyimage': ApiCodyimageCodyimage;
       'api::codyopportunit.codyopportunit': ApiCodyopportunitCodyopportunit;
+      'api::codyplatform.codyplatform': ApiCodyplatformCodyplatform;
       'api::codysolution.codysolution': ApiCodysolutionCodysolution;
       'admin::permission': AdminPermission;
       'admin::user': AdminUser;
