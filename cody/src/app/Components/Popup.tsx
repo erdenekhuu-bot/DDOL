@@ -46,7 +46,7 @@ const Popup = function ({ onClose, isOpen }: PopupProps) {
       <div className="flex justify-center items-center p-4 my-4">
         <span className="font-bold text-3xl">Шийдлүүд</span>
       </div>
-      <div className="mx-auto w-full p-8 flex justify-start flex-wrap overflow-scroll">
+      <div className="mx-auto w-full p-8 flex justify-start flex-wrap overflow-y-scroll">
         {save.map((item) => (
           <Solution_Item
             key={item.id}

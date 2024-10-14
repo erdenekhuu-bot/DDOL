@@ -104,7 +104,7 @@ const SixthSection = () => {
   });
   return (
     <Context.Provider value={page}>
-      <section className="p-12 bg-gray-50 overflow-hidden z-0 rounded-tr-[30%] rounded-tl-[30%]">
+      <section className="bg-gray-50 overflow-hidden z-0">
         <div className="flex justify-center p-8">
           <p className="font-bold text-2xl">
             Кодиг ашиглан Та юу бүтээж чадах вэ?
@@ -144,7 +144,7 @@ const SixthSection = () => {
             </div> */}
             <div className="hidden overflow-hidden md:w-full h-full md:flex">
               <div
-                className="flex transition-transform duration-300 ease-in-out"
+                className="transition-transform duration-300 ease-in-out"
                 style={{ transform: `translateX(-${page * 100}%)` }}
               >
                 {arr.map((image, index) => (
