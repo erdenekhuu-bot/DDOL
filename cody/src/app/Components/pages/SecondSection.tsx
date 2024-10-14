@@ -35,10 +35,10 @@ const SecondSection = function () {
         <img
           key={item.id}
           src={`http://192.168.1.41:1337${item.image.url}`}
-          width={80}
-          height={80}
+          width={70}
+          height={70}
           alt=""
-          className="hover:cursor-pointer hover:opacity-100 mx-4"
+          className="hover:cursor-pointer mx-4 p-2"
         />
       ))}
     </section>
