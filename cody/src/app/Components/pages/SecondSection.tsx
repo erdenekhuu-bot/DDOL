@@ -39,7 +39,7 @@ const SecondSection = function () {
           width={70}
           height={70}
           alt=""
-          className="mx-4 p-2 transition-opacity duration-300 opacity-50 hover:cursor-pointer hover:opacity-100"
+          className="mx-4 p-2 transition-opacity duration-300 opacity-30 hover:cursor-pointer hover:opacity-100"
         />
       ))}
     </section>
