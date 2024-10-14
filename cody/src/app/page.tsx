@@ -1,6 +1,4 @@
 import Stack from "@mui/material/Stack";
-import Header from "./Components/Header";
-import Footer from "./Components/Footer";
 import FirstSection from "./Components/pages/FirstSection";
 import SecondSection from "./Components/pages/SecondSection";
 import ThirdSection from "./Components/pages/ThirdSection";

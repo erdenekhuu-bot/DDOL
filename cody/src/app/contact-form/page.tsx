@@ -1,6 +1,6 @@
 const ContactForm = function () {
   return (
-    <section>
+    <section className="h-[800px]">
       <div>Contact-Form</div>
     </section>
   );

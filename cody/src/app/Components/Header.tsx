@@ -7,6 +7,7 @@ import x from "../../app/images/x_ios.png";
 import menu_list from "./list/menu";
 import { useState } from "react";
 import { Popupheader } from "./Popup";
+import Link from "next/link";
 
 const Header = function () {
   const [click, setClick] = useState(false);
@@ -17,7 +18,7 @@ const Header = function () {
   };
 
   return (
-    <nav className="fixed w-full flex justify-between bg-white px-8 py-4 z-10 border drop-shadow">
+    <nav className="fixed w-full flex justify-between bg-white px-8 py-4 z-10 border drop-shadow-lg">
       <section>
         <Image src={cody} width={100} height={40} alt="" />
       </section>
@@ -37,15 +38,24 @@ const Header = function () {
       <section className="hidden justify-between items-center md:flex">
         {menu_list.map((item) => (
           <div key={item.id} className="mx-4">
-            <span className="font-bold text-[14px] hover:cursor-pointer transition hover:text-purple-900">
+            <Link
+              key={item.id}
+              href={item.url}
+              className="font-bold text-[14px] hover:cursor-pointer transition hover:text-purple-900"
+            >
               {item.title}
-            </span>
+            </Link>
           </div>
         ))}
         <div className="mx-4">
-          <Button variant="contained" className="bg-purple-900 p-4 rounded-xl">
-            <span className="font-bold text-[10px]">Холбоо барих</span>
-          </Button>
+          <Link href="/contact-form">
+            <Button
+              variant="contained"
+              className="bg-purple-900 p-4 rounded-xl"
+            >
+              <span className="font-bold text-[10px]">Холбоо барих</span>
+            </Button>
+          </Link>
         </div>
       </section>
       <Popupheader isOpen={trigger} onClick={() => setTrigger(false)} />

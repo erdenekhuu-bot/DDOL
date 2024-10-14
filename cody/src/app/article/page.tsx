@@ -1,6 +1,6 @@
 const Article = function () {
   return (
-    <section>
+    <section className="h-[800px]">
       <div>Article</div>
     </section>
   );

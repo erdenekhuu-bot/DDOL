@@ -1,6 +1,6 @@
 const About = function () {
   return (
-    <section>
+    <section className="h-[800px]">
       <div>About</div>
     </section>
   );

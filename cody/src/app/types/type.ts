@@ -1,7 +1,8 @@
 export type header_menu = {
   id: number;
   title: string;
-};
+  url: string;
+}[];
 
 export type subitems = {
   id?: number;
