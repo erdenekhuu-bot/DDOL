@@ -583,6 +583,7 @@ export interface ApiCodyplatformCodyplatform
     singularName: 'codyplatform';
     pluralName: 'codyplatforms';
     displayName: 'Codyplatform';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -590,7 +591,7 @@ export interface ApiCodyplatformCodyplatform
   attributes: {
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;
-    content: Schema.Attribute.Blocks;
+    content: Schema.Attribute.Text;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;

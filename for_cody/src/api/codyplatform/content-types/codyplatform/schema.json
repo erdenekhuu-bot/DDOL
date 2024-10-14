@@ -4,7 +4,8 @@
   "info": {
     "singularName": "codyplatform",
     "pluralName": "codyplatforms",
-    "displayName": "Codyplatform"
+    "displayName": "Codyplatform",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,20 +13,21 @@
   "pluginOptions": {},
   "attributes": {
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "title": {
       "type": "string"
     },
     "content": {
-      "type": "blocks"
+      "type": "text"
     }
   }
 }
