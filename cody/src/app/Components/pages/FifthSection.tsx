@@ -46,7 +46,7 @@ const FifthSection = function () {
           className="fixed z-10 inset-0 bg-black bg-opacity-50 w-full h-full"
         ></div>
       )}
-      <div className="text-center mt-16">
+      <div className="text-center p-8">
         <span className="font-bold text-2xl">Системийн боломжууд</span>
       </div>
       <section className="flex overflow-hidden p-4 md:justify-around md:flex-wrap md:p-8 md:h-[560px]">

@@ -18,10 +18,10 @@ const FourthSection = function () {
           className="fixed z-10 inset-0 bg-black bg-opacity-50 w-full h-full"
         ></div>
       )}
-      <div className="text-center">
+      <div className="text-center p-8">
         <span className="font-bold text-2xl">Бидний шийдэл</span>
       </div>
-      <div className="text-xs md:flex md:justify-around md:flex-wrap md:p-8 md:text-xl">
+      <div className="text-xs md:flex md:justify-around md:flex-wrap md:px-4 md:text-xl">
         <Solution_Item
           title="Headless Ecommerce"
           content="Headless цахим худалдааны шийдлээр бизнесийн онцлогтоо тохирох цахим худалдааг бүтээж ирээдүйтэй бэлтгэ"
