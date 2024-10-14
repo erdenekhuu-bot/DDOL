@@ -67,9 +67,9 @@ const FirstSection = function () {
         <div className="hidden text-center md:block">
           <Button
             variant="contained"
-            className="bg-blue-950 w-[70%] p-2 rounded-xl"
+            className="bg-blue-950 w-[70%] p-3 rounded-xl"
           >
-            <span className="font-bold text-[10px]">Бидэнтэй холбогдох</span>
+            <span className="text-sm">Бидэнтэй холбогдох</span>
           </Button>
         </div>
       </Stack>
@@ -91,15 +91,15 @@ const FirstSection = function () {
           />
         </div>
       </div>
-      <div className="flex my-4 justify-center md:hidden">
-        <span className="text-xl text-blue-500">www.allstars.mn</span>
+      <div className="overflow-hidden flex my-4 typing justify-center md:hidden">
+        <span className="text-xl text-blue-500">www.allstars.mn.</span>
       </div>
       <div className="text-center md:hidden">
         <Button
           variant="contained"
-          className="bg-blue-950 w-[30%] p-2 rounded-xl"
+          className="bg-blue-950 w-[40%] p-3 rounded-xl"
         >
-          <span className="font-bold text-[10px]">Бидэнтэй холбогдох</span>
+          <span className="text-sm">Бидэнтэй холбогдох</span>
         </Button>
       </div>
     </section>

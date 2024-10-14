@@ -31,7 +31,7 @@ const SecondSection = function () {
   }, []);
 
   return (
-    <section className="flex border shadow-2xl items-center justify-center overflow-hidden drop-shadow-xl">
+    <section className="flex border bg-white items-center justify-center overflow-hidden drop-shadow-xl">
       {save.map((item) => (
         <Link key={item.id} href={item.url} target="_blank">
           <img
