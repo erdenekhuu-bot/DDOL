@@ -24,7 +24,7 @@ const SixthSection = () => {
       };
 
       const response = await axios.get(
-        "http://192.168.0.102:1337/api/codyevents?populate=*",
+        "http://192.168.1.41:1337/api/codyevents?populate=*",
         config
       );
       setSave(response.data.data);
@@ -66,7 +66,7 @@ const SixthSection = () => {
         key={item.id}
         width={980}
         height={980}
-        src={`http://192.168.0.102:1337${item.image.formats.large.url}`}
+        src={`http://192.168.1.41:1337${item.image.formats.large.url}`}
         alt=""
         className="object-cover rounded-3xl drop-shadow border m-2"
       />
@@ -82,7 +82,7 @@ const SixthSection = () => {
         key={item.id}
         width={400}
         height={900}
-        src={`http://192.168.0.102:1337${item.mobile.formats.large.url}`}
+        src={`http://192.168.1.41:1337${item.mobile.formats.large.url}`}
         alt=""
         className="object-cover mx-auto"
       />
@@ -96,7 +96,7 @@ const SixthSection = () => {
     const imageElement = (
       <Event_item_show
         key={item.id}
-        icon={`http://192.168.0.102:1337${item.icon.url}`}
+        icon={`http://192.168.1.41:1337${item.icon.url}`}
         title={item.title}
       />
     );
@@ -115,7 +115,7 @@ const SixthSection = () => {
             {save.map((item, index) => (
               <Event_item_show
                 key={item.id}
-                icon={`http://192.168.0.102:1337${item.icon.url}`}
+                icon={`http://192.168.1.41:1337${item.icon.url}`}
                 title={item.title}
                 onClick={() => handleClick(index)}
               />
@@ -134,7 +134,7 @@ const SixthSection = () => {
             <div
               onClick={navigateLeft}
               className={`absolute md:left-0 left-36 top-72 border bg-white rounded-full p-4 z-10 hover:cursor-pointer ${
-                page == arr.length - 1 ? `hidden` : `block`
+                page == 0 ? `hidden` : `block`
               }`}
             >
               <Image src={right} width={10} height={10} alt="" />
@@ -142,7 +142,7 @@ const SixthSection = () => {
             {/* <div className="hidden flex-shrink-0 w-full h-full py-4 md:flex">
               {arr[page]}
             </div> */}
-            <div className="flex overflow-hidden md:w-full h-full">
+            <div className="hidden overflow-hidden md:w-full h-full md:flex">
               <div
                 className="flex transition-transform duration-300 ease-in-out"
                 style={{ transform: `translateX(-${page * 100}%)` }}
@@ -159,8 +159,22 @@ const SixthSection = () => {
               </div>
             </div>
 
-            <div className="flex flex-shrink-0 md:w-full transition-transform duration-300 ease-in-out md:h-full py-4 md:hidden">
-              {mobile[page]}
+            <div className="flex flex-shrink-0 md:w-full overflow-hidden md:h-full py-4 md:hidden">
+              {/* {mobile[page]} */}
+              <div
+                className="flex transition-transform duration-300 ease-in-out"
+                style={{ transform: `translateX(-${page * 100}%)` }}
+              >
+                {mobile.map((image, index) => (
+                  <div
+                    key={index}
+                    draggable
+                    className="flex-shrink-0 w-full h-full"
+                  >
+                    {image}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>

@@ -26,7 +26,7 @@ const FirstSection = function () {
           }}
         >
           <Image
-            src={phone_image[4].image}
+            src={phone_image[2].image}
             width={150}
             height={100}
             alt=""
@@ -53,7 +53,7 @@ const FirstSection = function () {
             }}
           >
             <Image
-              src={phone_image[4].image}
+              src={phone_image[2].image}
               width={150}
               height={100}
               alt=""
@@ -61,7 +61,7 @@ const FirstSection = function () {
             />
           </div>
         </div>
-        <div className="hidden typing text-center md:block">
+        <div className="overflow-hidden hidden typing text-center md:block">
           <span className="">www.allstars.mn.</span>
         </div>
         <div className="hidden text-center md:block">
