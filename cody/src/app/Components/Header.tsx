@@ -18,7 +18,7 @@ const Header = function () {
   };
 
   return (
-    <nav className="fixed w-full flex items-center justify-between bg-white px-8 py-4 z-10 border drop-shadow-lg">
+    <nav className="fixed w-full flex items-center justify-between bg-white px-8 py-4 z-10 border drop-shadow-2xl">
       <Link href="/">
         <Image src={cody} width={100} height={40} alt="" />
       </Link>
