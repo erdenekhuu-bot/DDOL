@@ -68,6 +68,10 @@ const FirstSection = function () {
           <Button
             variant="contained"
             className="bg-blue-950 w-[70%] p-3 rounded-xl"
+            style={{
+              background:
+                "linear-gradient(95.41deg, rgb(131, 38, 226) 34.67%, rgb(82, 6, 225) 148.46%)",
+            }}
           >
             <span className="text-sm">Бидэнтэй холбогдох</span>
           </Button>

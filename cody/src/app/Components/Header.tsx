@@ -39,6 +39,7 @@ const Header = function () {
         {menu_list.map((item) => (
           <div key={item.id} className="mx-4">
             <Link
+              scroll={true}
               key={item.id}
               href={item.url}
               className="font-bold text-[14px] hover:cursor-pointer transition hover:text-purple-900"
@@ -52,6 +53,10 @@ const Header = function () {
             <Button
               variant="contained"
               className="bg-purple-900 p-4 rounded-xl"
+              style={{
+                background:
+                  "linear-gradient(95.41deg, rgb(131, 38, 226) 34.67%, rgb(82, 6, 225) 148.46%)",
+              }}
             >
               <span className="font-bold text-[10px]">Холбоо барих</span>
             </Button>

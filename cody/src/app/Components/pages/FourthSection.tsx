@@ -46,6 +46,10 @@ const FourthSection = function () {
           }}
           variant="contained"
           className="px-8 py-4 bg-purple-900 text-xs font-bold rounded-lg"
+          style={{
+            background:
+              "linear-gradient(95.41deg, rgb(131, 38, 226) 34.67%, rgb(82, 6, 225) 148.46%)",
+          }}
         >
           Дэлгэрэнгүй
         </Button>
