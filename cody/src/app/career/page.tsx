@@ -6,7 +6,7 @@ import career from "../../app/images/career.jpg";
 const Career = function () {
   return (
     <section
-      className="h-[800px] bg-cover bg-center"
+      className="h-[800px] bg-cover bg-center bg-gradient-to-bl "
       style={{
         backgroundImage: `url(${career.src})`,
       }}

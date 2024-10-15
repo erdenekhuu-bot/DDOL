@@ -64,4 +64,69 @@ const SVGicon = function () {
   );
 };
 
-export { SVGcody, SVGicon };
+const SVGbody = function () {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      width="1920"
+      height="2052"
+      viewBox="0 0 1920 2052"
+      fill="none"
+    >
+      <g filter="url(#filter0_d_888_123)">
+        <ellipse
+          cx="1322.06"
+          cy="1226.29"
+          rx="1496.94"
+          ry="674.707"
+          transform="rotate(-180 1322.06 1226.29)"
+          fill="url(#paint0_linear_888_123)"
+          shape-rendering="crispEdges"
+        />
+      </g>
+      <g opacity="0.5" filter="url(#filter1_d_888_123)">
+        <ellipse
+          cx="1217.5"
+          cy="1226.5"
+          rx="1601.5"
+          ry="705.5"
+          transform="rotate(-180 1217.5 1226.5)"
+          fill="url(#paint1_linear_888_123)"
+          shape-rendering="crispEdges"
+        />
+      </g>
+      <g opacity="0.08" filter="url(#filter2_d_888_123)">
+        <ellipse
+          cx="947"
+          cy="1226.5"
+          rx="1872"
+          ry="817.5"
+          transform="rotate(-180 947 1226.5)"
+          fill="url(#paint2_linear_888_123)"
+          shape-rendering="crispEdges"
+        />
+      </g>
+      <g opacity="0.2" filter="url(#filter3_d_888_123)">
+        <ellipse
+          cx="1097.5"
+          cy="1226.5"
+          rx="1721.5"
+          ry="751.5"
+          transform="rotate(-180 1097.5 1226.5)"
+          fill="url(#paint3_linear_888_123)"
+          shape-rendering="crispEdges"
+        />
+      </g>
+      <rect
+        x="264"
+        y="-0.000244141"
+        width="552"
+        height="552"
+        fill="url(#pattern0)"
+      />
+    </svg>
+  );
+};
+
+export { SVGcody, SVGicon, SVGbody };
