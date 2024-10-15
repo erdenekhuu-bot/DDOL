@@ -1,12 +1,7 @@
-"use client";
-import Image from "next/image";
-import download from "../../app/images/download.jpg";
-import { SVGbody } from "../svg/SVG";
-
 const About = function () {
   return (
     <section className="">
-      <div className="relative py-48 overflow-hidden h-[1350px]">
+      <div className="z-0 relative py-48 overflow-hidden h-[1350px]">
         <img
           className="object-cover"
           src="https://cody.mn/5e947460bab3e3e28a2d76be52a79bdd.svg"
@@ -25,7 +20,7 @@ const About = function () {
             шийдлээ түгээж, 20 гаруй салбарыг цахимжуулан ажиллаж байна.
           </p>
         </div>
-        <div className="absolute p-8 bottom-10">
+        <div className="absolute p-8 bottom-10 z-10">
           <p className="font-bold text-white text-3xl">Статистик</p>
         </div>
       </div>
