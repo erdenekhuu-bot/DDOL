@@ -3,11 +3,12 @@ import cody from "../images/cody.svg";
 import Link from "next/link";
 import { Button } from "@mui/material";
 import { navList } from "../json/objects";
+import menu from "../images/white_menu.png";
 
 export const Header = function () {
   return (
     <header className="fixed w-full bg-white z-20 p-4 drop-shadow-2xl">
-      <nav className="flex justify-between items-center navcustom:block">
+      <nav className="flex justify-between items-center navcustom:block mobilecustom:flex">
         <Image
           src={cody}
           alt=""
@@ -15,7 +16,16 @@ export const Header = function () {
           height={800}
           className="w-32 navcustom:w-44"
         />
-        <div className="flex items-center justify-between navcustom:flex navcustom:items-center navcustom:justify-between">
+        <div className="hidden hover:cursor-pointer mobilecustom:block">
+          <Image
+            src={menu}
+            alt=""
+            width={40}
+            height={40}
+            className="bg-purple-900 rounded-lg p-2"
+          />
+        </div>
+        <div className="flex items-center justify-between navcustom:flex navcustom:items-center navcustom:justify-between mobilecustom:hidden">
           {navList.map((items) => (
             <div key={items.id} className="mx-2">
               <p className="font-bold text-sm text-gray-800 ">{items.title}</p>

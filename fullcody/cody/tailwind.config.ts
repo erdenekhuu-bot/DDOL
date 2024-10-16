@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     screens: {
       navcustom: { max: "1024px" },
-      mobilecustom: { max: "900px" },
+      mobilecustom: { max: "800px" },
     },
     extend: {
       colors: {
