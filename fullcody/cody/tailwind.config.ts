@@ -7,7 +7,10 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    screens: {},
+    screens: {
+      navcustom: { max: "1024px" },
+      mobilecustom: { max: "900px" },
+    },
     extend: {
       colors: {
         background: "var(--background)",
