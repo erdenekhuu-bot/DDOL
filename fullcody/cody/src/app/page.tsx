@@ -38,13 +38,13 @@ export default function Home() {
         </div>
       </Firstsection>
       <section className="h-[80px] bg-blue-200">2</section>
-      <section id="section1" className="h-[800px] bg-blue-300">
+      <section id="cody" className="h-[800px] bg-blue-300">
         3
       </section>
-      <section id="section2" className="h-[800px] bg-blue-400">
+      <section id="solution" className="h-[800px] bg-blue-400">
         4
       </section>
-      <section id="section3" className="h-[800px] bg-blue-500">
+      <section id="features" className="h-[800px] bg-blue-500">
         5
       </section>
       <section className="h-[800px] bg-blue-600">6</section>
