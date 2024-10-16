@@ -3,7 +3,8 @@ import { Stack } from "@mui/material";
 import background_back from "../app/images/background_image.jpg";
 import phone_background from "../app/images/phone_template.png";
 import pad_background from "../app/images/pad_template.png";
-import Button from "@mui/material";
+import axios from "axios";
+import { useState, useEffect } from "react";
 
 export default function Home() {
   return (
