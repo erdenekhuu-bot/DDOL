@@ -1,8 +1,8 @@
-export default function About() {
+const About = function () {
   return (
-    <section>
-      <div></div>
-      <div></div>
+    <section className="w-full h-full bg-yellow-300">
+      <div>1</div>
     </section>
   );
-}
+};
+export default About;

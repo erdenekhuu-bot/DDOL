@@ -20,13 +20,15 @@ export const Header = function () {
   return (
     <header className="fixed w-full bg-white z-20 p-4 drop-shadow-2xl">
       <nav className="flex justify-between items-center navcustom:block mobilecustom:flex">
-        <Image
-          src={cody}
-          alt=""
-          width={800}
-          height={800}
-          className="w-32 navcustom:w-44"
-        />
+        <Link href="/">
+          <Image
+            src={cody}
+            alt=""
+            width={800}
+            height={800}
+            className="w-32 navcustom:w-44"
+          />
+        </Link>
         <div className="hidden relative hover:cursor-pointer mobilecustom:block">
           <Image
             onClick={() => {
@@ -43,7 +45,13 @@ export const Header = function () {
         <div className="flex items-center justify-between navcustom:flex navcustom:items-center navcustom:justify-between mobilecustom:hidden">
           {navList.map((items) => (
             <div key={items.id} className="mx-4">
-              <p className="font-bold text-sm text-gray-800 ">{items.title}</p>
+              <Link
+                key={items.id}
+                href={items.url}
+                className="font-bold text-sm text-gray-800 "
+              >
+                {items.title}
+              </Link>
             </div>
           ))}
           <Button
