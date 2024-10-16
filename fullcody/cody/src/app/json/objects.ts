@@ -4,17 +4,17 @@ export const navList: navlink = [
   {
     id: 1,
     title: "Коди Платформ",
-    url: "/",
+    url: "#section1",
   },
   {
     id: 2,
     title: "Шийдэл",
-    url: "/",
+    url: "#section2",
   },
   {
     id: 3,
     title: "Боломжууд",
-    url: "/",
+    url: "#section3",
   },
   {
     id: 4,

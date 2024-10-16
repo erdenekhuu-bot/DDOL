@@ -1,21 +1,19 @@
+"use client";
 import Image from "next/image";
 import { Stack } from "@mui/material";
-import background_back from "../app/images/background_image.jpg";
 import phone_background from "../app/images/phone_template.png";
 import pad_background from "../app/images/pad_template.png";
+import bacgrkound_img from "../app/images/background_image.jpg";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import background_back from "../app/images/background_image.jpg";
+import { Firstsection } from "./components/pages/Firstsection";
 
 export default function Home() {
   return (
     <Stack>
-      <section
-        className="h-[700px] bg-no-repeat bg-cover flex justify-around items-center"
-        style={{
-          backgroundImage: `url(${background_back.src})`,
-        }}
-      >
-        <div>
+      <Firstsection background_img={bacgrkound_img}>
+        <div className="mobilecustom:hidden">
           <Image
             src={phone_background}
             width={800}
@@ -38,11 +36,17 @@ export default function Home() {
             className="w-96"
           />
         </div>
-      </section>
+      </Firstsection>
       <section className="h-[80px] bg-blue-200">2</section>
-      <section className="h-[800px] bg-blue-300">3</section>
-      <section className="h-[800px] bg-blue-400">4</section>
-      <section className="h-[800px] bg-blue-500">5</section>
+      <section id="section1" className="h-[800px] bg-blue-300">
+        3
+      </section>
+      <section id="section2" className="h-[800px] bg-blue-400">
+        4
+      </section>
+      <section id="section3" className="h-[800px] bg-blue-500">
+        5
+      </section>
       <section className="h-[800px] bg-blue-600">6</section>
       <section className="h-[800px] bg-blue-700">7</section>
     </Stack>

@@ -6,7 +6,7 @@ import { Button } from "@mui/material";
 import { navList } from "../json/objects";
 import menu from "../images/white_menu.png";
 import x from "../images/x_ios.png";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Nav } from "./pages/PopUp";
 
 export const Header = function () {
@@ -44,12 +44,18 @@ export const Header = function () {
         </div>
         <div className="flex items-center justify-between navcustom:flex navcustom:items-center navcustom:justify-between mobilecustom:hidden">
           {navList.map((items) => (
-            <Link key={items.id} href={items.url} className="mx-4">
+            <Link
+              key={items.id}
+              href={items.url}
+              scroll={true}
+              className="mx-4"
+            >
               <div key={items.id} className="font-bold text-sm text-gray-800 ">
                 {items.title}
               </div>
             </Link>
           ))}
+
           <Button
             variant="contained"
             className="px-4 py-2 text-[12px] rounded-lg"
