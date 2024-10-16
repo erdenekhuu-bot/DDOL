@@ -10,6 +10,7 @@ const config: Config = {
     screens: {
       navcustom: { max: "1024px" },
       mobilecustom: { max: "800px" },
+      hidemenu: { min: "800px" },
     },
     extend: {
       colors: {

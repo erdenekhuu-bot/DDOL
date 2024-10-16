@@ -16,7 +16,7 @@ export const Nav = function ({
 }) {
   return (
     <section
-      className={`fixed z-20 my-4 right-0 left-0 bg-white transition-all duration-300 md:hidden`}
+      className={`fixed z-20 my-4 right-0 left-0 bg-white transition-all duration-300 hidemenu:hidden`}
     >
       <div
         className={`overflow-hidden transition-all duration-300 ${
