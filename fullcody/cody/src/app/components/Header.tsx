@@ -27,7 +27,7 @@ export const Header = function () {
         </div>
         <div className="flex items-center justify-between navcustom:flex navcustom:items-center navcustom:justify-between mobilecustom:hidden">
           {navList.map((items) => (
-            <div key={items.id} className="mx-2">
+            <div key={items.id} className="mx-4">
               <p className="font-bold text-sm text-gray-800 ">{items.title}</p>
             </div>
           ))}
