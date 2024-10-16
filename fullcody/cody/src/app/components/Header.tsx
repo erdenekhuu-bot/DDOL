@@ -1,11 +1,22 @@
+"use client";
 import Image from "next/image";
 import cody from "../images/cody.svg";
 import Link from "next/link";
 import { Button } from "@mui/material";
 import { navList } from "../json/objects";
 import menu from "../images/white_menu.png";
+import x from "../images/x_ios.png";
+import { useState } from "react";
+import { Nav } from "./pages/PopUp";
 
 export const Header = function () {
+  const [click, setClick] = useState(false);
+  const [trigger, setTrigger] = useState(false);
+
+  const togglePopup = () => {
+    setTrigger(!trigger);
+  };
+
   return (
     <header className="fixed w-full bg-white z-20 p-4 drop-shadow-2xl">
       <nav className="flex justify-between items-center navcustom:block mobilecustom:flex">
@@ -16,9 +27,13 @@ export const Header = function () {
           height={800}
           className="w-32 navcustom:w-44"
         />
-        <div className="hidden hover:cursor-pointer mobilecustom:block">
+        <div className="hidden relative hover:cursor-pointer mobilecustom:block">
           <Image
-            src={menu}
+            onClick={() => {
+              setClick(!click);
+              togglePopup();
+            }}
+            src={click ? x : menu}
             alt=""
             width={40}
             height={40}
@@ -43,6 +58,12 @@ export const Header = function () {
           </Button>
         </div>
       </nav>
+      <Nav
+        call={click}
+        click={() => {
+          setTrigger(!trigger);
+        }}
+      />
     </header>
   );
 };
