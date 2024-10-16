@@ -6,7 +6,7 @@ import { Button } from "@mui/material";
 import { navList } from "../json/objects";
 import menu from "../images/white_menu.png";
 import x from "../images/x_ios.png";
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { Nav } from "./pages/PopUp";
 
 export const Header = function () {
@@ -15,6 +15,10 @@ export const Header = function () {
 
   const togglePopup = () => {
     setTrigger(!trigger);
+  };
+
+  const mixing = function (url: string) {
+    return url[0] == "#" ? "/" + url : url;
   };
 
   return (
@@ -46,7 +50,7 @@ export const Header = function () {
           {navList.map((items) => (
             <Link
               key={items.id}
-              href={items.url}
+              href={mixing(items.url)}
               scroll={true}
               className="mx-4"
             >
