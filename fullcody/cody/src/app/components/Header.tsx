@@ -44,15 +44,11 @@ export const Header = function () {
         </div>
         <div className="flex items-center justify-between navcustom:flex navcustom:items-center navcustom:justify-between mobilecustom:hidden">
           {navList.map((items) => (
-            <div key={items.id} className="mx-4">
-              <Link
-                key={items.id}
-                href={items.url}
-                className="font-bold text-sm text-gray-800 "
-              >
+            <Link key={items.id} href={items.url} className="mx-4">
+              <div key={items.id} className="font-bold text-sm text-gray-800 ">
                 {items.title}
-              </Link>
-            </div>
+              </div>
+            </Link>
           ))}
           <Button
             variant="contained"
