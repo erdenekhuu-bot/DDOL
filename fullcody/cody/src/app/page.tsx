@@ -1,11 +1,38 @@
+"use client";
 import Image from "next/image";
 import { Stack } from "@mui/material";
 import phone_background from "../app/images/phone_template.png";
 import pad_background from "../app/images/pad_template.png";
 import bacgrkound_img from "../app/images/background_image.jpg";
 import { Firstsection } from "./components/pages/Firstsection";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { token, home } from "./types/type";
 
 export default function Home() {
+  const [getData, setData] = useState<home>([]);
+
+  const fetching = async function () {
+    try {
+      const header = {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      };
+      const response = await axios.get(
+        "http://127.0.0.1:1337/api/homes?populate=*",
+        header
+      );
+      setData(response.data.data);
+    } catch (error) {
+      return;
+    }
+  };
+
+  useEffect(function () {
+    fetching();
+  }, []);
+
   return (
     <Stack>
       <Firstsection background_img={bacgrkound_img}>
