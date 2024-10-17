@@ -1,4 +1,8 @@
 import { navlink } from "../types/type";
+import { slide } from "../types/type";
+import shoppy from "../../app/images/shoppy.png";
+import homeshopping from "../../app/images/homeshopping.png";
+import goyol from "../../app/images/goyol.png";
 
 export const navList: navlink = [
   {
@@ -68,5 +72,26 @@ export const mobilenavList: navlink = [
     id: 7,
     title: "Холбоо барих",
     url: "/",
+  },
+];
+
+export const sliding: slide = [
+  {
+    id: 1,
+    title: "goyol",
+    image: goyol,
+    url: "",
+  },
+  {
+    id: 2,
+    title: "homeshopping",
+    image: homeshopping,
+    url: "",
+  },
+  {
+    id: 3,
+    title: "shoppy",
+    image: shoppy,
+    url: "",
   },
 ];

@@ -14,3 +14,10 @@ export type home = {
   phone: any;
   tablet: any;
 }[];
+
+export type slide = {
+  id: number;
+  title: string;
+  image: any;
+  url: string;
+}[];

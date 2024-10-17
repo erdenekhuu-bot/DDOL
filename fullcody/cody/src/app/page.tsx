@@ -7,19 +7,22 @@ import bacgrkound_img from "../app/images/background_image.jpg";
 import { Firstsection } from "./components/pages/Firstsection";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { token, home } from "./types/type";
+import { token, home, slide } from "./types/type";
 import Button from "@mui/material";
+import { sliding } from "./json/objects";
+
+export const header = {
+  headers: {
+    Authorization: `Bearer ${token}`,
+  },
+};
 
 export default function Home() {
   const [getData, setData] = useState<home>([]);
+  const [getSlide, setSlide] = useState<slide>([]);
 
-  const fetching = async function () {
+  const fetching1 = async function () {
     try {
-      const header = {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      };
       const response = await axios.get(
         "http://127.0.0.1:1337/api/homes?populate=*",
         header
@@ -30,8 +33,21 @@ export default function Home() {
     }
   };
 
+  const fetching2 = async function () {
+    try {
+      const response = await axios.get(
+        "http://127.0.0.1:1337/api/slides",
+        header
+      );
+      setSlide(response.data.data);
+    } catch (error) {
+      return;
+    }
+  };
+
   useEffect(function () {
-    fetching();
+    fetching1();
+    fetching2();
   }, []);
 
   return (
@@ -74,7 +90,20 @@ export default function Home() {
         </div>
       </Firstsection>
 
-      <section className="h-[80px] bg-blue-200">2</section>
+      <section className="flex justify-evenly items-center p-2">
+        {sliding.map((items) => (
+          <div className="">
+            <Image
+              key={items.id}
+              src={items.image}
+              alt=""
+              width={800}
+              height={800}
+              className="w-16 mx-4"
+            />
+          </div>
+        ))}
+      </section>
       {/* <section id="cody" className="h-[800px] bg-blue-300">
         3
       </section> */}
