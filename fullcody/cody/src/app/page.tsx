@@ -10,6 +10,7 @@ import axios from "axios";
 import { token, home, slide } from "./types/type";
 import Button from "@mui/material";
 import { sliding } from "./json/objects";
+import Link from "next/link";
 
 export const header = {
   headers: {
@@ -36,7 +37,7 @@ export default function Home() {
   const fetching2 = async function () {
     try {
       const response = await axios.get(
-        "http://127.0.0.1:1337/api/slides",
+        "http://127.0.0.1:1337/api/slides?populate=*",
         header
       );
       setSlide(response.data.data);
@@ -91,22 +92,23 @@ export default function Home() {
       </Firstsection>
 
       <section className="flex justify-evenly items-center p-2">
-        {sliding.map((items) => (
-          <div className="">
-            <Image
-              key={items.id}
-              src={items.image}
-              alt=""
-              width={800}
-              height={800}
-              className="w-16 mx-4"
-            />
+        {getSlide.map((items) => (
+          <div key={items.id} className="">
+            <Link href={items.url}>
+              <img
+                src={`http://127.0.0.1:1337${items.image.formats.thumbnail.url}`}
+                alt=""
+                width={800}
+                height={800}
+                className="w-16 mx-4"
+              />
+            </Link>
           </div>
         ))}
       </section>
-      {/* <section id="cody" className="h-[800px] bg-blue-300">
+      <section id="cody" className="h-[800px] bg-blue-300">
         3
-      </section> */}
+      </section>
       {/* <section id="solution" className="h-[800px] bg-blue-400">
         4
       </section> */}
