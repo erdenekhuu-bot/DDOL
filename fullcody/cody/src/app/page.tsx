@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import { Stack } from "@mui/material";
 import phone_background from "../app/images/phone_template.png";
 import pad_background from "../app/images/pad_template.png";
 import bacgrkound_img from "../app/images/background_image.jpg";
@@ -12,6 +11,7 @@ import axios from "axios";
 import { token, home, platform } from "./types/type";
 import { Secondsection } from "./components/pages/Secondsection";
 import { Fifthsection } from "./components/pages/Fifthsection";
+import Layout from "antd/es/layout/layout";
 
 export const header = {
   headers: {
@@ -25,7 +25,7 @@ export default function Home() {
   const fetching1 = async function () {
     try {
       const response = await axios.get(
-        "http://127.0.0.1:1337/api/homes?populate=*",
+        "http://192.168.0.101:1337/api/homes?populate=*",
         header
       );
       setData(response.data.data);
@@ -39,7 +39,7 @@ export default function Home() {
   }, []);
 
   return (
-    <Stack>
+    <Layout>
       <Firstsection background_img={bacgrkound_img}>
         <div className="mobilecustom:hidden">
           <Image
@@ -77,14 +77,10 @@ export default function Home() {
           />
         </div>
       </Firstsection>
-
       <Secondsection />
-
       <Thirdsection />
       <Fourthsection />
       <Fifthsection />
-      {/* <section className="h-[800px] bg-blue-600">6</section> */}
-      {/* <section className="h-[800px] bg-blue-700">7</section> */}
-    </Stack>
+    </Layout>
   );
 }

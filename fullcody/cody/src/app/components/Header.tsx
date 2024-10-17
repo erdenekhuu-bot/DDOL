@@ -2,12 +2,12 @@
 import Image from "next/image";
 import cody from "../images/cody.svg";
 import Link from "next/link";
-import { Button } from "@mui/material";
 import { navList } from "../json/objects";
 import menu from "../images/white_menu.png";
 import x from "../images/x_ios.png";
 import { useState } from "react";
 import { Nav } from "./PopUp";
+import { Button } from "@mui/material";
 
 export const Header = function () {
   const [click, setClick] = useState(false);
@@ -59,10 +59,16 @@ export const Header = function () {
               </div>
             </Link>
           ))}
-
           <Button
+            onClick={function () {
+              setClick(!click);
+            }}
             variant="contained"
-            className="px-4 py-2 text-[12px] rounded-lg custom-gradient"
+            className="px-6 py-4 bg-purple-900 text-xs font-bold rounded-lg"
+            style={{
+              background:
+                "linear-gradient(95.41deg, rgb(131, 38, 226) 34.67%, rgb(82, 6, 225) 148.46%)",
+            }}
           >
             Холбоо барих
           </Button>

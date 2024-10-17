@@ -571,67 +571,13 @@ export interface ApiHomeHome extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiPlatformPlatform extends Struct.CollectionTypeSchema {
-  collectionName: 'platforms';
-  info: {
-    singularName: 'platform';
-    pluralName: 'platforms';
-    displayName: 'Platform';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    title: Schema.Attribute.String;
-    content: Schema.Attribute.RichText;
-    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    createdAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    publishedAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::platform.platform'
-    >;
-  };
-}
-
-export interface ApiSlideSlide extends Struct.CollectionTypeSchema {
-  collectionName: 'slides';
-  info: {
-    singularName: 'slide';
-    pluralName: 'slides';
-    displayName: 'Slide';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    title: Schema.Attribute.String;
-    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    url: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    publishedAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String;
-    localizations: Schema.Attribute.Relation<'oneToMany', 'api::slide.slide'>;
-  };
-}
-
 export interface ApiSolutionSolution extends Struct.CollectionTypeSchema {
   collectionName: 'solutions';
   info: {
     singularName: 'solution';
     pluralName: 'solutions';
     displayName: 'Solution';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -639,6 +585,7 @@ export interface ApiSolutionSolution extends Struct.CollectionTypeSchema {
   attributes: {
     title: Schema.Attribute.String;
     content: Schema.Attribute.RichText;
+    los: Schema.Attribute.Component<'dd.cody', false>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -1032,8 +979,6 @@ declare module '@strapi/strapi' {
       'api::article.article': ApiArticleArticle;
       'api::demo.demo': ApiDemoDemo;
       'api::home.home': ApiHomeHome;
-      'api::platform.platform': ApiPlatformPlatform;
-      'api::slide.slide': ApiSlideSlide;
       'api::solution.solution': ApiSolutionSolution;
       'admin::permission': AdminPermission;
       'admin::user': AdminUser;

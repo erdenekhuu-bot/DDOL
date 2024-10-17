@@ -4,7 +4,8 @@
   "info": {
     "singularName": "solution",
     "pluralName": "solutions",
-    "displayName": "Solution"
+    "displayName": "Solution",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -16,6 +17,12 @@
     },
     "content": {
       "type": "richtext"
+    },
+    "los": {
+      "displayName": "Cody",
+      "type": "component",
+      "repeatable": false,
+      "component": "dd.cody"
     }
   }
 }

@@ -5,6 +5,10 @@ import inn from "../images/in.svg";
 import insta from "../images/insta.svg";
 import Image from "next/image";
 import cody from "../images/cody.svg";
+import { solutions } from "@/app/json/objects";
+import { Card } from "./Card";
+import { features } from "@/app/json/objects";
+import { Cards } from "./pages/Fifthsection";
 
 export const Nav = function ({
   call,
@@ -70,10 +74,37 @@ export const Nav = function ({
   );
 };
 
-export const Sol = function () {
+export const Sol = function ({ trigger }: { trigger: () => void }) {
   return (
-    <section>
-      <div>1</div>
+    <section className="fixed inset-0 z-30 bg-gray-50 w-[90%] h-[90%] rounded-lg mx-auto my-auto flex flex-col">
+      <div className="flex justify-center items-center p-4 my-4">
+        <span className="font-bold text-3xl">Шийдлүүд</span>
+      </div>
+      <div className="mx-auto w-full p-8 flex justify-start flex-wrap overflow-y-scroll">
+        {solutions.map((item) => (
+          <Card key={item.id} title={item.title} content={item.content} />
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export const Fea = function ({ trigger }: { trigger: () => void }) {
+  return (
+    <section className="fixed inset-0 z-30 bg-gray-50 w-[90%] h-[90%] rounded-lg mx-auto my-auto flex flex-col">
+      <div className="flex justify-center items-center p-4 my-4">
+        <span className="font-bold text-3xl">Системийн боломжууд</span>
+      </div>
+      <div className="mx-auto w-full p-8 flex justify-start flex-wrap overflow-y-scroll">
+        {features.map((item) => (
+          <Cards
+            key={item.id}
+            icon={item.icon}
+            title={item.title}
+            feature={item.feature}
+          />
+        ))}
+      </div>
     </section>
   );
 };

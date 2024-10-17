@@ -5,7 +5,7 @@ export const Images = function ({ arr }: any) {
   return (
     <Link href={arr.url} target="_blank">
       <img
-        src={`http://127.0.0.1:1337${arr.image.formats.thumbnail.url}`}
+        src={arr.image}
         alt=""
         width={800}
         height={800}
