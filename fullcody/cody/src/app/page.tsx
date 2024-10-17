@@ -11,6 +11,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { token, home, platform } from "./types/type";
 import { Secondsection } from "./components/pages/Secondsection";
+import { Fifthsection } from "./components/pages/Fifthsection";
 
 export const header = {
   headers: {
@@ -81,9 +82,7 @@ export default function Home() {
 
       <Thirdsection />
       <Fourthsection />
-      <section id="features" className="h-[800px] bg-blue-500">
-        5
-      </section>
+      <Fifthsection />
       {/* <section className="h-[800px] bg-blue-600">6</section> */}
       {/* <section className="h-[800px] bg-blue-700">7</section> */}
     </Stack>

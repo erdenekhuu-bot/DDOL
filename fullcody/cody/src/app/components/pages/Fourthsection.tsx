@@ -8,6 +8,7 @@ import CardHeader from "@mui/material/CardHeader";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { header } from "@/app/page";
+import { Button } from "@mui/material";
 
 export const Fourthsection = function () {
   const [getSolution, setSolution] = useState<solution>([]);
@@ -40,9 +41,21 @@ export const Fourthsection = function () {
     }
   }
   return (
-    <section id="solution" className="h-[800px]">
+    <section id="solution" className="">
       <p className="text-2xl py-8 text-center">Бидний шийдэл</p>
       <div className="flex px-10 flex-wrap justify-center">{solutionCards}</div>
+      <div className="flex my-12 justify-center">
+        <Button
+          variant="contained"
+          className="px-8 py-4 bg-purple-900 text-xs font-bold rounded-lg"
+          style={{
+            background:
+              "linear-gradient(95.41deg, rgb(131, 38, 226) 34.67%, rgb(82, 6, 225) 148.46%)",
+          }}
+        >
+          Дэлгэрэнгүй
+        </Button>
+      </div>
     </section>
   );
 };

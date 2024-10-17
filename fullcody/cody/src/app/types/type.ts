@@ -34,3 +34,10 @@ export type solution = {
   title: string;
   content: string;
 }[];
+
+export type feature = {
+  id: number;
+  icon: any;
+  title: string;
+  feature: string;
+}[];
