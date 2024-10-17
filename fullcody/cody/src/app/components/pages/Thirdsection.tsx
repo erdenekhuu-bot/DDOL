@@ -27,7 +27,7 @@ export const Thirdsection = function () {
   return (
     <section id="cody" className="p-8">
       {getPlatform.map((elements, index) => (
-        <div className="p-10 flex justify-center">
+        <div className="px-10 py-4 flex justify-center">
           <img
             src={`http://127.0.0.1:1337${elements.image.formats.small.url}`}
             alt=""

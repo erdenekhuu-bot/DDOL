@@ -6,6 +6,7 @@ import pad_background from "../app/images/pad_template.png";
 import bacgrkound_img from "../app/images/background_image.jpg";
 import { Firstsection } from "./components/pages/Firstsection";
 import { Thirdsection } from "./components/pages/Thirdsection";
+import { Fourthsection } from "./components/pages/Fourthsection";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { token, home, platform } from "./types/type";
@@ -79,9 +80,7 @@ export default function Home() {
       <Secondsection />
 
       <Thirdsection />
-      <section id="solution" className="h-[800px] bg-blue-400">
-        4
-      </section>
+      <Fourthsection />
       <section id="features" className="h-[800px] bg-blue-500">
         5
       </section>

@@ -28,3 +28,9 @@ export type platform = {
   content: string;
   image: any;
 }[];
+
+export type solution = {
+  id: number;
+  title: string;
+  content: string;
+}[];

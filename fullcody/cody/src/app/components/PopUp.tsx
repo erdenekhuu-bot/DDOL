@@ -69,3 +69,11 @@ export const Nav = function ({
     </section>
   );
 };
+
+export const Sol = function () {
+  return (
+    <section>
+      <div>1</div>
+    </section>
+  );
+};
