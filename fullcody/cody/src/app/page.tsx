@@ -8,6 +8,7 @@ import { Firstsection } from "./components/pages/Firstsection";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { token, home } from "./types/type";
+import Button from "@mui/material";
 
 export default function Home() {
   const [getData, setData] = useState<home>([]);
