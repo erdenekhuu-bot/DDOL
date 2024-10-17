@@ -7,7 +7,7 @@ import { navList } from "../json/objects";
 import menu from "../images/white_menu.png";
 import x from "../images/x_ios.png";
 import { useState } from "react";
-import { Nav } from "./pages/PopUp";
+import { Nav } from "./PopUp";
 
 export const Header = function () {
   const [click, setClick] = useState(false);

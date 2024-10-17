@@ -1,11 +1,10 @@
 import { mobilenavList } from "@/app/json/objects";
-import { navlink } from "@/app/types/type";
-import x from "../../images/x.svg";
-import face from "../../images/face.svg";
-import inn from "../../images/in.svg";
-import insta from "../../images/insta.svg";
+import x from "../images/x.svg";
+import face from "../images/face.svg";
+import inn from "../images/in.svg";
+import insta from "../images/insta.svg";
 import Image from "next/image";
-import cody from "../../images/cody.svg";
+import cody from "../images/cody.svg";
 
 export const Nav = function ({
   call,

@@ -21,3 +21,10 @@ export type slide = {
   image: any;
   url: string;
 }[];
+
+export type platform = {
+  id: number;
+  title: string;
+  content: string;
+  image: any;
+}[];
