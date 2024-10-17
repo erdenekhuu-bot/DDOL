@@ -62,11 +62,7 @@ export const Header = function () {
 
           <Button
             variant="contained"
-            className="px-4 py-2 text-[12px] rounded-lg"
-            style={{
-              background:
-                "linear-gradient(95.41deg, rgb(131, 38, 226) 34.67%, rgb(82, 6, 225) 148.46%);",
-            }}
+            className="px-4 py-2 text-[12px] rounded-lg custom-gradient"
           >
             Холбоо барих
           </Button>
