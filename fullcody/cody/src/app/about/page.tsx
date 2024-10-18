@@ -10,7 +10,7 @@ const About = function () {
           alt=""
           className=""
         />
-        <div className="absolute top-32 right-1/4 w-[400px]">
+        <div className="absolute top-32 right-56 w-[500px]">
           <p className="font-bold text-center py-6">Бидний тухай</p>
           <p className="">
             Коди ХХК нь худалдаа, үйлчилгээний бизнест зориулсан, дата, хиймэл
