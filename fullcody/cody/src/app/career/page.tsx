@@ -24,7 +24,7 @@ const Career = function () {
 
       <div className="">
         <p className="text-2xl font-bold py-8 text-center">Яагаад Коди гэж?</p>
-        <div className="flex justify-evenly">
+        <div className="flex justify-evenly flex-wrap">
           {reason.map((items) => (
             <Cards key={items.id} title={items.title} />
           ))}
@@ -36,7 +36,7 @@ const Career = function () {
           Сонгон шалгаруулалтын үе шат
         </p>
       </div>
-      <div className="flex justify-evenly p-8 bg-gray-50">
+      <div className="flex flex-wrap justify-evenly p-8 bg-gray-50">
         <div className="relative hover:drop-shadow-xl">
           <Image
             src={tsuk1}

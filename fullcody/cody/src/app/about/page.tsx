@@ -1,7 +1,7 @@
 const About = function () {
   return (
-    <section className="w-full h-full bg-yellow-300">
-      <div>1</div>
+    <section className="h-[800px]">
+      <div>About</div>
     </section>
   );
 };
