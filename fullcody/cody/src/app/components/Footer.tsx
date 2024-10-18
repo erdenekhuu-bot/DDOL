@@ -4,7 +4,13 @@ import facebook from "../../app/images/facebook-logo.png";
 
 export const Footer = function () {
   return (
-    <footer className="z-10 py-8 px-6 flex w-full justify-around bg-purple-900 text-white">
+    <footer
+      className="z-10 py-8 px-6 flex w-full justify-around text-white"
+      style={{
+        background:
+          "linear-gradient(-91.81deg, rgb(142, 45, 226) 0%, rgb(142, 45, 226) 0%, rgb(77, 2, 224) 105.82%, rgb(76, 2, 224) 105.83%, rgba(75, 1, 224, 0.043) 105.84%, rgba(74, 0, 224, 0) 105.85%, rgb(74, 0, 224) 105.85%, rgb(77, 2, 224) 105.85%) left center",
+      }}
+    >
       <section className="text-white">
         <div className="font-bold text-xl my-8">КОДИ ПЛАТФОРМ</div>
         <p className="my-2 text-xs hover:cursor-pointer hover:text-gray-300">

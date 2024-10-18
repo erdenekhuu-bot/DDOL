@@ -2,23 +2,61 @@
 import { useState, useEffect } from "react";
 
 export const Statistics = function () {
-  const [count, setCount] = useState(0);
+  const [web, setWeb] = useState(0);
+  const [user, setUser] = useState(0);
+  const [partner, setPartner] = useState(0);
+  const [feature, setFeature] = useState(0);
+  const [product, setProduct] = useState(0);
+  const [brand, setBrand] = useState(0);
   const [isActive, setIsActive] = useState(false);
   let interval: any = null;
 
   useEffect(() => {
-    if (isActive) {
-      interval = setInterval(() => {
-        setCount((prevCount) => {
-          if (prevCount >= 100) {
-            clearInterval(interval);
-            return prevCount;
-          }
-          return prevCount + 1;
-        });
-      }, 10);
-    }
-  }, [isActive]);
+    interval = setInterval(() => {
+      setWeb((prevCount) => {
+        if (prevCount >= 100) {
+          clearInterval(interval);
+          return prevCount;
+        }
+        return prevCount + 10;
+      });
+      setUser((prevCount) => {
+        if (prevCount >= 1400000) {
+          clearInterval(interval);
+          return prevCount;
+        }
+        return prevCount + 100000;
+      });
+      setPartner((prevCount) => {
+        if (prevCount >= 500) {
+          clearInterval(interval);
+          return prevCount;
+        }
+        return prevCount + 100;
+      });
+      setFeature((prevCount) => {
+        if (prevCount >= 200) {
+          clearInterval(interval);
+          return prevCount;
+        }
+        return prevCount + 100;
+      });
+      setProduct((prevCount) => {
+        if (prevCount >= 600000) {
+          clearInterval(interval);
+          return prevCount;
+        }
+        return prevCount + 100000;
+      });
+      setBrand((prevCount) => {
+        if (prevCount >= 2700) {
+          clearInterval(interval);
+          return prevCount;
+        }
+        return prevCount + 100;
+      });
+    }, 100);
+  }, []);
 
   return (
     <section
@@ -34,34 +72,34 @@ export const Statistics = function () {
       <div className="flex justify-around flex-wrap m-10">
         <div className="w-[550px] mx-2 py-8 border-t border-gray-800 border-opacity-30">
           <p className="text-end font-bold text-gray-100">ECOMMERCE WEBSITE</p>
-          <p className="font-bold text-[60px] text-white">+100</p>
+          <p className="font-bold text-[60px] text-white">+{web}</p>
           <p className="text-gray-300 text-2xl">
             Хэрэглэгч байгууллага (цахим худалдааны сайт)
           </p>
         </div>
         <div className="w-[550px] mx-2 py-8 border-t border-gray-800 border-opacity-30">
           <p className="text-end font-bold text-gray-100">USERS</p>
-          <p className="font-bold text-[60px] text-white">+1400000</p>
+          <p className="font-bold text-[60px] text-white">+{user}</p>
           <p className="text-gray-300 text-2xl">Хэрэглэгчид</p>
         </div>
         <div className="w-[550px] mx-2 py-8 border-t border-gray-800 border-opacity-30">
           <p className="text-end font-bold text-gray-100">PARTNERS</p>
-          <p className="font-bold text-[60px] text-white">+1500</p>
+          <p className="font-bold text-[60px] text-white">+{partner}</p>
           <p className="text-gray-300 text-2xl">Харилцагчид</p>
         </div>
         <div className="w-[550px] mx-2 py-8 border-t border-gray-800 border-opacity-30">
           <p className="text-end font-bold text-gray-100">FEATURES</p>
-          <p className="font-bold text-[60px] text-white">+200</p>
+          <p className="font-bold text-[60px] text-white">+{feature}</p>
           <p className="text-gray-300 text-2xl">Худалдааны боломж</p>
         </div>
         <div className="w-[550px] mx-2 py-8 border-t border-gray-800 border-opacity-30">
           <p className="text-end font-bold text-gray-100">PRODUCTS</p>
-          <p className="font-bold text-[60px] text-white">+600000</p>
+          <p className="font-bold text-[60px] text-white">+{product}</p>
           <p className="text-gray-300 text-2xl">Бүтээгдэхүүн</p>
         </div>
         <div className="w-[550px] mx-2 py-8 border-t border-gray-800 border-opacity-30">
           <p className="text-end font-bold text-gray-100">BRANDS</p>
-          <p className="font-bold text-[60px] text-white">+2700</p>
+          <p className="font-bold text-[60px] text-white">+{brand}</p>
           <p className="text-gray-300 text-2xl">Брендүүд</p>
         </div>
       </div>
