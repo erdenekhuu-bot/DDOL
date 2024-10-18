@@ -287,3 +287,26 @@ export const features: feature = [
     feature: "Digital Wallet",
   },
 ];
+
+export const reason: { id: number; icon: any; title: string }[] = [
+  {
+    id: 1,
+    icon: AndroidFilled,
+    title: "Чадварлаг залуу хамт олон",
+  },
+  {
+    id: 2,
+    icon: AndroidFilled,
+    title: "Хөгжиж суралцах боломж",
+  },
+  {
+    id: 3,
+    icon: AndroidFilled,
+    title: "Технологийн ухаалаг шийдэл",
+  },
+  {
+    id: 4,
+    icon: AndroidFilled,
+    title: "Байгууллагын соёл",
+  },
+];

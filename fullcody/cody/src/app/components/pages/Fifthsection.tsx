@@ -14,8 +14,8 @@ export const Cards = function ({
   feature,
 }: {
   title: string;
-  icon: any;
-  feature: string;
+  icon?: any;
+  feature?: string;
 }) {
   const solution_list = [];
   return (
