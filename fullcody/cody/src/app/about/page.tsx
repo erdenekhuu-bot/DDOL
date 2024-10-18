@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { Statistics } from "../components/Statistics";
 import { Team } from "../components/Team";
+import { Purpose } from "../components/Purpose";
+import { Services } from "../components/Services";
 
 const About = function () {
   return (
@@ -27,6 +29,8 @@ const About = function () {
         <Statistics />
       </div>
       <Team />
+      <Purpose />
+      <Services />
     </section>
   );
 };

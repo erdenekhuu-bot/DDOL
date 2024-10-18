@@ -22,7 +22,7 @@ export const Header = function () {
   };
 
   return (
-    <header className="fixed w-full bg-white z-20 p-4 drop-shadow-2xl">
+    <header className="fixed w-full bg-white z-30 p-4 drop-shadow-2xl">
       <nav className="flex justify-between items-center navcustom:block mobilecustom:flex">
         <Link href="/">
           <Image

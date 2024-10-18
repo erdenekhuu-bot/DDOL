@@ -310,3 +310,46 @@ export const reason: { id: number; icon: any; title: string }[] = [
     title: "Байгууллагын соёл",
   },
 ];
+
+export const services: { id: number; service: string }[] = [
+  {
+    id: 1,
+    service: "Агуулахын цогц шийдэл",
+  },
+  {
+    id: 2,
+    service: "Цахим худалдааны платформ",
+  },
+  {
+    id: 3,
+    service: "Медиа платформ",
+  },
+  {
+    id: 4,
+    service: "SEO шийдэл",
+  },
+  {
+    id: 5,
+    service: "Крипто интеграци",
+  },
+  {
+    id: 6,
+    service: "Дэлхийн системүүдийн холболт",
+  },
+  {
+    id: 7,
+    service: "In App шийдэл",
+  },
+  {
+    id: 8,
+    service: "Дэлгүүрийн ухаалаг систем",
+  },
+  {
+    id: 9,
+    service: "Цахим хэтэвч",
+  },
+  {
+    id: 10,
+    service: "Хиймэл оюун ухаан хөгжүүлэлт",
+  },
+];
