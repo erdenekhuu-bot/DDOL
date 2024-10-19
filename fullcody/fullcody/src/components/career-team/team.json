@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_career_team_teams",
+  "info": {
+    "displayName": "team"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "profile": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "major": {
+      "type": "string"
+    },
+    "division": {
+      "type": "string"
+    }
+  }
+}

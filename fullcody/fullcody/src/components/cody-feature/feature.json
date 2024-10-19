@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_cody_feature_features",
+  "info": {
+    "displayName": "feature"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "title": {
+      "type": "string"
+    },
+    "feature": {
+      "type": "string"
+    }
+  }
+}

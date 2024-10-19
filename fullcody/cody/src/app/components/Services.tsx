@@ -2,7 +2,7 @@ import { services } from "../json/objects";
 
 export const Services = function () {
   return (
-    <section className="h-[800px] bg-gray-50 z-0">
+    <section className="bg-gray-50 py-8 z-0">
       <p className="font-bold text-center py-6 text-3xl">Бидний тухай</p>
       <div className="flex flex-wrap justify-evenly">
         {services.map((items) => (

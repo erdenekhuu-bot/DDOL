@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_career_tsuk_tsuks",
+  "info": {
+    "displayName": "tsuk"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "content": {
+      "type": "string"
+    }
+  }
+}

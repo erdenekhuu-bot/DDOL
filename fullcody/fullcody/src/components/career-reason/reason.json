@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_career_reason_reasons",
+  "info": {
+    "displayName": "reason"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "reason": {
+      "type": "string"
+    }
+  }
+}

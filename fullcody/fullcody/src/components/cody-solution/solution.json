@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_cody_solution_solutions",
+  "info": {
+    "displayName": "solution",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    }
+  }
+}

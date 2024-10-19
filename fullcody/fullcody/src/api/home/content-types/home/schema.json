@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "homes",
+  "info": {
+    "singularName": "home",
+    "pluralName": "homes",
+    "displayName": "Home",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "sliding1": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sliding1.sliding1"
+    },
+    "sliding2": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sliding2.sliding2"
+    },
+    "platform": {
+      "type": "component",
+      "repeatable": true,
+      "component": "cody-platform.platform"
+    },
+    "solution": {
+      "type": "component",
+      "repeatable": true,
+      "component": "cody-solution.solution"
+    },
+    "feature": {
+      "type": "component",
+      "repeatable": true,
+      "component": "cody-feature.feature"
+    },
+    "event": {
+      "type": "component",
+      "repeatable": true,
+      "component": "cody-event.event"
+    },
+    "comment": {
+      "type": "component",
+      "repeatable": true,
+      "component": "cody-comment.comment"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_about_service_services",
+  "info": {
+    "displayName": "service"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}

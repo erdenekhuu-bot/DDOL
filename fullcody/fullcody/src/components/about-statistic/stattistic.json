@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_about_statistic_stattistics",
+  "info": {
+    "displayName": "stattistic"
+  },
+  "options": {},
+  "attributes": {
+    "web": {
+      "type": "integer"
+    },
+    "user": {
+      "type": "integer"
+    },
+    "partner": {
+      "type": "integer"
+    },
+    "feature": {
+      "type": "integer"
+    },
+    "product": {
+      "type": "integer"
+    },
+    "brand": {
+      "type": "integer"
+    }
+  }
+}

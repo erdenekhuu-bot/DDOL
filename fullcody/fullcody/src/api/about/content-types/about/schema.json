@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "abouts",
+  "info": {
+    "singularName": "about",
+    "pluralName": "abouts",
+    "displayName": "About",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "about": {
+      "type": "string"
+    },
+    "statistic": {
+      "type": "component",
+      "repeatable": true,
+      "component": "about-statistic.stattistic"
+    },
+    "team": {
+      "type": "component",
+      "repeatable": true,
+      "component": "career-team.team"
+    },
+    "purpose": {
+      "type": "string"
+    },
+    "service": {
+      "type": "component",
+      "repeatable": true,
+      "component": "about-service.service"
+    }
+  }
+}

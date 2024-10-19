@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_about_aboutus_aboutuses",
+  "info": {
+    "displayName": "aboutus"
+  },
+  "options": {},
+  "attributes": {
+    "aboutus": {
+      "type": "text"
+    }
+  }
+}
