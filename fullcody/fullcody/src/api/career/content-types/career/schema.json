@@ -34,6 +34,12 @@
     },
     "purpose": {
       "type": "string"
+    },
+    "teamprofiles": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::teamprofile.teamprofile",
+      "mappedBy": "careers"
     }
   }
 }

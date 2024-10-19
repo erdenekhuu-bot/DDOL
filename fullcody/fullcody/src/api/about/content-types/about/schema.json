@@ -32,6 +32,12 @@
       "type": "component",
       "repeatable": true,
       "component": "about-service.service"
+    },
+    "teamprofiles": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::teamprofile.teamprofile",
+      "mappedBy": "abouts"
     }
   }
 }

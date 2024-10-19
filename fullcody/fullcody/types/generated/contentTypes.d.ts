@@ -512,6 +512,10 @@ export interface ApiAboutAbout extends Struct.CollectionTypeSchema {
     team: Schema.Attribute.Component<'career-team.team', true>;
     purpose: Schema.Attribute.String;
     service: Schema.Attribute.Component<'about-service.service', true>;
+    teamprofiles: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::teamprofile.teamprofile'
+    >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -573,6 +577,10 @@ export interface ApiCareerCareer extends Struct.CollectionTypeSchema {
     caropen: Schema.Attribute.Component<'career-open.careeropen', true>;
     team: Schema.Attribute.Component<'career-team.team', true>;
     purpose: Schema.Attribute.String;
+    teamprofiles: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::teamprofile.teamprofile'
+    >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -617,6 +625,37 @@ export interface ApiHomeHome extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::home.home'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTeamprofileTeamprofile extends Struct.CollectionTypeSchema {
+  collectionName: 'teamprofiles';
+  info: {
+    singularName: 'teamprofile';
+    pluralName: 'teamprofiles';
+    displayName: 'teamprofile';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    profile: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    careers: Schema.Attribute.Relation<'manyToMany', 'api::career.career'>;
+    abouts: Schema.Attribute.Relation<'manyToMany', 'api::about.about'>;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::teamprofile.teamprofile'
+    > &
       Schema.Attribute.Private;
   };
 }
@@ -1007,6 +1046,7 @@ declare module '@strapi/strapi' {
       'api::article.article': ApiArticleArticle;
       'api::career.career': ApiCareerCareer;
       'api::home.home': ApiHomeHome;
+      'api::teamprofile.teamprofile': ApiTeamprofileTeamprofile;
       'admin::permission': AdminPermission;
       'admin::user': AdminUser;
       'admin::role': AdminRole;

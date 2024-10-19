@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "teamprofiles",
+  "info": {
+    "singularName": "teamprofile",
+    "pluralName": "teamprofiles",
+    "displayName": "teamprofile",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "profile": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "careers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::career.career",
+      "inversedBy": "teamprofiles"
+    },
+    "abouts": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::about.about",
+      "inversedBy": "teamprofiles"
+    }
+  }
+}
