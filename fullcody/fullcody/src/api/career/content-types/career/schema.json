@@ -17,11 +17,6 @@
       "repeatable": true,
       "component": "career-reason.reason"
     },
-    "tsuk": {
-      "type": "component",
-      "repeatable": true,
-      "component": "career-tsuk.tsuk"
-    },
     "caropen": {
       "type": "component",
       "repeatable": true,

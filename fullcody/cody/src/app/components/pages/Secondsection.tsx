@@ -1,4 +1,3 @@
-import { Images } from "../Images";
 import { sliding } from "@/app/json/objects";
 import Image from "next/image";
 
@@ -7,7 +6,6 @@ export const Secondsection = function () {
     <section className="flex justify-evenly overflow-x-scroll items-center p-2">
       {sliding.map((items) => (
         <div key={items.id} className="">
-          {/* <Images arr={items} /> */}
           <Image
             src={items.image}
             alt=""

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Statistics } from "../components/Statistics";
 import { Team } from "../components/Team";
 import { Purpose } from "../components/Purpose";

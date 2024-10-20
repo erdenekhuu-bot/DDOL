@@ -1,10 +1,9 @@
-import Image from "next/image";
 import maps from "../../app/images/map.jpg";
 
 export const Purpose = function () {
   return (
     <section
-      className="h-[800px] bg-cover"
+      className="h-[600px] bg-cover"
       style={{
         backgroundImage: `url(${maps.src})`,
       }}

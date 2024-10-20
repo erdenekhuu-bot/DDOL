@@ -1,4 +1,3 @@
-import Image from "next/image";
 import ga4 from "../images/ga4.jpg";
 
 const Article = function () {

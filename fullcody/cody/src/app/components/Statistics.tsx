@@ -8,7 +8,6 @@ export const Statistics = function () {
   const [feature, setFeature] = useState(0);
   const [product, setProduct] = useState(0);
   const [brand, setBrand] = useState(0);
-  const [isActive, setIsActive] = useState(false);
   let interval: any = null;
 
   useEffect(() => {
