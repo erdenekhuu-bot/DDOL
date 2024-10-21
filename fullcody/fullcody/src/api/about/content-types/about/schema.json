@@ -12,9 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "about": {
-      "type": "string"
-    },
     "statistic": {
       "type": "component",
       "repeatable": true,

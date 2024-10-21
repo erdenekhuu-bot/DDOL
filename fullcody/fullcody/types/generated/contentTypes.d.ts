@@ -507,7 +507,6 @@ export interface ApiAboutAbout extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    about: Schema.Attribute.String;
     statistic: Schema.Attribute.Component<'about-statistic.stattistic', true>;
     team: Schema.Attribute.Component<'career-team.team', true>;
     purpose: Schema.Attribute.String;
