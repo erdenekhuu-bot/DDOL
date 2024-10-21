@@ -54,3 +54,9 @@ export type servicesing = {
   id: number;
   name: string;
 }[];
+
+export type articles = {
+  id: number;
+  image: any;
+  content: string;
+}[];

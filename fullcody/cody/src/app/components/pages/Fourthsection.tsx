@@ -14,7 +14,7 @@ export const Fourthsection = function () {
   const fetchingSolution = async function () {
     try {
       const response = await axios.get(
-        "http://192.168.0.102:1337/api/homes?populate[solution][populate]=*",
+        "http://127.0.0.1:1337/api/homes?populate[solution][populate]=*",
         header_api
       );
       setSolution(response.data.data[0].solution);

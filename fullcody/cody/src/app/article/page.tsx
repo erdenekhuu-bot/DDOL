@@ -1,16 +1,34 @@
+"use client";
 import ga4 from "../images/ga4.jpg";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { Aritcle } from "./Article";
+import { articles } from "../types/type";
+import { header_api } from "../page";
 
 const Article = function () {
+  const [getArticle, setArticle] = useState<articles>([]);
+
+  const fetching = async function () {
+    try {
+      const response = await axios.get(
+        "http://127.0.0.1:1337/api/articles?populate=*",
+        header_api
+      );
+      setArticle(response.data.data);
+    } catch (error) {
+      return;
+    }
+  };
+
+  useEffect(function () {
+    fetching();
+  }, []);
+
   return (
-    <section
-      className="h-[800px] bg-cover bg-center z-0 drop-shadow-2xl"
-      style={{
-        backgroundImage: `url(${ga4.src})`,
-      }}
-    >
-      <div className="absolute inset-0 bg-gray-400 opacity-30 z-10"></div>
+    <Aritcle attr={ga4}>
       <div></div>
-    </section>
+    </Aritcle>
   );
 };
 export default Article;

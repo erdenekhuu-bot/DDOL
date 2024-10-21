@@ -16,6 +16,8 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        customtitle: "rgb(30, 24, 102)",
+        custombanner: "rgb(118, 111, 239)",
       },
     },
   },

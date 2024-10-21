@@ -11,7 +11,7 @@ export const Thirdsection = function () {
   const fetchingPlatform = async function () {
     try {
       const response = await axios.get(
-        "http://192.168.0.102:1337/api/homes?populate[platform][populate]=*",
+        "http://127.0.0.1:1337/api/homes?populate[platform][populate]=*",
         header_api
       );
       setPlatform(response.data.data[0].platform);
@@ -29,7 +29,7 @@ export const Thirdsection = function () {
     array.push(
       <div className="px-10 py-4 flex justify-center mobilecustom:block">
         <img
-          src={`http://192.168.0.102:1337${i.image.formats.small.url}`}
+          src={`http://127.0.0.1:1337${i.image.formats.small.url}`}
           alt=""
           height={1000}
           width={1000}

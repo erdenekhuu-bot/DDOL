@@ -43,7 +43,7 @@ export const Fifthsection = function () {
   const fetchingFeature = async function () {
     try {
       const response = await axios.get(
-        "http://192.168.0.102:1337/api/homes?populate[feature][populate]=*",
+        "http://127.0.0.1:1337/api/homes?populate[feature][populate]=*",
         header_api
       );
       setFeature(response.data.data[0].feature);

@@ -11,7 +11,7 @@ export const header = {
 export const fetchingPlatform = async function () {
   try {
     const response = await axios.get(
-      "http://192.168.0.102:1337/api/homes?populate[platform][populate]=image",
+      "http://127.0.0.1:1337/api/homes?populate[platform][populate]=image",
       header
     );
     return response.data.data;
