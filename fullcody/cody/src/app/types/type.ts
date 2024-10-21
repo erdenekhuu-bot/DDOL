@@ -15,11 +15,11 @@ export type home = {
   tablet: any;
 }[];
 
-export type slide = {
+export type sliding1 = {
   id: number;
   title: string;
   image: any;
-  url: string;
+  icon: string;
 }[];
 
 export type platform = {
@@ -40,4 +40,17 @@ export type feature = {
   icon: any;
   title: string;
   feature: string;
+}[];
+
+export type team = {
+  id: number;
+  name: string;
+  profile: any;
+  major: string;
+  division?: string;
+}[];
+
+export type servicesing = {
+  id: number;
+  name: string;
 }[];

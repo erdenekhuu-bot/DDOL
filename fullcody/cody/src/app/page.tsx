@@ -8,6 +8,13 @@ import { Fourthsection } from "./components/pages/Fourthsection";
 import { Secondsection } from "./components/pages/Secondsection";
 import { Fifthsection } from "./components/pages/Fifthsection";
 import Layout from "antd/es/layout/layout";
+import { token } from "./types/type";
+
+export const header_api = {
+  headers: {
+    Authorization: `Bearer ${token}`,
+  },
+};
 
 export default function Home() {
   return (

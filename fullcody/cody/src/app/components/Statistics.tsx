@@ -1,7 +1,27 @@
 "use client";
 import { useState, useEffect } from "react";
+import axios from "axios";
+import { header_api } from "../page";
 
 export const Statistics = function () {
+  const [getSatatistic, setStatistic] = useState([]);
+
+  const fetching = async function () {
+    try {
+      const response = await axios.get(
+        "http://192.168.0.102:1337/api/abouts?populate=*",
+        header_api
+      );
+      setStatistic(response.data.data[0].statistic);
+    } catch (error) {
+      return;
+    }
+  };
+
+  useEffect(function () {
+    fetching();
+  }, []);
+
   const [web, setWeb] = useState(0);
   const [user, setUser] = useState(0);
   const [partner, setPartner] = useState(0);

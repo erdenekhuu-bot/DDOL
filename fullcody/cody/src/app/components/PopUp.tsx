@@ -74,14 +74,20 @@ export const Nav = function ({
   );
 };
 
-export const Sol = function ({ trigger }: { trigger: () => void }) {
+export const Sol = function ({
+  trigger,
+  array,
+}: {
+  trigger: () => void;
+  array: any;
+}) {
   return (
     <section className="fixed inset-0 z-30 bg-gray-50 w-[90%] h-[90%] rounded-lg mx-auto my-auto flex flex-col">
       <div className="flex justify-center items-center p-4 my-4">
         <span className="font-bold text-3xl">Шийдлүүд</span>
       </div>
       <div className="mx-auto w-full p-8 flex justify-start flex-wrap overflow-y-scroll">
-        {solutions.map((item) => (
+        {array.map((item: any) => (
           <Card key={item.id} title={item.title} content={item.content} />
         ))}
       </div>
@@ -89,14 +95,20 @@ export const Sol = function ({ trigger }: { trigger: () => void }) {
   );
 };
 
-export const Fea = function ({ trigger }: { trigger: () => void }) {
+export const Fea = function ({
+  trigger,
+  array,
+}: {
+  trigger: () => void;
+  array: any;
+}) {
   return (
     <section className="fixed inset-0 z-30 bg-gray-50 w-[90%] h-[90%] rounded-lg mx-auto my-auto flex flex-col">
       <div className="flex justify-center items-center p-4 my-4">
         <span className="font-bold text-3xl">Системийн боломжууд</span>
       </div>
       <div className="mx-auto w-full p-8 flex justify-start flex-wrap overflow-y-scroll">
-        {features.map((item) => (
+        {array.map((item: any) => (
           <Cards
             key={item.id}
             icon={item.icon}

@@ -1,14 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
 import { platform } from "@/app/types/type";
-import { token } from "@/app/types/type";
 import axios from "axios";
-
-export const header = {
-  headers: {
-    Authorization: `Bearer ${token}`,
-  },
-};
+import { header_api } from "@/app/page";
 
 export const Thirdsection = function () {
   const [getPlatform, setPlatform] = useState<platform>([]);
@@ -18,7 +12,7 @@ export const Thirdsection = function () {
     try {
       const response = await axios.get(
         "http://192.168.0.102:1337/api/homes?populate[platform][populate]=*",
-        header
+        header_api
       );
       setPlatform(response.data.data[0].platform);
     } catch (error) {
