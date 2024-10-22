@@ -247,7 +247,7 @@ export const features: feature = [
   {
     id: 4,
     icon: AndroidOutlined,
-    title: "Маркетинг хэрэгслүүд ",
+    title: "Маркетинг хэрэгслүүд",
     feature: "Marketing manager",
   },
   {

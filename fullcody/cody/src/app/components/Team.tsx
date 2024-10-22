@@ -34,6 +34,10 @@ export const Team = function () {
     fetching();
   }, []);
 
+  getTeam.map((item) => {
+    console.log(item.profile);
+  });
+
   return (
     <section className="z-20 py-20 w-full bg-white">
       <p className="font-bold text-3xl text-center py-6">Удирдлагын баг</p>
@@ -41,8 +45,8 @@ export const Team = function () {
         {getTeam.map((item) => (
           <div className="rounded-lg" key={item.id}>
             <img
-              src={`http://192.168.1.102:1337${item.profile.url}`}
-              alt="wrong"
+              src={`http://127.0.0.1:1337${item.profile?.url}`}
+              alt=""
               width={800}
               height={800}
               className="w-56"
