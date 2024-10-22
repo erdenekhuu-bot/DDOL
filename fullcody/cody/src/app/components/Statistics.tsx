@@ -32,47 +32,47 @@ export const Statistics = function () {
 
   useEffect(() => {
     interval = setInterval(() => {
-      setWeb((prevCount) => {
-        if (prevCount >= 100) {
+      setWeb((seconds) => {
+        if (seconds >= 100) {
           clearInterval(interval);
-          return prevCount;
+          return seconds;
         }
-        return prevCount + 10;
+        return seconds + 10;
       });
-      setUser((prevCount) => {
-        if (prevCount >= 1400000) {
+      setUser((seconds) => {
+        if (seconds >= 1400000) {
           clearInterval(interval);
-          return prevCount;
+          return seconds;
         }
-        return prevCount + 100000;
+        return seconds + 100000;
       });
-      setPartner((prevCount) => {
-        if (prevCount >= 500) {
+      setPartner((seconds) => {
+        if (seconds >= 500) {
           clearInterval(interval);
-          return prevCount;
+          return seconds;
         }
-        return prevCount + 100;
+        return seconds + 100;
       });
-      setFeature((prevCount) => {
-        if (prevCount >= 200) {
+      setFeature((seconds) => {
+        if (seconds >= 200) {
           clearInterval(interval);
-          return prevCount;
+          return seconds;
         }
-        return prevCount + 100;
+        return seconds + 100;
       });
-      setProduct((prevCount) => {
-        if (prevCount >= 600000) {
+      setProduct((seconds) => {
+        if (seconds >= 600000) {
           clearInterval(interval);
-          return prevCount;
+          return seconds;
         }
-        return prevCount + 100000;
+        return seconds + 100000;
       });
-      setBrand((prevCount) => {
-        if (prevCount >= 2700) {
+      setBrand((seconds) => {
+        if (seconds >= 2700) {
           clearInterval(interval);
-          return prevCount;
+          return seconds;
         }
-        return prevCount + 100;
+        return seconds + 100;
       });
     }, 100);
   }, []);

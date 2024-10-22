@@ -26,7 +26,7 @@ export const Nav = function ({
           call ? `max-h-screen` : `max-h-0`
         }`}
       >
-        {mobilenavList.map((items) => (
+        {mobilenavList.map((items: any) => (
           <div className="p-2 border">
             <p className="text-sm">{items.title}</p>
           </div>
