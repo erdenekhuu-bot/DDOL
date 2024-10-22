@@ -24,8 +24,6 @@ export const Services = function () {
     fetching();
   }, []);
 
-  console.log(getService);
-
   let counter = 1;
   return (
     <section className="bg-gray-50 py-8 z-0">
