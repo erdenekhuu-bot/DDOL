@@ -16,6 +16,9 @@ import platform1 from "../../app/images/platform1.jpg";
 import platform2 from "../../app/images/platform2.jpg";
 import platform3 from "../../app/images/platform3.jpg";
 import { AndroidFilled, AndroidOutlined } from "@ant-design/icons";
+import urban from "../../app/images/urban.svg";
+import ubpass from "../../app/images/ubpass.svg";
+import shoez from "../../app/images/shoez.png";
 
 export const navList: navlink = [
   {
@@ -147,6 +150,24 @@ export const sliding: slide = [
     id: 10,
     title: "tavan",
     image: tavan,
+    url: "",
+  },
+  {
+    id: 11,
+    title: "urban",
+    image: urban,
+    url: "",
+  },
+  {
+    id: 12,
+    title: "ubpass",
+    image: ubpass,
+    url: "",
+  },
+  {
+    id: 13,
+    title: "shoez",
+    image: shoez,
     url: "",
   },
 ];

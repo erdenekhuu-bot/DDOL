@@ -1,10 +1,11 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { header_api } from "@/app/page";
 import Draggable from "react-draggable";
 import { sliding } from "../../json/objects";
 import Image from "next/image";
+import { useDraggable } from "react-use-draggable-scroll";
 
 export const Secondsection = function () {
   const [getSliding2, setSliding2] = useState([]);
@@ -25,8 +26,17 @@ export const Secondsection = function () {
     fetchingSlide();
   }, []);
 
+  const ref = useRef<HTMLDivElement>() as React.MutableRefObject<
+    HTMLInputElement
+  >;
+  const { events } = useDraggable(ref);
+
   return (
-    <section className="flex justify-evenly overflow-x-scroll items-center p-2">
+    <div
+      className="flex space-x-20 items-center overflow-x-scroll scrollbar-hide p-2"
+      {...events}
+      ref={ref}
+    >
       {sliding.map((items: any) => (
         <div key={items.id} className="">
           {/* <img
@@ -36,15 +46,16 @@ export const Secondsection = function () {
             height={800}
             className="w-16 mx-4 hover:cursor-pointer"
           /> */}
+
           <Image
             src={items.image}
             alt=""
             width={800}
             height={800}
-            className="w-16 mx4 hover:cursor-pointer"
+            className="w-16 mx-4"
           />
         </div>
       ))}
-    </section>
+    </div>
   );
 };
