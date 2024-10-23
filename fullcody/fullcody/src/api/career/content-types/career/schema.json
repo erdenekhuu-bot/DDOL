@@ -22,11 +22,6 @@
       "repeatable": true,
       "component": "career-open.careeropen"
     },
-    "team": {
-      "type": "component",
-      "repeatable": true,
-      "component": "career-team.team"
-    },
     "purpose": {
       "type": "string"
     },

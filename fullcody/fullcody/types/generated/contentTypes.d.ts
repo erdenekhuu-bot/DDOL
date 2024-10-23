@@ -573,7 +573,6 @@ export interface ApiCareerCareer extends Struct.CollectionTypeSchema {
   attributes: {
     reason: Schema.Attribute.Component<'career-reason.reason', true>;
     caropen: Schema.Attribute.Component<'career-open.careeropen', true>;
-    team: Schema.Attribute.Component<'career-team.team', true>;
     purpose: Schema.Attribute.String;
     teamprofiles: Schema.Attribute.Relation<
       'manyToMany',
