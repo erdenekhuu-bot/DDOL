@@ -68,3 +68,9 @@ export type event = {
   image: any;
   mobile: any;
 };
+
+export type comment = {
+  id: number;
+  name: string;
+  image: any;
+};
