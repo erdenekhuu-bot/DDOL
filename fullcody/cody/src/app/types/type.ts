@@ -66,8 +66,8 @@ export type event = {
   title: string;
   icon: any;
   image: any;
-  mobile: any;
-};
+  mobile?: any;
+}[];
 
 export type comment = {
   id: number;
