@@ -2,6 +2,7 @@ import { Statistics } from "../components/Statistics";
 import { Team } from "../components/Team";
 import { Purpose } from "../components/Purpose";
 import { Services } from "../components/Services";
+import { Organization } from "../components/Organization";
 
 const About = function () {
   return (
@@ -30,6 +31,7 @@ const About = function () {
       <Team />
       <Purpose />
       <Services />
+      <Organization />
     </section>
   );
 };
