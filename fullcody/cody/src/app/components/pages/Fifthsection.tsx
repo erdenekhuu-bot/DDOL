@@ -17,7 +17,7 @@ export const Cards = function ({
   feature,
 }: {
   title: string;
-  icon?: any;
+  icon: string;
   feature?: string;
 }) {
   const solution_list = [];
@@ -25,7 +25,12 @@ export const Cards = function ({
     <Card sx={{ width: 200 }} className="rounded-lg py-2 m-4 relative">
       <CardContent>
         <div className="bg-purple-400 px-3 w-1/3 h-14 rounded-xl flex items-center">
-          <AndroidFilled className="w-20 text-3xl text-white" />
+          <img
+            src="https://cody.mn/84255cf7e189d5386dd3d0001103d4fa.svg"
+            alt=""
+            width={800}
+            height={800}
+          />
         </div>
       </CardContent>
       <CardContent className="font-bold text-xl">{title}</CardContent>

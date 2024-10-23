@@ -1,21 +1,26 @@
 {
   "collectionName": "components_career_reason_reasons",
   "info": {
-    "displayName": "reason"
+    "displayName": "reason",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "reason": {
+      "type": "string"
+    },
+    "url": {
       "type": "string"
     }
   }

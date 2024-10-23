@@ -75,6 +75,7 @@ export interface CodyFeatureFeature extends Struct.ComponentSchema {
     icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;
     feature: Schema.Attribute.String;
+    url: Schema.Attribute.String;
   };
 }
 
@@ -117,10 +118,12 @@ export interface CareerReasonReason extends Struct.ComponentSchema {
   collectionName: 'components_career_reason_reasons';
   info: {
     displayName: 'reason';
+    description: '';
   };
   attributes: {
     icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     reason: Schema.Attribute.String;
+    url: Schema.Attribute.String;
   };
 }
 
