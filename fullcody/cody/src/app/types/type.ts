@@ -6,7 +6,7 @@ export type navlink = {
 }[];
 
 export const token: string =
-  "5d9d71326b7f8d9e3f9d88c39519c78e7c2921ffc6da914f2e0c2e096a28a0061b0a455820327deca4ac82467c27ebd83a5e3fd753bc4c265141a2f01648459362fe37e48dac6aeebc439fe5ed14716132d878cadf3650a7810908be15967fbffb69c1092f2e4111eb43e3b18ae69f2a9a2578a553b2d0cb7bc13dca29e941c4";
+  "00aa7bef9f9579d79356ddb2e03bd8cffaa435a3a1d53b0de7ad89f09f43c83d8896868cd3dec0f10be234aaa3499ec86a377b211a1b7f923143e1cc951356e5b897a161d43d298338cfb68cb1b33366e87de62e16c910bace7a04bcc138fcf838c1fedafe28467d1bd9a8dac4f979c2426fd1b23b1a8c7a570b97b5d1388781";
 
 export type home = {
   id: number;
@@ -60,3 +60,11 @@ export type articles = {
   image: any;
   content: string;
 }[];
+
+export type event = {
+  id: number;
+  title: string;
+  icon: any;
+  image: any;
+  mobile: any;
+};

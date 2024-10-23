@@ -27,17 +27,16 @@ export const Thirdsection = function () {
   }, []);
 
   const array: any = [];
-  platforms.map((i: any) => {
+  getPlatform.map((i: any) => {
     array.push(
       <div className="px-10 py-4 flex justify-center mobilecustom:block">
-        {/* <img
+        <img
           src={`http://127.0.0.1:1337${i.image.formats.small.url}`}
           alt=""
           height={1000}
           width={1000}
           className="w-[600px]"
-        /> */}
-        <Image src={i.image} alt="" height={1000} width={1000} />
+        />
         <div className="relative p-10">
           <p className="my-8 font-bold text-2xl mobilecustom:text-center mobilecustom:my-4">
             {i.title}

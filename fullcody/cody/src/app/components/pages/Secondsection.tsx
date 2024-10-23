@@ -33,27 +33,27 @@ export const Secondsection = function () {
 
   return (
     <div
-      className="flex space-x-20 items-center overflow-x-scroll scrollbar-hide p-2"
+      className="flex space-x-20 items-center overflow-x-hidden scrollbar-hide p-2"
       {...events}
       ref={ref}
     >
-      {sliding.map((items: any) => (
+      {getSliding2.map((items: any) => (
         <div key={items.id} className="">
-          {/* <img
+          <img
             src={`http://127.0.0.1:1337/${items.icon?.url}`}
             alt=""
-            width={800}
-            height={800}
-            className="w-16 mx-4 hover:cursor-pointer"
-          /> */}
+            width={1000}
+            height={1000}
+            className="w-32 mx-4"
+          />
 
-          <Image
+          {/* <Image
             src={items.image}
             alt=""
             width={800}
             height={800}
             className="w-16 mx-4"
-          />
+          /> */}
         </div>
       ))}
     </div>

@@ -9,6 +9,7 @@ import { Thirdsection } from "./components/pages/Thirdsection";
 import { Fourthsection } from "./components/pages/Fourthsection";
 import { Secondsection } from "./components/pages/Secondsection";
 import { Fifthsection } from "./components/pages/Fifthsection";
+import { Sixthsection } from "./components/pages/Sixthsection";
 import Layout from "antd/es/layout/layout";
 import { token } from "./types/type";
 import { array } from "./json/image";
@@ -98,6 +99,7 @@ export default function Home() {
       <Thirdsection />
       <Fourthsection />
       <Fifthsection />
+      <Sixthsection />
     </Layout>
   );
 }
