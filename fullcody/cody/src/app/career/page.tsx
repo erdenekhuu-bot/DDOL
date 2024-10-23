@@ -8,6 +8,7 @@ import tsuk4 from "../images/tsuk4.png";
 import { Tsukcard } from "../components/Tsukcard";
 import { Whycody } from "./whycody";
 import { Openjobs } from "./openjob";
+import { Organ } from "../components/Organization";
 
 const Career = function () {
   return (
@@ -36,6 +37,7 @@ const Career = function () {
         <Tsukcard tsuk={tsuk4} content="Ажилд авах шийдвэр" />
       </div>
       <Openjobs />
+      <Organ />
     </section>
   );
 };

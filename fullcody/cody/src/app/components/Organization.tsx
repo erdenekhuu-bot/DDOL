@@ -21,7 +21,7 @@ export const Organization = function () {
   useEffect(function () {
     fetching();
   }, []);
-  console.log(getOrganiation);
+
   return (
     <section className="">
       <p className="font-bold text-center py-6 text-3xl">Хамт олон</p>
@@ -36,6 +36,33 @@ export const Organization = function () {
           />
         ))}
       </div>
+    </section>
+  );
+};
+
+export const Organ = function () {
+  const [getOrganiation, setOrganization] = useState([]);
+
+  const fetching = async function () {
+    try {
+      const response = await axios.get(
+        "http://127.0.0.1:1337/api/abouts?populate[teamprofiles][populate]=*",
+        header_api
+      );
+      setOrganization(response.data.data[0].teamprofiles);
+    } catch (error) {
+      return;
+    }
+  };
+
+  useEffect(function () {
+    fetching();
+  }, []);
+  return (
+    <section>
+      <p className="font-bold text-center py-6 text-3xl">Хамт олон</p>
+      <div></div>
+      <div></div>
     </section>
   );
 };
