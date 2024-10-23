@@ -46,7 +46,7 @@ export const Organ = function () {
   const fetching = async function () {
     try {
       const response = await axios.get(
-        "http://127.0.0.1:1337/api/abouts?populate[teamprofiles][populate]=*",
+        "http://127.0.0.1:1337/api/careers?populate[teamprofiles][populate]=*",
         header_api
       );
       setOrganization(response.data.data[0].teamprofiles);
@@ -58,11 +58,21 @@ export const Organ = function () {
   useEffect(function () {
     fetching();
   }, []);
+
   return (
     <section>
       <p className="font-bold text-center py-6 text-3xl">Хамт олон</p>
-      <div></div>
-      <div></div>
+      <div className="flex flex-wrap items-center p-8 ">
+        {getOrganiation.map((items: any) => (
+          <img
+            src={`http://127.0.0.1:1337${items.profile.url}`}
+            alt=""
+            width={800}
+            height={800}
+            className="w-44 h-44"
+          />
+        ))}
+      </div>
     </section>
   );
 };
