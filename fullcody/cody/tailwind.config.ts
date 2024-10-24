@@ -18,8 +18,7 @@ const config: Config = {
         foreground: "var(--foreground)",
         customtitle: "rgb(30, 24, 102)",
         custombanner: "rgb(118, 111, 239)",
-        customlinear:
-          "linear-gradient(-91.81deg, rgb(142, 45, 226) 0%, rgb(142, 45, 226) 0%, rgb(77, 2, 224) 105.82%, rgb(76, 2, 224) 105.83%, rgba(75, 1, 224, 0.043) 105.84%, rgba(74, 0, 224, 0) 105.85%, rgb(74, 0, 224) 105.85%, rgb(77, 2, 224) 105.85%) left center",
+        customlabel: "rgb(136, 85, 241)",
       },
     },
   },

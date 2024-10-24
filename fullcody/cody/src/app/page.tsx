@@ -15,6 +15,7 @@ import Layout from "antd/es/layout/layout";
 import { token } from "./types/type";
 import { array } from "./json/image";
 import { mobilearray } from "./json/image";
+import { Button } from "antd";
 
 export const header_api = {
   headers: {
@@ -56,26 +57,48 @@ export default function Home() {
           </div>
         </div>
         <div className="text-center p-4">
-          <p className="font-bold text-4xl  text-customtitle">
+          <p className="font-bold text-4xl text-customtitle mobilecustom:w-[60%] mobilecustom:mx-auto">
             Өөрийн цахим дэлгүүрээ бүтээ!
           </p>
-          <p className="my-4 text-2xl text-custombanner">
+          <p className="my-4 text-2xl font-bold text-custombanner mobilecustom:text-sm ">
             Та онлайнаар хаана ч, хэнд ч юу ч зарж болно
           </p>
           <p className="mt-8 mb-4 mobilecustom:hidden">www.allstars.mn</p>
+          <Button
+            type="primary"
+            className="bg-customtitle text-white p-5 mobilecustom:hidden"
+          >
+            Бидэнтэй холбогдох
+          </Button>
         </div>
         <div className="hidden mobilecustom:flex mobilecustom:justify-center">
-          <Image
-            src={phone_background}
-            width={1000}
-            height={1000}
-            alt=""
-            className="w-52"
-          />
+          <div className="relative">
+            <Image
+              src={phone_background}
+              width={1000}
+              height={1000}
+              alt=""
+              className="w-52 inset-0 z-20 overflow-hidden"
+            />
+            <div className="absolute p-3 inset-0 z-0 rounded-sm">
+              <Image
+                src={mobilearray[currentImageIndex]}
+                width={800}
+                height={800}
+                alt=""
+                className="transition-opacity duration-500 ease-in-out rounded-sm"
+              />
+            </div>
+          </div>
         </div>
-        <p className="hidden my-8 mobilecustom:flex mobilecustom:justify-center">
+        <p className="hidden my-4 mobilecustom:flex mobilecustom:justify-center">
           www.allstars.mn
         </p>
+        <div className="my-8 hidden mobilecustom:flex mobilecustom:justify-center mobilecustom:items-center">
+          <Button type="primary" className="bg-customtitle text-white p-5">
+            Бидэнтэй холбогдох
+          </Button>
+        </div>
         <div className="mobilecustom:hidden">
           <div className="relative w-96">
             <Image

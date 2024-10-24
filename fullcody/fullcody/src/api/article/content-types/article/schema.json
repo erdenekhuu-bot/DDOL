@@ -27,6 +27,12 @@
     },
     "content": {
       "type": "richtext"
+    },
+    "comments": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::comment.comment",
+      "mappedBy": "articles"
     }
   }
 }

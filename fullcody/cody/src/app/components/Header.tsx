@@ -9,16 +9,16 @@ import { useState } from "react";
 import { Nav } from "./PopUp";
 import { Button } from "@mui/material";
 
+export const mixing = function (url: string) {
+  return url[0] == "#" ? "/" + url : url;
+};
+
 export const Header = function () {
   const [click, setClick] = useState(false);
   const [trigger, setTrigger] = useState(false);
 
   const togglePopup = () => {
     setTrigger(!trigger);
-  };
-
-  const mixing = function (url: string) {
-    return url[0] == "#" ? "/" + url : url;
   };
 
   return (

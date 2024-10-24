@@ -2,18 +2,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { team } from "../types/type";
-import Image from "next/image";
 import { header_api } from "../page";
-import zol from "../../app/images/zol.png";
-import zolorg from "../../app/images/zolorg.png";
-import gun from "../../app/images/gun.png";
-import gunorg from "../../app/images/gunorg.png";
-import tur from "../../app/images/tur.png";
-import turorg from "../../app/images/turorg.png";
-import er from "../../app/images/er.png";
-import erorg from "../../app/images/erorg.png";
-import us from "../../app/images/us.png";
-import usorg from "../../app/images/usorg.png";
 
 export const Team = function () {
   const [getTeam, setTeam] = useState<team>([]);
@@ -34,14 +23,15 @@ export const Team = function () {
     fetching();
   }, []);
 
-  getTeam.map((item) => {
-    console.log(item.profile);
-  });
-
   return (
     <section className="z-20 py-20 w-full bg-white">
-      <p className="font-bold text-3xl text-center py-6">Удирдлагын баг</p>
-      <div className="flex justify-evenly p-4">
+      <p className="font-bold text-3xl text-center py-6 mobilecustom:hidden">
+        Удирдлагын баг
+      </p>
+      <p className="hidden font-bold text-3xl text-center py-6 mobilecustom:block">
+        УДИРДЛАГЫН БАГ
+      </p>
+      <div className="flex justify-evenly p-4 mobilecustom:flex-wrap mobilecustom:mx-8">
         {getTeam.map((item) => (
           <div className="rounded-lg" key={item.id}>
             <img

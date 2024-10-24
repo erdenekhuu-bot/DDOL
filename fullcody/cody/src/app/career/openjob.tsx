@@ -4,6 +4,34 @@ import axios from "axios";
 import { header_api } from "@/app/page";
 import { event } from "../types/type";
 
+export const Customlabel = function ({
+  clicking,
+  icon,
+  title,
+}: {
+  clicking: () => void;
+  icon: string;
+  title: string;
+}) {
+  return (
+    <section
+      onClick={clicking}
+      className="flex hover:cursor-pointer items-center p-4"
+    >
+      <img
+        className="mx-2"
+        width={30}
+        height={30}
+        src={`http://127.0.0.1:1337${icon}`}
+        alt=""
+      />
+      <p className="font-bold text-opacity-60 text-xl hover:text-purple-500">
+        {title}
+      </p>
+    </section>
+  );
+};
+
 export const Customcard = function ({
   clicking,
   icon,
@@ -86,11 +114,24 @@ export const Openjobs = function () {
       />
     )
   );
+
+  const mobilelabel: any = [];
+  getData.map((item: any, index: number) =>
+    mobilelabel.push(
+      <Customlabel
+        key={item.id}
+        icon={item.icon.url}
+        title={item.title}
+        clicking={() => handleClick(index)}
+      />
+    )
+  );
+
   return (
     <section>
       <p className="text-2xl font-bold py-8 text-center">Нээлттэй ажлын байр</p>
-      <section className="flex px-8">
-        <div className="w-1/3 md:p-4 overflow-y-scroll ">
+      <section className="flex px-8 mobilecustom:block">
+        <div className="w-1/3 md:p-4 overflow-y-scroll mobilecustom:hidden">
           {getData.map((item: any, index: number) => (
             <Customcard
               key={item.id}
@@ -99,6 +140,9 @@ export const Openjobs = function () {
               clicking={() => handleClick(index)}
             />
           ))}
+        </div>
+        <div className="hidden mobilecustom:flex mobilecustom:justify-center">
+          {mobilelabel[page]}
         </div>
         <div className="w-full">
           <div className="flex flex-shrink-0 w-full h-full py-4">

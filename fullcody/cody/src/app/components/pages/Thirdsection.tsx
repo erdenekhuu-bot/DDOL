@@ -3,8 +3,6 @@ import { useState, useEffect } from "react";
 import { platform } from "@/app/types/type";
 import axios from "axios";
 import { header_api } from "@/app/page";
-import Image from "next/image";
-import { platforms } from "../../json/objects";
 
 export const Thirdsection = function () {
   const [getPlatform, setPlatform] = useState<platform>([]);
@@ -35,13 +33,15 @@ export const Thirdsection = function () {
           alt=""
           height={1000}
           width={1000}
-          className="w-[600px]"
+          className="w-[600px] mobilecustom:w-[500px] mobilecustom:px-10"
         />
-        <div className="relative p-10">
+        <div className="relative p-8">
           <p className="my-8 font-bold text-2xl mobilecustom:text-center mobilecustom:my-4">
             {i.title}
           </p>
-          <p className="mobilecustom:text-center text-xl">{i.content}</p>
+          <p className="mobilecustom:text-center text-xl mobilecustom:text-sm">
+            {i.content}
+          </p>
           <div className="flex absolute bottom-32 navcustom:bottom-0 navcustom:left-1/2 navcustom:-translate-x-1/2 mobilecustom:bottom-0 mobilecustom:left-1/2 mobilecustom:-translate-x-1/2">
             <button
               onClick={() => {
