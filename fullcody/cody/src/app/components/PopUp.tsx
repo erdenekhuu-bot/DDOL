@@ -25,11 +25,11 @@ export const Nav = function ({
         }`}
       >
         {mobilenavList.map((items: any) => (
-          <div className="p-2 border">
+          <div className="p-4 border">
             <p className="text-sm">{items.title}</p>
           </div>
         ))}
-        <div className="my-4">
+        <div className="my-8">
           <div className="flex p-4 items-center justify-center">
             <Image
               src={insta}
@@ -64,7 +64,7 @@ export const Nav = function ({
         <div className="my-4 flex justify-center">
           ©2024 Cody Inc. All rights reserved.
         </div>
-        <div className="mx-auto w-1/2 my-4">
+        <div className="mx-auto w-1/2 my-12">
           <Image src={cody} alt="" width={800} height={800} className="w-32" />
         </div>
       </div>

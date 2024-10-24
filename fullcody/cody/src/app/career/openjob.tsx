@@ -86,11 +86,12 @@ export const Openjobs = function () {
       />
     )
   );
+
   return (
     <section>
       <p className="text-2xl font-bold py-8 text-center">Нээлттэй ажлын байр</p>
       <section className="flex px-8">
-        <div className="w-1/3 md:p-4 overflow-y-scroll ">
+        <div className="w-1/3 md:p-4 overflow-y-scroll mobilecustom:hidden">
           {getData.map((item: any, index: number) => (
             <Customcard
               key={item.id}
