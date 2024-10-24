@@ -22,7 +22,7 @@ export const Cards = function ({
 }) {
   const solution_list = [];
   return (
-    <Card sx={{ width: 200 }} className="rounded-lg py-2 m-4 relative">
+    <Card className="w-[200px] rounded-lg py-2 m-4 relative">
       <CardContent>
         <div className="bg-purple-400 px-3 w-1/3 h-14 rounded-xl flex items-center">
           <img
@@ -74,8 +74,13 @@ export const Fifthsection = function () {
             className="fixed z-20 inset-0 bg-black bg-opacity-50 w-full h-full"
           ></div>
         )}
-        <p className="text-2xl py-8 text-center">Системийн боломжууд</p>
-        <div className="flex flex-wrap justify-evenly h-[500px] overflow-hidden">
+        <p className="text-2xl py-8 text-center mobilecustom:hidden">
+          Системийн боломжууд
+        </p>
+        <p className="hidden font-bold text-2xl py-8 text-center mobilecustom:block">
+          СИСТЕМИЙН БОЛОМЖУУД
+        </p>
+        <div className="flex flex-wrap justify-evenly h-[500px] overflow-hidden mobilecustom:h-[250px] mobilecustom:space-x-0">
           {getFeature.map((elements: any) => (
             <Cards
               key={elements.id}

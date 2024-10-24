@@ -41,7 +41,12 @@ export const Fourthsection = function () {
   return (
     getSolution.length > 0 && (
       <section id="solution" className="">
-        <p className="text-2xl py-8 text-center">Бидний шийдэл</p>
+        <p className="text-2xl py-8 font-bold text-center mobilecustom:hidden">
+          Бидний шийдэл
+        </p>
+        <p className="hidden text-2xl py-8 font-bold text-center mobilecustom:block">
+          БИДНИЙ ШИЙДЭЛ
+        </p>
         {click && (
           <div
             onClick={handlePopupToggle}
