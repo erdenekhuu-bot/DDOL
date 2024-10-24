@@ -31,7 +31,7 @@ export const Team = function () {
       <p className="hidden font-bold text-3xl text-center py-6 mobilecustom:block">
         УДИРДЛАГЫН БАГ
       </p>
-      <div className="flex justify-evenly p-4 mobilecustom:flex-wrap">
+      <div className="flex justify-evenly p-4 mobilecustom:flex-wrap mobilecustom:mx-8">
         {getTeam.map((item) => (
           <div className="rounded-lg" key={item.id}>
             <img

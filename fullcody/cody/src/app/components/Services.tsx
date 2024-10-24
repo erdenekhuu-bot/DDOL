@@ -38,13 +38,15 @@ export const Services = function () {
       <p className="hidden font-bold text-center py-6 text-3xl mobilecustom:block">
         Үйлчилгээний төрөл
       </p>
-      <div className="flex flex-wrap justify-evenly">
+      <div className="flex flex-wrap justify-evenly mx-8">
         {getService.map((items: any, index: number) => (
           <div
             key={items.id}
             className="relative w-[200px] m-4 h-[200px] rounded-lg"
           >
-            <p className="font-bold text-[60px] text-purple-700">{0}</p>
+            <p className="font-bold text-[60px] text-purple-700 z-0 text-opacity-50">
+              {0}
+            </p>
             <p
               className={`absolute font-bold text-[60px] top-0 left-9 z-20 text-${switchcolor(
                 index
@@ -52,7 +54,7 @@ export const Services = function () {
             >
               {counter++ + "."}
             </p>
-            <div className="absolute bg-white rounded-xl w-[90%] h-[90%] top-10 left-8 z-10 drop-shadow-xl flex items-center">
+            <div className="absolute bg-white rounded-xl w-[90%] h-[90%] top-10 left-4 z-10 drop-shadow-xl flex items-center">
               <b className="text-center">{items.name}</b>
             </div>
           </div>
