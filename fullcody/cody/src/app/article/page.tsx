@@ -25,8 +25,8 @@ export const CustomCard = function ({
         className="w-52"
       />
       <div className="p-6">
-        <p className="font-bold my-4">{title}</p>
-        <p className="h-[ 80%] overflow-hidden text-sm">
+        <p className="font-bold text-sm my-4">{title}</p>
+        <p className="h-[80%] overflow-hidden text-sm">
           {blog.substring(0, 100) + "..."}
         </p>
       </div>
@@ -62,18 +62,25 @@ const Article = function () {
     <Aritcle>
       {customarr.length > 0 && (
         <div className="relative">
-          s<div className="absolute inset-0 bg-black bg-opacity-40"></div>
+          <div className="absolute inset-0 bg-black bg-opacity-40"></div>
           <img
             src={`http://127.0.0.1:1337${customarr[0].image.url}`}
             alt=""
             width={1000}
             className="object-cover w-full h-[800px]"
           />
-          <p className="absolute px-8 text-3xl top-60 z-20 font-bold text-white">
-            {customarr[0].title}
-          </p>
-          <p className="absolute px-8 w-[60%] text-xl text-opacity-50 top-80 z-20 text-white">
+          <Link href={`/article/${customarr[0].documentId}`}>
+            <p className="absolute px-8 text-3xl top-60 z-20 font-bold text-white">
+              {customarr[0].title}
+            </p>
+          </Link>
+          <p className="absolute px-8 w-[60%] text-xl text-opacity-80 top-80 z-20 text-white">
             {customarr[0].content.slice(0, 178) + "..."}
+            <Link href={`/article/${customarr[0].documentId}`}>
+              <p className="my-12 text-2xl z-20 text-white text-opacity-80 hover:text-opacity-100">
+                Дэлгэрэнгүй
+              </p>
+            </Link>
           </p>
         </div>
       )}
