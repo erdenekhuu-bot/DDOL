@@ -53,12 +53,10 @@ const Article = function () {
     fetching();
   }, []);
 
-  const customarr: any = [];
+  const customarr: articles = [];
 
   for (let i = 0; i < getArticle.length; i++)
     if (i < 1) customarr.push(getArticle[i]);
-
-  console.log(customarr[0].content);
 
   return (
     <Aritcle>
@@ -72,8 +70,11 @@ const Article = function () {
             className="object-cover w-full h-[800px]"
           />
 
-          <p className="absolute text-3xl top-60 z-20 font-bold text-white">
+          <p className="absolute px-8 text-3xl top-60 z-20 font-bold text-white">
             {customarr[0].title}
+          </p>
+          <p className="absolute px-8 w-[60%] text-xl text-opacity-50 top-80 z-20 text-white">
+            {customarr[0].content.slice(0, 178) + "..."}
           </p>
         </div>
       )}
