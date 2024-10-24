@@ -58,16 +58,23 @@ const Article = function () {
   for (let i = 0; i < getArticle.length; i++)
     if (i < 1) customarr.push(getArticle[i]);
 
+  console.log(customarr[0].content);
+
   return (
     <Aritcle>
       {customarr.length > 0 && (
-        <div className="">
+        <div className="relative">
+          <div className="absolute inset-0 bg-black bg-opacity-40"></div>
           <img
             src={`http://127.0.0.1:1337${customarr[0].image.url}`}
             alt=""
             width={1000}
             className="object-cover w-full h-[800px]"
           />
+
+          <p className="absolute text-3xl top-60 z-20 font-bold text-white">
+            {customarr[0].title}
+          </p>
         </div>
       )}
       <div className="absolute bottom-0 flex">
