@@ -4,6 +4,7 @@ import axios from "axios";
 import { Aritcle } from "./Article";
 import { articles } from "../types/type";
 import { header_api } from "../page";
+import Link from "next/link";
 
 export const CustomCard = function ({
   title,
@@ -71,12 +72,14 @@ const Article = function () {
       )}
       <div className="absolute bottom-0 flex">
         {getArticle.map((items: any) => (
-          <CustomCard
-            key={items.id}
-            image={items}
-            title={items.title}
-            blog={items.content}
-          />
+          <Link href={items.documentId}>
+            <CustomCard
+              key={items.id}
+              image={items}
+              title={items.title}
+              blog={items.content}
+            />
+          </Link>
         ))}
       </div>
     </Aritcle>
