@@ -3,6 +3,22 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { header_api } from "../page";
 
+export const Customcard = function ({
+  title,
+  params,
+}: {
+  title: string;
+  params: number;
+}) {
+  return (
+    <div className="w-[550px] mx-2 py-8 border-t border-gray-800 border-opacity-30">
+      <p className="text-end font-bold text-gray-100">ECOMMERCE WEBSITE</p>
+      <p className="font-bold text-[60px] text-white">+{params}</p>
+      <p className="text-gray-300 text-2xl">{title}</p>
+    </div>
+  );
+};
+
 export const Statistics = function () {
   const [getSatatistic, setStatistic] = useState([]);
 
@@ -79,7 +95,7 @@ export const Statistics = function () {
 
   return (
     <section
-      className="absolute top-[50%] w-full"
+      className="absolute top-[50%] w-full mobilecustom:relative mobilecustom:rounded-xl"
       style={{
         background:
           "linear-gradient(-91.81deg, rgb(142, 45, 226) 0%, rgb(142, 45, 226) 0%, rgb(77, 2, 224) 105.82%, rgb(76, 2, 224) 105.83%, rgba(75, 1, 224, 0.043) 105.84%, rgba(74, 0, 224, 0) 105.85%, rgb(74, 0, 224) 105.85%, rgb(77, 2, 224) 105.85%) left center",
@@ -88,39 +104,16 @@ export const Statistics = function () {
       <p className="font-bold text-3xl text-center text-white py-6">
         Статистик
       </p>
-      <div className="flex justify-around flex-wrap m-10">
-        <div className="w-[550px] mx-2 py-8 border-t border-gray-800 border-opacity-30">
-          <p className="text-end font-bold text-gray-100">ECOMMERCE WEBSITE</p>
-          <p className="font-bold text-[60px] text-white">+{web}</p>
-          <p className="text-gray-300 text-2xl">
-            Хэрэглэгч байгууллага (цахим худалдааны сайт)
-          </p>
-        </div>
-        <div className="w-[550px] mx-2 py-8 border-t border-gray-800 border-opacity-30">
-          <p className="text-end font-bold text-gray-100">USERS</p>
-          <p className="font-bold text-[60px] text-white">+{user}</p>
-          <p className="text-gray-300 text-2xl">Хэрэглэгчид</p>
-        </div>
-        <div className="w-[550px] mx-2 py-8 border-t border-gray-800 border-opacity-30">
-          <p className="text-end font-bold text-gray-100">PARTNERS</p>
-          <p className="font-bold text-[60px] text-white">+{partner}</p>
-          <p className="text-gray-300 text-2xl">Харилцагчид</p>
-        </div>
-        <div className="w-[550px] mx-2 py-8 border-t border-gray-800 border-opacity-30">
-          <p className="text-end font-bold text-gray-100">FEATURES</p>
-          <p className="font-bold text-[60px] text-white">+{feature}</p>
-          <p className="text-gray-300 text-2xl">Худалдааны боломж</p>
-        </div>
-        <div className="w-[550px] mx-2 py-8 border-t border-gray-800 border-opacity-30">
-          <p className="text-end font-bold text-gray-100">PRODUCTS</p>
-          <p className="font-bold text-[60px] text-white">+{product}</p>
-          <p className="text-gray-300 text-2xl">Бүтээгдэхүүн</p>
-        </div>
-        <div className="w-[550px] mx-2 py-8 border-t border-gray-800 border-opacity-30">
-          <p className="text-end font-bold text-gray-100">BRANDS</p>
-          <p className="font-bold text-[60px] text-white">+{brand}</p>
-          <p className="text-gray-300 text-2xl">Брендүүд</p>
-        </div>
+      <div className="flex justify-around flex-wrap m-10 mobilecustom:justify-normal">
+        <Customcard
+          title="Хэрэглэгч байгууллага (цахим худалдааны сайт)"
+          params={web}
+        />
+        <Customcard title="Хэрэглэгчид" params={user} />
+        <Customcard title="Харилцагчид" params={partner} />
+        <Customcard title="Худалдааны боломж" params={feature} />
+        <Customcard title="Бүтээгдэхүүн" params={product} />
+        <Customcard title="Брендүүд" params={brand} />
       </div>
     </section>
   );

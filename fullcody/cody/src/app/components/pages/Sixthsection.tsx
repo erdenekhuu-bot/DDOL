@@ -71,6 +71,19 @@ export const Sixthsection = function () {
 
   const mobiles: any = [];
 
+  getEvent.map((items: any) =>
+    mobiles.push(
+      <img
+        key={items.id}
+        width={980}
+        height={980}
+        src={`http://127.0.0.1:1337${items.mobile.formats.large.url}`}
+        alt="Something wrong..."
+        className="object-cover rounded-3xl drop-shadow border m-2"
+      />
+    )
+  );
+
   const navigateRight = () => {
     setPage((prevIndex: number) => {
       if (prevIndex == getEvent.length - 1) {
@@ -95,7 +108,7 @@ export const Sixthsection = function () {
         Кодиг ашиглан Та юу бүтээж чадах вэ?
       </p>
       <section className="flex px-8">
-        <div className="w-1/3 md:p-4 overflow-y-scroll ">
+        <div className="w-1/3 md:p-4 overflow-y-scroll mobilecustom:hidden">
           {getEvent.map((item: any, index: number) => (
             <Customcard
               key={item.id}
@@ -106,8 +119,11 @@ export const Sixthsection = function () {
           ))}
         </div>
         <div className="w-full">
-          <div className="flex flex-shrink-0 w-full h-full py-4">
+          <div className="flex flex-shrink-0 w-full h-full py-4 mobilecustom:hidden">
             {images[page]}
+          </div>
+          <div className="hidden flex-shrink-0 w-full h-full p-10 mobilecustom:flex">
+            {mobiles[page]}
           </div>
         </div>
       </section>

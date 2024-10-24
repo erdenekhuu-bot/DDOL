@@ -5,9 +5,7 @@ import inn from "../images/in.svg";
 import insta from "../images/insta.svg";
 import Image from "next/image";
 import cody from "../images/cody.svg";
-import { solutions } from "@/app/json/objects";
 import { Card } from "./Card";
-import { features } from "@/app/json/objects";
 import { Cards } from "./pages/Fifthsection";
 
 export const Nav = function ({
