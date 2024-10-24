@@ -62,14 +62,13 @@ const Article = function () {
     <Aritcle>
       {customarr.length > 0 && (
         <div className="relative">
-          <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+          s<div className="absolute inset-0 bg-black bg-opacity-40"></div>
           <img
             src={`http://127.0.0.1:1337${customarr[0].image.url}`}
             alt=""
             width={1000}
             className="object-cover w-full h-[800px]"
           />
-
           <p className="absolute px-8 text-3xl top-60 z-20 font-bold text-white">
             {customarr[0].title}
           </p>
