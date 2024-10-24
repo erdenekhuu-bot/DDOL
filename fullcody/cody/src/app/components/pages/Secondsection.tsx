@@ -2,9 +2,6 @@
 import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { header_api } from "@/app/page";
-import Draggable from "react-draggable";
-import { sliding } from "../../json/objects";
-import Image from "next/image";
 import { useDraggable } from "react-use-draggable-scroll";
 
 export const Secondsection = function () {
