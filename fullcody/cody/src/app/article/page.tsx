@@ -72,7 +72,7 @@ const Article = function () {
       )}
       <div className="absolute bottom-0 flex">
         {getArticle.map((items: any) => (
-          <Link href={items.documentId}>
+          <Link href={`/article/${items.documentId}`}>
             <CustomCard
               key={items.id}
               image={items}
