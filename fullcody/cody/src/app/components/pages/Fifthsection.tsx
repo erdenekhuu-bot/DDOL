@@ -80,7 +80,7 @@ export const Fifthsection = function () {
         <p className="hidden font-bold text-2xl py-8 text-center mobilecustom:block">
           СИСТЕМИЙН БОЛОМЖУУД
         </p>
-        <div className="flex flex-wrap justify-evenly h-[500px] overflow-hidden mobilecustom:h-[250px] mobilecustom:space-x-0">
+        <div className="flex flex-wrap justify-evenly px-28 h-[500px] overflow-hidden mobilecustom:h-[250px] mobilecustom:space-x-0">
           {getFeature.map((elements: any) => (
             <Cards
               key={elements.id}

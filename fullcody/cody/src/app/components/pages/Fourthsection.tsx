@@ -69,7 +69,9 @@ export const Fourthsection = function () {
             className="fixed z-20 inset-0 bg-black bg-opacity-50 w-full h-full"
           ></div>
         )}
-        <div className="flex flex-wrap justify-evenly">{solution_list}</div>
+        <div className="flex flex-wrap justify-evenly px-8">
+          {solution_list}
+        </div>
 
         <div className="flex my-12 justify-center">
           <Button
