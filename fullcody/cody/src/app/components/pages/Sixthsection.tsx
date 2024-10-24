@@ -4,6 +4,34 @@ import { event } from "@/app/types/type";
 import axios from "axios";
 import { header_api } from "../../page";
 
+export const Customlabel = function ({
+  clicking,
+  icon,
+  title,
+}: {
+  clicking: () => void;
+  icon: string;
+  title: string;
+}) {
+  return (
+    <section
+      onClick={clicking}
+      className="flex hover:cursor-pointer items-center p-4"
+    >
+      <img
+        className="mx-2"
+        width={30}
+        height={30}
+        src={`http://127.0.0.1:1337${icon}`}
+        alt=""
+      />
+      <p className="font-bold text-opacity-60 text-xl hover:text-purple-500">
+        {title}
+      </p>
+    </section>
+  );
+};
+
 export const Customcard = function ({
   clicking,
   icon,
@@ -69,6 +97,18 @@ export const Sixthsection = function () {
     )
   );
 
+  const mobilelabel: any = [];
+  getEvent.map((item: any, index: number) =>
+    mobilelabel.push(
+      <Customlabel
+        key={item.id}
+        icon={item.icon.url}
+        title={item.title}
+        clicking={() => handleClick(index)}
+      />
+    )
+  );
+
   const mobiles: any = [];
 
   getEvent.map((items: any) =>
@@ -104,10 +144,10 @@ export const Sixthsection = function () {
 
   return (
     <section className="">
-      <p className="text-2xl py-8  text-center font-bold">
+      <p className="text-2xl py-8 text-center font-bold">
         Кодиг ашиглан Та юу бүтээж чадах вэ?
       </p>
-      <section className="flex px-8">
+      <section className="flex px-8 mobilecustom:block">
         <div className="w-1/3 md:p-4 overflow-y-scroll mobilecustom:hidden">
           {getEvent.map((item: any, index: number) => (
             <Customcard
@@ -117,6 +157,9 @@ export const Sixthsection = function () {
               clicking={() => handleClick(index)}
             />
           ))}
+        </div>
+        <div className="hidden mobilecustom:flex mobilecustom:justify-center">
+          {mobilelabel[page]}
         </div>
         <div className="w-full">
           <div className="flex flex-shrink-0 w-full h-full py-4 mobilecustom:hidden">

@@ -6,6 +6,8 @@ import { Sol } from "../PopUp";
 import axios from "axios";
 import { solution } from "@/app/types/type";
 import { header_api } from "@/app/page";
+import Image from "next/image";
+import imgsol from "../../images/svgsoltion.svg";
 
 export const Fourthsection = function () {
   const [click, setClick] = useState(false);
@@ -41,12 +43,26 @@ export const Fourthsection = function () {
   return (
     getSolution.length > 0 && (
       <section id="solution" className="">
-        <p className="text-2xl py-8 font-bold text-center mobilecustom:hidden">
-          Бидний шийдэл
-        </p>
-        <p className="hidden text-2xl py-8 font-bold text-center mobilecustom:block">
-          БИДНИЙ ШИЙДЭЛ
-        </p>
+        <div className="relative mobilecustom:hidden">
+          <Image
+            src={imgsol}
+            width={800}
+            height={800}
+            alt=""
+            className="w-20 absolute top-1 right-1/3"
+          />
+          <p className="text-2xl py-8 font-bold text-center">Бидний шийдэл</p>
+        </div>
+        <div className="hidden relative w-[500px] mx-auto mobilecustom:block">
+          <Image
+            src={imgsol}
+            width={800}
+            height={800}
+            alt=""
+            className="w-20 absolute top-1 right-0"
+          />
+          <p className="text-2xl py-8 font-bold text-center">БИДНИЙ ШИЙДЭЛ</p>
+        </div>
         {click && (
           <div
             onClick={handlePopupToggle}

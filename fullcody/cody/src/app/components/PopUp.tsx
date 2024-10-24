@@ -7,6 +7,8 @@ import Image from "next/image";
 import cody from "../images/cody.svg";
 import { Card } from "./Card";
 import { Cards } from "./pages/Fifthsection";
+import Link from "next/link";
+import { mixing } from "../components/Header";
 
 export const Nav = function ({
   call,
@@ -25,9 +27,11 @@ export const Nav = function ({
         }`}
       >
         {mobilenavList.map((items: any) => (
-          <div className="p-4 border">
-            <p className="text-sm">{items.title}</p>
-          </div>
+          <Link key={items.id} href={mixing(items.url)} scroll={true}>
+            <div className="p-4 border">
+              <p className="text-sm">{items.title}</p>
+            </div>
+          </Link>
         ))}
         <div className="my-8">
           <div className="flex p-4 items-center justify-center">
