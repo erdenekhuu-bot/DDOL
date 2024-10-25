@@ -109,7 +109,7 @@ export const Openjobs = function () {
         width={980}
         height={980}
         src={`http://127.0.0.1:1337${items.image.formats.small.url}`}
-        alt="Something wrong..."
+        alt=""
         className="object-cover rounded-3xl drop-shadow border m-2"
       />
     )
@@ -145,8 +145,18 @@ export const Openjobs = function () {
           {mobilelabel[page]}
         </div>
         <div className="w-full">
-          <div className="flex flex-shrink-0 w-full h-full py-4">
-            {images[page]}
+          <div className="flex overflow-hidden flex-shrink-0 w-full h-full py-4">
+            {/* {images[page]} */}
+            <div
+              className="flex transition-transform duration-300 mobilecustom:hidden"
+              style={{ transform: `translateX(-${page * 100}%)` }}
+            >
+              {images.map((image: any, index: number) => (
+                <div key={index} className="flex-shrink-0 w-full h-full">
+                  {image}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

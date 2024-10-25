@@ -112,12 +112,13 @@ export default function Home() {
             <Image
               src={pad_background}
               alt=""
+              width={1000}
+              height={1000}
               objectFit="cover"
               className="absolute inset-0 z-20 overflow-hidden"
             />
             {/* <div
               className="relative p-3 z-0 rounded-sm"
-              style={{ transform: "scale(1)" }}
             >
               <Image
                 src={array[currentImageIndex]}
@@ -133,8 +134,8 @@ export default function Home() {
                   <Image
                     key={index}
                     src={image}
-                    width={800}
-                    height={800}
+                    width={1000}
+                    height={1000}
                     alt=""
                     className="rounded-sm mx-1"
                   />

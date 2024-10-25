@@ -1,8 +1,9 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { event } from "@/app/types/type";
 import axios from "axios";
 import { header_api } from "../../page";
+import { useDraggable } from "react-use-draggable-scroll";
 
 export const Customlabel = function ({
   clicking,
@@ -169,7 +170,7 @@ export const Sixthsection = function () {
           </div> */}
 
           <div
-            className="flex transition-transform duration-300"
+            className="flex transition-transform duration-300 mobilecustom:hidden"
             style={{ transform: `translateX(-${page * 100}%)` }}
           >
             {images.map((image: any, index: number) => (
@@ -179,7 +180,7 @@ export const Sixthsection = function () {
             ))}
           </div>
         </div>
-        <div className="hidden flex-shrink-0 w-full h-full p-10 mobilecustom:flex">
+        <div className="hidden relative flex-shrink-0 w-full h-full p-10 mobilecustom:flex">
           {mobiles[page]}
         </div>
       </section>

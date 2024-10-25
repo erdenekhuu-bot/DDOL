@@ -82,4 +82,4 @@ export type comment = {
   id: number;
   name: string;
   image: any;
-};
+}[];

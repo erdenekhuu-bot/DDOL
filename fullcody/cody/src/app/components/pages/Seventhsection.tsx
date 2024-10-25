@@ -40,11 +40,21 @@ export const Seventhsection = function () {
   );
 
   return (
-    <section>
+    <section className="overflow-hidden">
       <p className="text-2xl py-8  text-center font-bold">
         Харилцагчдын сэтгэгдэл
       </p>
-      <div className="">{array[tap]}</div>
+      {/* <div className="">{array[tap]}</div> */}
+      <div
+        className="flex transition-transform duration-300 "
+        style={{ transform: `translateX(-${tap * 100}%)` }}
+      >
+        {array.map((image: any, index: number) => (
+          <div key={index} className="flex-shrink-0 w-full h-full">
+            {image}
+          </div>
+        ))}
+      </div>
       <div className="flex justify-center my-2 md:my-9">
         <button
           onClick={() => {
