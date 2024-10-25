@@ -5,6 +5,7 @@ import { Aritcle } from "./Article";
 import { articles } from "../types/type";
 import { header_api } from "../page";
 import Link from "next/link";
+import { Image } from "antd";
 
 export const CustomCard = function ({
   title,
@@ -21,7 +22,6 @@ export const CustomCard = function ({
         src={`http://127.0.0.1:1337/${image.image.url}`}
         alt=""
         width={800}
-        height={800}
         className="w-52"
       />
       <div className="p-6">

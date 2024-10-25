@@ -25,10 +25,11 @@ export const Services = function () {
 
   let counter = 1;
 
-  const switchcolor = (index: number) => {
-    const cls = ["purple", "yellow", "pink", "aqua"];
-    return cls[index % cls.length];
+  const switchcolor = () => {
+    const cls = ["red", "yellow", "pink", "green"];
+    return cls[Math.floor(Math.random() * cls.length)];
   };
+
   return (
     <section className="bg-gray-50 py-8 z-0">
       <p className="font-bold text-center py-6 text-3xl mobilecustom:hidden">
@@ -43,13 +44,13 @@ export const Services = function () {
             key={items.id}
             className="relative w-[200px] m-4 h-[200px] rounded-lg"
           >
-            <p className="font-bold text-[60px] text-purple-700 z-0 text-opacity-50">
+            <p
+              className={`font-bold text-[60px] text-${switchcolor()}-500 z-0 text-opacity-50`}
+            >
               {0}
             </p>
             <p
-              className={`absolute font-bold text-[60px] top-0 left-9 z-20 text-${switchcolor(
-                index
-              )}-700`}
+              className={`absolute font-bold text-[60px] top-0 left-9 z-20 text-${switchcolor()}-500`}
             >
               {counter++ + "."}
             </p>

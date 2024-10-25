@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { header_api } from "@/app/page";
 import { comment } from "@/app/types/type";
+import { Carousel } from "antd";
 
 export const Seventhsection = function () {
   const [tap, setTap] = useState(0);
@@ -44,8 +45,16 @@ export const Seventhsection = function () {
       <p className="text-2xl py-8  text-center font-bold">
         Харилцагчдын сэтгэгдэл
       </p>
+      <Carousel autoplay>
+        {array.map((image: any, index: number) => (
+          <div key={index} className="flex-shrink-0 w-full h-full">
+            {image}
+          </div>
+        ))}
+      </Carousel>
+
       {/* <div className="">{array[tap]}</div> */}
-      <div
+      {/* <div
         className="flex transition-transform duration-300 "
         style={{ transform: `translateX(-${tap * 100}%)` }}
       >
@@ -54,8 +63,8 @@ export const Seventhsection = function () {
             {image}
           </div>
         ))}
-      </div>
-      <div className="flex justify-center my-2 md:my-9">
+      </div> */}
+      {/* <div className="flex justify-center my-2 md:my-9">
         <button
           onClick={() => {
             setTap(0);
@@ -96,7 +105,7 @@ export const Seventhsection = function () {
         >
           {""}
         </button>
-      </div>
+      </div> */}
     </section>
   );
 };

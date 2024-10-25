@@ -43,8 +43,6 @@ export const Statistics = function () {
     }
   };
 
-  getSatatistic.map((item: any) => console.log(item));
-
   useEffect(function () {
     fetching();
     interval = setInterval(() => {
