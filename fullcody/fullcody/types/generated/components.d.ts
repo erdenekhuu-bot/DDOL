@@ -51,20 +51,6 @@ export interface CodyPlatformPlatform extends Struct.ComponentSchema {
   };
 }
 
-export interface CodyFeatureFeature extends Struct.ComponentSchema {
-  collectionName: 'components_cody_feature_features';
-  info: {
-    displayName: 'feature';
-    description: '';
-  };
-  attributes: {
-    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    title: Schema.Attribute.String;
-    feature: Schema.Attribute.String;
-    url: Schema.Attribute.String;
-  };
-}
-
 export interface CodyEventEvent extends Struct.ComponentSchema {
   collectionName: 'components_cody_event_events';
   info: {
@@ -76,6 +62,20 @@ export interface CodyEventEvent extends Struct.ComponentSchema {
     icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     mobile: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface CodyFeatureFeature extends Struct.ComponentSchema {
+  collectionName: 'components_cody_feature_features';
+  info: {
+    displayName: 'feature';
+    description: '';
+  };
+  attributes: {
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String;
+    feature: Schema.Attribute.String;
+    url: Schema.Attribute.String;
   };
 }
 
@@ -181,8 +181,8 @@ declare module '@strapi/strapi' {
       'sliding1.sliding1': Sliding1Sliding1;
       'cody-solution.solution': CodySolutionSolution;
       'cody-platform.platform': CodyPlatformPlatform;
-      'cody-feature.feature': CodyFeatureFeature;
       'cody-event.event': CodyEventEvent;
+      'cody-feature.feature': CodyFeatureFeature;
       'cody-comment.comment': CodyCommentComment;
       'career-tsuk.tsuk': CareerTsukTsuk;
       'career-team.team': CareerTeamTeam;
