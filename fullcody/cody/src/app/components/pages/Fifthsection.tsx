@@ -1,15 +1,14 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { useDraggable } from "react-use-draggable-scroll";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
-import { AndroidFilled } from "@ant-design/icons";
 import { Button } from "@mui/material";
 import { Fea } from "../PopUp";
 import axios from "axios";
 import { feature } from "@/app/types/type";
 import { header_api } from "@/app/page";
-import { features } from "@/app/json/objects";
 
 export const Cards = function ({
   title,

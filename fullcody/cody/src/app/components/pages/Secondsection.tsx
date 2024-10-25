@@ -4,6 +4,7 @@ import axios from "axios";
 import { header_api } from "@/app/page";
 import { sliding2 } from "@/app/types/type";
 import { useDraggable } from "react-use-draggable-scroll";
+import { Image } from "antd";
 
 export const Secondsection = function () {
   const [getSliding2, setSliding2] = useState<sliding2>([]);
@@ -41,13 +42,12 @@ export const Secondsection = function () {
       className="flex space-x-20 items-center overflow-x-hidden scrollbar-hide p-4 drop-shadow-2xl"
     >
       {getSliding2.map((items: any) => (
-        <img
+        <Image
           key={items.id}
           src={`http://127.0.0.1:1337/${items.icon?.url}`}
           alt=""
-          width={1000}
-          height={1000}
-          className="w-16 mx-4"
+          width={800}
+          className="mx-4"
         />
       ))}
     </div>

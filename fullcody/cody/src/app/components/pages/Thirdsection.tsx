@@ -31,7 +31,7 @@ export const Thirdsection = function () {
         <img
           src={`http://127.0.0.1:1337${i.image.formats.small.url}`}
           alt=""
-          height={1000}
+          height={500}
           width={1000}
           className="w-[600px] px-10 mobilecustom:w-[500px] mobilecustom:px-10"
         />

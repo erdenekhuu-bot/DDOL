@@ -1,5 +1,4 @@
 "use client";
-import { services } from "../json/objects";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { header_api } from "../page";
@@ -26,9 +25,9 @@ export const Services = function () {
 
   let counter = 1;
 
-  const switchcolor = function (index: number) {
-    const cls: any = ["purple", "yellow", "pink", "aqua"];
-    return cls[Math.floor(Math.random() * 4)];
+  const switchcolor = (index: number) => {
+    const cls = ["purple", "yellow", "pink", "aqua"];
+    return cls[index % cls.length];
   };
   return (
     <section className="bg-gray-50 py-8 z-0">
