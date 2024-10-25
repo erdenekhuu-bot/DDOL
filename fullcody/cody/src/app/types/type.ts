@@ -83,3 +83,13 @@ export type comment = {
   name: string;
   image: any;
 }[];
+
+export type statistics = {
+  id: number;
+  web: number;
+  user: number;
+  partner: number;
+  feature: number;
+  product: number;
+  brand: number;
+}[];
