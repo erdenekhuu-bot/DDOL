@@ -45,16 +45,9 @@ export const Seventhsection = function () {
       <p className="text-2xl py-8  text-center font-bold">
         Харилцагчдын сэтгэгдэл
       </p>
-      <Carousel autoplay>
-        {array.map((image: any, index: number) => (
-          <div key={index} className="flex-shrink-0 w-full h-full">
-            {image}
-          </div>
-        ))}
-      </Carousel>
 
       {/* <div className="">{array[tap]}</div> */}
-      {/* <div
+      <div
         className="flex transition-transform duration-300 "
         style={{ transform: `translateX(-${tap * 100}%)` }}
       >
@@ -63,8 +56,8 @@ export const Seventhsection = function () {
             {image}
           </div>
         ))}
-      </div> */}
-      {/* <div className="flex justify-center my-2 md:my-9">
+      </div>
+      <div className="flex justify-center my-4">
         <button
           onClick={() => {
             setTap(0);
@@ -105,7 +98,7 @@ export const Seventhsection = function () {
         >
           {""}
         </button>
-      </div> */}
+      </div>
     </section>
   );
 };
