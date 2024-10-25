@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { header_api } from "@/app/page";
-import { sliding2 } from "@app/type/type";
+import { sliding2 } from "@/app/types/type";
 import { useDraggable } from "react-use-draggable-scroll";
 
 export const Secondsection = function () {
@@ -30,9 +30,8 @@ export const Secondsection = function () {
     };
   }, [fetchInterval]);
 
-  const ref = useRef<HTMLDivElement>() as React.MutableRefObject<
-    HTMLInputElement
-  >;
+  const ref =
+    useRef<HTMLDivElement>() as React.MutableRefObject<HTMLInputElement>;
   const { events } = useDraggable(ref);
 
   return (

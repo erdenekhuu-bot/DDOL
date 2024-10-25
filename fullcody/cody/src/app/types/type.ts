@@ -27,7 +27,7 @@ export type sliding2 = {
   name: string;
   icon: any;
   url: string;
-};
+}[];
 
 export type platform = {
   id: number;
