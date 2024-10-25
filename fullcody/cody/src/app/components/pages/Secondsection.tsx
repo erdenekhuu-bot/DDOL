@@ -2,10 +2,12 @@
 import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { header_api } from "@/app/page";
+import { sliding2 } from "@app/type/type";
 import { useDraggable } from "react-use-draggable-scroll";
 
 export const Secondsection = function () {
-  const [getSliding2, setSliding2] = useState([]);
+  const [getSliding2, setSliding2] = useState<sliding2>([]);
+  const [fetchInterval] = useState(5000);
 
   const fetchingSlide = async function () {
     try {
@@ -13,7 +15,8 @@ export const Secondsection = function () {
         "http://127.0.0.1:1337/api/homes?populate[sliding2][populate]=*",
         header_api
       );
-      setSliding2(response.data.data[0].sliding2);
+      const data = response.data.data[0].sliding2;
+      setSliding2((items: any) => [...items, ...data]);
     } catch (error) {
       return;
     }
@@ -21,7 +24,11 @@ export const Secondsection = function () {
 
   useEffect(() => {
     fetchingSlide();
-  }, []);
+    const interval = setInterval(fetchingSlide, fetchInterval);
+    return () => {
+      clearInterval(interval);
+    };
+  }, [fetchInterval]);
 
   const ref = useRef<HTMLDivElement>() as React.MutableRefObject<
     HTMLInputElement
@@ -30,9 +37,9 @@ export const Secondsection = function () {
 
   return (
     <div
-      className="flex space-x-20 items-center overflow-x-hidden scrollbar-hide p-4 drop-shadow-2xl"
       {...events}
       ref={ref}
+      className="flex space-x-20 items-center overflow-x-hidden scrollbar-hide p-4 drop-shadow-2xl"
     >
       {getSliding2.map((items: any) => (
         <img

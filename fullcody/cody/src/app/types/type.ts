@@ -22,6 +22,13 @@ export type sliding1 = {
   icon: string;
 }[];
 
+export type sliding2 = {
+  id: number;
+  name: string;
+  icon: any;
+  url: string;
+};
+
 export type platform = {
   id: number;
   title: string;
