@@ -37,25 +37,17 @@ export default function Home() {
   return (
     <Layout>
       <Firstsection background_img={bacgrkound_img}>
-        <div className="w-56 mobilecustom:hidden">
+        <div className="w-56 overflow-hidden mobilecustom:hidden">
           <div className="relative">
             <Image
               src={phone_background}
               width={900}
               height={900}
               alt=""
-              className="inset-0 z-50 overflow-hidden"
+              objectFit="cover"
+              className="absolute inset-0 z-20"
             />
-            {/* <div className="absolute p-3 inset-0 z-0 rounded-sm">
-              <Image
-                src={mobilearray[currentImageIndex]}
-                width={800}
-                height={800}
-                alt=""
-                className="transition-opacity duration-500 ease-in-out rounded-sm"
-              />
-            </div> */}
-            <div className="absolute overflow-hidden p-3 inset-0 z-20 rounded-sm ">
+            <div className="overflow-hidden z-0 relative">
               <div className="flex sliding">
                 {mobilearray.map((image: any, index: number) => (
                   <Image
@@ -64,7 +56,7 @@ export default function Home() {
                     width={800}
                     height={800}
                     alt=""
-                    className="rounded-sm mx-1 flex-shrink-0 w-full h-full"
+                    className="rounded-sm mx-1"
                   />
                 ))}
               </div>
@@ -121,9 +113,12 @@ export default function Home() {
               src={pad_background}
               alt=""
               objectFit="cover"
-              className="inset-0 z-20 overflow-hidden"
+              className="absolute inset-0 z-20 overflow-hidden"
             />
-            <div className="absolute p-3 inset-0 z-0 rounded-sm">
+            {/* <div
+              className="relative p-3 z-0 rounded-sm"
+              style={{ transform: "scale(1)" }}
+            >
               <Image
                 src={array[currentImageIndex]}
                 width={800}
@@ -131,6 +126,20 @@ export default function Home() {
                 alt=""
                 className="transition-opacity duration-500 ease-in-out rounded-sm"
               />
+            </div> */}
+            <div className="overflow-hidden z-0 relative">
+              <div className="flex slidingpad">
+                {array.map((image: any, index: number) => (
+                  <Image
+                    key={index}
+                    src={image}
+                    width={800}
+                    height={800}
+                    alt=""
+                    className="rounded-sm mx-1"
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
