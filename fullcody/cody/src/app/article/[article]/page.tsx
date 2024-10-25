@@ -13,8 +13,21 @@ type FieldType = {
   comment?: string;
 };
 
-const onFinish: FormProps<FieldType>["onFinish"] = (values) => {
-  console.log("Success:", values);
+const onFinish: FormProps<FieldType>["onFinish"] = async (values) => {
+  try {
+    await axios.post(
+      "http://127.0.0.1:1337/api/comments",
+      { data: { name: "erdebee", comment: values } },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+  } catch (error) {
+    console.log(error);
+    return;
+  }
 };
 
 const onFinishFailed: FormProps<FieldType>["onFinishFailed"] = (errorInfo) => {
@@ -69,7 +82,7 @@ export default function Article() {
       >
         <Form.Item<FieldType>
           name="comment"
-          rules={[{ required: true, message: "Please input your comment!" }]}
+          rules={[{ required: true, message: "Сэтгэгдэлээ үлдээнэ үү" }]}
         >
           <TextArea
             value={value}
@@ -81,7 +94,7 @@ export default function Article() {
 
         <Form.Item>
           <Button type="primary" htmlType="submit">
-            Submit
+            Нийтлэх
           </Button>
         </Form.Item>
       </Form>
