@@ -22,6 +22,13 @@ export type sliding1 = {
   icon: string;
 }[];
 
+export type sliding2 = {
+  id: number;
+  name: string;
+  icon: any;
+  url: string;
+}[];
+
 export type platform = {
   id: number;
   title: string;
@@ -75,4 +82,14 @@ export type comment = {
   id: number;
   name: string;
   image: any;
-};
+}[];
+
+export type statistics = {
+  id: number;
+  web: number;
+  user: number;
+  partner: number;
+  feature: number;
+  product: number;
+  brand: number;
+}[];

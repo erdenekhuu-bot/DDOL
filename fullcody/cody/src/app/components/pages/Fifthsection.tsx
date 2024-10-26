@@ -1,15 +1,14 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { useDraggable } from "react-use-draggable-scroll";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
-import { AndroidFilled } from "@ant-design/icons";
 import { Button } from "@mui/material";
 import { Fea } from "../PopUp";
 import axios from "axios";
 import { feature } from "@/app/types/type";
 import { header_api } from "@/app/page";
-import { features } from "@/app/json/objects";
 
 export const Cards = function ({
   title,
@@ -20,11 +19,16 @@ export const Cards = function ({
   icon: string;
   feature?: string;
 }) {
-  const solution_list = [];
+  const switchcolor = () => {
+    const cls = ["red", "yellow", "pink", "green"];
+    return cls[Math.floor(Math.random() * cls.length)];
+  };
   return (
     <Card className="w-[200px] rounded-lg py-2 m-4 relative">
       <CardContent>
-        <div className="bg-purple-400 px-3 w-1/3 h-14 rounded-xl flex items-center">
+        <div
+          className={`bg-${switchcolor()}-400 px-3 w-1/3 h-14 rounded-xl flex items-center`}
+        >
           <img
             src="https://cody.mn/84255cf7e189d5386dd3d0001103d4fa.svg"
             alt=""

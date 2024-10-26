@@ -33,29 +33,37 @@ export default function Home() {
 
     return () => clearInterval(interval);
   }, [array.length]);
+
   return (
     <Layout>
       <Firstsection background_img={bacgrkound_img}>
-        <div className="mobilecustom:hidden">
-          <div className="relative w-44">
+        <div className="w-56 overflow-hidden mobilecustom:hidden">
+          <div className="relative">
             <Image
               src={phone_background}
-              width={800}
-              height={800}
+              width={900}
+              height={900}
               alt=""
-              className="inset-0 z-20 overflow-hidden"
+              objectFit="cover"
+              className="absolute inset-0 z-20"
             />
-            <div className="absolute p-3 inset-0 z-0 rounded-sm">
-              <Image
-                src={mobilearray[currentImageIndex]}
-                width={800}
-                height={800}
-                alt=""
-                className="transition-opacity duration-500 ease-in-out rounded-sm"
-              />
+            <div className="overflow-hidden z-0 relative">
+              <div className="flex sliding">
+                {mobilearray.map((image: any, index: number) => (
+                  <Image
+                    key={index}
+                    src={image}
+                    width={800}
+                    height={800}
+                    alt=""
+                    className="rounded-sm mx-1"
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
+
         <div className="text-center p-4">
           <p className="font-bold text-4xl text-customtitle mobilecustom:w-[60%] mobilecustom:mx-auto">
             Өөрийн цахим дэлгүүрээ бүтээ!
@@ -104,10 +112,14 @@ export default function Home() {
             <Image
               src={pad_background}
               alt=""
+              width={1000}
+              height={1000}
               objectFit="cover"
-              className="inset-0 z-20 overflow-hidden"
+              className="absolute inset-0 z-20 overflow-hidden"
             />
-            <div className="absolute p-3 inset-0 z-0 rounded-sm">
+            {/* <div
+              className="relative p-3 z-0 rounded-sm"
+            >
               <Image
                 src={array[currentImageIndex]}
                 width={800}
@@ -115,6 +127,20 @@ export default function Home() {
                 alt=""
                 className="transition-opacity duration-500 ease-in-out rounded-sm"
               />
+            </div> */}
+            <div className="overflow-hidden z-0 relative">
+              <div className="flex slidingpad">
+                {array.map((image: any, index: number) => (
+                  <Image
+                    key={index}
+                    src={image}
+                    width={1000}
+                    height={1000}
+                    alt=""
+                    className="rounded-sm mx-1"
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>

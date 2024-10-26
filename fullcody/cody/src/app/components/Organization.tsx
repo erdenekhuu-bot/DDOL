@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { header_api } from "../page";
+import { Image } from "antd";
 
 export const Organization = function () {
   const [getOrganiation, setOrganization] = useState([]);
@@ -27,11 +28,11 @@ export const Organization = function () {
       <p className="font-bold text-center py-6 text-3xl">Хамт олон</p>
       <div className="flex justify-center my-4">
         {getOrganiation.map((photos: any) => (
-          <img
+          <Image
             src={`http://127.0.0.1:1337${photos.profile.formats.large.url}`}
             alt=""
             width={1000}
-            height={1000}
+            height={400}
             className=""
           />
         ))}
@@ -64,12 +65,11 @@ export const Organ = function () {
       <p className="font-bold text-center py-6 text-3xl">Хамт олон</p>
       <div className="flex flex-wrap items-center p-8 ">
         {getOrganiation.map((items: any) => (
-          <img
+          <Image
             src={`http://127.0.0.1:1337${items.profile.url}`}
             alt=""
-            width={800}
-            height={800}
-            className="w-44 h-44"
+            width={200}
+            height={200}
           />
         ))}
       </div>

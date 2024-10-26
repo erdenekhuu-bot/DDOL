@@ -1,6 +1,4 @@
 import career from "../images/career.jpg";
-import { reason } from "../json/objects";
-import { Cards } from "../components/pages/Fifthsection";
 import tsuk1 from "../images/tsuk1.png";
 import tsuk2 from "../images/tsuk2.png";
 import tsuk3 from "../images/tsuk3.png";

@@ -25,3 +25,43 @@ body {
     text-wrap: balance;
   }
 }
+
+@keyframes slidephone {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-105%);
+  }
+  100% {
+    transform: translateX(-210%);
+  }
+}
+
+.sliding {
+  animation: slidephone;
+  animation-delay: 8s;
+  animation-duration: 4s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}
+
+@keyframes slidetablet {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-105%);
+  }
+  100% {
+    transform: translateX(-210%);
+  }
+}
+
+.slidingpad {
+  animation: slidetablet;
+  animation-delay: 8s;
+  animation-duration: 4s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}

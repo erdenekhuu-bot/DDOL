@@ -9,7 +9,7 @@ export const Firstsection = function ({
 }) {
   return (
     <section
-      className="pt-36 bg-cover bg-no-repeat mobilecustom:bg-center flex justify-around items-center mobilecustom:block mobilecustom:pt-24 overflow-hidden"
+      className="pt-36 pb-10 bg-cover bg-no-repeat mobilecustom:bg-center flex justify-around items-center mobilecustom:block mobilecustom:pt-24 overflow-hidden"
       style={{
         backgroundImage: `url(${background_img.src})`,
       }}

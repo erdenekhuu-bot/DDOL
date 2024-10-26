@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { header_api } from "../page";
+import { statistics } from "../types/type";
 
 export const Customcard = function ({
   title,
@@ -20,7 +21,15 @@ export const Customcard = function ({
 };
 
 export const Statistics = function () {
-  const [getSatatistic, setStatistic] = useState([]);
+  const [getSatatistic, setStatistic] = useState<statistics>([]);
+
+  const [web, setWeb] = useState(0);
+  const [user, setUser] = useState(0);
+  const [partner, setPartner] = useState(0);
+  const [feature, setFeature] = useState(0);
+  const [product, setProduct] = useState(0);
+  const [brand, setBrand] = useState(0);
+  let interval: any = null;
 
   const fetching = async function () {
     try {
@@ -36,17 +45,6 @@ export const Statistics = function () {
 
   useEffect(function () {
     fetching();
-  }, []);
-
-  const [web, setWeb] = useState(0);
-  const [user, setUser] = useState(0);
-  const [partner, setPartner] = useState(0);
-  const [feature, setFeature] = useState(0);
-  const [product, setProduct] = useState(0);
-  const [brand, setBrand] = useState(0);
-  let interval: any = null;
-
-  useEffect(() => {
     interval = setInterval(() => {
       setWeb((seconds) => {
         if (seconds >= 100) {

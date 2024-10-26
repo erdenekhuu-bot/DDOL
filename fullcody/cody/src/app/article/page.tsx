@@ -21,7 +21,6 @@ export const CustomCard = function ({
         src={`http://127.0.0.1:1337/${image.image.url}`}
         alt=""
         width={800}
-        height={800}
         className="w-52"
       />
       <div className="p-6">
