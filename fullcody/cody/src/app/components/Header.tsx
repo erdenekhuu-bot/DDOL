@@ -7,7 +7,7 @@ import menu from "../images/white_menu.png";
 import x from "../images/x_ios.png";
 import { useState } from "react";
 import { Nav } from "./PopUp";
-import { Button } from "@mui/material";
+import { Button } from "antd";
 
 export const mixing = function (url: string) {
   return url[0] == "#" ? "/" + url : url;
@@ -63,8 +63,7 @@ export const Header = function () {
             onClick={function () {
               setClick(!click);
             }}
-            variant="contained"
-            className="px-6 py-4 bg-purple-900 text-xs font-bold rounded-lg"
+            className="p-6 bg-purple-900 text-xs font-bold rounded-lg text-white"
             style={{
               background:
                 "linear-gradient(95.41deg, rgb(131, 38, 226) 34.67%, rgb(82, 6, 225) 148.46%)",

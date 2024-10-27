@@ -16,6 +16,8 @@ import { token } from "./types/type";
 import { array } from "./json/image";
 import { mobilearray } from "./json/image";
 import { Button } from "antd";
+import ellipse from "../app/images/ellipsee-opt.webp";
+import ellipsedown from "../app/images/ellipsee-down.webp";
 
 export const header_api = {
   headers: {
@@ -31,7 +33,9 @@ export default function Home() {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % array.length);
     }, 3000);
 
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+    };
   }, [array.length]);
 
   return (
@@ -117,17 +121,7 @@ export default function Home() {
               objectFit="cover"
               className="absolute inset-0 z-20 overflow-hidden"
             />
-            {/* <div
-              className="relative p-3 z-0 rounded-sm"
-            >
-              <Image
-                src={array[currentImageIndex]}
-                width={800}
-                height={800}
-                alt=""
-                className="transition-opacity duration-500 ease-in-out rounded-sm"
-              />
-            </div> */}
+
             <div className="overflow-hidden z-0 relative">
               <div className="flex slidingpad">
                 {array.map((image: any, index: number) => (
@@ -148,7 +142,23 @@ export default function Home() {
       <Secondsection />
       <Thirdsection />
       <Fourthsection />
+      <Image
+        src={ellipse}
+        alt=""
+        width={1000}
+        height={1000}
+        className="w-full"
+      />
       <Fifthsection />
+      <section>
+        <Image
+          src={ellipsedown}
+          alt=""
+          width={1000}
+          height={1000}
+          className="w-full transform rotate-180"
+        />
+      </section>
       <Sixthsection />
       <Seventhsection />
     </Layout>

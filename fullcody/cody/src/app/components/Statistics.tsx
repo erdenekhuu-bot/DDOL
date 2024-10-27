@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { header_api } from "../page";
 import { statistics } from "../types/type";
+import Image from "next/image";
+import stat from "../images/statistic.svg";
 
 export const Customcard = function ({
   title,
@@ -99,9 +101,30 @@ export const Statistics = function () {
           "linear-gradient(-91.81deg, rgb(142, 45, 226) 0%, rgb(142, 45, 226) 0%, rgb(77, 2, 224) 105.82%, rgb(76, 2, 224) 105.83%, rgba(75, 1, 224, 0.043) 105.84%, rgba(74, 0, 224, 0) 105.85%, rgb(74, 0, 224) 105.85%, rgb(77, 2, 224) 105.85%) left center",
       }}
     >
-      <p className="font-bold text-3xl text-center text-white py-6">
-        Статистик
-      </p>
+      <div className="relative w-[500px] mx-auto mobilecustom:hidden">
+        <Image
+          src={stat}
+          width={800}
+          height={800}
+          alt=""
+          className="w-20 absolute top-4 right-1/4"
+        />
+        <p className="font-bold text-3xl text-center text-white py-6">
+          Статистик
+        </p>
+      </div>
+      <div className="hidden relative mobilecustom:block">
+        <Image
+          src={stat}
+          width={800}
+          height={800}
+          alt=""
+          className="w-20 absolute top-1 right-0 mobilecustom:mx-24"
+        />
+        <p className="font-bold text-3xl text-center text-white py-6 uppercase">
+          Статистик
+        </p>
+      </div>
       <div className="flex justify-around flex-wrap m-10 mobilecustom:justify-normal">
         <Customcard
           title="Хэрэглэгч байгууллага (цахим худалдааны сайт)"

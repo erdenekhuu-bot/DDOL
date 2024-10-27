@@ -9,6 +9,7 @@ import { Card } from "./Card";
 import { Cards } from "./pages/Fifthsection";
 import Link from "next/link";
 import { mixing } from "../components/Header";
+import imgsol from "../images/svgsoltion.svg";
 
 export const Nav = function ({
   call,
@@ -85,10 +86,17 @@ export const Sol = function ({
 }) {
   return (
     <section className="fixed inset-0 z-30 bg-gray-50 w-[90%] h-[90%] rounded-lg mx-auto my-auto flex flex-col">
-      <div className="flex justify-center items-center p-4 my-4">
-        <span className="font-bold text-3xl">Шийдлүүд</span>
+      <div className="relative my-4 w-[500px] mx-auto mobilecustom:hidden">
+        <Image
+          src={imgsol}
+          width={800}
+          height={800}
+          alt=""
+          className="w-20 absolute top-4 right-1/4"
+        />
+        <p className="text-2xl py-8 font-bold text-center">Шийдлүүд</p>
       </div>
-      <div className="mx-auto w-full p-8 flex justify-start flex-wrap overflow-y-scroll">
+      <div className="mx-auto w-full px-20 flex justify-start flex-wrap overflow-y-scroll">
         {array.map((item: any) => (
           <Card key={item.id} title={item.title} content={item.content} />
         ))}

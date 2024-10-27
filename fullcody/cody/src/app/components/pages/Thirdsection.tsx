@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { platform } from "@/app/types/type";
 import axios from "axios";
 import { header_api } from "@/app/page";
+import { Flex, Spin } from "antd";
 
 export const Thirdsection = function () {
   const [getPlatform, setPlatform] = useState<platform>([]);
@@ -27,7 +28,7 @@ export const Thirdsection = function () {
   const array: any = [];
   getPlatform.map((i: any) => {
     array.push(
-      <div className="px-10 py-4 flex mobilecustom:block">
+      <div className="px-10 py-24 flex bg-white mobilecustom:block">
         <img
           src={`http://127.0.0.1:1337${i.image.formats.small.url}`}
           alt=""
@@ -80,8 +81,10 @@ export const Thirdsection = function () {
   });
 
   return (
-    <section id="cody" className="p-8">
-      {array[tap]}
+    <section id="cody">
+      <Flex align="center" justify="center" gap="middle">
+        {array.length > 0 ? array[tap] : <Spin size="large" />}
+      </Flex>
     </section>
   );
 };

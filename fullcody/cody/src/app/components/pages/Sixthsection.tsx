@@ -1,9 +1,10 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { event } from "@/app/types/type";
 import axios from "axios";
 import { header_api } from "../../page";
-import { useDraggable } from "react-use-draggable-scroll";
+import Image from "next/image";
+import instru from "../../images/instructoin.svg";
 
 export const Customlabel = function ({
   clicking,
@@ -52,7 +53,7 @@ export const Customcard = function ({
         height={25}
         src={`http://127.0.0.1:1337${icon}`}
         alt=""
-        className="mx-5"
+        className="mx-5 z-20 bg-gray-300"
       />
       <p className="font-bold text-xl text-opacity-60 hover:text-purple-500">
         {title}
@@ -93,7 +94,7 @@ export const Sixthsection = function () {
         key={items.id}
         width={980}
         height={980}
-        src={`http://127.0.0.1:1337${items.image.formats.large.url}`}
+        src={`http://127.0.0.1:1337${items.image?.formats.large.url}`}
         alt=""
         className="object-cover rounded-3xl drop-shadow border m-2"
       />
@@ -120,7 +121,7 @@ export const Sixthsection = function () {
         key={items.id}
         width={980}
         height={980}
-        src={`http://127.0.0.1:1337${items.mobile.formats.large.url}`}
+        src={`http://127.0.0.1:1337${items.mobile?.formats.large.url}`}
         alt=""
         className="object-cover rounded-3xl drop-shadow border m-2"
       />
@@ -146,12 +147,33 @@ export const Sixthsection = function () {
   };
 
   return (
-    <section className="">
-      <p className="text-2xl py-8 text-center font-bold">
-        Кодиг ашиглан Та юу бүтээж чадах вэ?
-      </p>
+    <section className="bg-splushcolor">
+      <div className="relative w-[500px] mx-auto mobilecustom:hidden">
+        <Image
+          src={instru}
+          width={800}
+          height={800}
+          alt=""
+          className="w-20 absolute top-4 right-1/4"
+        />
+        <p className="text-2xl py-8 font-bold text-center">
+          Кодиг ашиглан Та юу бүтээж чадах вэ?
+        </p>
+      </div>
+      <div className="hidden relative mobilecustom:block">
+        <Image
+          src={instru}
+          width={800}
+          height={800}
+          alt=""
+          className="w-20 absolute top-1 right-0 mobilecustom:mx-24"
+        />
+        <p className="text-2xl py-8 font-bold text-center uppercase">
+          Кодиг ашиглан Та юу бүтээж чадах вэ?
+        </p>
+      </div>
       <section className="flex px-10 mobilecustom:block">
-        <div className="w-1/3 p-4 overflow-y-scroll mobilecustom:hidden">
+        <div className="h-[600px] w-1/3 p-4 overflow-y-scroll select-none mobilecustom:hidden">
           {getEvent.map((item: any, index: number) => (
             <Customcard
               key={item.id}
@@ -170,11 +192,11 @@ export const Sixthsection = function () {
           </div> */}
 
           <div
-            className="flex transition-transform duration-300 mobilecustom:hidden"
+            className="flex transition-transform duration-300 select-none mobilecustom:hidden"
             style={{ transform: `translateX(-${page * 100}%)` }}
           >
             {images.map((image: any, index: number) => (
-              <div key={index} className="flex-shrink-0 w-full h-full">
+              <div key={index} className="flex-shrink-0 w-full h-full px-2">
                 {image}
               </div>
             ))}

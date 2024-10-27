@@ -22,9 +22,6 @@
     },
     "feature": {
       "type": "string"
-    },
-    "url": {
-      "type": "string"
     }
   }
 }

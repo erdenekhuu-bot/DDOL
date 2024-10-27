@@ -19,6 +19,8 @@ const config: Config = {
         customtitle: "rgb(30, 24, 102)",
         custombanner: "rgb(118, 111, 239)",
         customlabel: "rgb(136, 85, 241)",
+        splushcolor: "rgb(250, 251, 255);",
+        ssdcolor: "rgb(241, 243, 255);",
       },
     },
   },

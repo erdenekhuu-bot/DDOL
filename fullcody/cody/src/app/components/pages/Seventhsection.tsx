@@ -3,7 +3,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { header_api } from "@/app/page";
 import { comment } from "@/app/types/type";
-import { Carousel } from "antd";
+import review from "../../images/review.svg";
+import Image from "next/image";
 
 export const Seventhsection = function () {
   const [tap, setTap] = useState(0);
@@ -42,9 +43,30 @@ export const Seventhsection = function () {
 
   return (
     <section className="overflow-hidden">
-      <p className="text-2xl py-8  text-center font-bold">
-        Харилцагчдын сэтгэгдэл
-      </p>
+      <div className="relative w-[500px] mx-auto mobilecustom:hidden">
+        <Image
+          src={review}
+          width={800}
+          height={800}
+          alt=""
+          className="w-20 absolute top-4 right-1/4"
+        />
+        <p className="text-2xl py-8 font-bold text-center">
+          Харилцагчдын сэтгэгдэл
+        </p>
+      </div>
+      <div className="hidden relative mobilecustom:block">
+        <Image
+          src={review}
+          width={800}
+          height={800}
+          alt=""
+          className="w-20 absolute top-1 right-0 mobilecustom:mx-24"
+        />
+        <p className="text-2xl py-8 font-bold text-center uppercase">
+          Харилцагчдын сэтгэгдэл
+        </p>
+      </div>
 
       {/* <div className="">{array[tap]}</div> */}
       <div

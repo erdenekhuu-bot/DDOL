@@ -3,6 +3,9 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { header_api } from "../page";
 import { servicesing } from "../types/type";
+import Image from "next/image";
+import servi from "../images/services.svg";
+import { Flex, Spin } from "antd";
 
 export const Services = function () {
   const [getService, setService] = useState<servicesing>([]);
@@ -25,41 +28,60 @@ export const Services = function () {
 
   let counter = 1;
 
-  const switchcolor = () => {
-    const cls = ["red", "yellow", "pink", "green"];
-    return cls[Math.floor(Math.random() * cls.length)];
-  };
-
   return (
-    <section className="bg-gray-50 py-8 z-0">
-      <p className="font-bold text-center py-6 text-3xl mobilecustom:hidden">
-        Үйлчилгээний төрөл
-      </p>
-      <p className="hidden font-bold text-center py-6 text-3xl mobilecustom:block">
-        Үйлчилгээний төрөл
-      </p>
-      <div className="flex flex-wrap justify-evenly mx-8">
-        {getService.map((items: any, index: number) => (
-          <div
-            key={items.id}
-            className="relative w-[200px] m-4 h-[200px] rounded-lg"
-          >
-            <p
-              className={`font-bold text-[60px] text-${switchcolor()}-500 z-0 text-opacity-50`}
-            >
-              {0}
+    <Flex align="center" justify="center" gap="middle">
+      {getService.length > 0 ? (
+        <section className="bg-gray-50 py-8 z-0">
+          <div className="relative w-[500px] mx-auto mobilecustom:hidden">
+            <Image
+              src={servi}
+              width={800}
+              height={800}
+              alt=""
+              className="w-20 absolute top-4 right-1/4"
+            />
+            <p className="text-3xl py-8 font-bold text-center">
+              Үйлчилгээний төрөл
             </p>
-            <p
-              className={`absolute font-bold text-[60px] top-0 left-9 z-20 text-${switchcolor()}-500`}
-            >
-              {counter++ + "."}
-            </p>
-            <div className="absolute bg-white rounded-xl w-[90%] h-[90%] top-10 left-4 z-10 drop-shadow-xl flex items-center">
-              <b className="text-center">{items.name}</b>
-            </div>
           </div>
-        ))}
-      </div>
-    </section>
+          <div className="hidden relative mobilecustom:block">
+            <Image
+              src={servi}
+              width={800}
+              height={800}
+              alt=""
+              className="w-20 absolute top-1 right-0 mobilecustom:mx-24"
+            />
+            <p className="text-3xl py-8 font-bold text-center uppercase">
+              Үйлчилгээний төрөл
+            </p>
+          </div>
+          <div className="flex flex-wrap justify-evenly mx-8">
+            {getService.map((items: any, index: number) => (
+              <div
+                key={items.id}
+                className="relative w-[200px] m-4 h-[200px] rounded-lg"
+              >
+                <p
+                  className={`font-bold text-[60px] text-purple-500 z-0 text-opacity-50`}
+                >
+                  {0}
+                </p>
+                <p
+                  className={`absolute font-bold text-[60px] top-0 left-9 z-20 text-purple-500`}
+                >
+                  {counter++ + "."}
+                </p>
+                <div className="absolute bg-white rounded-xl w-[90%] h-[90%] top-10 left-4 z-10 drop-shadow-xl flex items-center">
+                  <b className="text-center">{items.name}</b>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      ) : (
+        <Spin size="large" />
+      )}
+    </Flex>
   );
 };
