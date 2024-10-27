@@ -17,15 +17,20 @@ const onFinish: FormProps<FieldType>["onFinish"] = async (values) => {
   try {
     await axios.post(
       "http://127.0.0.1:1337/api/comments",
-      { data: { name: "erdebee", comment: values } },
+      {
+        data: {
+          name: "guest",
+          comment: values.comment,
+        },
+      },
       {
         headers: {
           "Content-Type": "application/json",
         },
       }
     );
+    alert("Success posted");
   } catch (error) {
-    console.log(error);
     return;
   }
 };
