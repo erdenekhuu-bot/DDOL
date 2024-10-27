@@ -60,6 +60,7 @@ export type team = {
 export type servicesing = {
   id: number;
   name: string;
+  customcolor?: string;
 }[];
 
 export type articles = {

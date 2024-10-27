@@ -2,7 +2,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { header_api } from "../page";
-import { Image } from "antd";
+import Image from "next/image";
+import join from "../images/join.svg";
 
 export const Organization = function () {
   const [getOrganiation, setOrganization] = useState([]);
@@ -25,7 +26,28 @@ export const Organization = function () {
 
   return (
     <section className="">
-      <p className="font-bold text-center py-6 text-3xl">Хамт олон</p>
+      <div className="relative w-[500px] mx-auto mobilecustom:hidden">
+        <Image
+          src={join}
+          width={800}
+          height={800}
+          alt=""
+          className="w-36 absolute top-4 right-1/4"
+        />
+        <p className="text-3xl py-6 font-bold text-center">Хамт олон</p>
+      </div>
+      <div className="hidden relative mobilecustom:block">
+        <Image
+          src={join}
+          width={800}
+          height={800}
+          alt=""
+          className="w-36 absolute top-1 right-0 mobilecustom:mx-24"
+        />
+        <p className="text-3xl py-6 font-bold text-center uppercase">
+          Хамт олон
+        </p>
+      </div>
       <div className="flex justify-center my-4">
         {getOrganiation.map((photos: any) => (
           <Image

@@ -22,9 +22,6 @@
       "repeatable": true,
       "component": "career-team.team"
     },
-    "purpose": {
-      "type": "string"
-    },
     "service": {
       "type": "component",
       "repeatable": true,

@@ -13,7 +13,7 @@ export const Services = function () {
   const fetching = async function () {
     try {
       const response = await axios.get(
-        "http://127.0.0.1:1337/api/abouts?populate=*",
+        "http://127.0.0.1:1337/api/abouts?populate[service]=*",
         header_api
       );
       setService(response.data.data[0].service);
@@ -57,18 +57,20 @@ export const Services = function () {
             </p>
           </div>
           <div className="flex flex-wrap justify-evenly mx-8">
-            {getService.map((items: any, index: number) => (
+            {getService.map((items) => (
               <div
                 key={items.id}
                 className="relative w-[200px] m-4 h-[200px] rounded-lg"
               >
                 <p
-                  className={`font-bold text-[60px] text-purple-500 z-0 text-opacity-50`}
+                  className={`font-extrabold text-[60px] z-0 text-opacity-50`}
+                  style={{ color: items.customcolor || "purple" }}
                 >
                   {0}
                 </p>
                 <p
-                  className={`absolute font-bold text-[60px] top-0 left-9 z-20 text-purple-500`}
+                  className={`absolute font-extrabold text-[60px] top-0 left-9 z-20`}
+                  style={{ color: items.customcolor || "purple" }}
                 >
                   {counter++ + "."}
                 </p>

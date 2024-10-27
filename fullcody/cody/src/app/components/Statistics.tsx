@@ -36,7 +36,7 @@ export const Statistics = function () {
   const fetching = async function () {
     try {
       const response = await axios.get(
-        "http://127.0.0.1:1337/api/abouts?populate=*",
+        "http://127.0.0.1:1337/api/abouts?populate[statistic]=*",
         header_api
       );
       setStatistic(response.data.data[0].statistic);

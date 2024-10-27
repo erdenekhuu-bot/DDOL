@@ -157,9 +157,11 @@ export interface AboutServiceService extends Struct.ComponentSchema {
   collectionName: 'components_about_service_services';
   info: {
     displayName: 'service';
+    description: '';
   };
   attributes: {
     name: Schema.Attribute.String;
+    customcolor: Schema.Attribute.String;
   };
 }
 

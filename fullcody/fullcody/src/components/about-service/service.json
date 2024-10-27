@@ -1,11 +1,15 @@
 {
   "collectionName": "components_about_service_services",
   "info": {
-    "displayName": "service"
+    "displayName": "service",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "name": {
+      "type": "string"
+    },
+    "customcolor": {
       "type": "string"
     }
   }
