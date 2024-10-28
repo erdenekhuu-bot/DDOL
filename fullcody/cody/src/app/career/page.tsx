@@ -4,9 +4,9 @@ import tsuk2 from "../images/tsuk2.png";
 import tsuk3 from "../images/tsuk3.png";
 import tsuk4 from "../images/tsuk4.png";
 import { Tsukcard } from "../components/Tsukcard";
-import { Whycody } from "./whycody";
-import { Openjobs } from "./openjob";
 import { Organ } from "../components/Organization";
+import { Whycodypage } from "../pages/Whycodypage";
+import { Openjobspage } from "../pages/Openjobspage";
 
 const Career = function () {
   return (
@@ -22,7 +22,7 @@ const Career = function () {
           хамтран ажиллахдаа үргэлж нээлттэй байх болно.
         </p>
       </div>
-      <Whycody />
+      <Whycodypage />
       <div className="py-4 bg-gray-50">
         <p className="text-2xl font-bold py-8 text-center">
           Сонгон шалгаруулалтын үе шат
@@ -34,7 +34,7 @@ const Career = function () {
         <Tsukcard tsuk={tsuk3} content="Нэмэлт сонгон шалгаруулалт" />
         <Tsukcard tsuk={tsuk4} content="Ажилд авах шийдвэр" />
       </div>
-      <Openjobs />
+      <Openjobspage />
       <Organ />
     </section>
   );

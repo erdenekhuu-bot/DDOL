@@ -1,8 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
-import { event } from "@/app/types/type";
-import axios from "axios";
-import { header_api } from "../../page";
+import { useState } from "react";
 import Image from "next/image";
 import instru from "../../images/instructoin.svg";
 
@@ -62,33 +59,16 @@ export const Customcard = function ({
   );
 };
 
-export const Sixthsection = function () {
-  const [getEvent, setEvent] = useState<event>([]);
+export const Sixthsection = function ({ data }: { data: any }) {
   const [page, setPage] = useState(0);
 
   const handleClick = (index: number) => {
     setPage(index);
   };
 
-  const fetching = async function () {
-    try {
-      const response = await axios.get(
-        "http://127.0.0.1:1337/api/homes?populate[event][populate]=*",
-        header_api
-      );
-      setEvent(response.data.data[0].event);
-    } catch (error) {
-      return;
-    }
-  };
-
-  useEffect(function () {
-    fetching();
-  }, []);
-
   const images: any = [];
 
-  getEvent.map((items: any) =>
+  data.map((items: any) =>
     images.push(
       <img
         key={items.id}
@@ -102,7 +82,7 @@ export const Sixthsection = function () {
   );
 
   const mobilelabel: any = [];
-  getEvent.map((item: any, index: number) =>
+  data.map((item: any, index: number) =>
     mobilelabel.push(
       <Customlabel
         key={item.id}
@@ -115,7 +95,7 @@ export const Sixthsection = function () {
 
   const mobiles: any = [];
 
-  getEvent.map((items: any) =>
+  data.map((items: any) =>
     mobiles.push(
       <img
         key={items.id}
@@ -130,7 +110,7 @@ export const Sixthsection = function () {
 
   const navigateRight = () => {
     setPage((prevIndex: number) => {
-      if (prevIndex == getEvent.length - 1) {
+      if (prevIndex == data.length - 1) {
         return 0;
       }
       return prevIndex + 1;
@@ -140,7 +120,7 @@ export const Sixthsection = function () {
   const navigateLeft = () => {
     setPage((prevIndex: number) => {
       if (prevIndex == 0) {
-        return getEvent.length - 1;
+        return data.length - 1;
       }
       return prevIndex - 1;
     });
@@ -173,8 +153,8 @@ export const Sixthsection = function () {
         </p>
       </div>
       <section className="flex px-10 mobilecustom:block">
-        <div className="h-[600px] w-1/3 p-4 overflow-y-scroll select-none mobilecustom:hidden">
-          {getEvent.map((item: any, index: number) => (
+        <div className="h-[600px] w-1/3 p-4 overflow-y-scroll select-none hide-scrollbar mobilecustom:hidden">
+          {data.map((item: any, index: number) => (
             <Customcard
               key={item.id}
               icon={item.icon.url}

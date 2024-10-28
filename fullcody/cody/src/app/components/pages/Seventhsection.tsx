@@ -1,40 +1,20 @@
 "use client";
-import { useState, useEffect } from "react";
-import axios from "axios";
-import { header_api } from "@/app/page";
-import { comment } from "@/app/types/type";
+import { useState } from "react";
 import review from "../../images/review.svg";
 import Image from "next/image";
 
-export const Seventhsection = function () {
+export const Seventhsection = function ({ data }: { data: any }) {
   const [tap, setTap] = useState(0);
-  const [getComment, setComment] = useState<comment>([]);
-
-  const fetching = async function () {
-    try {
-      const response = await axios.get(
-        "http://127.0.0.1:1337/api/homes?populate[comment][populate]=*",
-        header_api
-      );
-      setComment(response.data.data[0].comment);
-    } catch (error) {
-      return;
-    }
-  };
-
-  useEffect(function () {
-    fetching();
-  }, []);
 
   const array: any = [];
 
-  getComment.map((item: any) =>
+  data.map((item: any) =>
     array.push(
       <img
         key={item.id}
         width={1000}
         height={500}
-        src={`http://127.0.0.1:1337${item.image.formats.large.url}`}
+        src={`http://127.0.0.1:1337${item.image?.formats.large.url}`}
         alt=""
         className="object-cover w-[90%] mx-auto"
       />

@@ -1,32 +1,12 @@
 "use client";
-import { useState, useEffect } from "react";
-import { platform } from "@/app/types/type";
-import axios from "axios";
-import { header_api } from "@/app/page";
+import { useState } from "react";
 import { Flex, Spin } from "antd";
 
-export const Thirdsection = function () {
-  const [getPlatform, setPlatform] = useState<platform>([]);
+export const Thirdsection = function ({ data }: { data: any }) {
   const [tap, setTap] = useState(0);
 
-  const fetchingPlatform = async function () {
-    try {
-      const response = await axios.get(
-        "http://127.0.0.1:1337/api/homes?populate[platform][populate]=*",
-        header_api
-      );
-      setPlatform(response.data.data[0].platform);
-    } catch (error) {
-      return;
-    }
-  };
-
-  useEffect(() => {
-    fetchingPlatform();
-  }, []);
-
   const array: any = [];
-  getPlatform.map((i: any) => {
+  data.map((i: any) => {
     array.push(
       <div className="px-10 py-24 flex bg-white mobilecustom:block">
         <img

@@ -5,12 +5,6 @@ import phone_background from "../app/images/phone_template.png";
 import pad_background from "../app/images/pad_template.png";
 import bacgrkound_img from "../app/images/background_image.jpg";
 import { Firstsection } from "./components/pages/Firstsection";
-import { Thirdsection } from "./components/pages/Thirdsection";
-import { Fourthsection } from "./components/pages/Fourthsection";
-import { Secondsection } from "./components/pages/Secondsection";
-import { Fifthsection } from "./components/pages/Fifthsection";
-import { Sixthsection } from "./components/pages/Sixthsection";
-import { Seventhsection } from "./components/pages/Seventhsection";
 import Layout from "antd/es/layout/layout";
 import { token } from "./types/type";
 import { array } from "./json/image";
@@ -18,6 +12,12 @@ import { mobilearray } from "./json/image";
 import { Button } from "antd";
 import ellipse from "../app/images/ellipsee-opt.webp";
 import ellipsedown from "../app/images/ellipsee-down.webp";
+import { Sliding2 } from "./pages/Sliding2";
+import { Platform } from "./pages/Platform";
+import { Solution } from "./pages/Solution";
+import { Feature } from "./pages/Feature";
+import { Event } from "./pages/Event";
+import { Comments } from "./pages/Comment";
 
 export const header_api = {
   headers: {
@@ -139,9 +139,9 @@ export default function Home() {
           </div>
         </div>
       </Firstsection>
-      <Secondsection />
-      <Thirdsection />
-      <Fourthsection />
+      <Sliding2 />
+      <Platform />
+      <Solution />
       <Image
         src={ellipse}
         alt=""
@@ -149,7 +149,7 @@ export default function Home() {
         height={1000}
         className="w-full"
       />
-      <Fifthsection />
+      <Feature />
       <section>
         <Image
           src={ellipsedown}
@@ -159,8 +159,8 @@ export default function Home() {
           className="w-full transform rotate-180"
         />
       </section>
-      <Sixthsection />
-      <Seventhsection />
+      <Event />
+      <Comments />
     </Layout>
   );
 }

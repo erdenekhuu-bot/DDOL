@@ -65,3 +65,7 @@ body {
   animation-fill-mode: both;
   animation-iteration-count: infinite;
 }
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}

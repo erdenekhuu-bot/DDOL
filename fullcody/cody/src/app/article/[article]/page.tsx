@@ -35,13 +35,16 @@ const onFinish: FormProps<FieldType>["onFinish"] = async (values) => {
   }
 };
 
-const onFinishFailed: FormProps<FieldType>["onFinishFailed"] = (errorInfo) => {
-  console.log("Failed:", errorInfo);
-};
-
 export default function Article() {
   const params = useParams();
   const [getArticle, setArticle] = useState<articles>([]);
+  const [getComment, setComment] = useState<
+    {
+      id: number;
+      name: string;
+      comment: string;
+    }[]
+  >([]);
   const [value, setValue] = useState("");
 
   const fetching = async function () {
@@ -51,6 +54,7 @@ export default function Article() {
         header_api
       );
       setArticle(response.data.data);
+      setComment(response.data.data.comments);
     } catch (error) {
       return;
     }
@@ -62,6 +66,8 @@ export default function Article() {
     },
     [params.article]
   );
+
+  console.log(getComment);
 
   return (
     <section className="w-full pt-44">
@@ -77,12 +83,19 @@ export default function Article() {
       <div className="p-8 mx-auto w-1/2">{getArticle.content}</div>
       <p className="text-center my-2 font-bold text-2xl">Сэтгэгдлүүд</p>
 
+      {getComment.length > 0 &&
+        getComment.map((items) => (
+          <div className="py-8 border-t border-gray-800 border-opacity-30 mx-auto w-1/2">
+            <p className="text-xl">Контент бүтээгч</p>
+            <p className="my-2">{items.name}</p>
+            <p className="">{items.comment}</p>
+          </div>
+        ))}
       <Form
         className="mx-auto w-1/2"
         name="basic"
         initialValues={{ remember: true }}
         onFinish={onFinish}
-        onFinishFailed={onFinishFailed}
         autoComplete="off"
       >
         <Form.Item<FieldType>

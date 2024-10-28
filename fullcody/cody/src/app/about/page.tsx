@@ -1,4 +1,3 @@
-import { Statistics } from "../components/Statistics";
 import { Team } from "../components/Team";
 import { Purpose } from "../components/Purpose";
 import { Services } from "../components/Services";
@@ -6,6 +5,7 @@ import { Organization } from "../components/Organization";
 import about_mobile from "../images/about_mobile.svg";
 import Image from "next/image";
 import about from "../images/about.svg";
+import { Statisticspage } from "../pages/Statisticspage";
 
 const About = function () {
   return (
@@ -71,7 +71,7 @@ const About = function () {
             шийдлээ түгээж, 20 гаруй салбарыг цахимжуулан ажиллаж байна.
           </p>
         </div>
-        <Statistics />
+        <Statisticspage />
       </div>
       <Team />
       <Purpose />

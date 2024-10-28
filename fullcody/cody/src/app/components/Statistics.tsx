@@ -1,8 +1,5 @@
 "use client";
 import { useState, useEffect } from "react";
-import axios from "axios";
-import { header_api } from "../page";
-import { statistics } from "../types/type";
 import Image from "next/image";
 import stat from "../images/statistic.svg";
 
@@ -22,9 +19,7 @@ export const Customcard = function ({
   );
 };
 
-export const Statistics = function () {
-  const [getSatatistic, setStatistic] = useState<statistics>([]);
-
+export const Statistics = function ({ data }: { data: any }) {
   const [web, setWeb] = useState(0);
   const [user, setUser] = useState(0);
   const [partner, setPartner] = useState(0);
@@ -33,20 +28,7 @@ export const Statistics = function () {
   const [brand, setBrand] = useState(0);
   let interval: any = null;
 
-  const fetching = async function () {
-    try {
-      const response = await axios.get(
-        "http://127.0.0.1:1337/api/abouts?populate[statistic]=*",
-        header_api
-      );
-      setStatistic(response.data.data[0].statistic);
-    } catch (error) {
-      return;
-    }
-  };
-
   useEffect(function () {
-    fetching();
     interval = setInterval(() => {
       setWeb((seconds) => {
         if (seconds >= 100) {

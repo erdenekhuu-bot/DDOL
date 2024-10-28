@@ -4,6 +4,7 @@ import axios from "axios";
 import { header_api } from "../page";
 import Image from "next/image";
 import join from "../images/join.svg";
+import { Flex, Spin } from "antd";
 
 export const Organization = function () {
   const [getOrganiation, setOrganization] = useState([]);
@@ -83,18 +84,24 @@ export const Organ = function () {
   }, []);
 
   return (
-    <section>
-      <p className="font-bold text-center py-6 text-3xl">Хамт олон</p>
-      <div className="flex flex-wrap items-center p-8 ">
-        {getOrganiation.map((items: any) => (
-          <Image
-            src={`http://127.0.0.1:1337${items.profile.url}`}
-            alt=""
-            width={200}
-            height={200}
-          />
-        ))}
-      </div>
-    </section>
+    <Flex align="center" justify="center" gap="middle">
+      {getOrganiation.length > 0 ? (
+        <section>
+          <p className="font-bold text-center py-6 text-3xl">Хамт олон</p>
+          <div className="flex flex-wrap items-center p-8 ">
+            {getOrganiation.map((items: any) => (
+              <Image
+                src={`http://127.0.0.1:1337${items.profile.url}`}
+                alt=""
+                width={200}
+                height={200}
+              />
+            ))}
+          </div>
+        </section>
+      ) : (
+        <Spin size="large" />
+      )}
+    </Flex>
   );
 };

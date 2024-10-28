@@ -22,9 +22,6 @@
       "repeatable": true,
       "component": "career-open.careeropen"
     },
-    "purpose": {
-      "type": "string"
-    },
     "teamprofiles": {
       "type": "relation",
       "relation": "manyToMany",

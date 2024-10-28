@@ -1,47 +1,28 @@
 "use client";
 import { Card } from "../Card";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Sol } from "../PopUp";
-import axios from "axios";
-import { solution } from "@/app/types/type";
-import { header_api } from "@/app/page";
 import Image from "next/image";
 import imgsol from "../../images/svgsoltion.svg";
 import { Button } from "antd";
+import { Flex, Spin } from "antd";
 
-export const Fourthsection = function () {
+export const Fourthsection = function ({ data }: { data: any }) {
   const [click, setClick] = useState(false);
-  const [getSolution, setSolution] = useState<solution>([]);
-
-  const fetchingSolution = async function () {
-    try {
-      const response = await axios.get(
-        "http://127.0.0.1:1337/api/homes?populate[solution][populate]=*",
-        header_api
-      );
-      setSolution(response.data.data[0].solution);
-    } catch (error) {
-      return;
-    }
-  };
-
-  useEffect(function () {
-    fetchingSolution();
-  }, []);
 
   const handlePopupToggle = () => {
     setClick(!click);
   };
   const solution_list = [];
 
-  for (let i = 0; i < getSolution.length; i++)
+  for (let i = 0; i < data.length; i++)
     if (i < 4)
       solution_list.push(
-        <Card title={getSolution[i].title} content={getSolution[i].content} />
+        <Card title={data[i].title} content={data[i].content} />
       );
 
   return (
-    getSolution.length > 0 && (
+    data.length > 0 && (
       <section id="solution" className="bg-splushcolor">
         <div className="relative w-[500px] mx-auto mobilecustom:hidden">
           <Image
@@ -86,7 +67,7 @@ export const Fourthsection = function () {
           >
             Дэлгэрэнгүй
           </Button>
-          {click && <Sol trigger={handlePopupToggle} array={getSolution} />}
+          {click && <Sol trigger={handlePopupToggle} array={data} />}
         </div>
       </section>
     )

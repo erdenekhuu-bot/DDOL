@@ -542,7 +542,7 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
     title: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     content: Schema.Attribute.RichText;
-    comments: Schema.Attribute.Relation<'manyToMany', 'api::comment.comment'>;
+    comments: Schema.Attribute.Relation<'oneToMany', 'api::comment.comment'>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -573,7 +573,6 @@ export interface ApiCareerCareer extends Struct.CollectionTypeSchema {
   attributes: {
     reason: Schema.Attribute.Component<'career-reason.reason', true>;
     caropen: Schema.Attribute.Component<'career-open.careeropen', true>;
-    purpose: Schema.Attribute.String;
     teamprofiles: Schema.Attribute.Relation<
       'manyToMany',
       'api::teamprofile.teamprofile'
@@ -600,6 +599,7 @@ export interface ApiCommentComment extends Struct.CollectionTypeSchema {
     singularName: 'comment';
     pluralName: 'comments';
     displayName: 'comment';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -607,7 +607,7 @@ export interface ApiCommentComment extends Struct.CollectionTypeSchema {
   attributes: {
     name: Schema.Attribute.String;
     comment: Schema.Attribute.RichText;
-    articles: Schema.Attribute.Relation<'manyToMany', 'api::article.article'>;
+    article: Schema.Attribute.Relation<'manyToOne', 'api::article.article'>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
