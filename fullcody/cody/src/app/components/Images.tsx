@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { slide } from "@/app/types/type";
 
 export const Images = function ({ arr }: any) {
   return (

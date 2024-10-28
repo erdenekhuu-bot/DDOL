@@ -5,6 +5,10 @@ import { Aritcle } from "./Article";
 import { articles } from "../types/type";
 import { header_api } from "../page";
 import Link from "next/link";
+import Image from "next/image";
+import search from "../images/search.svg";
+
+export const Popup = function () {};
 
 export const CustomCard = function ({
   title,
@@ -35,6 +39,7 @@ export const CustomCard = function ({
 
 const Article = function () {
   const [getArticle, setArticle] = useState<articles>([]);
+  const [click, setClick] = useState(false);
 
   const fetching = async function () {
     try {
@@ -59,6 +64,20 @@ const Article = function () {
 
   return (
     <Aritcle>
+      {click && (
+        <div className="absolute inset-0 top-0 right-0 left-0 z-30 bg-black bg-opacity-50"></div>
+      )}
+      <div className="fixed top-52 z-30 right-10 bg-white p-2 w-10 rounded-[50%] hover:bg-opacity-50">
+        <button
+          className=""
+          type="button"
+          onClick={function () {
+            setClick(!click);
+          }}
+        >
+          <Image src={search} width={800} height={800} alt="" className="" />
+        </button>
+      </div>
       {customarr.length > 0 && (
         <div className="relative">
           <div className="absolute inset-0 bg-black bg-opacity-40"></div>
@@ -83,7 +102,7 @@ const Article = function () {
           </p>
         </div>
       )}
-      <div className="absolute bottom-0 flex">
+      <div className="absolute bottom-3 flex">
         {getArticle.map((items: any) => (
           <Link href={`/article/${items.documentId}`}>
             <CustomCard
