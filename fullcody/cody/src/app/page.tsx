@@ -18,6 +18,7 @@ import { Solution } from "./pages/Solution";
 import { Feature } from "./pages/Feature";
 import { Event } from "./pages/Event";
 import { Comments } from "./pages/Comment";
+import { Seventhsection } from "./components/pages/Seventhsection";
 
 export const header_api = {
   headers: {
@@ -160,7 +161,8 @@ export default function Home() {
         />
       </section>
       <Event />
-      <Comments />
+      {/* <Comments /> */}
+      <Seventhsection />
     </Layout>
   );
 }

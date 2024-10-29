@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { Flex, Spin } from "antd";
+import { Flex, Spin, Skeleton } from "antd";
 
 export const Thirdsection = function ({ data }: { data: any }) {
   const [tap, setTap] = useState(0);
@@ -63,7 +63,7 @@ export const Thirdsection = function ({ data }: { data: any }) {
   return (
     <section id="cody">
       <Flex align="center" justify="center" gap="middle">
-        {array.length > 0 ? array[tap] : <Spin size="large" />}
+        {array.length > 0 ? array[tap] : <Skeleton />}
       </Flex>
     </section>
   );

@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { Aritcle } from "./Article";
 import { articles } from "../types/type";
@@ -7,7 +7,8 @@ import { header_api } from "../page";
 import Link from "next/link";
 import Image from "next/image";
 import search from "../images/search.svg";
-import { Flex, Input, List } from "antd";
+import { Flex, Input } from "antd";
+import { useDraggable } from "react-use-draggable-scroll";
 
 export const Popup = function ({ data }: { data: any }) {
   const [search, setSearch] = useState("");
@@ -17,18 +18,27 @@ export const Popup = function ({ data }: { data: any }) {
   );
 
   return (
-    <section className="fixed inset-0 z-30 bg-gray-50 w-[90%] h-[25%] rounded-lg mx-auto my-auto">
+    <section className="fixed inset-0 z-30 bg-gray-50 w-[90%] h-[35%] rounded-lg mx-auto my-auto">
       <Flex vertical gap={12} className="p-4">
         <Input
           placeholder="Article хайх..."
           onChange={(e) => setSearch(e.target.value)}
         />
         <p className="">Хайлтын илэрц</p>
-        <div className="bg-gray-400 bg-opacity-50 py-8">
+        <div className="flex space-x-10">
           {search.length > 0 ? (
-            searching.map((items: any) => <p key={items.id}>{items.title}</p>)
+            searching.map((items: any) => (
+              <div key={items.id} className="w-24">
+                <img src={`http://127.0.0.1:1337/${items.image.url}`} alt="" />
+                <p className="text-center lowercase text-[12px]">
+                  {items.title.substring(0, 30) + "..."}
+                </p>
+              </div>
+            ))
           ) : (
-            <p>Та хайх түлхүүр үгээ оруулна уу</p>
+            <p className="bg-gray-400 bg-opacity-50 w-full">
+              Та хайх түлхүүр үгээ оруулна уу
+            </p>
           )}
         </div>
       </Flex>
@@ -46,7 +56,7 @@ export const CustomCard = function ({
   blog: string;
 }) {
   return (
-    <div className="z-10 w-[500px] bg-white rounded-lg flex mx-8">
+    <div className="z-10 w-[500px] bg-white rounded-lg flex">
       <img
         src={`http://127.0.0.1:1337/${image.image.url}`}
         alt=""
@@ -63,7 +73,7 @@ export const CustomCard = function ({
   );
 };
 
-const Article = function () {
+const Article = function ({ data }: { data: any }) {
   const [getArticle, setArticle] = useState<articles>([]);
   const [click, setClick] = useState(false);
 
@@ -87,6 +97,10 @@ const Article = function () {
 
   for (let i = 0; i < getArticle.length; i++)
     if (i < 1) customarr.push(getArticle[i]);
+
+  const ref =
+    useRef<HTMLDivElement>() as React.MutableRefObject<HTMLInputElement>;
+  const { events } = useDraggable(ref);
 
   return (
     <Aritcle>
@@ -129,7 +143,11 @@ const Article = function () {
           </p>
         </div>
       )}
-      <div className="absolute bottom-3 flex">
+      <div
+        {...events}
+        ref={ref}
+        className="ml-32 absolute bottom-3 flex w-[80%] hide-scrollbar space-x-20 overflow-x-hidden scrollbar-hide select-none"
+      >
         {getArticle.map((items: any) => (
           <Link href={`/article/${items.documentId}`}>
             <CustomCard
