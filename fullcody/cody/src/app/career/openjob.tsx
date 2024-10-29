@@ -121,7 +121,7 @@ export const Openjobs = function ({ data }: { data: any }) {
             Нээлттэй ажлын байр
           </p>
           <section className="flex px-8 mobilecustom:block">
-            <div className="w-1/3 md:p-4 overflow-y-scroll mobilecustom:hidden">
+            <div className="w-1/3 md:p-4 overflow-y-scroll hide-scrollbar mobilecustom:hidden">
               {data.map((item: any, index: number) => (
                 <Customcard
                   key={item.id}
@@ -138,7 +138,7 @@ export const Openjobs = function ({ data }: { data: any }) {
               <div className="flex overflow-hidden flex-shrink-0 w-full h-full py-4">
                 {/* {images[page]} */}
                 <div
-                  className="flex transition-transform duration-300 mobilecustom:hidden"
+                  className="flex transition-transform duration-300"
                   style={{ transform: `translateX(-${page * 100}%)` }}
                 >
                   {images.map((image: any, index: number) => (

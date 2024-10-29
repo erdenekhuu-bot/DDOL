@@ -6,7 +6,6 @@ import { articles } from "../../types/type";
 import { header_api } from "../../page";
 import { Input } from "antd";
 import { Form, FormProps, Button } from "antd";
-import { MakeCommentPopup } from "../page";
 
 const { TextArea } = Input;
 
@@ -70,16 +69,18 @@ export default function Article() {
 
   return (
     <section className="w-full pt-44">
-      <div className="p-8 mx-auto w-1/2">
+      <div className="p-8 mx-auto w-[60%] mobilecustom:mx-0 mobilecustom:w-full">
         <img
           src={`http://127.0.0.1:1337${getArticle.image?.formats.small.url}`}
           alt=""
           width={1000}
           height={1000}
-          className="w-96"
+          className="w-full object-cover"
         />
       </div>
-      <div className="p-8 mx-auto w-1/2">{getArticle.content}</div>
+      <div className="p-8 mx-auto w-[60%] mobilecustom:mx-0 mobilecustom:w-full">
+        {getArticle.content}
+      </div>
       <p className="text-center my-2 font-bold text-2xl">Сэтгэгдлүүд</p>
 
       {getComment.length > 0 &&
@@ -91,7 +92,7 @@ export default function Article() {
           </div>
         ))}
       <Form
-        className="mx-auto w-1/2"
+        className="mx-auto w-1/2 p-8 mobilecustom:w-full"
         name="basic"
         initialValues={{ remember: true }}
         onFinish={onFinish}

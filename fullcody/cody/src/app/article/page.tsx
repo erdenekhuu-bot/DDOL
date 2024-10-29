@@ -139,7 +139,7 @@ const Article = function ({ data }: { data?: any }) {
               {customarr[0].title}
             </p>
           </Link>
-          <p className="absolute px-8 w-[60%] text-xl text-opacity-80 top-80 z-20 text-white">
+          <p className="absolute px-8 w-[60%] text-xl text-opacity-80 top-80 z-20 text-white mobilecustom:w-[100%]">
             {customarr[0].content.slice(0, 178) + "..."}
             <Link href={`/article/${customarr[0].documentId}`}>
               <p className="my-12 text-2xl z-20 text-white text-opacity-80 hover:text-opacity-100">
