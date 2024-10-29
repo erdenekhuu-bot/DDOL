@@ -111,7 +111,7 @@ const Article = function ({ data }: { data?: any }) {
   return (
     <Aritcle>
       {click && (
-        <div className="absolute inset-0 top-0 right-0 left-0 z-30 bg-black bg-opacity-50"></div>
+        <div className="select-none absolute inset-0 top-0 right-0 left-0 z-30 bg-black bg-opacity-50"></div>
       )}
 
       <div className="fixed top-52 z-30 right-10 bg-white p-2 w-10 rounded-[50%] hover:bg-opacity-50">
