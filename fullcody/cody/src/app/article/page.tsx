@@ -18,7 +18,7 @@ export const Popup = function ({ data }: { data: any }) {
   );
 
   return (
-    <section className="fixed inset-0 z-30 bg-gray-50 w-[90%] h-[35%] rounded-lg mx-auto my-auto">
+    <section className="fixed top-32 inset-0 z-30 bg-gray-50 w-[90%] h-[35%] rounded-lg mx-auto">
       <Flex vertical gap={12} className="p-4">
         <Input
           placeholder="Article хайх..."
@@ -28,12 +28,18 @@ export const Popup = function ({ data }: { data: any }) {
         <div className="flex space-x-10">
           {search.length > 0 ? (
             searching.map((items: any) => (
-              <div key={items.id} className="w-24">
-                <img src={`http://127.0.0.1:1337/${items.image.url}`} alt="" />
-                <p className="text-center lowercase text-[12px]">
-                  {items.title.substring(0, 30) + "..."}
-                </p>
-              </div>
+              <Link href={`/article/${items.documentId}`}>
+                <div key={items.id} className="w-24">
+                  <img
+                    src={`http://127.0.0.1:1337/${items.image.url}`}
+                    alt=""
+                  />
+
+                  <p className="text-center lowercase text-[12px]">
+                    {items.title.substring(0, 30) + "..."}
+                  </p>
+                </div>
+              </Link>
             ))
           ) : (
             <p className="bg-gray-400 bg-opacity-50 w-full">
@@ -73,7 +79,7 @@ export const CustomCard = function ({
   );
 };
 
-const Article = function ({ data }: { data: any }) {
+const Article = function ({ data }: { data?: any }) {
   const [getArticle, setArticle] = useState<articles>([]);
   const [click, setClick] = useState(false);
 
