@@ -18,7 +18,7 @@ export const MakeCommentPopup = function ({ data }: { data: any }) {
   );
 
   return (
-    <section className="fixed top-32 inset-0 z-30 bg-gray-50 w-[90%] h-[35%] rounded-lg mx-auto">
+    <section className="select-none fixed top-32 inset-0 z-30 bg-gray-50 w-[90%] h-[35%] rounded-lg mx-auto">
       <Flex vertical gap={12} className="p-4">
         <Input
           placeholder="Article хайх..."
