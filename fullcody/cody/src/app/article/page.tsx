@@ -10,7 +10,7 @@ import search from "../images/search.svg";
 import { Flex, Input } from "antd";
 import { useDraggable } from "react-use-draggable-scroll";
 
-export const Popup = function ({ data }: { data: any }) {
+export const MakeCommentPopup = function ({ data }: { data: any }) {
   const [search, setSearch] = useState("");
 
   const searching = data.filter((letter: any) =>
@@ -25,7 +25,7 @@ export const Popup = function ({ data }: { data: any }) {
           onChange={(e) => setSearch(e.target.value)}
         />
         <p className="">Хайлтын илэрц</p>
-        <div className="flex space-x-10">
+        <div className="flex space-x-5">
           {search.length > 0 ? (
             searching.map((items: any) => (
               <Link href={`/article/${items.documentId}`}>
@@ -165,7 +165,7 @@ const Article = function ({ data }: { data?: any }) {
           </Link>
         ))}
       </div>
-      {click && <Popup data={getArticle} />}
+      {click && <MakeCommentPopup data={getArticle} />}
     </Aritcle>
   );
 };

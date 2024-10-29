@@ -6,6 +6,7 @@ import { articles } from "../../types/type";
 import { header_api } from "../../page";
 import { Input } from "antd";
 import { Form, FormProps, Button } from "antd";
+import { MakeCommentPopup } from "../page";
 
 const { TextArea } = Input;
 
@@ -114,6 +115,7 @@ export default function Article() {
           </Button>
         </Form.Item>
       </Form>
+      <div className=""></div>
     </section>
   );
 }
