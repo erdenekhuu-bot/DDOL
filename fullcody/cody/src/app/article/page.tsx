@@ -7,8 +7,34 @@ import { header_api } from "../page";
 import Link from "next/link";
 import Image from "next/image";
 import search from "../images/search.svg";
+import { Flex, Input, List } from "antd";
 
-export const Popup = function () {};
+export const Popup = function ({ data }: { data: any }) {
+  const [search, setSearch] = useState("");
+
+  const searching = data.filter((letter: any) =>
+    letter.title.toLowerCase().includes(search.toLowerCase())
+  );
+
+  return (
+    <section className="fixed inset-0 z-30 bg-gray-50 w-[90%] h-[25%] rounded-lg mx-auto my-auto">
+      <Flex vertical gap={12} className="p-4">
+        <Input
+          placeholder="Article хайх..."
+          onChange={(e) => setSearch(e.target.value)}
+        />
+        <p className="">Хайлтын илэрц</p>
+        <div className="bg-gray-400 bg-opacity-50 py-8">
+          {search.length > 0 ? (
+            searching.map((items: any) => <p key={items.id}>{items.title}</p>)
+          ) : (
+            <p>Та хайх түлхүүр үгээ оруулна уу</p>
+          )}
+        </div>
+      </Flex>
+    </section>
+  );
+};
 
 export const CustomCard = function ({
   title,
@@ -67,6 +93,7 @@ const Article = function () {
       {click && (
         <div className="absolute inset-0 top-0 right-0 left-0 z-30 bg-black bg-opacity-50"></div>
       )}
+
       <div className="fixed top-52 z-30 right-10 bg-white p-2 w-10 rounded-[50%] hover:bg-opacity-50">
         <button
           className=""
@@ -114,6 +141,7 @@ const Article = function () {
           </Link>
         ))}
       </div>
+      {click && <Popup data={getArticle} />}
     </Aritcle>
   );
 };

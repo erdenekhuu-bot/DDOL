@@ -67,8 +67,6 @@ export default function Article() {
     [params.article]
   );
 
-  console.log(getComment);
-
   return (
     <section className="w-full pt-44">
       <div className="p-8 mx-auto w-1/2">
