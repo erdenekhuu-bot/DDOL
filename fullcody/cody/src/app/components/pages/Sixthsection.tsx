@@ -105,7 +105,7 @@ export const Sixthsection = function ({ data }: { data: any }) {
         height={980}
         src={`http://127.0.0.1:1337${items.mobile?.formats.large.url}`}
         alt=""
-        className="object-cover rounded-3xl drop-shadow border m-2"
+        className="object-cover rounded-3xl drop-shadow border"
       />
     )
   );
@@ -185,38 +185,46 @@ export const Sixthsection = function ({ data }: { data: any }) {
           </div>
         </div>
         <div className="hidden relative flex-shrink-0 w-full h-full p-10 mobilecustom:flex">
-          <div className="absolute left-0 top-1/2 w-56 hidden z-20 rounded-full mobilecustom:block">
-            <button className="bg-yellow-300" onClick={navigateRight}>
+          <div className="absolute left-1 top-1/2 w-56 hidden z-20 rounded-full mobilecustom:block">
+            <button
+              className="border bg-white z-20 rounded-full p-4"
+              onClick={navigateLeft}
+            >
               <Image
                 src={right}
                 alt=""
                 width={800}
                 height={800}
-                className="w-10"
+                className="w-2"
               />
             </button>
           </div>
-          <div className="absolute right-0 top-1/2 w-56 hidden z-20 mobilecustom:block">
-            <button className="bg-yellow-300" onClick={navigateLeft}>
+          <div className="absolute right-1 top-1/2 w-56 hidden z-20 mobilecustom:block">
+            <button
+              className="border bg-white z-20 rounded-full p-4"
+              onClick={navigateRight}
+            >
               <Image
                 src={left}
                 alt=""
                 width={800}
                 height={800}
-                className="w-10"
+                className="w-2"
               />
             </button>
           </div>
           {/* <div className="z-0 bg-blue-500">{mobiles[page]}</div> */}
-          <div
-            className="flex transition-transform duration-300 select-none"
-            style={{ transform: `translateX(-${page * 100}%)` }}
-          >
-            {mobiles.map((image: any, index: number) => (
-              <div key={index} className="flex-shrink-0 w-full h-full px-2">
-                {image}
-              </div>
-            ))}
+          <div className="w-[500px] bg-yellow-200 flex space-x-10 overflow-hidden">
+            <div
+              className="flex transition-transform duration-300 select-none"
+              style={{ transform: `translateX(-${page * 100}%)` }}
+            >
+              {mobiles.map((image: any, index: number) => (
+                <div key={index} className="flex-shrink-0 w-full h-full">
+                  {image}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
