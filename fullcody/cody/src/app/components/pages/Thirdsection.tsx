@@ -73,11 +73,9 @@ export const Thirdsection = function ({ data }: { data: any }) {
         {array.length > 0 && (
           <Swiper
             spaceBetween={10}
-            scrollbar={{ draggable: false }}
             loop={true}
             onSlideChange={handleSlideChange}
             initialSlide={tap}
-            pagination={true}
           >
             {array.map((image: any) => (
               <SwiperSlide key={image.id}>
