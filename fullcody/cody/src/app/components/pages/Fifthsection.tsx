@@ -20,7 +20,7 @@ export const WhycodeCards = function ({
   customcolor?: string;
 }) {
   return (
-    <section className="w-[200px] h-[250px] z-20 rounded-lg p-4 m-4 relative mobilecustom:h-[200px] mobilecustom:rounded-sm">
+    <section className="w-[200px] h-[250px] z-20 rounded-lg p-4 m-4 relative mobilecustom:w-[150px] mobilecustom:h-[150px] mobilecustom:m-2">
       <div
         style={{ backgroundColor: customcolor || "purple" }}
         className="p-4 my-4 w-1/3 rounded-xl flex items-center mobilecustom:p-1"
