@@ -67,7 +67,9 @@ export const Team = function () {
                 <p className="font-bold text-center text-sm my-4">
                   {item.name}
                 </p>
-                <p className="text-center text-sm my-2">{item.major}</p>
+                <p className="text-center text-sm my-2 mobilecustom:text-[10px] mobilecustom:my-0">
+                  {item.major}
+                </p>
                 <p className="text-center">{item.division}</p>
               </div>
             ))}

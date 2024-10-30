@@ -38,6 +38,19 @@ export interface CodySolutionSolution extends Struct.ComponentSchema {
   };
 }
 
+export interface CodyPlatformPlatform extends Struct.ComponentSchema {
+  collectionName: 'components_cody_platform_platforms';
+  info: {
+    displayName: 'platform';
+    description: '';
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    content: Schema.Attribute.RichText;
+  };
+}
+
 export interface CodyFeatureFeature extends Struct.ComponentSchema {
   collectionName: 'components_cody_feature_features';
   info: {
@@ -49,19 +62,6 @@ export interface CodyFeatureFeature extends Struct.ComponentSchema {
     title: Schema.Attribute.String;
     feature: Schema.Attribute.String;
     customcolor: Schema.Attribute.String;
-  };
-}
-
-export interface CodyPlatformPlatform extends Struct.ComponentSchema {
-  collectionName: 'components_cody_platform_platforms';
-  info: {
-    displayName: 'platform';
-    description: '';
-  };
-  attributes: {
-    title: Schema.Attribute.String;
-    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    content: Schema.Attribute.RichText;
   };
 }
 
@@ -182,8 +182,8 @@ declare module '@strapi/strapi' {
       'sliding2.sliding2': Sliding2Sliding2;
       'sliding1.sliding1': Sliding1Sliding1;
       'cody-solution.solution': CodySolutionSolution;
-      'cody-feature.feature': CodyFeatureFeature;
       'cody-platform.platform': CodyPlatformPlatform;
+      'cody-feature.feature': CodyFeatureFeature;
       'cody-event.event': CodyEventEvent;
       'cody-comment.comment': CodyCommentComment;
       'career-tsuk.tsuk': CareerTsukTsuk;
