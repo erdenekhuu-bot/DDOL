@@ -20,19 +20,22 @@ export const WhycodeCards = function ({
   customcolor?: string;
 }) {
   return (
-    <section className="w-[200px] h-[250px] z-20 rounded-lg p-4 m-4 relative mobilecustom:w-[150px] mobilecustom:h-[150px] mobilecustom:m-2">
+    <section className="w-[200px] h-[250px] z-20 rounded-lg p-4 m-4 relative mobilecustom:w-[80px] mobilecustom:h-[150px] mobilecustom:m-0 mobilecustom:p-0">
       <div
         style={{ backgroundColor: customcolor || "purple" }}
-        className="p-4 my-4 w-1/3 rounded-xl flex items-center mobilecustom:p-1"
+        className="p-4 my-4 w-1/3 rounded-xl flex items-center mobilecustom:p-6 mobilecustom:w-[100%] mobilecustom:h-[60px]"
       >
         <img
           src="https://cody.mn/84255cf7e189d5386dd3d0001103d4fa.svg"
           alt=""
           width={800}
           height={800}
+          className="mobilecustom:object-cover"
         />
       </div>
-      <div className="font-bold">{title}</div>
+      <div className="font-bold mobilecustom:text-[10px] mobilecustom:text-center">
+        {title}
+      </div>
       <div className="absolute bottom-1 right-5 mobilecustom:text-[8px]">
         {feature}
       </div>
