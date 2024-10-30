@@ -6,7 +6,7 @@ import insta from "../images/insta.svg";
 import Image from "next/image";
 import cody from "../images/cody.svg";
 import { Card } from "./Card";
-import { Cards } from "./pages/Fifthsection";
+import { Cards, CardsMobile } from "./pages/Fifthsection";
 import Link from "next/link";
 import { mixing } from "../components/Header";
 import imgsol from "../images/svgsoltion.svg";
@@ -96,7 +96,7 @@ export const Sol = function ({
         />
         <p className="text-2xl py-8 font-bold text-center">Шийдлүүд</p>
       </div>
-      <div className="mx-auto w-full px-20 flex justify-start flex-wrap overflow-y-scroll mobilecustom:px-10">
+      <div className="mx-auto w-full px-20 flex justify-start flex-wrap overflow-y-scroll mobilecustom:px-0">
         {array.map((item: any) => (
           <Card key={item.id} title={item.title} content={item.content} />
         ))}
@@ -113,17 +113,18 @@ export const Fea = function ({
   array: any;
 }) {
   return (
-    <section className="fixed inset-0 z-30 bg-gray-50 w-[90%] h-[90%] rounded-lg mx-auto my-auto flex flex-col">
+    <section className="fixed inset-0 z-30 bg-popupcolor bg-opacity-50 w-[90%] h-[90%] rounded-lg mx-auto my-auto flex flex-col">
       <div className="flex justify-center items-center p-4 my-4">
         <span className="font-bold text-3xl">Системийн боломжууд</span>
       </div>
-      <div className="mx-auto w-full p-8 flex justify-start flex-wrap overflow-y-scroll">
+      <div className="mx-auto w-full p-8 flex justify-start flex-wrap overflow-y-scroll mobilecustom:p-0">
         {array.map((item: any) => (
-          <Cards
+          <CardsMobile
             key={item.id}
             icon={item.icon}
             title={item.title}
             feature={item.feature}
+            customcolor={item.customcolor}
           />
         ))}
       </div>

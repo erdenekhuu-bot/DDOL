@@ -21,6 +21,7 @@ const config: Config = {
         customlabel: "rgb(136, 85, 241)",
         splushcolor: "rgb(250, 251, 255);",
         ssdcolor: "rgb(241, 243, 255);",
+        popupcolor: "rgb(246, 246, 246);",
       },
     },
   },

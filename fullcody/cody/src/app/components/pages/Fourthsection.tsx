@@ -50,11 +50,11 @@ export const Fourthsection = function ({ data }: { data: any }) {
             className="fixed z-30 inset-0 bg-black bg-opacity-50 w-full h-full"
           ></div>
         )}
-        <div className="flex flex-wrap justify-evenly px-8">
+        <div className="flex flex-wrap justify-evenly px-8 mobilecustom:px-0">
           {solution_list}
         </div>
 
-        <div className="flex justify-center">
+        <div className="flex my-8 justify-center">
           <Button
             onClick={function () {
               setClick(!click);

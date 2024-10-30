@@ -10,7 +10,7 @@ export const Card = function ({
       <p className="my-6 text-3xl font-bold text-customlabel mobilecustom:text-xl mobilecustom:my-2">
         {title}
       </p>
-      <p className="text-xl mobilecustom:text-sm">{content}</p>
+      <p className="text-xl mobilecustom:text-sm ">{content}</p>
     </div>
   );
 };
