@@ -1,5 +1,3 @@
-"use client";
-
 import { Cards } from "../components/pages/Fifthsection";
 
 export const Whycody = function ({ data }: { data: any }) {
@@ -8,7 +6,12 @@ export const Whycody = function ({ data }: { data: any }) {
       <p className="text-2xl font-bold py-8 text-center">Яагаад Коди гэж?</p>
       <div className="flex justify-evenly flex-wrap">
         {data.map((items: any) => (
-          <Cards key={items.id} icon={items.url} title={items.reason} />
+          <Cards
+            key={items.id}
+            icon={items.url}
+            title={items.reason}
+            customcolor={items.customcolor}
+          />
         ))}
       </div>
     </div>
