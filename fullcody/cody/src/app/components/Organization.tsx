@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { header_api } from "../page";
 import Image from "next/image";
+import { Image as Antdimage } from "antd";
 import join from "../images/join.svg";
 import { Flex, Spin } from "antd";
 
@@ -88,14 +89,16 @@ export const Organ = function () {
       {getOrganiation.length > 0 ? (
         <section>
           <p className="font-bold text-center py-6 text-3xl">Хамт олон</p>
-          <div className="flex flex-wrap items-center p-8 ">
+          <div className="flex flex-wrap items-center p-6 mobilecustom:p-0">
             {getOrganiation.map((items: any) => (
-              <Image
-                src={`http://192.168.0.101:1337${items.profile.url}`}
-                alt=""
-                width={200}
-                height={200}
-              />
+              <div className="mobilecustom:w-40">
+                <Antdimage
+                  src={`http://192.168.0.101:1337${items.profile?.url}`}
+                  alt=""
+                  width={200}
+                  height={200}
+                />
+              </div>
             ))}
           </div>
         </section>

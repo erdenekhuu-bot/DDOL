@@ -69,7 +69,7 @@ export const CustomCard = function ({
         src={`http://192.168.0.101:1337/${image.image.url}`}
         alt=""
         width={800}
-        className="w-52 mobilecustom:h-[100px] mobilecustom:object-cover mobilecustom:w-full"
+        className="w-52 mobilecustom:h-[120px] mobilecustom:object-cover mobilecustom:w-full"
       />
       <div className="p-6">
         <p className="font-bold text-sm my-4">{title}</p>
