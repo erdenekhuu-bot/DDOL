@@ -10,6 +10,7 @@ import search from "../images/search.svg";
 import { Flex, Input } from "antd";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import ops from "../images/ops.png";
 
 export const MakeCommentPopup = function ({ data }: { data: any }) {
   const [search, setSearch] = useState("");
@@ -122,7 +123,7 @@ const Article = function ({ data }: { data?: any }) {
           <Image src={search} width={800} height={800} alt="" className="" />
         </button>
       </div>
-      {customarr.length > 0 && (
+      {customarr.length > 0 ? (
         <div className="relative">
           <div className="absolute inset-0 bg-black bg-opacity-40"></div>
           <img
@@ -145,6 +146,10 @@ const Article = function ({ data }: { data?: any }) {
             </Link>
           </p>
         </div>
+      ) : (
+        <section className="w-full h-[600px] flex items-center justify-center">
+          <Image src={ops} width={1000} height={1000} alt="" className="w-96" />
+        </section>
       )}
       <div className="absolute bottom-0 w-full p-4 px-14 mobilecustom:hidden">
         <Swiper
