@@ -12,7 +12,7 @@ export const Organization = function () {
   const fetching = async function () {
     try {
       const response = await axios.get(
-        "http://192.168.1.19:1337/api/abouts?populate[teamprofiles][populate]=*",
+        "http://192.168.0.101:1337/api/abouts?populate[teamprofiles][populate]=*",
         header_api
       );
       setOrganization(response.data.data[0].teamprofiles);
@@ -52,7 +52,7 @@ export const Organization = function () {
       <div className="flex justify-center my-4">
         {getOrganiation.map((photos: any) => (
           <Image
-            src={`http://192.168.1.19:1337${photos.profile.formats.large.url}`}
+            src={`http://192.168.0.101:1337${photos.profile.formats.large.url}`}
             alt=""
             width={1000}
             height={400}
@@ -70,7 +70,7 @@ export const Organ = function () {
   const fetching = async function () {
     try {
       const response = await axios.get(
-        "http://192.168.1.19:1337/api/careers?populate[teamprofiles][populate]=*",
+        "http://192.168.0.101:1337/api/careers?populate[teamprofiles][populate]=*",
         header_api
       );
       setOrganization(response.data.data[0].teamprofiles);
@@ -91,7 +91,7 @@ export const Organ = function () {
           <div className="flex flex-wrap items-center p-8 ">
             {getOrganiation.map((items: any) => (
               <Image
-                src={`http://192.168.1.19:1337${items.profile.url}`}
+                src={`http://192.168.0.101:1337${items.profile.url}`}
                 alt=""
                 width={200}
                 height={200}

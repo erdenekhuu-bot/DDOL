@@ -12,7 +12,7 @@ export const Thirdsection = function ({ data }: { data: any }) {
     array.push(
       <div className="px-10 py-10 flex bg-white mobilecustom:block mobilecustom:px-0">
         <img
-          src={`http://192.168.1.19:1337${i.image.formats.small.url}`}
+          src={`http://192.168.0.101:1337${i.image.formats.small.url}`}
           alt=""
           height={500}
           width={1000}

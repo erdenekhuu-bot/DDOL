@@ -22,7 +22,7 @@ import { Seventhsection } from "./components/pages/Seventhsection";
 
 export const header_api = {
   headers: {
-    Authorization: `Bearer ${token}`,
+    Authorization: `Bearer ${test_token}`,
   },
 };
 

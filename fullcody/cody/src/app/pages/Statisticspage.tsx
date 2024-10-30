@@ -17,7 +17,7 @@ export const Statisticspage = function () {
         },
       });
       const response = await axios.get(
-        `http://192.168.1.19:1337/api/abouts?${query}`,
+        `http://192.168.0.101:1337/api/abouts?${query}`,
         header_api
       );
       setStatistic(response.data.data[0].statistic);
