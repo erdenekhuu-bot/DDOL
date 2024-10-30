@@ -56,11 +56,11 @@ export const Services = function () {
               Үйлчилгээний төрөл
             </p>
           </div>
-          <div className="flex flex-wrap justify-evenly mx-8 ">
+          <div className="flex flex-wrap justify-evenly mx-8 mobilecustom:mx-0">
             {getService.map((items) => (
               <div
                 key={items.id}
-                className="relative w-[200px] m-4 h-[200px] rounded-lg"
+                className="relative w-[200px] m-4 h-[200px] rounded-lg mobilecustom:w-[100px] mobilecustom:h-[150px]"
               >
                 <p
                   className={`font-extrabold text-[60px] z-0 text-opacity-50`}
@@ -74,8 +74,10 @@ export const Services = function () {
                 >
                   {counter++ + "."}
                 </p>
-                <div className="absolute bg-white rounded-xl w-[90%] h-[90%] top-10 left-4 z-10 drop-shadow-xl flex items-center">
-                  <b className="text-center">{items.name}</b>
+                <div className="absolute bg-white rounded-xl w-[90%] h-[90%] top-10 left-4 z-10 drop-shadow-xl flex items-center mobilecustom:w-[100%]">
+                  <b className="text-center mobilecustom:text-[12px]">
+                    {items.name}
+                  </b>
                 </div>
               </div>
             ))}
