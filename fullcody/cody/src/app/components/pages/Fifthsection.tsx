@@ -6,7 +6,6 @@ import Image from "next/image";
 import { Spin } from "antd";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "swiper/css/grid";
 import { Button } from "antd";
 
 export const Cards = function ({
@@ -113,7 +112,7 @@ export const Fifthsection = function ({ data }: { data: any }) {
           СИСТЕМИЙН БОЛОМЖУУД
         </p>
       </div>
-      <div className="flex overflow-hidden mobilecustom:hidden">
+      <div className="mobilecustom:hidden">
         <Swiper scrollbar={{ draggable: true }} loop={true} slidesPerView={6}>
           {data.map((elements: any) => (
             <SwiperSlide key={elements.id}>
@@ -130,7 +129,7 @@ export const Fifthsection = function ({ data }: { data: any }) {
           ))}
         </Swiper>
       </div>
-      <div className="hidden overflow-hidden mobilecustom:block">
+      <div className="hidden mobilecustom:block">
         <Swiper scrollbar={{ draggable: true }} loop={true} slidesPerView={2}>
           {data.map((elements: any) => (
             <SwiperSlide key={elements.id}>

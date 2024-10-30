@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import review from "../../images/review.svg";
 import Image from "next/image";
+import { Image as AntdImage } from "antd";
 import { comment } from "@/app/types/type";
 import { header_api } from "@/app/page";
 import axios from "axios";
@@ -34,10 +35,9 @@ export const Seventhsection = function ({ data }: { data?: any }) {
 
   getComment.map((item: any) =>
     array.push(
-      <img
+      <AntdImage
         key={item.id}
         width={1000}
-        height={500}
         src={`http://192.168.0.101:1337${item.image?.formats.large.url}`}
         alt=""
         className="object-cover w-[90%] mx-auto"
