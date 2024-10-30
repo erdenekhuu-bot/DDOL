@@ -16,7 +16,7 @@ type FieldType = {
 const onFinish: FormProps<FieldType>["onFinish"] = async (values) => {
   try {
     await axios.post(
-      "http://192.168.0.101:1337/api/comments",
+      "http://192.168.1.19:1337/api/comments",
       {
         data: {
           name: "guest",
@@ -50,7 +50,7 @@ export default function Article() {
   const fetching = async function () {
     try {
       const response = await axios.get(
-        `http://192.168.0.101:1337/api/articles/${params.article}?populate=*`,
+        `http://192.168.1.19:1337/api/articles/${params.article}?populate=*`,
         header_api
       );
       setArticle(response.data.data);
@@ -71,7 +71,7 @@ export default function Article() {
     <section className="w-full pt-44">
       <div className="p-8 mx-auto w-[60%] mobilecustom:mx-0 mobilecustom:w-full">
         <img
-          src={`http://192.168.0.101:1337${getArticle.image?.formats.small.url}`}
+          src={`http://192.168.1.19:1337${getArticle.image?.formats.small.url}`}
           alt=""
           width={1000}
           height={1000}

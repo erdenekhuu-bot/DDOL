@@ -56,7 +56,7 @@ export const Services = function () {
               Үйлчилгээний төрөл
             </p>
           </div>
-          <div className="flex flex-wrap justify-evenly mx-8">
+          <div className="flex flex-wrap justify-evenly mx-8 ">
             {getService.map((items) => (
               <div
                 key={items.id}

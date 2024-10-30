@@ -8,7 +8,8 @@ import Link from "next/link";
 import Image from "next/image";
 import search from "../images/search.svg";
 import { Flex, Input } from "antd";
-import { useDraggable } from "react-use-draggable-scroll";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 
 export const MakeCommentPopup = function ({ data }: { data: any }) {
   const [search, setSearch] = useState("");
@@ -31,7 +32,7 @@ export const MakeCommentPopup = function ({ data }: { data: any }) {
               <Link href={`/article/${items.documentId}`}>
                 <div key={items.id} className="w-24">
                   <img
-                    src={`http://192.168.0.101:1337/${items.image.url}`}
+                    src={`http://192.168.1.19:1337/${items.image.url}`}
                     alt=""
                   />
 
@@ -62,9 +63,9 @@ export const CustomCard = function ({
   blog: string;
 }) {
   return (
-    <div className="z-10 w-[500px] bg-white rounded-lg flex">
+    <div className="z-10 w-[500px] bg-white rounded-lg flex mobilecustom:block">
       <img
-        src={`http://192.168.0.101:1337/${image.image.url}`}
+        src={`http://192.168.1.19:1337/${image.image.url}`}
         alt=""
         width={800}
         className="w-52"
@@ -86,7 +87,7 @@ const Article = function ({ data }: { data?: any }) {
   const fetching = async function () {
     try {
       const response = await axios.get(
-        "http://192.168.0.101:1337/api/articles?populate=*",
+        "http://192.168.1.19:1337/api/articles?populate=*",
         header_api
       );
       setArticle(response.data.data);
@@ -103,10 +104,6 @@ const Article = function ({ data }: { data?: any }) {
 
   for (let i = 0; i < getArticle.length; i++)
     if (i < 1) customarr.push(getArticle[i]);
-
-  const ref =
-    useRef<HTMLDivElement>() as React.MutableRefObject<HTMLInputElement>;
-  const { events } = useDraggable(ref);
 
   return (
     <Aritcle>
@@ -129,17 +126,17 @@ const Article = function ({ data }: { data?: any }) {
         <div className="relative">
           <div className="absolute inset-0 bg-black bg-opacity-40"></div>
           <img
-            src={`http://192.168.0.101:1337${customarr[0].image.url}`}
+            src={`http://192.168.1.19:1337${customarr[0].image.url}`}
             alt=""
             width={1000}
             className="object-cover w-full h-[800px]"
           />
           <Link href={`/article/${customarr[0].documentId}`}>
-            <p className="absolute px-8 text-3xl top-60 z-20 font-bold text-white">
+            <p className="absolute px-8 text-3xl top-60 z-20 font-bold text-white mobilecustom:top-28">
               {customarr[0].title}
             </p>
           </Link>
-          <p className="absolute px-8 w-[60%] text-xl text-opacity-80 top-80 z-20 text-white mobilecustom:w-[100%]">
+          <p className="absolute px-8 w-[60%] text-xl text-opacity-80 top-72 z-20 text-white mobilecustom:w-[100%]">
             {customarr[0].content.slice(0, 178) + "..."}
             <Link href={`/article/${customarr[0].documentId}`}>
               <p className="my-12 text-2xl z-20 text-white text-opacity-80 hover:text-opacity-100">
@@ -149,21 +146,47 @@ const Article = function ({ data }: { data?: any }) {
           </p>
         </div>
       )}
-      <div
-        {...events}
-        ref={ref}
-        className="ml-32 absolute bottom-3 flex w-[80%] hide-scrollbar space-x-20 overflow-x-hidden scrollbar-hide select-none"
-      >
-        {getArticle.map((items: any) => (
-          <Link href={`/article/${items.documentId}`}>
-            <CustomCard
-              key={items.id}
-              image={items}
-              title={items.title}
-              blog={items.content}
-            />
-          </Link>
-        ))}
+      <div className="absolute bottom-0 w-full p-4 px-14 mobilecustom:hidden">
+        <Swiper
+          scrollbar={{ draggable: true }}
+          loop={true}
+          slidesPerView={2}
+          spaceBetween={10}
+        >
+          {getArticle.map((items: any) => (
+            <SwiperSlide key={items.id}>
+              <Link href={`/article/${items.documentId}`}>
+                <CustomCard
+                  key={items.id}
+                  image={items}
+                  title={items.title}
+                  blog={items.content}
+                />
+              </Link>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+      <div className="hidden absolute bottom-0 w-full p-4 px-14 mobilecustom:block">
+        <Swiper
+          scrollbar={{ draggable: true }}
+          loop={true}
+          slidesPerView={1}
+          spaceBetween={10}
+        >
+          {getArticle.map((items: any) => (
+            <SwiperSlide key={items.id}>
+              <Link href={`/article/${items.documentId}`}>
+                <CustomCard
+                  key={items.id}
+                  image={items}
+                  title={items.title}
+                  blog={items.content}
+                />
+              </Link>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
       {click && <MakeCommentPopup data={getArticle} />}
     </Aritcle>

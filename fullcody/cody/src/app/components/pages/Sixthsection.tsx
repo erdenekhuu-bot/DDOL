@@ -2,8 +2,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import instru from "../../images/instructoin.svg";
-import right from "../../images/rightarrow.svg";
-import left from "../../images/leftarrow.svg";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 
 export const Customlabel = function ({
   clicking,
@@ -23,7 +23,7 @@ export const Customlabel = function ({
         className="mx-2"
         width={30}
         height={30}
-        src={`http://192.168.0.101:1337${icon}`}
+        src={`http://192.168.1.19:1337${icon}`}
         alt=""
       />
       <p className="font-bold text-opacity-60 text-xl hover:text-purple-500">
@@ -50,7 +50,7 @@ export const Customcard = function ({
       <img
         width={25}
         height={25}
-        src={`http://192.168.0.101:1337${icon}`}
+        src={`http://192.168.1.19:1337${icon}`}
         alt=""
         className="mx-5 z-20 bg-gray-300"
       />
@@ -76,7 +76,7 @@ export const Sixthsection = function ({ data }: { data: any }) {
         key={items.id}
         width={980}
         height={980}
-        src={`http://192.168.0.101:1337${items.image?.formats.large.url}`}
+        src={`http://192.168.1.19:1337${items.image?.formats.large.url}`}
         alt=""
         className="object-cover rounded-3xl drop-shadow"
       />
@@ -103,7 +103,7 @@ export const Sixthsection = function ({ data }: { data: any }) {
         key={items.id}
         width={980}
         height={980}
-        src={`http://192.168.0.101:1337${items.mobile?.formats.large.url}`}
+        src={`http://192.168.1.19:1337${items.mobile?.formats.large.url}`}
         alt=""
         className="object-cover rounded-3xl drop-shadow border"
       />
@@ -126,6 +126,10 @@ export const Sixthsection = function ({ data }: { data: any }) {
       }
       return prevIndex - 1;
     });
+  };
+
+  const handleSlideChange = (swiper: any) => {
+    setPage(swiper.activeIndex);
   };
 
   return (
@@ -169,11 +173,7 @@ export const Sixthsection = function ({ data }: { data: any }) {
           {mobilelabel[page]}
         </div>
         <div className="w-full overflow-hidden">
-          {/* <div className="flex flex-shrink-0 w-full h-full py-4 mobilecustom:hidden">
-            {images[page]}
-          </div> */}
-
-          <div
+          {/* <div
             className="flex transition-transform duration-300 select-none mobilecustom:hidden"
             style={{ transform: `translateX(-${page * 100}%)` }}
           >
@@ -182,50 +182,40 @@ export const Sixthsection = function ({ data }: { data: any }) {
                 {image}
               </div>
             ))}
-          </div>
-        </div>
-        <div className="hidden relative flex-shrink-0 w-full h-full p-10 mobilecustom:flex">
-          <div className="absolute left-1 top-1/2 w-56 hidden z-20 rounded-full mobilecustom:block">
-            <button
-              className="border bg-white z-20 rounded-full p-4"
-              onClick={navigateLeft}
-            >
-              <Image
-                src={right}
-                alt=""
-                width={800}
-                height={800}
-                className="w-2"
-              />
-            </button>
-          </div>
-          <div className="absolute right-1 top-1/2 w-56 hidden z-20 mobilecustom:block">
-            <button
-              className="border bg-white z-20 rounded-full p-4"
-              onClick={navigateRight}
-            >
-              <Image
-                src={left}
-                alt=""
-                width={800}
-                height={800}
-                className="w-2"
-              />
-            </button>
-          </div>
-          {/* <div className="z-0 bg-blue-500">{mobiles[page]}</div> */}
-          <div className="w-[500px] bg-yellow-200 flex space-x-10 overflow-hidden">
-            <div
-              className="flex transition-transform duration-300 select-none"
-              style={{ transform: `translateX(-${page * 100}%)` }}
-            >
-              {mobiles.map((image: any, index: number) => (
-                <div key={index} className="flex-shrink-0 w-full h-full">
+          </div> */}
+          <Swiper
+            spaceBetween={10}
+            scrollbar={{ draggable: true }}
+            loop={true}
+            onSlideChange={handleSlideChange}
+            initialSlide={page}
+            className="select-none"
+          >
+            {images.map((image: any) => (
+              <SwiperSlide key={image.id}>
+                <div className="flex justify-center items-center h-full ">
                   {image}
                 </div>
-              ))}
-            </div>
-          </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+        <div className="hidden relative flex-shrink-0 w-full h-full p-10 mobilecustom:flex">
+          <Swiper
+            spaceBetween={10}
+            scrollbar={{ draggable: true }}
+            loop={true}
+            onSlideChange={handleSlideChange}
+            initialSlide={page}
+          >
+            {mobiles.map((image: any) => (
+              <SwiperSlide key={image.id}>
+                <div className="flex justify-center items-center h-full">
+                  {image}
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </section>
     </section>

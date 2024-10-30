@@ -1,9 +1,8 @@
 "use client";
-import { useState, useEffect } from "react";
-import axios from "axios";
-import { header_api } from "@/app/page";
-import { event } from "../types/type";
+import { useState } from "react";
 import { Flex, Spin } from "antd";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 
 export const Customlabel = function ({
   clicking,
@@ -23,7 +22,7 @@ export const Customlabel = function ({
         className="mx-2"
         width={30}
         height={30}
-        src={`http://192.168.0.101:1337${icon}`}
+        src={`http://192.168.1.19:1337${icon}`}
         alt=""
       />
       <p className="font-bold text-opacity-60 text-xl hover:text-purple-500">
@@ -51,7 +50,7 @@ export const Customcard = function ({
         className="mx-4"
         width={20}
         height={20}
-        src={`http://192.168.0.101:1337${icon}`}
+        src={`http://192.168.1.19:1337${icon}`}
         alt=""
       />
       <p className="font-bold text-opacity-60 hover:text-purple-500">{title}</p>
@@ -93,7 +92,7 @@ export const Openjobs = function ({ data }: { data: any }) {
           key={items.id}
           width={980}
           height={980}
-          src={`http://192.168.0.101:1337${items.image?.formats.small.url}`}
+          src={`http://192.168.1.19:1337${items.image?.formats.small.url}`}
           alt=""
           className="object-cover rounded-3xl drop-shadow border m-2"
         />
@@ -112,6 +111,10 @@ export const Openjobs = function ({ data }: { data: any }) {
       />
     )
   );
+
+  const handleSlideChange = (swiper: any) => {
+    setPage(swiper.activeIndex);
+  };
 
   return (
     <Flex>

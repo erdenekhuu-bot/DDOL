@@ -20,7 +20,7 @@
     "reason": {
       "type": "string"
     },
-    "url": {
+    "customcolor": {
       "type": "string"
     }
   }

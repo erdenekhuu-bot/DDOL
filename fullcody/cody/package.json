@@ -19,7 +19,8 @@
     "qs": "^6.13.0",
     "react": "^18",
     "react-dom": "^18",
-    "react-use-draggable-scroll": "^0.4.7"
+    "react-use-draggable-scroll": "^0.4.7",
+    "swiper": "^11.1.14"
   },
   "devDependencies": {
     "@types/node": "^20",

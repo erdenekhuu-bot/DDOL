@@ -5,6 +5,9 @@ import Image from "next/image";
 import { comment } from "@/app/types/type";
 import { header_api } from "@/app/page";
 import axios from "axios";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
 
 export const Seventhsection = function ({ data }: { data?: any }) {
   const [getComment, setComment] = useState<comment>([]);
@@ -12,7 +15,7 @@ export const Seventhsection = function ({ data }: { data?: any }) {
   const fetching = async function () {
     try {
       const response = await axios.get(
-        `http://192.168.0.101:1337/api/homes?populate[comment][populate]=*`,
+        `http://192.168.1.19:1337/api/homes?populate[comment][populate]=*`,
         header_api
       );
       setComment(response.data.data[0].comment);
@@ -35,12 +38,16 @@ export const Seventhsection = function ({ data }: { data?: any }) {
         key={item.id}
         width={1000}
         height={500}
-        src={`http://192.168.0.101:1337${item.image?.formats.large.url}`}
+        src={`http://192.168.1.19:1337${item.image?.formats.large.url}`}
         alt=""
         className="object-cover w-[90%] mx-auto"
       />
     )
   );
+
+  const handleSlideChange = (swiper: any) => {
+    setTap(swiper.activeIndex);
+  };
 
   return (
     <section className="overflow-hidden">
@@ -68,18 +75,22 @@ export const Seventhsection = function ({ data }: { data?: any }) {
           Харилцагчдын сэтгэгдэл
         </p>
       </div>
-
-      {/* <div className="">{array[tap]}</div> */}
-      <div
-        className="flex transition-transform duration-300 "
-        style={{ transform: `translateX(-${tap * 100}%)` }}
+      <Swiper
+        spaceBetween={10}
+        scrollbar={{ draggable: true }}
+        loop={true}
+        onSlideChange={handleSlideChange}
+        initialSlide={tap}
+        pagination={true}
       >
-        {array.map((image: any, index: number) => (
-          <div key={index} className="flex-shrink-0 w-full h-full">
-            {image}
-          </div>
+        {array.map((image: any) => (
+          <SwiperSlide key={image.id}>
+            <div className="flex justify-center items-center h-full">
+              {image}
+            </div>
+          </SwiperSlide>
         ))}
-      </div>
+      </Swiper>
       <div className="flex justify-center my-4">
         <button
           onClick={() => {

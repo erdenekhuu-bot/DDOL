@@ -37,7 +37,7 @@ const About = function () {
           дэмжлэг үзүүлж, нийт 1,000 гаруй компанид ямар нэгэн байдлаар шийдлээ
           түгээж, 20 гаруй салбарыг цахимжуулан ажиллаж байна.
         </p>
-        <div className="absolute top-32 right-56 w-[500px]">
+        <div className="absolute top-32 right-56 w-[500px] mobilecustom:hidden">
           <div className="relative w-[500px] mx-auto mobilecustom:hidden">
             <Image
               src={about}

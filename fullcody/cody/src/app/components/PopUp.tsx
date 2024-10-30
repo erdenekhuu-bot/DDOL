@@ -96,7 +96,7 @@ export const Sol = function ({
         />
         <p className="text-2xl py-8 font-bold text-center">Шийдлүүд</p>
       </div>
-      <div className="mx-auto w-full px-20 flex justify-start flex-wrap overflow-y-scroll">
+      <div className="mx-auto w-full px-20 flex justify-start flex-wrap overflow-y-scroll mobilecustom:px-10">
         {array.map((item: any) => (
           <Card key={item.id} title={item.title} content={item.content} />
         ))}

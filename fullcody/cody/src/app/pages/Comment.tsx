@@ -19,7 +19,7 @@ export const Comments = function () {
         },
       });
       const response = await axios.get(
-        `http://192.168.0.101:1337/api/homes?populate[comment][populate]=*`,
+        `http://192.168.1.19:1337/api/homes?populate[comment][populate]=*`,
         header_api
       );
       setComment(response.data.data[0].comment);

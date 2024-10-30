@@ -1,42 +1,41 @@
 "use client";
 import { useState } from "react";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardActions from "@mui/material/CardActions";
-import { Button } from "@mui/material";
 import { Fea } from "../PopUp";
 import featureban from "../../images/featureban.svg";
 import Image from "next/image";
 import { Spin } from "antd";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/grid";
+import { Button } from "antd";
 
 export const Cards = function ({
   title,
   icon,
   feature,
+  customcolor,
 }: {
   title: string;
   icon: string;
   feature?: string;
+  customcolor?: string;
 }) {
   return (
-    <Card className="w-[200px] rounded-lg py-2 m-4 relative">
-      <CardContent>
-        <div
-          className={`bg-purple-400 px-3 w-1/3 h-14 rounded-xl flex items-center`}
-        >
-          <img
-            src="https://cody.mn/84255cf7e189d5386dd3d0001103d4fa.svg"
-            alt=""
-            width={800}
-            height={800}
-          />
-        </div>
-      </CardContent>
-      <CardContent className="font-bold text-xl">{title}</CardContent>
-      <CardActions className="absolute right-0 bottom-0">
-        <span>{feature}</span>
-      </CardActions>
-    </Card>
+    <section className="w-[200px] h-[250px] bg-white z-20 rounded-lg p-4 m-4 relative mobilecustom:h-[200px] mobilecustom:rounded-sm">
+      <div
+        style={{ backgroundColor: customcolor || "purple" }}
+        className="p-4 my-4 w-1/3 rounded-xl flex items-center mobilecustom:p-1"
+      >
+        <img
+          src="https://cody.mn/84255cf7e189d5386dd3d0001103d4fa.svg"
+          alt=""
+          width={800}
+          height={800}
+        />
+      </div>
+      <div className="font-bold">{title}</div>
+      <div className="absolute bottom-1 right-5">{feature}</div>
+    </section>
   );
 };
 
@@ -80,23 +79,46 @@ export const Fifthsection = function ({ data }: { data: any }) {
           СИСТЕМИЙН БОЛОМЖУУД
         </p>
       </div>
-      <div className="flex flex-wrap justify-evenly px-28 h-[500px] overflow-hidden mobilecustom:h-[250px] mobilecustom:space-x-0">
-        {data.map((elements: any) => (
-          <Cards
-            key={elements.id}
-            title={elements.title}
-            icon={elements.icon}
-            feature={elements.feature}
-          />
-        ))}
+      <div className="flex overflow-hidden mobilecustom:hidden">
+        <Swiper scrollbar={{ draggable: true }} loop={true} slidesPerView={6}>
+          {data.map((elements: any) => (
+            <SwiperSlide key={elements.id}>
+              <div className="flex justify-center items-center h-full">
+                <Cards
+                  key={elements.id}
+                  title={elements.title}
+                  icon={elements.icon}
+                  feature={elements.feature}
+                  customcolor={elements.customcolor}
+                />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
-      <div className="flex my-12 justify-center">
+      <div className="hidden overflow-hidden mobilecustom:block">
+        <Swiper scrollbar={{ draggable: true }} loop={true} slidesPerView={2}>
+          {data.map((elements: any) => (
+            <SwiperSlide key={elements.id}>
+              <div className="flex justify-center items-center h-full">
+                <Cards
+                  key={elements.id}
+                  title={elements.title}
+                  icon={elements.icon}
+                  feature={elements.feature}
+                  customcolor={elements.customcolor}
+                />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+      <div className="flex justify-center my-8">
         <Button
           onClick={function () {
             setClick(!click);
           }}
-          variant="contained"
-          className="px-8 py-4 bg-purple-900 text-xs font-bold rounded-lg"
+          className="py-6 px-8 bg-purple-900 text-3xs font-bold rounded-lg text-white"
           style={{
             background:
               "linear-gradient(95.41deg, rgb(131, 38, 226) 34.67%, rgb(82, 6, 225) 148.46%)",
@@ -104,8 +126,8 @@ export const Fifthsection = function ({ data }: { data: any }) {
         >
           Дэлгэрэнгүй
         </Button>
+        {click && <Fea trigger={handlePopupToggle} array={data} />}
       </div>
-      {click && <Fea trigger={handlePopupToggle} array={data} />}
     </section>
   ) : (
     <Spin size="large" />
