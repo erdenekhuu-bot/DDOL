@@ -6,7 +6,7 @@ import pad_background from "../app/images/pad_template.png";
 import bacgrkound_img from "../app/images/background_image.jpg";
 import { Firstsection } from "./components/pages/Firstsection";
 import Layout from "antd/es/layout/layout";
-import { token } from "./types/type";
+import { token, test_token } from "./types/type";
 import { array } from "./json/image";
 import { mobilearray } from "./json/image";
 import { Button } from "antd";
@@ -22,7 +22,7 @@ import { Seventhsection } from "./components/pages/Seventhsection";
 
 export const header_api = {
   headers: {
-    Authorization: `Bearer ${token}`,
+    Authorization: `Bearer ${test_token}`,
   },
 };
 
@@ -69,8 +69,8 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="text-center p-4">
-          <p className="font-bold text-4xl text-customtitle mobilecustom:w-[60%] mobilecustom:mx-auto">
+        <div className="text-center py-4">
+          <p className="font-bold text-4xl text-customtitle  mobilecustom:mx-auto">
             Өөрийн цахим дэлгүүрээ бүтээ!
           </p>
           <p className="my-4 text-2xl font-bold text-custombanner mobilecustom:text-sm ">

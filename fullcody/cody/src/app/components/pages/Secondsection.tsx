@@ -20,7 +20,7 @@ export const Secondsection = function ({ data }: { data: any }) {
         data.map((items: any) => (
           <Image
             key={items.id}
-            src={`http://127.0.0.1:1337/${items.icon?.url}`}
+            src={`http://192.168.0.101:1337/${items.icon?.url}`}
             alt=""
             width={100}
             className="mx-4"

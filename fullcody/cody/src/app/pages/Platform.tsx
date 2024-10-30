@@ -19,7 +19,7 @@ export const Platform = function () {
         },
       });
       const response = await axios.get(
-        `http://127.0.0.1:1337/api/homes?${query}`,
+        `http://192.168.0.101:1337/api/homes?${query}`,
         header_api
       );
       setPlatform(response.data.data[0].platform);

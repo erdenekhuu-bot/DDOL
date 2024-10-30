@@ -31,7 +31,7 @@ export const MakeCommentPopup = function ({ data }: { data: any }) {
               <Link href={`/article/${items.documentId}`}>
                 <div key={items.id} className="w-24">
                   <img
-                    src={`http://127.0.0.1:1337/${items.image.url}`}
+                    src={`http://192.168.0.101:1337/${items.image.url}`}
                     alt=""
                   />
 
@@ -64,7 +64,7 @@ export const CustomCard = function ({
   return (
     <div className="z-10 w-[500px] bg-white rounded-lg flex">
       <img
-        src={`http://127.0.0.1:1337/${image.image.url}`}
+        src={`http://192.168.0.101:1337/${image.image.url}`}
         alt=""
         width={800}
         className="w-52"
@@ -86,7 +86,7 @@ const Article = function ({ data }: { data?: any }) {
   const fetching = async function () {
     try {
       const response = await axios.get(
-        "http://127.0.0.1:1337/api/articles?populate=*",
+        "http://192.168.0.101:1337/api/articles?populate=*",
         header_api
       );
       setArticle(response.data.data);
@@ -129,7 +129,7 @@ const Article = function ({ data }: { data?: any }) {
         <div className="relative">
           <div className="absolute inset-0 bg-black bg-opacity-40"></div>
           <img
-            src={`http://127.0.0.1:1337${customarr[0].image.url}`}
+            src={`http://192.168.0.101:1337${customarr[0].image.url}`}
             alt=""
             width={1000}
             className="object-cover w-full h-[800px]"

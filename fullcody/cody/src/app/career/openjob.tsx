@@ -23,7 +23,7 @@ export const Customlabel = function ({
         className="mx-2"
         width={30}
         height={30}
-        src={`http://127.0.0.1:1337${icon}`}
+        src={`http://192.168.0.101:1337${icon}`}
         alt=""
       />
       <p className="font-bold text-opacity-60 text-xl hover:text-purple-500">
@@ -51,7 +51,7 @@ export const Customcard = function ({
         className="mx-4"
         width={20}
         height={20}
-        src={`http://127.0.0.1:1337${icon}`}
+        src={`http://192.168.0.101:1337${icon}`}
         alt=""
       />
       <p className="font-bold text-opacity-60 hover:text-purple-500">{title}</p>
@@ -93,7 +93,7 @@ export const Openjobs = function ({ data }: { data: any }) {
           key={items.id}
           width={980}
           height={980}
-          src={`http://127.0.0.1:1337${items.image?.formats.small.url}`}
+          src={`http://192.168.0.101:1337${items.image?.formats.small.url}`}
           alt=""
           className="object-cover rounded-3xl drop-shadow border m-2"
         />

@@ -12,7 +12,7 @@ export const Seventhsection = function ({ data }: { data?: any }) {
   const fetching = async function () {
     try {
       const response = await axios.get(
-        `http://127.0.0.1:1337/api/homes?populate[comment][populate]=*`,
+        `http://192.168.0.101:1337/api/homes?populate[comment][populate]=*`,
         header_api
       );
       setComment(response.data.data[0].comment);
@@ -35,7 +35,7 @@ export const Seventhsection = function ({ data }: { data?: any }) {
         key={item.id}
         width={1000}
         height={500}
-        src={`http://127.0.0.1:1337${item.image?.formats.large.url}`}
+        src={`http://192.168.0.101:1337${item.image?.formats.large.url}`}
         alt=""
         className="object-cover w-[90%] mx-auto"
       />

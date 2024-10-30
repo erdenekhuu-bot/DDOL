@@ -19,7 +19,7 @@ export const Openjobspage = function () {
         },
       });
       const response = await axios.get(
-        `http://127.0.0.1:1337/api/careers?${query}`,
+        `http://192.168.0.101:1337/api/careers?${query}`,
         header_api
       );
       setData(response.data.data[0].caropen);

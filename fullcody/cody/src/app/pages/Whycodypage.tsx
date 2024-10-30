@@ -10,7 +10,7 @@ export const Whycodypage = function () {
   const fetching = async function () {
     try {
       const respone = await axios.get(
-        "http://127.0.0.1:1337/api/careers?populate=*",
+        "http://192.168.0.101:1337/api/careers?populate=*",
         header_api
       );
       setData(respone.data.data[0].reason);

@@ -13,7 +13,7 @@ export const Team = function () {
   const fetching = async function () {
     try {
       const response = await axios.get(
-        "http://127.0.0.1:1337/api/abouts?populate[team][populate]=*",
+        "http://192.168.0.101:1337/api/abouts?populate[team][populate]=*",
         header_api
       );
       setTeam(response.data.data[0].team);
@@ -58,7 +58,7 @@ export const Team = function () {
             {getTeam.map((item) => (
               <div className="rounded-lg" key={item.id}>
                 <img
-                  src={`http://127.0.0.1:1337${item.profile?.url}`}
+                  src={`http://192.168.0.101:1337${item.profile?.url}`}
                   alt=""
                   width={800}
                   height={800}
