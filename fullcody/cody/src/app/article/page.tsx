@@ -64,17 +64,20 @@ export const CustomCard = function ({
   blog: string;
 }) {
   return (
-    <div className="z-10 w-[500px] bg-white rounded-lg flex mobilecustom:block">
+    <div className="z-10 w-[500px] bg-white overflow-hidden rounded-2xl flex  mobilecustom:block mobilecustom:w-[250px]">
       <img
         src={`http://192.168.0.101:1337/${image.image.url}`}
         alt=""
         width={800}
-        className="w-52"
+        className="w-52 mobilecustom:h-[100px] mobilecustom:object-cover mobilecustom:w-full"
       />
       <div className="p-6">
         <p className="font-bold text-sm my-4">{title}</p>
-        <p className="h-[80%] overflow-hidden text-sm">
+        <p className="h-[80%] overflow-hidden text-sm mobilecustom:hidden">
           {blog.substring(0, 100) + "..."}
+        </p>
+        <p className="hidden h-[80%] overflow-hidden text-sm mobilecustom:block">
+          {blog.substring(0, 50) + "..."}
         </p>
       </div>
     </div>
@@ -124,7 +127,7 @@ const Article = function ({ data }: { data?: any }) {
         </button>
       </div>
       {customarr.length > 0 ? (
-        <div className="relative">
+        <div className="relative select-none mobilecustom:h-[900px]">
           <div className="absolute inset-0 bg-black bg-opacity-40"></div>
           <img
             src={`http://192.168.0.101:1337${customarr[0].image.url}`}
@@ -172,7 +175,7 @@ const Article = function ({ data }: { data?: any }) {
           ))}
         </Swiper>
       </div>
-      <div className="hidden absolute bottom-0 w-full p-4 px-14 mobilecustom:block">
+      <div className="hidden absolute bottom-0 w-full p-4 px-14 mobilecustom:block mobilecustom:px-0">
         <Swiper
           scrollbar={{ draggable: true }}
           loop={true}
