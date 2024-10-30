@@ -88,7 +88,7 @@ export const Sixthsection = function ({ data }: { data: any }) {
     mobilelabel.push(
       <Customlabel
         key={item.id}
-        icon={item.icon.url}
+        icon={item.icon?.url}
         title={item.title}
         clicking={() => handleClick(index)}
       />
@@ -163,7 +163,7 @@ export const Sixthsection = function ({ data }: { data: any }) {
           {data.map((item: any, index: number) => (
             <Customcard
               key={item.id}
-              icon={item.icon.url}
+              icon={item.icon?.url}
               title={item.title}
               clicking={() => handleClick(index)}
             />
@@ -193,7 +193,7 @@ export const Sixthsection = function ({ data }: { data: any }) {
           >
             {images.map((image: any) => (
               <SwiperSlide key={image.id}>
-                <div className="flex justify-center items-center h-full ">
+                <div className="flex justify-center items-center h-full mobilecustom:hidden">
                   {image}
                 </div>
               </SwiperSlide>
