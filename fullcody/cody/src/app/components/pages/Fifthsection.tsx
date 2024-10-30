@@ -8,6 +8,38 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Button } from "antd";
 
+export const WhycodeCards = function ({
+  title,
+  icon,
+  feature,
+  customcolor,
+}: {
+  title: string;
+  icon: string;
+  feature?: string;
+  customcolor?: string;
+}) {
+  return (
+    <section className="w-[200px] h-[250px] z-20 rounded-lg p-4 m-4 relative mobilecustom:h-[200px] mobilecustom:rounded-sm">
+      <div
+        style={{ backgroundColor: customcolor || "purple" }}
+        className="p-4 my-4 w-1/3 rounded-xl flex items-center mobilecustom:p-1"
+      >
+        <img
+          src="https://cody.mn/84255cf7e189d5386dd3d0001103d4fa.svg"
+          alt=""
+          width={800}
+          height={800}
+        />
+      </div>
+      <div className="font-bold">{title}</div>
+      <div className="absolute bottom-1 right-5 mobilecustom:text-[8px]">
+        {feature}
+      </div>
+    </section>
+  );
+};
+
 export const Cards = function ({
   title,
   icon,
