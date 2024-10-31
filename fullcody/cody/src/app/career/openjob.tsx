@@ -84,7 +84,6 @@ export const Openjobs = function ({ data }: { data: any }) {
   };
 
   const images: any = [];
-  const mobile: any = [];
 
   data.map((items: any) =>
     images.push(
@@ -151,17 +150,19 @@ export const Openjobs = function ({ data }: { data: any }) {
                   ))}
                 </div>
               </div>
-              <Swiper
-                scrollbar={{ draggable: true }}
-                loop={true}
-                onSlideChange={handleSlideChange}
-                initialSlide={page}
-                className="hidden w-[300px] mobilecustom:block"
-              >
-                {images.map((image: any) => (
-                  <SwiperSlide key={image.id}>{image}</SwiperSlide>
-                ))}
-              </Swiper>
+              <div className="hidden mobilecustom:block">
+                <Swiper
+                  scrollbar={{ draggable: true }}
+                  loop={true}
+                  onSlideChange={handleSlideChange}
+                  initialSlide={page}
+                  className="w-[300px] "
+                >
+                  {images.map((image: any) => (
+                    <SwiperSlide key={image.id}>{image}</SwiperSlide>
+                  ))}
+                </Swiper>
+              </div>
             </div>
           </section>
         </section>
