@@ -21,6 +21,10 @@ export const Header = function () {
     setTrigger(!trigger);
   };
 
+  const hidePopup = () => {
+    setClick(!click);
+  };
+
   return (
     <header className="fixed w-full z-30 bg-white p-4 drop-shadow-2xl">
       <nav className="flex justify-between items-center navcustom:block mobilecustom:flex">

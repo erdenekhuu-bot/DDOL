@@ -33,7 +33,7 @@ export const MakeCommentPopup = function ({ data }: { data: any }) {
               <Link href={`/article/${items.documentId}`}>
                 <div key={items.id} className="w-24">
                   <img
-                    src={`http://192.168.0.101:1337/${items.image.url}`}
+                    src={`http://192.168.1.19:1337/${items.image.url}`}
                     alt=""
                   />
 
@@ -66,7 +66,7 @@ export const CustomCard = function ({
   return (
     <div className="z-10 w-[500px] bg-white overflow-hidden rounded-2xl flex  mobilecustom:block mobilecustom:w-[250px]">
       <img
-        src={`http://192.168.0.101:1337/${image.image.url}`}
+        src={`http://192.168.1.19:1337/${image.image.url}`}
         alt=""
         width={800}
         className="w-52 mobilecustom:h-[120px] mobilecustom:object-cover mobilecustom:w-full"
@@ -91,7 +91,7 @@ const Article = function ({ data }: { data?: any }) {
   const fetching = async function () {
     try {
       const response = await axios.get(
-        "http://192.168.0.101:1337/api/articles?populate=*",
+        "http://192.168.1.19:1337/api/articles?populate=*",
         header_api
       );
       setArticle(response.data.data);
@@ -109,10 +109,17 @@ const Article = function ({ data }: { data?: any }) {
   for (let i = 0; i < getArticle.length; i++)
     if (i < 1) customarr.push(getArticle[i]);
 
+  const handlePopupToggle = () => {
+    setClick(!click);
+  };
+
   return (
     <Aritcle>
       {click && (
-        <div className="select-none absolute inset-0 top-0 right-0 left-0 z-30 bg-black bg-opacity-50"></div>
+        <div
+          onClick={handlePopupToggle}
+          className="select-none absolute inset-0 top-0 right-0 left-0 z-30 bg-black bg-opacity-50"
+        ></div>
       )}
 
       <div className="fixed top-52 z-30 right-10 bg-white p-2 w-10 rounded-[50%] hover:bg-opacity-50">
@@ -130,7 +137,7 @@ const Article = function ({ data }: { data?: any }) {
         <div className="relative select-none mobilecustom:h-[900px]">
           <div className="absolute inset-0 bg-black bg-opacity-40"></div>
           <img
-            src={`http://192.168.0.101:1337${customarr[0].image.url}`}
+            src={`http://192.168.1.19:1337${customarr[0].image.url}`}
             alt=""
             width={1000}
             className="object-cover w-full h-[800px]"

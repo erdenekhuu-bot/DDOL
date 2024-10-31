@@ -21,7 +21,7 @@ export const Secondsection = function ({ data }: { data: any }) {
           {data.map((items: any) => (
             <SwiperSlide key={items.id}>
               <Image
-                src={`http://192.168.0.101:1337/${items.icon?.url}`}
+                src={`http://192.168.1.19:1337/${items.icon?.url}`}
                 alt=""
                 width={100}
                 className="w-52"

@@ -23,7 +23,7 @@ export const Customlabel = function ({
         className="mx-2"
         width={30}
         height={30}
-        src={`http://192.168.0.101:1337${icon}`}
+        src={`http://192.168.1.19:1337${icon}`}
         alt=""
       />
       <p className="font-bold text-opacity-60 text-xl hover:text-purple-500">
@@ -50,7 +50,7 @@ export const Customcard = function ({
       <img
         width={25}
         height={25}
-        src={`http://192.168.0.101:1337${icon}`}
+        src={`http://192.168.1.19:1337${icon}`}
         alt=""
         className="mx-5 z-20 bg-gray-300"
       />
@@ -76,7 +76,7 @@ export const Sixthsection = function ({ data }: { data: any }) {
         key={items.id}
         width={980}
         height={980}
-        src={`http://192.168.0.101:1337${items.image?.formats.large.url}`}
+        src={`http://192.168.1.19:1337${items.image?.formats.large.url}`}
         alt=""
         className="object-cover rounded-3xl drop-shadow"
       />
@@ -103,7 +103,7 @@ export const Sixthsection = function ({ data }: { data: any }) {
         key={items.id}
         width={980}
         height={980}
-        src={`http://192.168.0.101:1337${items.mobile?.formats.large.url}`}
+        src={`http://192.168.1.19:1337${items.mobile?.formats.large.url}`}
         alt=""
         className="object-cover rounded-3xl drop-shadow border"
       />
