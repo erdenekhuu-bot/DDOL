@@ -5,13 +5,15 @@ import Link from "next/link";
 import { navList } from "../json/objects";
 import menu from "../images/white_menu.png";
 import x from "../images/x_ios.png";
-import { useState } from "react";
+import { useState, createContext } from "react";
 import { Nav } from "./PopUp";
 import { Button } from "antd";
 
 export const mixing = function (url: string) {
   return url[0] == "#" ? "/" + url : url;
 };
+
+export const Popscontext = createContext(null);
 
 export const Header = function () {
   const [click, setClick] = useState(false);

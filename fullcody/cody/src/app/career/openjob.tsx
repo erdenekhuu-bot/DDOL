@@ -84,6 +84,7 @@ export const Openjobs = function ({ data }: { data: any }) {
   };
 
   const images: any = [];
+  const mobile: any = [];
 
   data.map((items: any) =>
     images.push(
@@ -139,7 +140,6 @@ export const Openjobs = function ({ data }: { data: any }) {
             </div>
             <div className="w-full">
               <div className="flex overflow-hidden flex-shrink-0 w-full h-full py-4">
-                {/* {images[page]} */}
                 <div
                   className="flex transition-transform duration-300"
                   style={{ transform: `translateX(-${page * 100}%)` }}

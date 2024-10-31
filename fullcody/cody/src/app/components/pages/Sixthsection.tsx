@@ -173,7 +173,7 @@ export const Sixthsection = function ({ data }: { data: any }) {
           {mobilelabel[page]}
         </div>
         <div className="w-full overflow-hidden">
-          {/* <div
+          <div
             className="flex transition-transform duration-300 select-none mobilecustom:hidden"
             style={{ transform: `translateX(-${page * 100}%)` }}
           >
@@ -182,8 +182,8 @@ export const Sixthsection = function ({ data }: { data: any }) {
                 {image}
               </div>
             ))}
-          </div> */}
-          <Swiper
+          </div>
+          {/* <Swiper
             spaceBetween={10}
             scrollbar={{ draggable: true }}
             loop={true}
@@ -198,7 +198,7 @@ export const Sixthsection = function ({ data }: { data: any }) {
                 </div>
               </SwiperSlide>
             ))}
-          </Swiper>
+          </Swiper> */}
         </div>
         <div className="hidden relative flex-shrink-0 w-full h-full p-10 mobilecustom:flex">
           <Swiper
