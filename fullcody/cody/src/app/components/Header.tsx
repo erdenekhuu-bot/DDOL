@@ -18,11 +18,6 @@ export const Popscontext = createContext(null);
 export const Header = function () {
   const [click, setClick] = useState(false);
   const [trigger, setTrigger] = useState(false);
-  const [forward, setForward] = useState(1);
-
-  const graybg = () => {
-    setTrigger(!trigger);
-  };
 
   return (
     <header className="fixed w-full z-30 bg-white p-4 drop-shadow-2xl">
