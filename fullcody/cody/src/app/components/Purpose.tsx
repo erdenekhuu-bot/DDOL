@@ -33,7 +33,7 @@ export const Purpose = function () {
         </p>
       </div>
       <div className="flex justify-center my-8">
-        <p className="text-[50px] text-center w-[90%] mobilecustom:text-3xl">
+        <p className="text-[50px] text-center w-[90%] mobilecustom:text-xl">
           Дэвшилтэд шийдэл, технологиор дамжуулан мянга мянган бизнест боломжийг
           нээж өгнө.
         </p>
