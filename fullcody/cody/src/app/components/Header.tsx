@@ -24,8 +24,7 @@ export const Header = function () {
   };
 
   const hidePopup = () => {
-    // setClick(!click);
-    console.log("cliced");
+    setClick(false);
   };
 
   return (
