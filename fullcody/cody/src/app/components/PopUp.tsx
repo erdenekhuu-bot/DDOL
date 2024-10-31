@@ -10,6 +10,7 @@ import { Cards, CardsMobile } from "./pages/Fifthsection";
 import Link from "next/link";
 import { mixing } from "../components/Header";
 import imgsol from "../images/svgsoltion.svg";
+import popfeature from "../images/popfeature.svg";
 
 export const Nav = function ({
   call,
@@ -114,8 +115,20 @@ export const Fea = function ({
 }) {
   return (
     <section className="fixed inset-0 z-30 bg-popupcolor bg-opacity-50 w-[90%] h-[90%] rounded-lg mx-auto my-auto flex flex-col">
-      <div className="flex justify-center items-center p-4 my-4">
+      {/* <div className="flex justify-center items-center p-4 my-4">
         <span className="font-bold text-3xl">Системийн боломжууд</span>
+      </div> */}
+      <div className="relative my-4 w-[500px] mx-auto mobilecustom:hidden">
+        <Image
+          src={popfeature}
+          width={800}
+          height={800}
+          alt=""
+          className="w-20 absolute top-4 right-1/4"
+        />
+        <p className="text-2xl py-8 font-bold text-center">
+          Системийн боломжууд
+        </p>
       </div>
       <div className="mx-auto w-full p-8 flex justify-start flex-wrap overflow-y-scroll mobilecustom:p-0">
         {array.map((item: any) => (
