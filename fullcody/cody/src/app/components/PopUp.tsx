@@ -115,9 +115,6 @@ export const Fea = function ({
 }) {
   return (
     <section className="fixed inset-0 z-30 bg-popupcolor bg-opacity-50 w-[90%] h-[90%] rounded-lg mx-auto my-auto flex flex-col">
-      {/* <div className="flex justify-center items-center p-4 my-4">
-        <span className="font-bold text-3xl">Системийн боломжууд</span>
-      </div> */}
       <div className="relative my-4 w-[500px] mx-auto mobilecustom:hidden">
         <Image
           src={popfeature}
