@@ -139,7 +139,7 @@ export const Openjobs = function ({ data }: { data: any }) {
               {mobilelabel[page]}
             </div>
             <div className="w-full">
-              <div className="flex overflow-hidden flex-shrink-0 w-full h-full py-4">
+              <div className="flex overflow-hidden flex-shrink-0 w-full h-full py-4 mobilecustom:hidden">
                 <div
                   className="flex transition-transform duration-300"
                   style={{ transform: `translateX(-${page * 100}%)` }}
@@ -151,6 +151,17 @@ export const Openjobs = function ({ data }: { data: any }) {
                   ))}
                 </div>
               </div>
+              <Swiper
+                scrollbar={{ draggable: true }}
+                loop={true}
+                onSlideChange={handleSlideChange}
+                initialSlide={page}
+                className="hidden w-[300px] mobilecustom:block"
+              >
+                {images.map((image: any) => (
+                  <SwiperSlide key={image.id}>{image}</SwiperSlide>
+                ))}
+              </Swiper>
             </div>
           </section>
         </section>
