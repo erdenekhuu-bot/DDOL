@@ -18,13 +18,10 @@ export const Popscontext = createContext(null);
 export const Header = function () {
   const [click, setClick] = useState(false);
   const [trigger, setTrigger] = useState(false);
+  const [forward, setForward] = useState(1);
 
-  const togglePopup = () => {
+  const graybg = () => {
     setTrigger(!trigger);
-  };
-
-  const hidePopup = () => {
-    setClick(false);
   };
 
   return (
@@ -43,7 +40,6 @@ export const Header = function () {
           <Image
             onClick={() => {
               setClick(!click);
-              togglePopup();
             }}
             src={click ? x : menu}
             alt=""
@@ -59,7 +55,6 @@ export const Header = function () {
               href={mixing(items.url)}
               scroll={true}
               className="mx-4"
-              onClick={hidePopup}
             >
               <div key={items.id} className="font-bold text-sm text-gray-800 ">
                 {items.title}
@@ -80,12 +75,7 @@ export const Header = function () {
           </Button>
         </div>
       </nav>
-      <Nav
-        call={click}
-        click={() => {
-          setTrigger(!trigger);
-        }}
-      />
+      <Nav call={click} />
     </header>
   );
 };

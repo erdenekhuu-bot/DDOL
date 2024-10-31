@@ -1,3 +1,4 @@
+"use client";
 import { mobilenavList } from "@/app/json/objects";
 import x from "../images/x.svg";
 import face from "../images/face.svg";
@@ -11,25 +12,34 @@ import Link from "next/link";
 import { mixing } from "../components/Header";
 import imgsol from "../images/svgsoltion.svg";
 import popfeature from "../images/popfeature.svg";
+import { useState, useEffect } from "react";
 
-export const Nav = function ({
-  call,
-  click,
-}: {
-  call: boolean;
-  click: () => void;
-}) {
+export const Nav = function ({ call }: { call: boolean }) {
+  const [isVisible, setIsVisible] = useState(call);
+
+  useEffect(() => {
+    setIsVisible(call);
+  }, [call]);
+
+  const handleItemClick = () => {
+    setIsVisible(false);
+  };
   return (
     <section
       className={`fixed z-20 my-4 right-0 left-0 bg-white transition-all duration-300 hidemenu:hidden`}
     >
       <div
         className={`overflow-hidden transition-all duration-300 ${
-          call ? `max-h-screen` : `max-h-0`
+          isVisible ? `max-h-screen` : `max-h-0`
         }`}
       >
         {mobilenavList.map((items: any) => (
-          <Link key={items.id} href={mixing(items.url)} scroll={true}>
+          <Link
+            key={items.id}
+            href={mixing(items.url)}
+            scroll={true}
+            onClick={handleItemClick}
+          >
             <div className="p-4 border">
               <p className="text-sm">{items.title}</p>
             </div>
