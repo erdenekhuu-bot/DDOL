@@ -76,6 +76,7 @@ export const Thirdsection = function ({ data }: { data: any }) {
             loop={true}
             onSlideChange={handleSlideChange}
             initialSlide={tap}
+            className="mobilecustom:hidden"
           >
             {array.map((image: any) => (
               <SwiperSlide key={image.id}>
