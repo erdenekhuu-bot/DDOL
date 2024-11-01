@@ -78,7 +78,6 @@ export const Firstsection = function () {
           </div>
         </div>
       </div>
-
       <div className="text-center py-4">
         <p className="font-bold text-4xl text-customtitle  mobilecustom:mx-auto">
           Өөрийн цахим дэлгүүрээ бүтээ!
@@ -95,14 +94,38 @@ export const Firstsection = function () {
         </Button>
       </div>
       <div className="hidden mobilecustom:flex mobilecustom:justify-center">
-        <div className="relative p-2">
+        <div className="relative p-5 w-64 h-[500px] overflow-hidden">
           <Image
             src={phone_background}
+            alt=""
             width={1000}
             height={1000}
-            alt=""
-            className="w-52 inset-0 z-20 overflow-hidden"
+            objectFit="cover"
+            className="w-56 absolute z-20 overflow-hidden"
           />
+          <div className="overflow-hidden z-0 relative">
+            <Swiper
+              scrollbar={{ draggable: true }}
+              loop={true}
+              slidesPerView={1}
+              autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+              }}
+              modules={[Autoplay]}
+            >
+              {getImage.map((items: any) => (
+                <SwiperSlide key={items.id}>
+                  <img
+                    src={`http://192.168.1.19:1337/${items.phone.formats?.small.url}`}
+                    alt=""
+                    width={800}
+                    height={800}
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
         </div>
       </div>
       <p className="hidden my-4 mobilecustom:flex mobilecustom:justify-center">
