@@ -13,28 +13,6 @@ type FieldType = {
   comment?: string;
 };
 
-const onFinish: FormProps<FieldType>["onFinish"] = async (values) => {
-  try {
-    await axios.post(
-      "http://192.168.1.19:1337/api/comments",
-      {
-        data: {
-          name: "guest",
-          comment: values.comment,
-        },
-      },
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
-    alert("Success posted");
-  } catch (error) {
-    return;
-  }
-};
-
 export default function Article() {
   const params = useParams();
   const [getArticle, setArticle] = useState<articles>([]);
@@ -66,6 +44,28 @@ export default function Article() {
     },
     [params.article]
   );
+  // execute for submit form
+  const onFinish: FormProps<FieldType>["onFinish"] = async (values) => {
+    try {
+      await axios.post(
+        `http://192.168.1.19:1337/api/articles/${params.article}/comments`,
+        {
+          data: {
+            name: "guest",
+            comment: values.comment,
+          },
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      alert("Success posted");
+    } catch (error) {
+      return;
+    }
+  };
 
   return (
     <section className="w-full pt-44">
@@ -116,7 +116,6 @@ export default function Article() {
           </Button>
         </Form.Item>
       </Form>
-      <div className=""></div>
     </section>
   );
 }
