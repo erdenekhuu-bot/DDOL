@@ -4,8 +4,6 @@ import phone_background from "../../../app/images/phone_template.png";
 import pad_background from "../../../app/images/pad_template.png";
 import bacgrkound_img from "../../../app/images/background_image.jpg";
 import Image from "next/image";
-import { mobilearray } from "../../json/image";
-import { array } from "../../json/image";
 import { Button } from "antd";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
