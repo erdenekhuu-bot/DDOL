@@ -12,7 +12,6 @@ import { header_api } from "@/app/page";
 import { Autoplay } from "swiper/modules";
 
 export const Firstsection = function () {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [getImage, setImage] = useState<
     {
       id: number;
@@ -96,7 +95,7 @@ export const Firstsection = function () {
         </Button>
       </div>
       <div className="hidden mobilecustom:flex mobilecustom:justify-center">
-        <div className="relative">
+        <div className="relative p-2">
           <Image
             src={phone_background}
             width={1000}
