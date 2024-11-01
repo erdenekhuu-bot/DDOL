@@ -8,16 +8,16 @@ export default factories.createCoreController(
   ({ strapi }) => ({
     async customAction(ctx) {
       try {
-        const { articleId } = ctx.params;
+        const { id } = ctx.params;
         const { name, comment } = ctx.request.body;
 
         const entry = await strapi.entityService.create(
           "api::comment.comment",
           {
             data: {
+              article: id,
               name,
               comment,
-              article: articleId,
             },
           }
         );

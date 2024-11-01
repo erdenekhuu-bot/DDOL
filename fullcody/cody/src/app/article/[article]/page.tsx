@@ -44,14 +44,14 @@ export default function Article() {
     },
     [params.article]
   );
-  // execute for submit form
+
   const onFinish: FormProps<FieldType>["onFinish"] = async (values) => {
     try {
       await axios.post(
         `http://192.168.1.19:1337/api/articles/${params.article}/comments`,
         {
           data: {
-            name: "guest",
+            name: "Зочин",
             comment: values.comment,
           },
         },
@@ -86,9 +86,9 @@ export default function Article() {
       {getComment.length > 0 &&
         getComment.map((items) => (
           <div className="py-8 border-t border-gray-800 border-opacity-30 mx-auto w-1/2">
-            <p className="text-xl">Контент бүтээгч</p>
-            <p className="my-2">{items.name}</p>
-            <p className="">{items.comment}</p>
+            <p className="text-sm uppercase text-gray-400">Контент бүтээгч</p>
+            <p className="my-2 font-bold">{items.name}</p>
+            <p className="text-sm text-gray-400">{items.comment}</p>
           </div>
         ))}
       <Form
