@@ -84,11 +84,6 @@ export const mobilenavList: navlink = [
     title: "Ажлын байр",
     url: "/career",
   },
-  {
-    id: 7,
-    title: "Холбоо барих",
-    url: "/",
-  },
 ];
 
 export const sliding: slide = [

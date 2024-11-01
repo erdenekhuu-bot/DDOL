@@ -94,7 +94,7 @@ export const Firstsection = function () {
         </Button>
       </div>
       <div className="hidden mobilecustom:flex mobilecustom:justify-center">
-        <div className="relative p-5 w-64 h-[500px] overflow-hidden">
+        <div className="relative p-6 w-64 h-[500px] overflow-hidden">
           <Image
             src={phone_background}
             alt=""
