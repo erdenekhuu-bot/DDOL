@@ -7,19 +7,38 @@ import Image from "next/image";
 import { mobilearray } from "../../json/image";
 import { array } from "../../json/image";
 import { Button } from "antd";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import axios from "axios";
+import { header_api } from "@/app/page";
+import { Autoplay } from "swiper/modules";
 
 export const Firstsection = function () {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [getImage, setImage] = useState<
+    {
+      id: number;
+      tablet: any;
+      phone: any;
+    }[]
+  >([]);
+
+  const fetching = async function () {
+    try {
+      const response = await axios.get(
+        "http://192.168.1.19:1337/api/homes?populate[sliding1][populate]=*",
+        header_api
+      );
+      setImage(response.data.data[0].sliding1);
+    } catch (error) {
+      return;
+    }
+  };
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % array.length);
-    }, 3000);
+    fetching();
+  }, []);
 
-    return () => {
-      clearInterval(interval);
-    };
-  }, [array.length]);
   return (
     <section
       className="pt-36 pb-10 bg-cover bg-no-repeat mobilecustom:bg-center flex justify-around items-center mobilecustom:block mobilecustom:pt-24 overflow-hidden"
@@ -27,8 +46,8 @@ export const Firstsection = function () {
         backgroundImage: `url(${bacgrkound_img.src})`,
       }}
     >
-      <div className="w-56 overflow-hidden mobilecustom:hidden">
-        <div className="relative">
+      <div className="w-56 h-[500px] mobilecustom:hidden">
+        <div className="relative p-2">
           <Image
             src={phone_background}
             width={900}
@@ -38,18 +57,27 @@ export const Firstsection = function () {
             className="absolute inset-0 z-20"
           />
           <div className="overflow-hidden z-0 relative">
-            <div className="flex sliding">
-              {mobilearray.map((image: any, index: number) => (
-                <Image
-                  key={index}
-                  src={image}
-                  width={800}
-                  height={800}
-                  alt=""
-                  className="rounded-sm mx-1"
-                />
+            <Swiper
+              scrollbar={{ draggable: true }}
+              loop={true}
+              slidesPerView={1}
+              autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+              }}
+              modules={[Autoplay]}
+            >
+              {getImage.map((items: any) => (
+                <SwiperSlide key={items.id}>
+                  <img
+                    src={`http://192.168.1.19:1337/${items.phone.formats?.small.url}`}
+                    alt=""
+                    width={800}
+                    height={800}
+                  />
+                </SwiperSlide>
               ))}
-            </div>
+            </Swiper>
           </div>
         </div>
       </div>
@@ -78,15 +106,6 @@ export const Firstsection = function () {
             alt=""
             className="w-52 inset-0 z-20 overflow-hidden"
           />
-          <div className="absolute p-3 inset-0 z-0 rounded-sm">
-            <Image
-              src={mobilearray[currentImageIndex]}
-              width={800}
-              height={800}
-              alt=""
-              className="transition-opacity duration-500 ease-in-out rounded-sm"
-            />
-          </div>
         </div>
       </div>
       <p className="hidden my-4 mobilecustom:flex mobilecustom:justify-center">
@@ -98,7 +117,7 @@ export const Firstsection = function () {
         </Button>
       </div>
       <div className="mobilecustom:hidden">
-        <div className="relative w-96">
+        <div className="relative w-96 p-2">
           <Image
             src={pad_background}
             alt=""
@@ -109,18 +128,27 @@ export const Firstsection = function () {
           />
 
           <div className="overflow-hidden z-0 relative">
-            <div className="flex slidingpad">
-              {array.map((image: any, index: number) => (
-                <Image
-                  key={index}
-                  src={image}
-                  width={1000}
-                  height={1000}
-                  alt=""
-                  className="rounded-sm mx-1"
-                />
+            <Swiper
+              scrollbar={{ draggable: true }}
+              loop={true}
+              slidesPerView={1}
+              autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+              }}
+              modules={[Autoplay]}
+            >
+              {getImage.map((items: any) => (
+                <SwiperSlide key={items.id}>
+                  <img
+                    src={`http://192.168.1.19:1337/${items.tablet.formats?.small.url}`}
+                    alt=""
+                    width={800}
+                    height={800}
+                  />
+                </SwiperSlide>
               ))}
-            </div>
+            </Swiper>
           </div>
         </div>
       </div>
