@@ -1,7 +1,7 @@
 fullcody/cody/ фолдер дотор next js бүхий UI хэсэг байгаа. (antd ui ашигласан).
 fullcody/fullcody фолдер дотор strapi js бүхий dashboard хэсэг байгаа. (postgresql ашигласан)
 
-Next js v14 хувилбар ашигласан бөгөөд react-use-draggable-scroll, axios package* ашиглаж байгаа. 
+Next js v14 хувилбар ашигласан бөгөөд axios package* ашиглаж байгаа. 
 
 fullcody/fullcody .env дагуу ажиллах ба хэрэв хүсвэл .env -г өөрчилж болно. .env файлыг шалгаад npm run develop коммандын мөрөөр ажилуулж болно. Гараар тохирулах зүйл байхгүй. 
 
